@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    SpringBoot+Vue前后端分离简易开发 |  Hexo
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+
+  
+
+  
+
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-SpringBoot-Vue前后端分离简易开发" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  SpringBoot+Vue前后端分离简易开发
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/02/21/SpringBoot-Vue%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%AE%80%E6%98%93%E5%BC%80%E5%8F%91/" class="article-date">
+  <time datetime="2020-02-21T07:16:36.000Z" itemprop="datePublished">2020-02-21</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Vue%E5%AE%9E%E6%88%98/">Vue实战</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">3.2k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">17分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <p>本文主要是学习于B站的Spring Boot+Vue前后端分离开发，技术主要采用Springboot + Vue + Element Ui，来完成基本的数据表格操作。</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+## 前端
+### 界面
+![](https://img-blog.csdnimg.cn/20200221153338242.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70)
+![](https://img-blog.csdnimg.cn/20200221153757210.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70)
+![](https://img-blog.csdnimg.cn/20200221153707819.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70)
+
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><h4 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'./plugins/axios'</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App.vue'</span></span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">'./router'</span></span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'./store'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'./plugins/element.js'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//element-ui的全部组件</span></span><br><span class="line"><span class="keyword">import</span> ElementUI <span class="keyword">from</span> <span class="string">'element-ui'</span></span><br><span class="line"><span class="comment">//element-ui的css</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'element-ui/lib/theme-chalk/index.css'</span></span><br><span class="line"><span class="comment">//使用elementUI</span></span><br><span class="line">Vue.use(ElementUI)</span><br><span class="line"></span><br><span class="line">Vue.config.productionTip = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  router,</span><br><span class="line">  store,</span><br><span class="line">  render: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br><span class="line">&#125;).$mount(<span class="string">'#app'</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="router"><a href="#router" class="headerlink" title="router"></a>router</h4><p><strong>index.js</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">'vue-router'</span></span><br><span class="line"><span class="keyword">import</span> List <span class="keyword">from</span> <span class="string">'../views/PageOne'</span></span><br><span class="line"><span class="keyword">import</span> Add <span class="keyword">from</span> <span class="string">'../views/PageTwo'</span></span><br><span class="line"><span class="keyword">import</span> Update <span class="keyword">from</span> <span class="string">'../views/PageThree.vue'</span></span><br><span class="line"><span class="keyword">import</span> PageFour <span class="keyword">from</span> <span class="string">'../views/PageFour.vue'</span></span><br><span class="line"><span class="keyword">import</span> Index <span class="keyword">from</span> <span class="string">'../views/index.vue'</span></span><br><span class="line"></span><br><span class="line">Vue.use(VueRouter)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routes = [&#123;</span><br><span class="line">    path: <span class="string">"/"</span>,</span><br><span class="line">    name: <span class="string">"用户管理"</span>,</span><br><span class="line">    component: Index,</span><br><span class="line">    redirect: <span class="string">"/List"</span>,</span><br><span class="line">    show: <span class="literal">true</span>,</span><br><span class="line">    children: [&#123;</span><br><span class="line">        path: <span class="string">"/List"</span>,</span><br><span class="line">        name: <span class="string">"查询用户"</span>,</span><br><span class="line">        component: List</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        path: <span class="string">"/Add"</span>,</span><br><span class="line">        name: <span class="string">"添加用户"</span>,</span><br><span class="line">        component: Add</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        path: <span class="string">"/update"</span>,</span><br><span class="line">        name: <span class="string">"修改用户"</span>,</span><br><span class="line">        component: Update</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">"/authority"</span>,</span><br><span class="line">    name: <span class="string">"权限管理"</span>,</span><br><span class="line">    <span class="comment">// 利用v-show隐藏此模块</span></span><br><span class="line">    show: <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  mode: <span class="string">'history'</span>,</span><br><span class="line">  base: process.env.BASE_URL,</span><br><span class="line">  routes</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router</span><br></pre></td></tr></table></figure>
+
+<h4 id="App-vue"><a href="#App-vue" class="headerlink" title="App.vue"></a>App.vue</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.el-header</span> &#123;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">background-color</span>: <span class="selector-id">#b3c0d1</span>;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">color</span>: <span class="selector-id">#333</span>;</span></span><br><span class="line">  line-height: 60px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="css"><span class="selector-class">.el-aside</span> &#123;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">color</span>: <span class="selector-id">#333</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">  data() &#123;</span><br><span class="line"><span class="actionscript">    <span class="keyword">const</span> item = &#123;</span></span><br><span class="line"><span class="actionscript">      date: <span class="string">"2016-05-02"</span>,</span></span><br><span class="line"><span class="actionscript">      name: <span class="string">"王小虎"</span>,</span></span><br><span class="line"><span class="actionscript">      address: <span class="string">"上海市普陀区金沙江路 1518 弄"</span></span></span><br><span class="line">    &#125;;</span><br><span class="line"><span class="actionscript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">      tableData: <span class="built_in">Array</span>(<span class="number">20</span>).fill(item)</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="views"><a href="#views" class="headerlink" title="views"></a>views</h4><p><strong>index.vue</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 构建整个页面框架 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-container</span> <span class="attr">style</span>=<span class="string">"height: 500px; border: 1px solid #eee"</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 构建左侧菜单 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-aside</span> <span class="attr">width</span>=<span class="string">"200px"</span> <span class="attr">style</span>=<span class="string">"background-color: rgb(238, 241, 246)"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 左侧菜单内容，</span></span><br><span class="line"><span class="comment">        常用属性 ：default-openeds默认展开的菜单，通过菜单的index直来关联</span></span><br><span class="line"><span class="comment">        default-active：默认选中的菜单，通过菜单的index值来关联--&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;el-menu :default-openeds="['1', '3']"&gt;</span></span><br><span class="line"><span class="comment">          可展开的菜单，常用属性，index：菜单的下标，文本类型，不能是数值类型</span></span><br><span class="line"><span class="comment">          &lt;el-submenu index="1"&gt;</span></span><br><span class="line"><span class="comment">            对应el-submenu的菜单名</span></span><br><span class="line"><span class="comment">            &lt;template slot="title"&gt;</span></span><br><span class="line"><span class="comment">              i：设置菜单图标，通过class属性实则. 如:el-icon-menu,el-icon-message,el-icon-setting</span></span><br><span class="line"><span class="comment">              &lt;i class="el-icon-message"&gt;&lt;/i&gt;导航一</span></span><br><span class="line"><span class="comment">            &lt;/template&gt;</span></span><br><span class="line"><span class="comment">            菜单的子节点,不可再展开,常用属性. index:菜单的下标,文本类型,不能是数值类型</span></span><br><span class="line"><span class="comment">            &lt;el-menu-item index="1-1"&gt;选项1&lt;/el-menu-item&gt;</span></span><br><span class="line"><span class="comment">            &lt;el-menu-item index="1-2"&gt;选项2&lt;/el-menu-item&gt;</span></span><br><span class="line"><span class="comment">            &lt;el-submenu index="1-3"&gt;</span></span><br><span class="line"><span class="comment">              &lt;template slot="title"&gt;</span></span><br><span class="line"><span class="comment">                &lt;i class="el-icon-message"&gt;&lt;/i&gt;选项3</span></span><br><span class="line"><span class="comment">              &lt;/template&gt;</span></span><br><span class="line"><span class="comment">              &lt;el-menu-item index="1-3-1"&gt;选项3-1&lt;/el-menu-item&gt;</span></span><br><span class="line"><span class="comment">            &lt;/el-submenu&gt;</span></span><br><span class="line"><span class="comment">          &lt;/el-submenu&gt;</span></span><br><span class="line"><span class="comment">        &lt;/el-menu&gt; --&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- menu 与 router的绑定：</span></span><br><span class="line"><span class="comment">          1.&lt;el-menu&gt;标签添加router属性</span></span><br><span class="line"><span class="comment">          2.在页面中添加&lt;router-view&gt;标签，它是一个容器，动态渲染你选择的router</span></span><br><span class="line"><span class="comment">          3.&lt;el-menu-item&gt;标签的index值就是要跳转的router</span></span><br><span class="line"><span class="comment">           --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-menu</span> <span class="attr">router</span> <span class="attr">:default-openeds</span>=<span class="string">"['0', '1']"</span>&gt;</span></span><br><span class="line">          <span class="comment">&lt;!-- Custom elements in iteration require 'v-bind:key' directives. --&gt;</span></span><br><span class="line">          <span class="comment">&lt;!-- 在el-menu-item 及el-submenu 标签上面，必须要加上 index属性，如果没有则报错。 </span></span><br><span class="line"><span class="comment">          :key属性为了避免点击菜单全部展开--&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">el-submenu</span> <span class="attr">v-for</span>=<span class="string">"(item,index)  in $router.options.routes"</span> <span class="attr">:index</span>=<span class="string">"index + ''"</span> <span class="attr">:key</span>=<span class="string">"index + ''"</span> <span class="attr">v-show</span>=<span class="string">"item.show"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot</span>=<span class="string">"title"</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"el-icon-message"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>&#123;&#123;index&#125;&#125;-&#123;&#123;item.name&#125;&#125;<span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-menu-item</span> <span class="attr">v-for</span>=<span class="string">"(item2,index2) in item.children"</span></span></span><br><span class="line"><span class="tag">              <span class="attr">:class</span>=<span class="string">"$route.path == item2.path ? 'isActive':''"</span> <span class="attr">:index</span>=<span class="string">"item2.path"</span> <span class="attr">v-bind:key</span>=<span class="string">"index + '-' + index2"</span>&gt;</span></span><br><span class="line">              <span class="comment">&lt;!-- &lt;router-link :to="/路径"&gt;&lt;/router-link&gt; --&gt;</span></span><br><span class="line">              &#123;&#123;item2.name&#125;&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">el-menu-item</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">el-submenu</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-menu</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-aside</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-container</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-header</span> <span class="attr">style</span>=<span class="string">"text-align: right; font-size: 12px"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">el-dropdown</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"el-icon-setting"</span> <span class="attr">style</span>=<span class="string">"margin-right: 15px"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-dropdown-menu</span> <span class="attr">slot</span>=<span class="string">"dropdown"</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">el-dropdown-item</span>&gt;</span>查看<span class="tag">&lt;/<span class="name">el-dropdown-item</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">el-dropdown-item</span>&gt;</span>新增<span class="tag">&lt;/<span class="name">el-dropdown-item</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">el-dropdown-item</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">el-dropdown-item</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">el-dropdown-menu</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">el-dropdown</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span>&gt;</span>王小虎<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-header</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 构建页面主体内容 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-main</span>&gt;</span></span><br><span class="line">          <span class="comment">&lt;!-- &lt;el-table :data="tableData"&gt;</span></span><br><span class="line"><span class="comment">            &lt;el-table-column prop="date" label="日期" width="140"&gt;&lt;/el-table-column&gt;</span></span><br><span class="line"><span class="comment">            &lt;el-table-column prop="name" label="姓名" width="120"&gt;&lt;/el-table-column&gt;</span></span><br><span class="line"><span class="comment">            &lt;el-table-column prop="address" label="地址"&gt;&lt;/el-table-column&gt;</span></span><br><span class="line"><span class="comment">          &lt;/el-table&gt;--&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-main</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-container</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-container</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.isActive</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line">  color: aquamarine;</span><br><span class="line">  font-weight: bold;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>PageOne.vue-页面展示数据表</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 必须都套在一个div里 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-table</span> <span class="attr">:data</span>=<span class="string">"tableData"</span> <span class="attr">border</span> <span class="attr">style</span>=<span class="string">"width: 50%"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">fixed</span> <span class="attr">prop</span>=<span class="string">"id"</span> <span class="attr">label</span>=<span class="string">"编号"</span> <span class="attr">width</span>=<span class="string">"150"</span>&gt;</span><span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">prop</span>=<span class="string">"name"</span> <span class="attr">label</span>=<span class="string">"姓名"</span> <span class="attr">width</span>=<span class="string">"120"</span>&gt;</span><span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">prop</span>=<span class="string">"gender"</span> <span class="attr">label</span>=<span class="string">"性别"</span> <span class="attr">width</span>=<span class="string">"120"</span>&gt;</span><span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">prop</span>=<span class="string">"age"</span> <span class="attr">label</span>=<span class="string">"年龄"</span> <span class="attr">width</span>=<span class="string">"120"</span>&gt;</span><span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">fixed</span>=<span class="string">"right"</span> <span class="attr">label</span>=<span class="string">"操作"</span> <span class="attr">width</span>=<span class="string">"100"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">"scope"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">el-button</span> @<span class="attr">click</span>=<span class="string">"edit(scope.row)"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">size</span>=<span class="string">"small"</span>&gt;</span>修改<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">el-button</span> @<span class="attr">click</span>=<span class="string">"deleteUserById(scope.row)"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">size</span>=<span class="string">"small"</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-table</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 分页 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- :total 默认每页十条记录数，总记录数是100，就是十页</span></span><br><span class="line"><span class="comment">    :page-size: 每页数据量(即记录数)，默认10--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-pagination</span></span></span><br><span class="line"><span class="tag">      <span class="attr">background</span></span></span><br><span class="line"><span class="tag">      <span class="attr">layout</span>=<span class="string">"prev, pager, next"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:page-size</span>=<span class="string">"pageSize"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:total</span>=<span class="string">"total"</span></span></span><br><span class="line"><span class="tag">      @<span class="attr">current-change</span>=<span class="string">"page"</span></span></span><br><span class="line"><span class="tag">    &gt;</span><span class="tag">&lt;/<span class="name">el-pagination</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="actionscript">  name: <span class="string">"PageOne"</span>,</span></span><br><span class="line">  methods: &#123;</span><br><span class="line">    edit(row) &#123;</span><br><span class="line"><span class="actionscript">      <span class="keyword">this</span>.$router.push(&#123;</span></span><br><span class="line"><span class="actionscript">        path: <span class="string">'/update'</span>,</span></span><br><span class="line">        query: &#123;</span><br><span class="line">          id: row.id</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    deleteUserById(row) &#123;</span><br><span class="line">      alert(row.id)</span><br><span class="line"><span class="actionscript">      <span class="keyword">const</span> _this = <span class="keyword">this</span>;</span></span><br><span class="line">      axios</span><br><span class="line"><span class="actionscript">        .delete(<span class="string">"http://localhost:8181/user/delete?id="</span> + row.id)</span></span><br><span class="line"><span class="actionscript">        .then(<span class="function"><span class="keyword">function</span><span class="params">(resp)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">          alert(<span class="string">"成功"</span>);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">window</span>.location.reload();</span></span><br><span class="line"><span class="javascript">        &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="actionscript">          alert(<span class="string">"失败"</span>)</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    page(currentPage) &#123;</span><br><span class="line"><span class="actionscript">      <span class="keyword">const</span> _this = <span class="keyword">this</span>;</span></span><br><span class="line">      axios</span><br><span class="line"><span class="actionscript">        .get(<span class="string">"http://localhost:8181/user/findAll/"</span> + (currentPage - <span class="number">1</span>) + <span class="string">"/6"</span>)</span></span><br><span class="line"><span class="actionscript">        .then(<span class="function"><span class="keyword">function</span><span class="params">(resp)</span> </span>&#123;</span></span><br><span class="line">          _this.tableData = resp.data.content;</span><br><span class="line">          _this.pageSize = resp.data.size;</span><br><span class="line">          _this.total = resp.data.totalElements;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line"><span class="actionscript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line">      pageSize: 1,</span><br><span class="line">      total: 17,</span><br><span class="line">      tableData: []</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  created() &#123;</span><br><span class="line"><span class="actionscript">    <span class="keyword">const</span> _this = <span class="keyword">this</span>;</span></span><br><span class="line"><span class="actionscript">    axios.get(<span class="string">"http://localhost:8181/user/findAll/0/5"</span>).then(<span class="function"><span class="keyword">function</span><span class="params">(resp)</span> </span>&#123;</span></span><br><span class="line">      _this.tableData = resp.data.content;</span><br><span class="line">      _this.pageSize = resp.data.size;</span><br><span class="line">      _this.total = resp.data.totalElements;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>PageTwo-页面添加功能</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- ref:不能少，相当于form表单的name属性 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-form</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:model</span>=<span class="string">"ruleForm"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:rules</span>=<span class="string">"rules"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">ref</span>=<span class="string">"ruleForm"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">label-width</span>=<span class="string">"100px"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">class</span>=<span class="string">"demo-ruleForm"</span></span></span><br><span class="line"><span class="tag">    &gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">"用户姓名"</span> <span class="attr">prop</span>=<span class="string">"name"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">"ruleForm.name"</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">"用户性别"</span> <span class="attr">prop</span>=<span class="string">"gender"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">"ruleForm.gender"</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">"用户年龄"</span> <span class="attr">prop</span>=<span class="string">"age"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">"ruleForm.age"</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">type</span>=<span class="string">"primary"</span> @<span class="attr">click</span>=<span class="string">"submitForm('ruleForm')"</span>&gt;</span>立即创建<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-button</span> @<span class="attr">click</span>=<span class="string">"resetForm('ruleForm')"</span>&gt;</span>重置<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-button</span> @<span class="attr">click</span>=<span class="string">"test()"</span>&gt;</span>Test<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="actionscript">  name: <span class="string">"PageTwo"</span>,</span></span><br><span class="line">  data() &#123;</span><br><span class="line"><span class="actionscript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line">      ruleForm: &#123;</span><br><span class="line"><span class="actionscript">        name: <span class="string">""</span>,</span></span><br><span class="line"><span class="actionscript">        age: <span class="string">""</span>,</span></span><br><span class="line"><span class="actionscript">        gender: <span class="string">""</span></span></span><br><span class="line"><span class="actionscript">        <span class="comment">// region: "",</span></span></span><br><span class="line"><span class="actionscript">        <span class="comment">// date1: "",</span></span></span><br><span class="line"><span class="actionscript">        <span class="comment">// date2: "",</span></span></span><br><span class="line"><span class="actionscript">        <span class="comment">// delivery: false,</span></span></span><br><span class="line"><span class="actionscript">        <span class="comment">// type: [],</span></span></span><br><span class="line"><span class="actionscript">        <span class="comment">// resource: "",</span></span></span><br><span class="line"><span class="actionscript">        <span class="comment">// desc: ""</span></span></span><br><span class="line">      &#125;,</span><br><span class="line"><span class="actionscript">      <span class="comment">// 定义rules对象，在rules对象中设置表单各个选项的校验规则：</span></span></span><br><span class="line"><span class="actionscript">      <span class="comment">// trigger：触发事件，如 blur失焦</span></span></span><br><span class="line">      rules: &#123;</span><br><span class="line">        id: [</span><br><span class="line"><span class="actionscript">          &#123; required: <span class="literal">true</span>, message: <span class="string">"请输入用户编号"</span>, trigger: <span class="string">"blur"</span> &#125;,</span></span><br><span class="line"><span class="actionscript">          &#123; min: <span class="number">1</span>, max: <span class="number">5</span>, message: <span class="string">"长度在 1 到 5 个字符"</span>, trigger: <span class="string">"blur"</span> &#125;</span></span><br><span class="line">        ],</span><br><span class="line">        name: [</span><br><span class="line"><span class="actionscript">          &#123; required: <span class="literal">true</span>, message: <span class="string">"请输入用户名称"</span>, trigger: <span class="string">"blur"</span> &#125;,</span></span><br><span class="line"><span class="actionscript">          &#123; min: <span class="number">3</span>, max: <span class="number">5</span>, message: <span class="string">"长度在 3 到 5 个字符"</span>, trigger: <span class="string">"blur"</span> &#125;</span></span><br><span class="line">        ],</span><br><span class="line">        region: [</span><br><span class="line"><span class="actionscript">          &#123; required: <span class="literal">true</span>, message: <span class="string">"请选择活动区域"</span>, trigger: <span class="string">"change"</span> &#125;</span></span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    test() &#123;</span><br><span class="line"><span class="actionscript">      <span class="comment">// 不能拼接 "内容" +，会变成Object</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.ruleForm);</span></span><br><span class="line">    &#125;,</span><br><span class="line">    submitForm(formName) &#123;</span><br><span class="line"><span class="actionscript">      <span class="keyword">const</span> _this = <span class="keyword">this</span>;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.$refs[formName].validate(<span class="function"><span class="params">valid</span> =&gt;</span> &#123;</span></span><br><span class="line">        if (valid) &#123;</span><br><span class="line"><span class="actionscript">          <span class="comment">// axios.post('http://localhost:8181/user/add', this.ruleForm)</span></span></span><br><span class="line"><span class="actionscript">          <span class="comment">//   .then(function (response) &#123;</span></span></span><br><span class="line"><span class="actionscript">          <span class="comment">//     console.log(response);</span></span></span><br><span class="line"><span class="actionscript">          <span class="comment">//   &#125;)</span></span></span><br><span class="line">          axios(&#123;</span><br><span class="line"><span class="actionscript">            url: <span class="string">"http://localhost:8181/user/add"</span>,</span></span><br><span class="line">            params: &#123;</span><br><span class="line"><span class="actionscript">              name: <span class="keyword">this</span>.ruleForm.name,</span></span><br><span class="line"><span class="actionscript">              age: <span class="keyword">this</span>.ruleForm.age,</span></span><br><span class="line"><span class="actionscript">              gender: <span class="keyword">this</span>.ruleForm.gender</span></span><br><span class="line">            &#125;,</span><br><span class="line"><span class="actionscript">            method: <span class="string">"post"</span></span></span><br><span class="line"><span class="javascript">          &#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="actionscript">            _this.$alert(<span class="string">"《"</span> + _this.ruleForm.name + <span class="string">"》添加成功"</span>, <span class="string">"消息"</span>, &#123;</span></span><br><span class="line"><span class="actionscript">              confirmButtonText: <span class="string">"确定"</span>,</span></span><br><span class="line"><span class="javascript">              callback: <span class="function"><span class="params">action</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="actionscript">                _this.$router.push(<span class="string">"/List"</span>);</span></span><br><span class="line">              &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">          &#125;);</span><br><span class="line"><span class="actionscript">        &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"error submit!!"</span>);</span></span><br><span class="line"><span class="actionscript">          <span class="keyword">return</span> <span class="literal">false</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    resetForm(formName) &#123;</span><br><span class="line"><span class="actionscript">      <span class="keyword">this</span>.$refs[formName].resetFields();</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>PageThree-页面修改功能</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- ref:不能少，相当于form表单的name属性 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-form</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:model</span>=<span class="string">"ruleForm"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:rules</span>=<span class="string">"rules"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">ref</span>=<span class="string">"ruleForm"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">label-width</span>=<span class="string">"100px"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">class</span>=<span class="string">"demo-ruleForm"</span></span></span><br><span class="line"><span class="tag">    &gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">"用户编号"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">"ruleForm.id"</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">"用户姓名"</span> <span class="attr">prop</span>=<span class="string">"name"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">"ruleForm.name"</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">"用户性别"</span> <span class="attr">prop</span>=<span class="string">"gender"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">"ruleForm.gender"</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">"用户年龄"</span> <span class="attr">prop</span>=<span class="string">"age"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">"ruleForm.age"</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">type</span>=<span class="string">"primary"</span> @<span class="attr">click</span>=<span class="string">"submitForm('ruleForm')"</span>&gt;</span>修改<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-button</span> @<span class="attr">click</span>=<span class="string">"resetForm('ruleForm')"</span>&gt;</span>重置<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="actionscript">  name: <span class="string">"PageThree"</span>,</span></span><br><span class="line">  data() &#123;</span><br><span class="line"><span class="actionscript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line">      ruleForm: &#123;</span><br><span class="line"><span class="actionscript">        id: <span class="string">""</span>,</span></span><br><span class="line"><span class="actionscript">        name: <span class="string">""</span>,</span></span><br><span class="line"><span class="actionscript">        age: <span class="string">""</span>,</span></span><br><span class="line"><span class="actionscript">        gender: <span class="string">""</span></span></span><br><span class="line"><span class="actionscript">        <span class="comment">// region: "",</span></span></span><br><span class="line"><span class="actionscript">        <span class="comment">// date1: "",</span></span></span><br><span class="line"><span class="actionscript">        <span class="comment">// date2: "",</span></span></span><br><span class="line"><span class="actionscript">        <span class="comment">// delivery: false,</span></span></span><br><span class="line"><span class="actionscript">        <span class="comment">// type: [],</span></span></span><br><span class="line"><span class="actionscript">        <span class="comment">// resource: "",</span></span></span><br><span class="line"><span class="actionscript">        <span class="comment">// desc: ""</span></span></span><br><span class="line">      &#125;,</span><br><span class="line"><span class="actionscript">      <span class="comment">// 定义rules对象，在rules对象中设置表单各个选项的校验规则：</span></span></span><br><span class="line"><span class="actionscript">      <span class="comment">// trigger：触发事件，如 blur失焦</span></span></span><br><span class="line">      rules: &#123;</span><br><span class="line">        id: [</span><br><span class="line"><span class="actionscript">          &#123; required: <span class="literal">true</span>, message: <span class="string">"请输入用户编号"</span>, trigger: <span class="string">"blur"</span> &#125;,</span></span><br><span class="line"><span class="actionscript">          &#123; min: <span class="number">1</span>, max: <span class="number">5</span>, message: <span class="string">"长度在 1 到 5 个字符"</span>, trigger: <span class="string">"blur"</span> &#125;</span></span><br><span class="line">        ],</span><br><span class="line">        name: [</span><br><span class="line"><span class="actionscript">          &#123; required: <span class="literal">true</span>, message: <span class="string">"请输入用户名称"</span>, trigger: <span class="string">"blur"</span> &#125;,</span></span><br><span class="line"><span class="actionscript">          &#123; min: <span class="number">2</span>, max: <span class="number">5</span>, message: <span class="string">"长度在 3 到 5 个字符"</span>, trigger: <span class="string">"blur"</span> &#125;</span></span><br><span class="line">        ],</span><br><span class="line">        region: [</span><br><span class="line"><span class="actionscript">          &#123; required: <span class="literal">true</span>, message: <span class="string">"请选择活动区域"</span>, trigger: <span class="string">"change"</span> &#125;</span></span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    submitForm(formName) &#123;</span><br><span class="line"><span class="actionscript">      <span class="keyword">const</span> _this = <span class="keyword">this</span>;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.$refs[formName].validate(<span class="function"><span class="params">valid</span> =&gt;</span> &#123;</span></span><br><span class="line">        if (valid) &#123;</span><br><span class="line"><span class="actionscript">          <span class="comment">// axios.post('http://localhost:8181/user/add', this.ruleForm)</span></span></span><br><span class="line"><span class="actionscript">          <span class="comment">//   .then(function (response) &#123;</span></span></span><br><span class="line"><span class="actionscript">          <span class="comment">//     console.log(response);</span></span></span><br><span class="line"><span class="actionscript">          <span class="comment">//   &#125;)</span></span></span><br><span class="line">          axios(&#123;</span><br><span class="line"><span class="actionscript">            url: <span class="string">"http://localhost:8181/user/update"</span>,</span></span><br><span class="line">            params: &#123;</span><br><span class="line"><span class="actionscript">              id: <span class="keyword">this</span>.ruleForm.id,</span></span><br><span class="line"><span class="actionscript">              name: <span class="keyword">this</span>.ruleForm.name,</span></span><br><span class="line"><span class="actionscript">              age: <span class="keyword">this</span>.ruleForm.age,</span></span><br><span class="line"><span class="actionscript">              gender: <span class="keyword">this</span>.ruleForm.gender</span></span><br><span class="line">            &#125;,</span><br><span class="line"><span class="actionscript">            method: <span class="string">"put"</span></span></span><br><span class="line"><span class="javascript">          &#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="actionscript">            _this.$alert(<span class="string">"《"</span> + _this.ruleForm.name + <span class="string">"》修改成功"</span>, <span class="string">"消息"</span>, &#123;</span></span><br><span class="line"><span class="actionscript">              confirmButtonText: <span class="string">"确定"</span>,</span></span><br><span class="line"><span class="javascript">              callback: <span class="function"><span class="params">action</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="actionscript">                _this.$router.push(<span class="string">"/List"</span>);</span></span><br><span class="line">              &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">          &#125;);</span><br><span class="line"><span class="actionscript">        &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"error submit!!"</span>);</span></span><br><span class="line"><span class="actionscript">          <span class="keyword">return</span> <span class="literal">false</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    resetForm(formName) &#123;</span><br><span class="line"><span class="actionscript">      <span class="keyword">this</span>.$refs[formName].resetFields();</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  created() &#123;</span><br><span class="line"><span class="actionscript">    <span class="keyword">const</span> _this = <span class="keyword">this</span>;</span></span><br><span class="line"><span class="actionscript">    alert(<span class="keyword">this</span>.$route.query.id);</span></span><br><span class="line">    axios</span><br><span class="line"><span class="actionscript">      .get(<span class="string">"http://localhost:8181/user/findById/"</span> + <span class="keyword">this</span>.$route.query.id)</span></span><br><span class="line"><span class="actionscript">      .then(<span class="function"><span class="keyword">function</span><span class="params">(response)</span> </span>&#123;</span></span><br><span class="line">        _this.ruleForm = response.data;</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h2><p><strong>UserInfo.java</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.blue.demo.entity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.persistence.Entity;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.GeneratedValue;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.GenerationType;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.Id;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Blue</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2020/2/11</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserInfo</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 设置自增</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue</span>(strategy = GenerationType.IDENTITY)</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String gender;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>UserInfoRepository.java</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.blue.demo.repository;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.blue.demo.entity.UserInfo;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.jpa.repository.JpaRepository;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Blue</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2020/2/11</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserInfoRepository</span> <span class="keyword">extends</span> <span class="title">JpaRepository</span>&lt;<span class="title">UserInfo</span>, <span class="title">Integer</span>&gt; </span>&#123;</span><br><span class="line">    <span class="comment">//右键 goto，创建测试类</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>UserInfoController.java</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.blue.demo.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.blue.demo.entity.UserInfo;</span><br><span class="line"><span class="keyword">import</span> cn.blue.demo.repository.UserInfoRepository;</span><br><span class="line"><span class="keyword">import</span> org.apache.catalina.User;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.domain.Page;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.domain.PageRequest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Blue</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2020/2/11</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/user"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserInfoController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserInfoRepository userInfoRepository;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> page 当前页数</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> size 每页显示数据量</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 用户列表信息；倘若让其直接通过访问user就请求此方法就是404</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/findAll/&#123;page&#125;/&#123;size&#125;"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Page&lt;UserInfo&gt; <span class="title">findAll</span><span class="params">(@PathVariable(<span class="string">"page"</span>)</span> Integer page, @<span class="title">PathVariable</span><span class="params">(<span class="string">"size"</span>)</span> Integer size) </span>&#123;</span><br><span class="line">        PageRequest pageRequest = PageRequest.of(page, size);</span><br><span class="line">        <span class="keyword">return</span> userInfoRepository.findAll(pageRequest);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PostMapping</span>(<span class="string">"/add"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">add</span><span class="params">(UserInfo userInfo)</span> </span>&#123;</span><br><span class="line">        UserInfo user = userInfoRepository.save(userInfo);</span><br><span class="line">        <span class="keyword">if</span> (user != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"success"</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"error"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"findById/&#123;id&#125;"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> UserInfo <span class="title">findById</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Integer id) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> userInfoRepository.findById(id).get();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PutMapping</span>(<span class="string">"/update"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">update</span><span class="params">(UserInfo userInfo)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(userInfoRepository.save(userInfo) != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"success"</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"error"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@DeleteMapping</span>(<span class="string">"/delete"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">delete</span><span class="params">(@RequestParam(<span class="string">"id"</span>)</span> Integer id) </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            UserInfo userInfo = <span class="keyword">new</span> UserInfo();</span><br><span class="line">            userInfo.setId(id);</span><br><span class="line">            userInfoRepository.delete(userInfo);</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"success"</span>;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"error"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>配置类CorsConfig: 解决跨域问题</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.blue.demo.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.CorsRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurer;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Blue</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2020/2/11</span></span><br><span class="line"><span class="comment"> * 解决跨域的问题</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CorsConfig</span> <span class="keyword">implements</span> <span class="title">WebMvcConfigurer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addCorsMappings</span><span class="params">(CorsRegistry registry)</span> </span>&#123;</span><br><span class="line">        registry.addMapping(<span class="string">"/**"</span>)</span><br><span class="line">                .allowedOrigins(<span class="string">"*"</span>)</span><br><span class="line">                .allowedMethods(<span class="string">"GET"</span>, <span class="string">"HEAD"</span>, <span class="string">"POST"</span>, <span class="string">"PUT"</span>, <span class="string">"DELETE"</span>, <span class="string">"OPTIONS"</span>)</span><br><span class="line">                .allowCredentials(<span class="keyword">true</span>)</span><br><span class="line">                .maxAge(<span class="number">3600</span>)</span><br><span class="line">                .allowedHeaders(<span class="string">"*"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>pom.xml</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-jpa<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-devtools<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.junit.vintage<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit-vintage-engine<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        打赏
+      </div>
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+        <div class="declare">
+          <ul class="post-copyright">
+            <li>
+              <i class="ri-copyright-line"></i>
+              <strong>版权声明： </strong s>
+              本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
+                target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+            </li>
+          </ul>
+        </div>
+        
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/02/21/SpringBoot-Vue%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%AE%80%E6%98%93%E5%BC%80%E5%8F%91/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Element-Ui/" rel="tag">Element Ui</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/" rel="tag">SpringBoot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+    
+      <a href="/2020/02/09/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Vue学习笔记</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: '',
+        app_key: '',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'mp',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2015-2020
+        John Doe
+      </li>
+      <li>
+        
+          Powered by
+        
+        
+        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <span>
+  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
+  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
+</span>
+        
+      </li>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+    <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+      <aside class="sidebar">
+        <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Hexo"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/%E6%97%85%E8%A1%8C/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="http://shenyu-vip.lofter.com" target="_blank" rel="noopener">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/links">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+      </aside>
+      <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+      
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+    strings: ['一花一世界,一叶一追寻','面朝大海，春暖花开','愿你一生努力，一生被爱'],
+    startDelay: 0,
+    typeSpeed: 200,
+    loop: true,
+    backSpeed: 100,
+    showCursor: true
+    });
+  } catch (err) {
+  }
+  
+</script>
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer:'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    onClick: (e) => {
+      $('.toc-link').removeClass('is-active-link');
+      $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+      $(e.target.hash).scrollIntoView();
+      return false;
+    }
+  });
+</script>
+
+
+<script>
+  var ayerConfig = {
+    mathjax: false
+  }
+</script>
+
+
+<script src="/js/ayer.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    Github + Hexo + Next主题博客搭建教程 |  Hexo
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+
+  
+
+  
+
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-hexo博客搭建教程" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Github + Hexo + Next主题博客搭建教程
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/01/04/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" class="article-date">
+  <time datetime="2020-01-04T05:48:32.000Z" itemprop="datePublished">2020-01-04</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">2.3k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">11分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>在正式安装 Hexo 之前，我们需要确认电脑中是否已安装下列应用程序:</p>
+<ul>
+<li>GitHub 账号</li>
+<li>Node.js<blockquote>
+<p>查看Node版本：node -v</p>
+</blockquote>
+</li>
+<li>Git<blockquote>
+<p>查看git版本：$ git version</p>
+</blockquote>
+<h2 id="在本地安装Hexo"><a href="#在本地安装Hexo" class="headerlink" title="在本地安装Hexo"></a>在本地安装Hexo</h2>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。在blog文件下右键点击Git Bash here，输入如下命令:<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><blockquote>
+<p>hexo g #完整命令为hexo generate,生成静态文件<br>hexo s #完整命令为hexo server,启动服务器,本地可以测试<br>hexo d #完整命令为hexo deploy,将本地编译好的静态文件发布到github上<br>hexo n #完整命令为hexo new,新建一篇文章<br>hexo clean #清除当前项目的静态文件<br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s<br>hexo clean &amp;&amp; hexo douban -bgm &amp;&amp; hexo g &amp;&amp; hexo s #加载豆瓣插件部署博客</p>
+</blockquote>
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><blockquote>
+<p>npm install -g hexo</p>
+</blockquote>
+<h3 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h3><blockquote>
+<p>~/blog $ hexo init</p>
+</blockquote>
+<h3 id="生成和本地预览"><a href="#生成和本地预览" class="headerlink" title="生成和本地预览"></a>生成和本地预览</h3><blockquote>
+<p>~/blog $ hexo g &amp;&amp; hexo s</p>
+</blockquote>
+<h3 id="查看浏览器-localhost-4000"><a href="#查看浏览器-localhost-4000" class="headerlink" title="查看浏览器:localhost:4000"></a>查看浏览器:localhost:4000</h3><img src="https://ask.qcloudimg.com/http-save/yehe-4220914/tutewqpbhm.jpeg?imageView2/2/w/1620" alt="原始界面"><h2 id="部署博客到-GitHub-Pages"><a href="#部署博客到-GitHub-Pages" class="headerlink" title="部署博客到 GitHub Pages"></a>部署博客到 GitHub Pages</h2><a href="https://cloud.tencent.com/developer/article/1520557" target="_blank" rel="noopener">具体可以参考</a><h2 id="博客美化"><a href="#博客美化" class="headerlink" title="博客美化"></a>博客美化</h2><h3 id="两个yml文件"><a href="#两个yml文件" class="headerlink" title="两个yml文件"></a>两个yml文件</h3></li>
+<li>站点配置文件，位于站点文件夹根目录内<ul>
+<li>~/blog/_config.yml</li>
+</ul>
+</li>
+<li>主题配置文件，位于主题文件夹根目录内<ul>
+<li>~/blog/themes/next/_config.yml<h3 id="主题更换"><a href="#主题更换" class="headerlink" title="主题更换"></a>主题更换</h3>如更换成yilia主题</li>
+</ul>
+</li>
+<li>下载主题<ul>
+<li>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a></li>
+</ul>
+</li>
+<li>配置文件 _config.yml 中指定所使用的 theme：yilia</li>
+<li>安装插件<ul>
+<li>npm install –save-dev 插件名</li>
+</ul>
+</li>
+<li>注：可以使用<strong>cnpm</strong>替换npm，下载速度更快<h3 id="yilia主题"><a href="#yilia主题" class="headerlink" title="yilia主题"></a>yilia主题</h3></li>
+</ul>
+<ol>
+<li>起初小杨是根据B站视频来搭建的，选择的yilia主题<a href="https://www.bilibili.com/video/av62400697?t=274&p=9" target="_blank" rel="noopener">hexo + yilia主题</a><br>但是主题里面都没有很是中意的，遂改成了Next主题，更加符合我的审美。</li>
+<li>具体的主题优化配置可以参考如下文档:<ul>
+<li><a href="https://www.liuyun.fun/2018/04/07/Hexo_yilia_%E4%B8%BB%E9%A2%98%E4%B8%80%E6%8F%BD%E5%AD%90%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88/" target="_blank" rel="noopener">Hexo_yilia_主题一揽子优化方案</a></li>
+<li><a href="https://blog.csdn.net/qq_30930805/article/details/97623045" target="_blank" rel="noopener">集成码云和github评论</a></li>
+</ul>
+</li>
+</ol>
+<h3 id="Next主题"><a href="#Next主题" class="headerlink" title="Next主题"></a>Next主题</h3><p>###动态背景<br><img src="https://io-oi.me/images/hexo-next-optimization-2.gif" alt="仰慕很久了的，总觉得很好玩"></p>
+<ul>
+<li>在主题配置文件中，靠后面，改 canvas_nest: true，想要更改颜色和数量？<a href="https://github.com/hustcc/canvas-nest.js/blob/master/README-zh.md" target="_blank" rel="noopener">请参考</a><br>修改文件：<blockquote>
+<p>文件位置：~/blog/themes/next/source/lib/canvas-nest/canvas-nest.min.js<br>###使用腾讯云给博客添加动态相册功能<br><a href="https://me.idealli.com/post/73ad4183.html" target="_blank" rel="noopener">参考小鸡</a>，哈哈，所有的坑我都踩过一遍了，最后幸好出来了<br>基于此，完善步骤如下：</p>
+</blockquote>
+</li>
+</ul>
+<p>1.创建腾讯云cos存储桶<br><img src="https://me.idealli.com/images/blog/18122202.jpg" alt=""><br>2.跨域访问cors设置</p>
+<ul>
+<li>在基础配置中找到cors设置<br>  <img src="https://me.idealli.com/images/blog/18122201.jpg" alt="引用小鸡的"><br>  origin源可以先填为*，然后后面成功了再改成自己的博客地址<br>  <img src="https://blueblog-1301047842.cos.ap-chengdu.myqcloud.com/%E5%8D%9A%E5%AE%A2/cors%E4%BF%AE%E6%94%B9%E8%A7%84%E5%88%99.png" alt="引用小鸡的"></li>
+</ul>
+<p>3.Policy权限设置</p>
+<ul>
+<li>存储桶访问权限：一般共有读私有写就行, 权限不配置访问存储桶域名可能会依然出现error节点<br><img src="https://blueblog-1301047842.cos.ap-chengdu.myqcloud.com/%E5%8D%9A%E5%AE%A2/%E6%9D%83%E9%99%90%E8%AE%BE%E7%BD%AE.png" alt=""></li>
+</ul>
+<p>4.本地创建相册页面<br>    &gt;$ hexo new page photos<br>    * 编辑source/photos路径下的index.md文件，写入以下代码:<br>    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"box"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"box"</span>&gt;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">function loadXMLDoc(xmlUrl) </span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">    try //Internet Explorer</span></span><br><span class="line"><span class="string">    &#123;</span></span><br><span class="line"><span class="string">        xmlDoc=new ActiveXObject("</span>Microsoft.XMLDOM<span class="string">");</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    catch(e)</span></span><br><span class="line"><span class="string">    &#123;</span></span><br><span class="line"><span class="string">    try //Firefox, Mozilla, Opera, etc.</span></span><br><span class="line"><span class="string">        &#123;</span></span><br><span class="line"><span class="string">        xmlDoc=document.implementation.createDocument("</span><span class="string">","</span><span class="string">",null);</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    catch(e) &#123;alert(e.message)&#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    try </span></span><br><span class="line"><span class="string">    &#123;</span></span><br><span class="line"><span class="string">        xmlDoc.async=false;</span></span><br><span class="line"><span class="string">        xmlDoc.load(xmlUrl);</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    catch(e) &#123;</span></span><br><span class="line"><span class="string">        try //Google Chrome  </span></span><br><span class="line"><span class="string">        &#123;  </span></span><br><span class="line"><span class="string">            var chromeXml = new XMLHttpRequest();</span></span><br><span class="line"><span class="string">            chromeXml.open("</span>GET<span class="string">", xmlUrl, false);</span></span><br><span class="line"><span class="string">            chromeXml.send(null);</span></span><br><span class="line"><span class="string">            xmlDoc = chromeXml.responseXML.documentElement; 				</span></span><br><span class="line"><span class="string">            //alert(xmlDoc.childNodes[0].nodeName);</span></span><br><span class="line"><span class="string">            //return xmlDoc;    </span></span><br><span class="line"><span class="string">        &#125;  </span></span><br><span class="line"><span class="string">        catch(e)  </span></span><br><span class="line"><span class="string">        &#123;  </span></span><br><span class="line"><span class="string">            alert(e.message)  </span></span><br><span class="line"><span class="string">        &#125;  		  	</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    return xmlDoc; </span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">var xmllink="</span>你的访问域名链接<span class="string">"</span></span><br><span class="line"><span class="string">//访问域名链接就是我上面提到的那个访问域名xml链接</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">xmlDoc=loadXMLDoc(xmllink);</span></span><br><span class="line"><span class="string">var urls=xmlDoc.getElementsByTagName('Key');</span></span><br><span class="line"><span class="string">var date=xmlDoc.getElementsByTagName('LastModified');</span></span><br><span class="line"><span class="string">var wid=250;</span></span><br><span class="line"><span class="string">var showNum=12; //每个相册一次展示多少照片</span></span><br><span class="line"><span class="string">if ((window.innerWidth)&gt;1200) &#123;wid=(window.innerWidth*3)/18;&#125;</span></span><br><span class="line"><span class="string">var box=document.getElementById('box');</span></span><br><span class="line"><span class="string">var i=0;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">var content=new Array();</span></span><br><span class="line"><span class="string">var tmp=0;</span></span><br><span class="line"><span class="string">var kkk=-1;</span></span><br><span class="line"><span class="string">for (var t = 0; t &lt; urls.length ; t++) &#123;</span></span><br><span class="line"><span class="string">    var bucket=urls[t].innerHTML;</span></span><br><span class="line"><span class="string">    var length=bucket.indexOf('/');</span></span><br><span class="line"><span class="string">    if(length===bucket.length-1)&#123;</span></span><br><span class="line"><span class="string">        kkk++;</span></span><br><span class="line"><span class="string">        content[kkk]=new Array();</span></span><br><span class="line"><span class="string">        content[kkk][0]=&#123;'url':bucket,'date':date[t].innerHTML.substring(0,10)&#125;;</span></span><br><span class="line"><span class="string">        tmp=1;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    else &#123;</span></span><br><span class="line"><span class="string">        content[kkk][tmp++]=&#123;'url':bucket.substring(length+1),'date':date[t].innerHTML.substring(0,10)&#125;;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">for (var i = 0; i &lt; content.length; i++) &#123;</span></span><br><span class="line"><span class="string">    var conBox=document.createElement("</span>div<span class="string">");</span></span><br><span class="line"><span class="string">    conBox.id='conBox'+i;</span></span><br><span class="line"><span class="string">    box.appendChild(conBox);</span></span><br><span class="line"><span class="string">    var item=document.createElement("</span>div<span class="string">");</span></span><br><span class="line"><span class="string">    var title=content[i][0].url;</span></span><br><span class="line"><span class="string">    item.innerHTML="</span>&lt;button <span class="class"><span class="keyword">class</span></span>=title style=background:url(<span class="string">"+xmllink+'/'+title+"</span>封面.jpg<span class="string">"+"</span>);&gt;<span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">display:inline;</span>&gt;</span><span class="tag">&lt;<span class="name">strong</span> <span class="attr">style</span>=<span class="string">color:#f0f3f6;</span> &gt;</span>"+title.substring(0,title.length-1)+"<span class="tag">&lt;/<span class="name">strong</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span>&lt;<span class="regexp">/button&gt;";</span></span><br><span class="line"><span class="regexp">    conBox.appendChild(item);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    for (var j = 1; j &lt; content[i].length &amp;&amp; j &lt; showNum+1; j++) &#123;</span></span><br><span class="line"><span class="regexp">        var con=content[i][j].url;</span></span><br><span class="line"><span class="regexp">        var item=document.createElement("li");</span></span><br><span class="line"><span class="regexp">        item.innerHTML="&lt;div class=imgbox id=imgbox style=height:"+wid+"px;&gt;&lt;img class=imgitem src="+xmllink+'/</span><span class="string">'+title+con+" alt="+con+"&gt;&lt;/div&gt;&lt;span&gt;"+con.substring(0,con.length-4)+"&lt;/span&gt;&lt;p&gt;上传于"+content[i][j].date+"&lt;/p&gt;";</span></span><br><span class="line"><span class="string">        conBox.appendChild(item);</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    if(content[i].length &gt; showNum)&#123;</span></span><br><span class="line"><span class="string">        var moreItem=document.createElement("button");</span></span><br><span class="line"><span class="string">        moreItem.className="btn-more-posts";</span></span><br><span class="line"><span class="string">        moreItem.id="more"+i;</span></span><br><span class="line"><span class="string">        moreItem.value=showNum+1;</span></span><br><span class="line"><span class="string">        let cur=i;</span></span><br><span class="line"><span class="string">        moreItem.onclick= function ()&#123;</span></span><br><span class="line"><span class="string">            moreClick(this,cur,content[cur],content[cur][0].url);</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">        moreItem.innerHTML="&lt;span style=display:inline;&gt;&lt;strong style=color:#f0f3f6;&gt;加载更多&lt;/strong&gt;&lt;/span&gt;";</span></span><br><span class="line"><span class="string">        conBox.appendChild(moreItem);</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">function moreClick(obj,cur,cont,title)&#123;</span></span><br><span class="line"><span class="string">    var parent=obj.parentNode;</span></span><br><span class="line"><span class="string">    parent.removeChild(obj);</span></span><br><span class="line"><span class="string">    var j=obj.value;</span></span><br><span class="line"><span class="string">    var begin=j;</span></span><br><span class="line"><span class="string">    for ( ; j &lt; cont.length &amp;&amp; j &lt; Number(showNum) + Number(begin); j++) &#123;</span></span><br><span class="line"><span class="string">        console.log( Number(showNum) + Number(begin));</span></span><br><span class="line"><span class="string">        var con=cont[j].url;</span></span><br><span class="line"><span class="string">        var item=document.createElement("li");</span></span><br><span class="line"><span class="string">        item.innerHTML="&lt;div class=imgbox id=imgbox style=height:"+wid+"px;&gt;&lt;img class=imgitem src="+xmllink+'</span>/<span class="string">'+title+con+" alt="+con+"&gt;&lt;/div&gt;&lt;span&gt;"+con.substring(0,con.length-4)+"&lt;/span&gt;&lt;p&gt;上传于"+cont[j].date+"&lt;/p&gt;";</span></span><br><span class="line"><span class="string">        parent.appendChild(item);</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    if(cont.length &gt; j)&#123;</span></span><br><span class="line"><span class="string">        obj.value=j;</span></span><br><span class="line"><span class="string">        parent.appendChild(obj);</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure><br>    * 相册样式可以自行去调整<br>    * 注意：<br>        * 存储桶中应该必须是文件夹，不能图片和文件夹同级，否则报错：Uncaught ypeError: Cannot set property ‘0’ of undefined，</p>
+<h3 id="手动修改博客css样式，打造属于自己的博客样式"><a href="#手动修改博客css样式，打造属于自己的博客样式" class="headerlink" title="手动修改博客css样式，打造属于自己的博客样式"></a>手动修改博客css样式，打造属于自己的博客样式</h3><ul>
+<li>F12手动查看网页</li>
+<li>自己主题的themes extsourcecss_custom目录下的custom.styl文件<h3 id="自定义文章底部版权声明"><a href="#自定义文章底部版权声明" class="headerlink" title="自定义文章底部版权声明"></a>自定义文章底部版权声明</h3></li>
+</ul>
+<ol>
+<li>在目录 themes/next/layout/_macro/ 下添加 my-copyright.swig ，内容如下： <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if page.copyright %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"my_post_copyright"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- JS库 sweetalert 可修改路径 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>本文标题:<span class="tag">&lt;/<span class="name">span</span>&gt;</span>&#123;&#123; page.title &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>文章作者:<span class="tag">&lt;/<span class="name">span</span>&gt;</span>&#123;&#123; theme.author &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>发布时间:<span class="tag">&lt;/<span class="name">span</span>&gt;</span>&#123;&#123; page.date.format("YYYY年MM月DD日 - HH:mm:ss") &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>最后更新:<span class="tag">&lt;/<span class="name">span</span>&gt;</span>&#123;&#123; page.updated.format("YYYY年MM月DD日 - HH:mm:ss") &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>原始链接:<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for(page.path) &#125;&#125;"</span> <span class="attr">title</span>=<span class="string">"&#123;&#123; page.title &#125;&#125;"</span>&gt;</span>&#123;&#123; page.permalink &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"copy-path"</span>  <span class="attr">title</span>=<span class="string">"点击复制文章链接"</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-clipboard"</span> <span class="attr">data-clipboard-text</span>=<span class="string">"&#123;&#123; page.permalink &#125;&#125;"</span>  <span class="attr">aria-label</span>=<span class="string">"复制成功！"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>许可协议:<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-creative-commons"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span> <span class="tag">&lt;<span class="name">a</span> <span class="attr">rel</span>=<span class="string">"license"</span> <span class="attr">href</span>=<span class="string">"https://creativecommons.org/licenses/by-nc-nd/4.0/"</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">title</span>=<span class="string">"Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)"</span>&gt;</span>署名-非商业性使用-禁止演绎 4.0 国际<span class="tag">&lt;/<span class="name">a</span>&gt;</span> 转载请保留原文链接及作者。<span class="tag">&lt;/<span class="name">p</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span> </span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> clipboard = <span class="keyword">new</span> Clipboard(<span class="string">'.fa-clipboard'</span>);</span></span><br><span class="line"><span class="javascript">    clipboard.on(<span class="string">'success'</span>, $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">    $(<span class="string">".fa-clipboard"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line">        swal(&#123;   </span><br><span class="line"><span class="actionscript">        title: <span class="string">""</span>,   </span></span><br><span class="line"><span class="actionscript">        text: <span class="string">'复制成功'</span>,   </span></span><br><span class="line"><span class="actionscript">        html: <span class="literal">false</span>,</span></span><br><span class="line">        timer: 500,   </span><br><span class="line"><span class="actionscript">        showConfirmButton: <span class="literal">false</span></span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    &#125;));  </span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure></li>
+<li>在目录 themes/next/source/css/_common/components/post/ 下添加 my-post-copyright.styl，内容如下:<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.my_post_copyright</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">85%</span>;</span><br><span class="line">    <span class="attribute">max-width</span>: <span class="number">45em</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">2.8em</span> auto <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0.5em</span> <span class="number">1.0em</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#d3d3d3</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">0.93rem</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">1.6em</span>;</span><br><span class="line">    <span class="attribute">word-break</span>: break-all;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0.4</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.my_post_copyright</span> <span class="selector-tag">p</span>&#123;<span class="attribute">margin</span>:<span class="number">0</span>;&#125;</span><br><span class="line">    <span class="selector-class">.my_post_copyright</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">5.2em</span>;</span><br><span class="line">    color: #333333; // title color</span><br><span class="line">    <span class="selector-tag">font-weight</span>: <span class="selector-tag">bold</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.my_post_copyright</span> <span class="selector-class">.raw</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">1em</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">5em</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.my_post_copyright</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#808080</span>;</span><br><span class="line">    <span class="attribute">border-bottom</span>:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.my_post_copyright</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    color: #0593d3; // link color</span><br><span class="line">    <span class="selector-tag">text-decoration</span>: <span class="selector-tag">underline</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.my_post_copyright</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.fa-clipboard</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#000</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.my_post_copyright</span> <span class="selector-class">.post-url</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">font-weight</span>: normal;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.my_post_copyright</span> <span class="selector-class">.copy-path</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">1em</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">1em</span>;</span><br><span class="line">    +mobile()&#123;display:none;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.my_post_copyright</span> <span class="selector-class">.copy-path</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#808080</span>;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+<li>修改 themes/next/layout/_macro/post.swig ，如下：<br>在代码<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.wechat_subscriber.enabled and not is_index %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        &#123;% include 'wechat-subscriber.swig' %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+之前，新增如下代码：<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    &#123;% if not is_index %&#125;</span><br><span class="line">        &#123;% include 'my-copyright.swig' %&#125;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>打开 themes/next/source/css/_common/components/post/post.styl 文件，在最后一行增加代码:<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">import</span> <span class="string">"my-post-copyright"</span></span><br></pre></td></tr></table></figure></li>
+<li>设置新建文章自动开启 copyright ，即新建文章自动显示自定义的版权声明，设置 ～/scaffolds/post.md 文件，如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">copyright: true #新增,开启</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="建立标签云及效果展示"><a href="#建立标签云及效果展示" class="headerlink" title="建立标签云及效果展示"></a>建立标签云及效果展示</h3><a href="http://www.aomanhao.top/2019/04/20/hexo_Tag_cloud/" target="_blank" rel="noopener">Hexo博客建立标签云及效果展示</a><h3 id="Hexo文章简单加密访问"><a href="#Hexo文章简单加密访问" class="headerlink" title="Hexo文章简单加密访问"></a>Hexo文章简单加密访问</h3><a href="https://blog.paddings.cn/2016/12/01/blog/hexo-password/" target="_blank" rel="noopener">教程：密码 password</a><h3 id="在Hexo博客中加入豆瓣读书页面"><a href="#在Hexo博客中加入豆瓣读书页面" class="headerlink" title="在Hexo博客中加入豆瓣读书页面"></a>在Hexo博客中加入豆瓣读书页面</h3><a href="https://bestzuo.cn/posts/hexo-douban.html" target="_blank" rel="noopener">参考链接</a></li>
+</ol>
+<hr>
+<p><a href="https://io-oi.me/tech/hexo-next-optimization/#%E5%9C%A8%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85-hexo" target="_blank" rel="noopener">参考文档：打造个性超赞博客 Hexo + NexT + GitHub Pages 的超深度优化</a><br><a href="https://www.liaofuzhan.com/posts/2114475547.html" target="_blank" rel="noopener">参考文档：Hexo NexT主题美化2.0</a></p>
+
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        打赏
+      </div>
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+        <div class="declare">
+          <ul class="post-copyright">
+            <li>
+              <i class="ri-copyright-line"></i>
+              <strong>版权声明： </strong s>
+              本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
+                target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+            </li>
+          </ul>
+        </div>
+        
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/01/04/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Next/" rel="tag">Next</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2020/01/06/%E7%9F%A5%E6%96%B0%E7%BD%91%E5%9C%A8%E7%BA%BF%E8%A7%86%E9%A2%91%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            知新网在线视频学习网站
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/01/03/%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E7%89%88%E6%9D%83/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">添加文章版权</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: '',
+        app_key: '',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'mp',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2015-2020
+        John Doe
+      </li>
+      <li>
+        
+          Powered by
+        
+        
+        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <span>
+  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
+  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
+</span>
+        
+      </li>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+    <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+      <aside class="sidebar">
+        <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Hexo"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/%E6%97%85%E8%A1%8C/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="http://shenyu-vip.lofter.com" target="_blank" rel="noopener">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/links">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+      </aside>
+      <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+      
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+    strings: ['一花一世界,一叶一追寻','面朝大海，春暖花开','愿你一生努力，一生被爱'],
+    startDelay: 0,
+    typeSpeed: 200,
+    loop: true,
+    backSpeed: 100,
+    showCursor: true
+    });
+  } catch (err) {
+  }
+  
+</script>
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer:'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    onClick: (e) => {
+      $('.toc-link').removeClass('is-active-link');
+      $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+      $(e.target.hash).scrollIntoView();
+      return false;
+    }
+  });
+</script>
+
+
+<script>
+  var ayerConfig = {
+    mathjax: false
+  }
+</script>
+
+
+<script src="/js/ayer.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+  </div>
+</body>
+
+</html>
