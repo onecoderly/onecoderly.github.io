@@ -7755,7 +7755,7 @@ a.article-more-link {
 .articles .article:not(:last-child) {
   border-bottom: 0.1rem #cce5ff solid;
 }
-.logo img {
+.navbar .logo img {
   width: 5.2rem;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -7793,8 +7793,7 @@ div#days {
   width: 160px;
   height: 160px;
 }
-.article-entry img,
-.article-entry video {
+#my_photo #my {
   max-width: 45%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
