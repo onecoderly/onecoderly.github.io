@@ -9,6 +9,7 @@
     function |  Blue
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
+
   
   <link rel="shortcut icon" href="/favicon.ico" />
   
@@ -27,6 +28,7 @@
 </head>
 
 </html>
+
 
 <body>
   <div id="app">
@@ -49,6 +51,9 @@
 
     
     <div class="article-meta">
+      <!-- 博客指定样式修改 -->
+      
+
       <a href="/2020/01/06/layui%E4%BD%BF%E7%94%A8/" class="article-date">
   <time datetime="2020-01-06T01:28:29.000Z" itemprop="datePublished">2020-01-06</time>
 </a>
@@ -97,6 +102,8 @@
 
       
       <h2 id="使用layer弹出层，官网下载后导入直接报错，"><a href="#使用layer弹出层，官网下载后导入直接报错，" class="headerlink" title="使用layer弹出层，官网下载后导入直接报错，"></a>使用layer弹出层，官网下载后导入直接报错，</h2><p><strong>原因：需要先引入jquery再引入layer.js</strong><br><a href="http://layer.layui.com/" target="_blank" rel="noopener">layer官网链接</a></p>
+<a id="more"></a>
+
 <p><img src="https://img-blog.csdnimg.cn/20191227145403789.png" alt="在这里插入图片描述"><br>演示代码：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>layer弹出层演示<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery/jquery-3.4.1.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"layer/layer.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"p1"</span>&gt;</span>弹出一个提示层<span class="tag">&lt;/<span class="name">p</span> <span class="attr">id</span>=<span class="string">"p"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"p2"</span>&gt;</span>弹出一个页面层<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"p3"</span>&gt;</span>弹出一个iframe层<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"p4"</span>&gt;</span>弹出一个loading层<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"p5"</span>&gt;</span>弹出一个tips层<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="actionscript">    <span class="comment">//弹出一个提示层</span></span></span><br><span class="line"><span class="javascript">    $(<span class="string">'#p1'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="actionscript">      layer.msg(<span class="string">'hello'</span>);</span></span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="actionscript">    <span class="comment">//弹出一个页面层</span></span></span><br><span class="line"><span class="javascript">    $(<span class="string">'#p2'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line">      layer.open(&#123;</span><br><span class="line">        type: 1,</span><br><span class="line"><span class="actionscript">        area: [<span class="string">'600px'</span>, <span class="string">'360px'</span>],</span></span><br><span class="line"><span class="actionscript">        shadeClose: <span class="literal">true</span>, <span class="comment">//点击遮罩关闭</span></span></span><br><span class="line"><span class="handlebars"><span class="xml">        content: '\<span class="tag">&lt;<span class="name">\div</span> <span class="attr">style</span>=<span class="string">"padding:20px;"</span>&gt;</span>自定义内容\<span class="tag">&lt;<span class="name">\</span>/<span class="attr">div</span>&gt;</span>'</span></span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="actionscript">    <span class="comment">//弹出一个iframe层</span></span></span><br><span class="line"><span class="javascript">    $(<span class="string">'#p3'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line">      layer.open(&#123;</span><br><span class="line">        type: 2,</span><br><span class="line"><span class="actionscript">        title: <span class="string">'iframe父子操作'</span>,</span></span><br><span class="line"><span class="actionscript">        maxmin: <span class="literal">true</span>,</span></span><br><span class="line"><span class="actionscript">        shadeClose: <span class="literal">true</span>, <span class="comment">//点击遮罩关闭层</span></span></span><br><span class="line"><span class="actionscript">        area : [<span class="string">'800px'</span> , <span class="string">'520px'</span>],</span></span><br><span class="line"><span class="actionscript">        content: <span class="string">'test/iframe.html'</span></span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="actionscript">    <span class="comment">//弹出一个loading层</span></span></span><br><span class="line"><span class="javascript">    $(<span class="string">'#p4'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">var</span> ii = layer.load();</span></span><br><span class="line"><span class="actionscript">      <span class="comment">//此处用setTimeout演示ajax的回调</span></span></span><br><span class="line"><span class="actionscript">      setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line">        layer.close(ii);</span><br><span class="line">      &#125;, 1000);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="actionscript">    <span class="comment">//弹出一个tips层</span></span></span><br><span class="line"><span class="javascript">    $(<span class="string">'#p5'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="actionscript">      layer.tips(<span class="string">'Hello tips!'</span>, <span class="string">'#p5'</span>);</span></span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20191227145439393.png" alt="在这里插入图片描述"><br>##layui中Uncaught ReferenceError: cn is not defined<br>查询了很久最终发现竟然是导入layui文件时出现问题!!!!!!!<br>##RestFul风格</p>
@@ -116,23 +123,23 @@
       
     </div>
     
+
+    <!-- copyright -->
     
-      <!-- copyright -->
-      
-        <div class="declare">
-          <ul class="post-copyright">
-            <li>
-              <i class="ri-copyright-line"></i>
-              <strong>版权声明： </strong s>
-              本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
-                target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
-            </li>
-          </ul>
-        </div>
-        
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong s>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
+            target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
     <footer class="article-footer">
       
-          
+      
 <div class="share-btn">
       <span class="share-sns share-outer">
         <i class="ri-share-forward-line"></i>
@@ -275,52 +282,71 @@
 </section>
       <footer class="footer">
   <div class="outer">
-    <ul class="list-inline">
+    <ol class="list-inline">
       <li>
         &copy;
         2020
         Liu Yang
       </li>
+      <div id="days"></div>
+      </script>
+      <script language="javascript">
+        function show_date_time() {
+          window.setTimeout("show_date_time()", 1000);
+          BirthDay = new Date("01/01/2020 00:00:00");
+          today = new Date();
+          timeold = (today.getTime() - BirthDay.getTime());
+          sectimeold = timeold / 1000
+          secondsold = Math.floor(sectimeold);
+          msPerDay = 24 * 60 * 60 * 1000
+          e_daysold = timeold / msPerDay
+          daysold = Math.floor(e_daysold);
+          e_hrsold = (e_daysold - daysold) * 24;
+          hrsold = setzero(Math.floor(e_hrsold));
+          e_minsold = (e_hrsold - hrsold) * 60;
+          minsold = setzero(Math.floor((e_hrsold - hrsold) * 60));
+          seconds = setzero(Math.floor((e_minsold - minsold) * 60));
+          document.getElementById('days').innerHTML="<style type=\"text/css\">span {color: #4c618f;}</style><span>我已在此等候你</span>"+daysold+"<style type=\"text/css\">span {color: #4c618f;}</style><span>天</span>"+hrsold+"<style type=\"text/css\">span {color: #4c618f;}</style><span>时</span>"+minsold+"<style type=\"text/css\">span {color: #4c618f;}</style><span>分</span>"+seconds+"<style type=\"text/css\">span {color: #4c618f;}</style><span>秒</span>";
+        }
+        function setzero(i) {
+          if (i < 10) {
+            i = "0" + i
+          };
+          return i;
+        }
+        show_date_time();
+      </script>
+    </ol>
+    <ul class="list-busuanzi">
       <li>
         
-          Powered by
+        <span id="busuanzi_container_site_pv">
+          我的第<span id="busuanzi_value_site_pv" style="color: #1095e6"></span>位朋友
+        </span>
         
         
-        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
-        
-      </li>
-    </ul>
-    <ul class="list-inline">
-      <li>
-        
-        
-        <span>
-  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
-  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
-</span>
-        
-      </li>
-      <li>
-        <!-- cnzz统计 -->
-        
-        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+          <span id="busuanzi_container_site_uv">
+            ， 历经<span id="busuanzi_value_site_uv" style="color: #1095e6"></span>次回眸才与你相遇
+          </span>
         
       </li>
     </ul>
   </div>
 </footer>
-    <div class="to_top">
+
+
+      <div class="to_top">
         <div class="totop" id="totop">
   <i class="ri-arrow-up-line"></i>
 </div>
       </div>
     </main>
-      <aside class="sidebar">
-        <button class="navbar-toggle"></button>
+    <aside class="sidebar">
+      <button class="navbar-toggle"></button>
 <nav class="navbar">
   
   <div class="logo">
-    <a href="/"><img src="/images/ayer-side.svg" alt="Blue"></a>
+    <a href="/"><img src="/images/dog.jpg" alt="Blue"></a>
   </div>
   
   <ul class="nav nav-main">
@@ -342,7 +368,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/">摄影</a>
+      <a class="nav-item-link" href="/tags/%E9%9A%8F%E7%AC%94">随笔</a>
     </li>
     
     <li class="nav-item">
@@ -377,8 +403,8 @@
   <div id="local-search-result" class="local-search-result"></div>
 </div>
 </div>
-      </aside>
-      <div id="mask"></div>
+    </aside>
+    <div id="mask"></div>
 
 <!-- #reward -->
 <div id="reward">
@@ -399,7 +425,7 @@
     
   </div>
 </div>
-      
+    
 <script src="/js/jquery-2.0.3.min.js"></script>
 
 
@@ -589,6 +615,9 @@
 
 <script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
   </div>
+  <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
 </body>
 
 </html>

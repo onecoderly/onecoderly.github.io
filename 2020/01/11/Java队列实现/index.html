@@ -9,6 +9,7 @@
     Java队列实现 |  Blue
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
+
   
   <link rel="shortcut icon" href="/favicon.ico" />
   
@@ -27,6 +28,7 @@
 </head>
 
 </html>
+
 
 <body>
   <div id="app">
@@ -49,6 +51,9 @@
 
     
     <div class="article-meta">
+      <!-- 博客指定样式修改 -->
+      
+
       <a href="/2020/01/11/Java%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0/" class="article-date">
   <time datetime="2020-01-11T01:21:42.000Z" itemprop="datePublished">2020-01-11</time>
 </a>
@@ -101,6 +106,7 @@
 
       
       <h2 id="队列简单介绍"><a href="#队列简单介绍" class="headerlink" title="队列简单介绍"></a>队列简单介绍</h2><p>队列是一种常用的数据结构之一，与之前的栈类似，不过队列是“先进先出”。队列有队头（front）和队尾（rear），数据从队尾进入队列，从队头出队列，队头（front）指向队列的第一个数据，队尾（rear）指向队列中的最后一个数据。</p>
+<a id="more"></a>
 <h2 id="队列实现"><a href="#队列实现" class="headerlink" title="队列实现"></a>队列实现</h2><p>队列有很多种，这里只是介绍最基本的实现，采用链式存储，也就是链式队列，与之前的链表存储形式一样，通过结点对象描述一个数据，结点对象包含具体数据和下一个结点的引用。<br><img src="https://img-blog.csdnimg.cn/20200111092616449.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>队列有两个重要的概念，一个叫队头，一个叫队尾，队头指向的是第一个元素，而队尾指向的是最后一个元素。队列跟栈一样也是访问受限制的，所以队列也只有两个主要的操作：<strong>入队(enqueue)操作</strong> 和 <strong>出队(dequeue)操作</strong> 。入队操作就是将一个元素添加到队尾，出队操作就是从队头取出一个元素。</p>
 <p>队列的底层实现可以用数组和链表，基于数组实现的队列叫作顺序队列，基于链表实现的队列叫作链式队列，下面我们分别用数组和链表来简单的实现这两种队列。</p>
 <h2 id="基于数组的队列"><a href="#基于数组的队列" class="headerlink" title="基于数组的队列"></a>基于数组的队列</h2><p>不管使用那种方式来实现队列，都需要定义两个指针分别指向队头和队尾，本文中我们用head指向队头，tail指向队尾，后面的示例中这将默认使用这个，有特殊的地方我会进行说明，先来看看顺序队列的入队、出队操作。<br><img src="https://blueblog-1301047842.cos.ap-chengdu.myqcloud.com/%E5%8D%9A%E5%AE%A2/%E9%98%9F%E5%88%97" alt=""><br>图中可以看出，入队时，队尾往后移动，队头保持不变，出队是队头往后移动，队尾保持不变。入队、出队操作的逻辑都比较简单，可能你有疑问的地方是：出队时为什么队头要往后移动而不是一直指向数组下标为0的位置？ 为什么呢？如果我们保持队头一直指向数组下标为0的位置，那每次出队操作后，后面的数据都需要往前挪一位，换句话说每次出队操作都需要进行数据迁移，而数据迁移的代价比较大，每次数据迁移的时间复杂度为O(n)，这样会极大的影响队列的使用性能。如果我们出队时，队头往后移动一位，这样我们就避免每次出队都进行数据迁移，我们只需要在只有在tail等于数组大小且head不等于0时，进行一次数据迁移，将已经出队留下的空间继续供入队时使用。下图是数据迁移的过程：<br><img src="https://img-blog.csdnimg.cn/20200111093909448.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>数据迁移时，从head位置开始的数据都需要往前移动head位，这样就把出队后的空间腾出来，供后续入队操作使用。</p>
@@ -139,23 +145,23 @@
       
     </div>
     
+
+    <!-- copyright -->
     
-      <!-- copyright -->
-      
-        <div class="declare">
-          <ul class="post-copyright">
-            <li>
-              <i class="ri-copyright-line"></i>
-              <strong>版权声明： </strong s>
-              本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
-                target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
-            </li>
-          </ul>
-        </div>
-        
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong s>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
+            target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
     <footer class="article-footer">
       
-          
+      
 <div class="share-btn">
       <span class="share-sns share-outer">
         <i class="ri-share-forward-line"></i>
@@ -298,52 +304,71 @@
 </section>
       <footer class="footer">
   <div class="outer">
-    <ul class="list-inline">
+    <ol class="list-inline">
       <li>
         &copy;
         2020
         Liu Yang
       </li>
+      <div id="days"></div>
+      </script>
+      <script language="javascript">
+        function show_date_time() {
+          window.setTimeout("show_date_time()", 1000);
+          BirthDay = new Date("01/01/2020 00:00:00");
+          today = new Date();
+          timeold = (today.getTime() - BirthDay.getTime());
+          sectimeold = timeold / 1000
+          secondsold = Math.floor(sectimeold);
+          msPerDay = 24 * 60 * 60 * 1000
+          e_daysold = timeold / msPerDay
+          daysold = Math.floor(e_daysold);
+          e_hrsold = (e_daysold - daysold) * 24;
+          hrsold = setzero(Math.floor(e_hrsold));
+          e_minsold = (e_hrsold - hrsold) * 60;
+          minsold = setzero(Math.floor((e_hrsold - hrsold) * 60));
+          seconds = setzero(Math.floor((e_minsold - minsold) * 60));
+          document.getElementById('days').innerHTML="<style type=\"text/css\">span {color: #4c618f;}</style><span>我已在此等候你</span>"+daysold+"<style type=\"text/css\">span {color: #4c618f;}</style><span>天</span>"+hrsold+"<style type=\"text/css\">span {color: #4c618f;}</style><span>时</span>"+minsold+"<style type=\"text/css\">span {color: #4c618f;}</style><span>分</span>"+seconds+"<style type=\"text/css\">span {color: #4c618f;}</style><span>秒</span>";
+        }
+        function setzero(i) {
+          if (i < 10) {
+            i = "0" + i
+          };
+          return i;
+        }
+        show_date_time();
+      </script>
+    </ol>
+    <ul class="list-busuanzi">
       <li>
         
-          Powered by
+        <span id="busuanzi_container_site_pv">
+          我的第<span id="busuanzi_value_site_pv" style="color: #1095e6"></span>位朋友
+        </span>
         
         
-        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
-        
-      </li>
-    </ul>
-    <ul class="list-inline">
-      <li>
-        
-        
-        <span>
-  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
-  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
-</span>
-        
-      </li>
-      <li>
-        <!-- cnzz统计 -->
-        
-        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+          <span id="busuanzi_container_site_uv">
+            ， 历经<span id="busuanzi_value_site_uv" style="color: #1095e6"></span>次回眸才与你相遇
+          </span>
         
       </li>
     </ul>
   </div>
 </footer>
-    <div class="to_top">
+
+
+      <div class="to_top">
         <div class="totop" id="totop">
   <i class="ri-arrow-up-line"></i>
 </div>
       </div>
     </main>
-      <aside class="sidebar">
-        <button class="navbar-toggle"></button>
+    <aside class="sidebar">
+      <button class="navbar-toggle"></button>
 <nav class="navbar">
   
   <div class="logo">
-    <a href="/"><img src="/images/ayer-side.svg" alt="Blue"></a>
+    <a href="/"><img src="/images/dog.jpg" alt="Blue"></a>
   </div>
   
   <ul class="nav nav-main">
@@ -365,7 +390,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/">摄影</a>
+      <a class="nav-item-link" href="/tags/%E9%9A%8F%E7%AC%94">随笔</a>
     </li>
     
     <li class="nav-item">
@@ -400,8 +425,8 @@
   <div id="local-search-result" class="local-search-result"></div>
 </div>
 </div>
-      </aside>
-      <div id="mask"></div>
+    </aside>
+    <div id="mask"></div>
 
 <!-- #reward -->
 <div id="reward">
@@ -422,7 +447,7 @@
     
   </div>
 </div>
-      
+    
 <script src="/js/jquery-2.0.3.min.js"></script>
 
 
@@ -612,6 +637,9 @@
 
 <script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
   </div>
+  <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
 </body>
 
 </html>

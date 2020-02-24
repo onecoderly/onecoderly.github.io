@@ -9,6 +9,7 @@
     ES6的基本语法 |  Blue
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
+
   
   <link rel="shortcut icon" href="/favicon.ico" />
   
@@ -27,6 +28,7 @@
 </head>
 
 </html>
+
 
 <body>
   <div id="app">
@@ -49,6 +51,9 @@
 
     
     <div class="article-meta">
+      <!-- 博客指定样式修改 -->
+      
+
       <a href="/2020/02/06/ES6%E8%AF%AD%E6%B3%95/" class="article-date">
   <time datetime="2020-02-06T02:40:30.000Z" itemprop="datePublished">2020-02-06</time>
 </a>
@@ -100,9 +105,10 @@
       
 
       
-      <h2 id="块级作用域讲解"><a href="#块级作用域讲解" class="headerlink" title="块级作用域讲解"></a>块级作用域讲解</h2><p>ES6， 全称 ECMAScript 6.0 ，是 JavaScript 的下一个版本标准，2015.06 发版。</p>
+      <p>ES6， 全称 ECMAScript 6.0 ，是 JavaScript 的下一个版本标准，2015.06 发版。</p>
 <p>ES6 主要是为了解决 ES5 的先天不足，比如 JavaScript 里并没有类的概念，但是目前浏览器的 JavaScript 是 ES5 版本，大多数高版本的浏览器也支持 ES6，不过只实现了 ES6 的部分特性和功能。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>按钮1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>按钮2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>按钮3<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>按钮4<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>按钮5<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> btns = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'button'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">//方式1（错误方法）：var全局变量，没有块级作用域</span></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; btns.length; i++) &#123;</span></span><br><span class="line"><span class="actionscript">        btns[i].addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="string">'第'</span> + i + <span class="string">'个按钮被点击了'</span>);</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">//方式2：使用闭包</span></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; btns.length; i++) &#123;</span></span><br><span class="line"><span class="actionscript">        (<span class="function"><span class="keyword">function</span> <span class="params">(i)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">            btns[i].addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">'第'</span> + i + <span class="string">'个按钮被点击了'</span>);</span></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)(i)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 方式3. 使用ES6中的let</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; btns.length; i++) &#123;</span></span><br><span class="line"><span class="actionscript">        btns[i].onclick = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="string">'第'</span> + i + <span class="string">'个按钮被点击了'</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">//详解：</span></span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span><span class="params">(i)</span> </span>&#123; <span class="comment">//i = 0，点击第一次</span></span></span><br><span class="line"><span class="actionscript">         btns[i].addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript">             <span class="built_in">console</span>.log(<span class="string">'第'</span> + i + <span class="string">'个按钮被点击了'</span>);</span></span><br><span class="line">         &#125;)</span><br><span class="line">     &#125;</span><br><span class="line"><span class="actionscript">     <span class="function"><span class="keyword">function</span><span class="params">(i)</span> </span>&#123; </span></span><br><span class="line"><span class="actionscript">      <span class="comment">//i = 1,点击第二次。</span></span></span><br><span class="line"><span class="actionscript">      <span class="comment">// ①：由于使用的是var，前面i = 0/的函数里i又会被重新赋值成i = 1，故点击五次后，不论点击哪个按钮，都是打印的第5个按钮被点击</span></span></span><br><span class="line"><span class="actionscript">      <span class="comment">// ②：闭包方式，此循环的函数调用完后，会寻找i，然后由于是闭包形式，此i就相当于局部变量使用，其他循环下的i不相互影响</span></span></span><br><span class="line"><span class="actionscript">      <span class="comment">// ③：let方式：局部变量，有作用域范围</span></span></span><br><span class="line"><span class="actionscript">         btns[i].addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript">             <span class="built_in">console</span>.log(<span class="string">'第'</span> + i + <span class="string">'个按钮被点击了'</span>);</span></span><br><span class="line">         &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="块级作用域讲解"><a href="#块级作用域讲解" class="headerlink" title="块级作用域讲解"></a>块级作用域讲解</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>按钮1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>按钮2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>按钮3<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>按钮4<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>按钮5<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> btns = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'button'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">//方式1（错误方法）：var全局变量，没有块级作用域</span></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; btns.length; i++) &#123;</span></span><br><span class="line"><span class="actionscript">        btns[i].addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="string">'第'</span> + i + <span class="string">'个按钮被点击了'</span>);</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">//方式2：使用闭包</span></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; btns.length; i++) &#123;</span></span><br><span class="line"><span class="actionscript">        (<span class="function"><span class="keyword">function</span> <span class="params">(i)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">            btns[i].addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">'第'</span> + i + <span class="string">'个按钮被点击了'</span>);</span></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)(i)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 方式3. 使用ES6中的let</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; btns.length; i++) &#123;</span></span><br><span class="line"><span class="actionscript">        btns[i].onclick = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="string">'第'</span> + i + <span class="string">'个按钮被点击了'</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">//详解：</span></span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span><span class="params">(i)</span> </span>&#123; <span class="comment">//i = 0，点击第一次</span></span></span><br><span class="line"><span class="actionscript">         btns[i].addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript">             <span class="built_in">console</span>.log(<span class="string">'第'</span> + i + <span class="string">'个按钮被点击了'</span>);</span></span><br><span class="line">         &#125;)</span><br><span class="line">     &#125;</span><br><span class="line"><span class="actionscript">     <span class="function"><span class="keyword">function</span><span class="params">(i)</span> </span>&#123; </span></span><br><span class="line"><span class="actionscript">      <span class="comment">//i = 1,点击第二次。</span></span></span><br><span class="line"><span class="actionscript">      <span class="comment">// ①：由于使用的是var，前面i = 0/的函数里i又会被重新赋值成i = 1，故点击五次后，不论点击哪个按钮，都是打印的第5个按钮被点击</span></span></span><br><span class="line"><span class="actionscript">      <span class="comment">// ②：闭包方式，此循环的函数调用完后，会寻找i，然后由于是闭包形式，此i就相当于局部变量使用，其他循环下的i不相互影响</span></span></span><br><span class="line"><span class="actionscript">      <span class="comment">// ③：let方式：局部变量，有作用域范围</span></span></span><br><span class="line"><span class="actionscript">         btns[i].addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript">             <span class="built_in">console</span>.log(<span class="string">'第'</span> + i + <span class="string">'个按钮被点击了'</span>);</span></span><br><span class="line">         &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="const使用和注意"><a href="#const使用和注意" class="headerlink" title="const使用和注意"></a>const使用和注意</h2><p><strong>在使用ES6开发中我们优先使用const，只当有需要改变一个标识符时才使用let</strong></p>
 <ol>
@@ -136,23 +142,23 @@
       
     </div>
     
+
+    <!-- copyright -->
     
-      <!-- copyright -->
-      
-        <div class="declare">
-          <ul class="post-copyright">
-            <li>
-              <i class="ri-copyright-line"></i>
-              <strong>版权声明： </strong s>
-              本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
-                target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
-            </li>
-          </ul>
-        </div>
-        
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong s>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
+            target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
     <footer class="article-footer">
       
-          
+      
 <div class="share-btn">
       <span class="share-sns share-outer">
         <i class="ri-share-forward-line"></i>
@@ -295,52 +301,71 @@
 </section>
       <footer class="footer">
   <div class="outer">
-    <ul class="list-inline">
+    <ol class="list-inline">
       <li>
         &copy;
         2020
         Liu Yang
       </li>
+      <div id="days"></div>
+      </script>
+      <script language="javascript">
+        function show_date_time() {
+          window.setTimeout("show_date_time()", 1000);
+          BirthDay = new Date("01/01/2020 00:00:00");
+          today = new Date();
+          timeold = (today.getTime() - BirthDay.getTime());
+          sectimeold = timeold / 1000
+          secondsold = Math.floor(sectimeold);
+          msPerDay = 24 * 60 * 60 * 1000
+          e_daysold = timeold / msPerDay
+          daysold = Math.floor(e_daysold);
+          e_hrsold = (e_daysold - daysold) * 24;
+          hrsold = setzero(Math.floor(e_hrsold));
+          e_minsold = (e_hrsold - hrsold) * 60;
+          minsold = setzero(Math.floor((e_hrsold - hrsold) * 60));
+          seconds = setzero(Math.floor((e_minsold - minsold) * 60));
+          document.getElementById('days').innerHTML="<style type=\"text/css\">span {color: #4c618f;}</style><span>我已在此等候你</span>"+daysold+"<style type=\"text/css\">span {color: #4c618f;}</style><span>天</span>"+hrsold+"<style type=\"text/css\">span {color: #4c618f;}</style><span>时</span>"+minsold+"<style type=\"text/css\">span {color: #4c618f;}</style><span>分</span>"+seconds+"<style type=\"text/css\">span {color: #4c618f;}</style><span>秒</span>";
+        }
+        function setzero(i) {
+          if (i < 10) {
+            i = "0" + i
+          };
+          return i;
+        }
+        show_date_time();
+      </script>
+    </ol>
+    <ul class="list-busuanzi">
       <li>
         
-          Powered by
+        <span id="busuanzi_container_site_pv">
+          我的第<span id="busuanzi_value_site_pv" style="color: #1095e6"></span>位朋友
+        </span>
         
         
-        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
-        
-      </li>
-    </ul>
-    <ul class="list-inline">
-      <li>
-        
-        
-        <span>
-  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
-  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
-</span>
-        
-      </li>
-      <li>
-        <!-- cnzz统计 -->
-        
-        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+          <span id="busuanzi_container_site_uv">
+            ， 历经<span id="busuanzi_value_site_uv" style="color: #1095e6"></span>次回眸才与你相遇
+          </span>
         
       </li>
     </ul>
   </div>
 </footer>
-    <div class="to_top">
+
+
+      <div class="to_top">
         <div class="totop" id="totop">
   <i class="ri-arrow-up-line"></i>
 </div>
       </div>
     </main>
-      <aside class="sidebar">
-        <button class="navbar-toggle"></button>
+    <aside class="sidebar">
+      <button class="navbar-toggle"></button>
 <nav class="navbar">
   
   <div class="logo">
-    <a href="/"><img src="/images/ayer-side.svg" alt="Blue"></a>
+    <a href="/"><img src="/images/dog.jpg" alt="Blue"></a>
   </div>
   
   <ul class="nav nav-main">
@@ -362,7 +387,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/">摄影</a>
+      <a class="nav-item-link" href="/tags/%E9%9A%8F%E7%AC%94">随笔</a>
     </li>
     
     <li class="nav-item">
@@ -397,8 +422,8 @@
   <div id="local-search-result" class="local-search-result"></div>
 </div>
 </div>
-      </aside>
-      <div id="mask"></div>
+    </aside>
+    <div id="mask"></div>
 
 <!-- #reward -->
 <div id="reward">
@@ -419,7 +444,7 @@
     
   </div>
 </div>
-      
+    
 <script src="/js/jquery-2.0.3.min.js"></script>
 
 
@@ -609,6 +634,9 @@
 
 <script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
   </div>
+  <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
 </body>
 
 </html>

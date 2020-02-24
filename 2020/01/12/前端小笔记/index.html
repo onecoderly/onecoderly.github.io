@@ -9,6 +9,7 @@
     前端小笔记 |  Blue
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
+
   
   <link rel="shortcut icon" href="/favicon.ico" />
   
@@ -27,6 +28,7 @@
 </head>
 
 </html>
+
 
 <body>
   <div id="app">
@@ -49,6 +51,9 @@
 
     
     <div class="article-meta">
+      <!-- 博客指定样式修改 -->
+      
+
       <a href="/2020/01/12/%E5%89%8D%E7%AB%AF%E5%B0%8F%E7%AC%94%E8%AE%B0/" class="article-date">
   <time datetime="2020-01-12T09:21:03.000Z" itemprop="datePublished">2020-01-12</time>
 </a>
@@ -100,7 +105,9 @@
       
 
       
-      <p>本文主要记录前端小笔记</p>
+      <p>本文主要记录前端小笔记<br><br></p>
+<a id="more"></a>
+
 <h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="绝对定位、相对定位、固定定位："><a href="#绝对定位、相对定位、固定定位：" class="headerlink" title="绝对定位、相对定位、固定定位："></a>绝对定位、相对定位、固定定位：</h3><p>绝对定位脱离了文档流，绝对定位元素渲染时它依赖的元素已经渲染完成 百分比是可以计算出来的。<br>而相对定位，子元素的高度会影响父元素，此时父元素高度未知，要等子元素高度确定，父元素高度才确定。<br>注意:单独使用relative的时候，top:%不会移动，但是换成px会移动。</p>
 <h4 id="相对定位-relative"><a href="#相对定位-relative" class="headerlink" title="相对定位 relative"></a>相对定位 relative</h4><blockquote>
 <p>设置right为正值，元素往左移动，bottom设置正值，元素往上移动。负值则往与正值相反的方向移动<br>设置left为正值，元素往右移动，top设置正值，元素往下移动。</p>
@@ -152,23 +159,23 @@
       
     </div>
     
+
+    <!-- copyright -->
     
-      <!-- copyright -->
-      
-        <div class="declare">
-          <ul class="post-copyright">
-            <li>
-              <i class="ri-copyright-line"></i>
-              <strong>版权声明： </strong s>
-              本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
-                target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
-            </li>
-          </ul>
-        </div>
-        
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong s>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
+            target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
     <footer class="article-footer">
       
-          
+      
 <div class="share-btn">
       <span class="share-sns share-outer">
         <i class="ri-share-forward-line"></i>
@@ -311,52 +318,71 @@
 </section>
       <footer class="footer">
   <div class="outer">
-    <ul class="list-inline">
+    <ol class="list-inline">
       <li>
         &copy;
         2020
         Liu Yang
       </li>
+      <div id="days"></div>
+      </script>
+      <script language="javascript">
+        function show_date_time() {
+          window.setTimeout("show_date_time()", 1000);
+          BirthDay = new Date("01/01/2020 00:00:00");
+          today = new Date();
+          timeold = (today.getTime() - BirthDay.getTime());
+          sectimeold = timeold / 1000
+          secondsold = Math.floor(sectimeold);
+          msPerDay = 24 * 60 * 60 * 1000
+          e_daysold = timeold / msPerDay
+          daysold = Math.floor(e_daysold);
+          e_hrsold = (e_daysold - daysold) * 24;
+          hrsold = setzero(Math.floor(e_hrsold));
+          e_minsold = (e_hrsold - hrsold) * 60;
+          minsold = setzero(Math.floor((e_hrsold - hrsold) * 60));
+          seconds = setzero(Math.floor((e_minsold - minsold) * 60));
+          document.getElementById('days').innerHTML="<style type=\"text/css\">span {color: #4c618f;}</style><span>我已在此等候你</span>"+daysold+"<style type=\"text/css\">span {color: #4c618f;}</style><span>天</span>"+hrsold+"<style type=\"text/css\">span {color: #4c618f;}</style><span>时</span>"+minsold+"<style type=\"text/css\">span {color: #4c618f;}</style><span>分</span>"+seconds+"<style type=\"text/css\">span {color: #4c618f;}</style><span>秒</span>";
+        }
+        function setzero(i) {
+          if (i < 10) {
+            i = "0" + i
+          };
+          return i;
+        }
+        show_date_time();
+      </script>
+    </ol>
+    <ul class="list-busuanzi">
       <li>
         
-          Powered by
+        <span id="busuanzi_container_site_pv">
+          我的第<span id="busuanzi_value_site_pv" style="color: #1095e6"></span>位朋友
+        </span>
         
         
-        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
-        
-      </li>
-    </ul>
-    <ul class="list-inline">
-      <li>
-        
-        
-        <span>
-  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
-  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
-</span>
-        
-      </li>
-      <li>
-        <!-- cnzz统计 -->
-        
-        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+          <span id="busuanzi_container_site_uv">
+            ， 历经<span id="busuanzi_value_site_uv" style="color: #1095e6"></span>次回眸才与你相遇
+          </span>
         
       </li>
     </ul>
   </div>
 </footer>
-    <div class="to_top">
+
+
+      <div class="to_top">
         <div class="totop" id="totop">
   <i class="ri-arrow-up-line"></i>
 </div>
       </div>
     </main>
-      <aside class="sidebar">
-        <button class="navbar-toggle"></button>
+    <aside class="sidebar">
+      <button class="navbar-toggle"></button>
 <nav class="navbar">
   
   <div class="logo">
-    <a href="/"><img src="/images/ayer-side.svg" alt="Blue"></a>
+    <a href="/"><img src="/images/dog.jpg" alt="Blue"></a>
   </div>
   
   <ul class="nav nav-main">
@@ -378,7 +404,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/">摄影</a>
+      <a class="nav-item-link" href="/tags/%E9%9A%8F%E7%AC%94">随笔</a>
     </li>
     
     <li class="nav-item">
@@ -413,8 +439,8 @@
   <div id="local-search-result" class="local-search-result"></div>
 </div>
 </div>
-      </aside>
-      <div id="mask"></div>
+    </aside>
+    <div id="mask"></div>
 
 <!-- #reward -->
 <div id="reward">
@@ -435,7 +461,7 @@
     
   </div>
 </div>
-      
+    
 <script src="/js/jquery-2.0.3.min.js"></script>
 
 
@@ -625,6 +651,9 @@
 
 <script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
   </div>
+  <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
 </body>
 
 </html>

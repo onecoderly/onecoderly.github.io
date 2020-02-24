@@ -9,6 +9,7 @@
     在此处打开cmd窗口 |  Blue
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
+
   
   <link rel="shortcut icon" href="/favicon.ico" />
   
@@ -27,6 +28,7 @@
 </head>
 
 </html>
+
 
 <body>
   <div id="app">
@@ -49,6 +51,9 @@
 
     
     <div class="article-meta">
+      <!-- 博客指定样式修改 -->
+      
+
       <a href="/2020/01/06/%E5%9C%A8%E6%AD%A4%E5%A4%84%E6%89%93%E5%BC%80cmd%E7%AA%97%E5%8F%A3/" class="article-date">
   <time datetime="2020-01-06T01:32:09.000Z" itemprop="datePublished">2020-01-06</time>
 </a>
@@ -95,6 +100,8 @@
 
       
       <p>具体步骤<br>第一步：新建一个txt文件，命名为OpenCmdHere.txt<br>第二步：在文件中输入如下代码，用notepad++保存,<strong><em>注意编码需要是ANSI</em></strong></p>
+<a id="more"></a>
+
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version <span class="number">5.00</span></span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\OpenCmdHere]</span><br><span class="line">@=<span class="string">"在此处打开命令窗口"</span></span><br><span class="line"><span class="string">"Icon"</span>=<span class="string">"cmd.exe"</span></span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\OpenCmdHere\command]</span><br><span class="line">@=<span class="string">"cmd.exe /s /k pushd "</span>%V<span class="string">""</span></span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCmdHere]</span><br><span class="line">@=<span class="string">"在此处打开命令窗口"</span></span><br><span class="line"><span class="string">"Icon"</span>=<span class="string">"cmd.exe"</span></span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCmdHere\command]</span><br><span class="line">@=<span class="string">"cmd.exe /s /k pushd \"%V\""</span></span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Drive\shell\OpenCmdHere]</span><br><span class="line">@=<span class="string">"在此处打开命令窗口"</span></span><br><span class="line"><span class="string">"Icon"</span>=<span class="string">"cmd.exe"</span></span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Drive\shell\OpenCmdHere\command]</span><br><span class="line">@=<span class="string">"cmd.exe /s /k pushd \"%V\""</span></span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\LibraryFolder\<span class="built_in">background</span>\shell\OpenCmdHere]</span><br><span class="line">@=<span class="string">"在此处打开命令窗口"</span></span><br><span class="line"><span class="string">"Icon"</span>=<span class="string">"cmd.exe"</span></span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\LibraryFolder\<span class="built_in">background</span>\shell\OpenCmdHere\command]</span><br><span class="line">@=<span class="string">"cmd.exe /s /k pushd \"%V\""</span></span><br></pre></td></tr></table></figure>
 <p>第三步：更改文件后缀名为reg，弹出的提示点确认。<br>第四步：双击OpenCmdHere.reg文件运行，</p>
 
@@ -107,23 +114,23 @@
       
     </div>
     
+
+    <!-- copyright -->
     
-      <!-- copyright -->
-      
-        <div class="declare">
-          <ul class="post-copyright">
-            <li>
-              <i class="ri-copyright-line"></i>
-              <strong>版权声明： </strong s>
-              本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
-                target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
-            </li>
-          </ul>
-        </div>
-        
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong s>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
+            target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
     <footer class="article-footer">
       
-          
+      
 <div class="share-btn">
       <span class="share-sns share-outer">
         <i class="ri-share-forward-line"></i>
@@ -266,52 +273,71 @@
 </section>
       <footer class="footer">
   <div class="outer">
-    <ul class="list-inline">
+    <ol class="list-inline">
       <li>
         &copy;
         2020
         Liu Yang
       </li>
+      <div id="days"></div>
+      </script>
+      <script language="javascript">
+        function show_date_time() {
+          window.setTimeout("show_date_time()", 1000);
+          BirthDay = new Date("01/01/2020 00:00:00");
+          today = new Date();
+          timeold = (today.getTime() - BirthDay.getTime());
+          sectimeold = timeold / 1000
+          secondsold = Math.floor(sectimeold);
+          msPerDay = 24 * 60 * 60 * 1000
+          e_daysold = timeold / msPerDay
+          daysold = Math.floor(e_daysold);
+          e_hrsold = (e_daysold - daysold) * 24;
+          hrsold = setzero(Math.floor(e_hrsold));
+          e_minsold = (e_hrsold - hrsold) * 60;
+          minsold = setzero(Math.floor((e_hrsold - hrsold) * 60));
+          seconds = setzero(Math.floor((e_minsold - minsold) * 60));
+          document.getElementById('days').innerHTML="<style type=\"text/css\">span {color: #4c618f;}</style><span>我已在此等候你</span>"+daysold+"<style type=\"text/css\">span {color: #4c618f;}</style><span>天</span>"+hrsold+"<style type=\"text/css\">span {color: #4c618f;}</style><span>时</span>"+minsold+"<style type=\"text/css\">span {color: #4c618f;}</style><span>分</span>"+seconds+"<style type=\"text/css\">span {color: #4c618f;}</style><span>秒</span>";
+        }
+        function setzero(i) {
+          if (i < 10) {
+            i = "0" + i
+          };
+          return i;
+        }
+        show_date_time();
+      </script>
+    </ol>
+    <ul class="list-busuanzi">
       <li>
         
-          Powered by
+        <span id="busuanzi_container_site_pv">
+          我的第<span id="busuanzi_value_site_pv" style="color: #1095e6"></span>位朋友
+        </span>
         
         
-        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
-        
-      </li>
-    </ul>
-    <ul class="list-inline">
-      <li>
-        
-        
-        <span>
-  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
-  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
-</span>
-        
-      </li>
-      <li>
-        <!-- cnzz统计 -->
-        
-        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+          <span id="busuanzi_container_site_uv">
+            ， 历经<span id="busuanzi_value_site_uv" style="color: #1095e6"></span>次回眸才与你相遇
+          </span>
         
       </li>
     </ul>
   </div>
 </footer>
-    <div class="to_top">
+
+
+      <div class="to_top">
         <div class="totop" id="totop">
   <i class="ri-arrow-up-line"></i>
 </div>
       </div>
     </main>
-      <aside class="sidebar">
-        <button class="navbar-toggle"></button>
+    <aside class="sidebar">
+      <button class="navbar-toggle"></button>
 <nav class="navbar">
   
   <div class="logo">
-    <a href="/"><img src="/images/ayer-side.svg" alt="Blue"></a>
+    <a href="/"><img src="/images/dog.jpg" alt="Blue"></a>
   </div>
   
   <ul class="nav nav-main">
@@ -333,7 +359,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/">摄影</a>
+      <a class="nav-item-link" href="/tags/%E9%9A%8F%E7%AC%94">随笔</a>
     </li>
     
     <li class="nav-item">
@@ -368,8 +394,8 @@
   <div id="local-search-result" class="local-search-result"></div>
 </div>
 </div>
-      </aside>
-      <div id="mask"></div>
+    </aside>
+    <div id="mask"></div>
 
 <!-- #reward -->
 <div id="reward">
@@ -390,7 +416,7 @@
     
   </div>
 </div>
-      
+    
 <script src="/js/jquery-2.0.3.min.js"></script>
 
 
@@ -580,6 +606,9 @@
 
 <script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
   </div>
+  <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
 </body>
 
 </html>
