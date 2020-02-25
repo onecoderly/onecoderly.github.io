@@ -7771,7 +7771,7 @@ a.article-more-link {
 }
 .list-busuanzi {
   text-align: center;
-  margin-left: 22%;
+  margin-left: 22.5%;
   color: #4c618f;
   font-size: 17px;
 }
@@ -7798,4 +7798,8 @@ div#days {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
+}
+footer.footer {
+  position: relative;
+  left: -2.5rem;
 }

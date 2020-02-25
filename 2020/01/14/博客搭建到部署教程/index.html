@@ -6,7 +6,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    Github + Hexo + Next主题博客搭建教程 |  Blue
+    博客搭建到部署教程 |  Blue
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
 
@@ -34,7 +34,7 @@
   <div id="app">
     <main class="content">
       <section class="outer">
-  <article id="post-hexo博客搭建教程" class="article article-type-post" itemscope
+  <article id="post-博客搭建到部署教程" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -42,7 +42,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Github + Hexo + Next主题博客搭建教程
+  博客搭建到部署教程
 </h1>
   
 
@@ -54,8 +54,8 @@
       <!-- 博客指定样式修改 -->
       
 
-      <a href="/2020/01/04/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" class="article-date">
-  <time datetime="2020-01-04T05:48:32.000Z" itemprop="datePublished">2020-01-04</time>
+      <a href="/2020/01/14/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%88%B0%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/" class="article-date">
+  <time datetime="2020-01-14T04:25:50.000Z" itemprop="datePublished">2020-01-14</time>
 </a>
       
   <div class="article-category">
@@ -69,7 +69,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">2.3k字</span>
+            <span class="post-count">3.9k字</span>
         </span>
     </span>
 
@@ -78,7 +78,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">11分钟</span>
+            <span class="post-count">18分钟</span>
         </span>
     </span>
 </div>
@@ -108,27 +108,113 @@
       <h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>在正式安装 Hexo 之前，我们需要确认电脑中是否已安装下列应用程序:</p>
 <a id="more"></a>
 <ul>
-<li>GitHub 账号</li>
-<li>Node.js<blockquote>
-<p>查看Node版本：node -v</p>
+<li><p>GitHub 账号</p>
+</li>
+<li><p>Node.js</p>
+<blockquote>
+<p><a href="https://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="noopener">详情安装教程</a><br>  查看Node版本：node -v</p>
 </blockquote>
 </li>
-<li>Git<blockquote>
-<p>查看git版本：$ git version</p>
+<li><p>Git</p>
+<blockquote>
+<p><a href="https://blog.csdn.net/weixin_44950987/article/details/102619708" target="_blank" rel="noopener">详情安装教程</a><br>  查看git版本：$ git version</p>
 </blockquote>
+<ul>
+<li>打开git的.ssh目录(我的是C:\Users\Administrator.ssh)，然后右键git bash如下图:<br><img src="https://img-blog.csdnimg.cn/20200225120130407.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></li>
+<li>执行如下命令：  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"你的用户名"</span>  </span><br><span class="line">git config --global user.email 你的邮箱  </span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"你的邮箱"</span></span><br></pre></td></tr></table></figure>
 <h2 id="在本地安装Hexo"><a href="#在本地安装Hexo" class="headerlink" title="在本地安装Hexo"></a>在本地安装Hexo</h2>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。在blog文件下右键点击Git Bash here，输入如下命令:<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><blockquote>
 <p>hexo g #完整命令为hexo generate,生成静态文件<br>hexo s #完整命令为hexo server,启动服务器,本地可以测试<br>hexo d #完整命令为hexo deploy,将本地编译好的静态文件发布到github上<br>hexo n #完整命令为hexo new,新建一篇文章<br>hexo clean #清除当前项目的静态文件<br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s<br>hexo clean &amp;&amp; hexo douban -bgm &amp;&amp; hexo g &amp;&amp; hexo s #加载豆瓣插件部署博客</p>
 </blockquote>
-<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><blockquote>
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3>以下都是在博客根目录下操作~/blog <blockquote>
 <p>npm install -g hexo</p>
 </blockquote>
 <h3 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h3><blockquote>
-<p>~/blog $ hexo init</p>
+<p>$ hexo init</p>
+</blockquote>
+<h3 id="安装本地预览服务"><a href="#安装本地预览服务" class="headerlink" title="安装本地预览服务"></a>安装本地预览服务</h3><blockquote>
+<p>在博客根目录 npm i hexo-server</p>
 </blockquote>
 <h3 id="生成和本地预览"><a href="#生成和本地预览" class="headerlink" title="生成和本地预览"></a>生成和本地预览</h3><blockquote>
-<p>~/blog $ hexo g &amp;&amp; hexo s</p>
+<p>$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</p>
 </blockquote>
-<h3 id="查看浏览器-localhost-4000"><a href="#查看浏览器-localhost-4000" class="headerlink" title="查看浏览器:localhost:4000"></a>查看浏览器:localhost:4000</h3><img src="https://ask.qcloudimg.com/http-save/yehe-4220914/tutewqpbhm.jpeg?imageView2/2/w/1620" alt="原始界面"><h2 id="部署博客到-GitHub-Pages"><a href="#部署博客到-GitHub-Pages" class="headerlink" title="部署博客到 GitHub Pages"></a>部署博客到 GitHub Pages</h2><a href="https://cloud.tencent.com/developer/article/1520557" target="_blank" rel="noopener">具体可以参考</a><h2 id="博客美化"><a href="#博客美化" class="headerlink" title="博客美化"></a>博客美化</h2><h3 id="两个yml文件"><a href="#两个yml文件" class="headerlink" title="两个yml文件"></a>两个yml文件</h3></li>
+<h3 id="查看浏览器-localhost-4000"><a href="#查看浏览器-localhost-4000" class="headerlink" title="查看浏览器:localhost:4000"></a>查看浏览器:localhost:4000</h3><img src="https://ask.qcloudimg.com/http-save/yehe-4220914/tutewqpbhm.jpeg?imageView2/2/w/1620" alt="原始界面"><h2 id="部署博客到-GitHub-Pages"><a href="#部署博客到-GitHub-Pages" class="headerlink" title="部署博客到 GitHub Pages"></a>部署博客到 GitHub Pages</h2></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>创建一个repo，名称为yourname.github.io, 其中yourname是你的github名称，按照这个规则创建才有用</li>
+<li><blockquote>
+<p>npm install hexo-deployer-git –save</p>
+</blockquote>
+</li>
+<li>更改自己博客的_config.ym文件，找到如下代码  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: 仓库的ssh链接</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure></li>
+<li>上传到自己建立的仓库：hexo clean &amp;&amp; hexo g &amp;&amp; hexo deploy</li>
+<li>访问网站方式：<a href="https://yourname.github.io/" target="_blank" rel="noopener">https://yourname.github.io/</a><br><a href="https://cloud.tencent.com/developer/article/1520557" target="_blank" rel="noopener">具体可以参考</a></li>
+</ul>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>搭建好了博客，也有了hexo，但是报错:ERROR Local hexo not found in D:\hexo 解决：<br>1.cmd进入博客当前文件夹路径<br>2.执行 npm install<br>3.执行 hexo server<br>4.执行成功后,再到博客下的git中执行 hexo d /hexo g 发现可以执行成功。</p>
+<h2 id="部署到服务器"><a href="#部署到服务器" class="headerlink" title="部署到服务器"></a>部署到服务器</h2><p>以下我以阿里云服务器的centos系统为例：<br>1.搭建git环境<br>xshell进入后台，安装git</p>
+<blockquote>
+<p>yum install git </p>
+</blockquote>
+<p>然后</p>
+<blockquote>
+<p>git –version  </p>
+</blockquote>
+<p>查看git版本<br>创建一个git用户，然后按照以下代码步骤一步一步完成：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">adduser git <span class="comment">//添加git用户</span></span><br><span class="line">passwd git <span class="comment">// 设置git密码  </span></span><br><span class="line">su git <span class="comment">// 切换用户  </span></span><br><span class="line">cd /home/git/   <span class="comment">//进入git目录  </span></span><br><span class="line">mkdir -p projects/blog <span class="comment">// 创建文件来放置hexo静态工程  </span></span><br><span class="line">mkdir repos &amp;&amp; cd repos <span class="comment">//创建文件放置git仓库  </span></span><br><span class="line">git init --bare blog.git <span class="comment">// 创建一个裸露的仓库  </span></span><br><span class="line">cd blog.git/hooks  <span class="comment">//进入钩子目录</span></span><br><span class="line">vi post-receive <span class="comment">//创建hook钩子函数(git提交时自动部署)  </span></span><br><span class="line"></span><br><span class="line">hook钩子函数内容:  (注xshell命令vi/vim这两个命令的用法，输入之后按一下i字母键代表输入，输入完了之后，先按Esc键，再输入:wq代表保存退出，:q是退出不保存)</span><br><span class="line">#!/bin/sh </span><br><span class="line">git --work-tree=/home/git/projects/blog --git-dir=/home/git/repos/blog.git checkout -f</span><br></pre></td></tr></table></figure>
+
+<p>修改权限</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chmod +x post-receive</span><br><span class="line">exit <span class="comment">// 退出到 root 登录</span></span><br><span class="line">chown -R git:git /home/git/repos/blog.git <span class="comment">// 添加权限</span></span><br></pre></td></tr></table></figure>
+
+<p>2.建立ssh免密登录：<br>这里注意，还是git用户，不能退出，不能切换到root管理用户<br>创建authorized_keys文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">su git     <span class="comment">//切换git用户</span></span><br><span class="line">cd /home/git   <span class="comment">//进入git目录</span></span><br><span class="line">mkdir .ssh  <span class="comment">//创建免密公匙目录</span></span><br><span class="line">cd /home/git/.ssh  <span class="comment">//注意是用git用户进这个目录，不是root</span></span><br><span class="line">touch authorized_keys  <span class="comment">//存放客户端的ssh公钥(id_rsa.pub)  </span></span><br><span class="line">chmod <span class="number">600</span> authorized_keys   <span class="comment">//配置权限  </span></span><br><span class="line">cd .. <span class="comment">//退出.ssh目录  </span></span><br><span class="line">chmod <span class="number">700</span> .ssh  <span class="comment">//.ssh目录必须700权限</span></span><br></pre></td></tr></table></figure>
+
+<p>然后用winscap远程连接服务器，打开这个文件，注意看以下操作：<br>客户端本地(就是我自己的电脑)进入.ssh目录，右键git bash，同上面的操作，然后输入如下命令:<br>cat id_rsa.pub，复制公匙key，从ssh-rsa开始复制到最后的邮箱地址.com,如下图:<br><img src="https://img-blog.csdnimg.cn/20200225120801405.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt="免密key"></p>
+<p>粘贴到刚刚前面winscap打开的authorized_keys里面，复制完了注意，粘贴的时候后面不能有任何的空格和回车，最后是鼠标点到最后，按del键清空下，这里就是把本地的id_rsa.pub内容复制到authorized_keys里面<br>测试下能否本地免密登录，首次联系会提示你输入yes，然后输入密码，如下图：<br><img src="https://img-blog.csdnimg.cn/20200225120949794.png" alt="首次连接"><br><img src="https://img-blog.csdnimg.cn/20200225121023583.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt="免密成功"></p>
+<p>到这里免密成功，服务器git环境搭建完成，测试下能否可能服务器的目录到本地：<br>随便打开一个文件夹，输入以下命令：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git<span class="meta">@server</span>_ip:/home/git/repos/blog.git</span><br></pre></td></tr></table></figure>
+<p>成功以后如下：<br><img src="https://img-blog.csdnimg.cn/20200225121134137.png" alt="克隆成功"></p>
+<p>3.限制git登录<br>git用户的登录权限禁掉，只能clone和push，修改目录/etc/下面的passwd文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/shells <span class="comment">// 查看`git-shell`是否在登录方式里面，有则跳过</span></span><br><span class="line">which git-shell <span class="comment">// 查看是否安装 </span></span><br><span class="line">vi /etc/shells</span><br><span class="line">添加(which git-shell)显示出来的路劲，通常在 /usr/bin/git-shell</span><br></pre></td></tr></table></figure>
+
+<p>修改</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /etc  </span><br><span class="line">vi passwd</span><br></pre></td></tr></table></figure>
+
+<p>更改方式如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">将原来的</span><br><span class="line">git:x:<span class="number">1000</span>:<span class="number">1000</span>:/home/git:/bin/bash <span class="comment">//原来的</span></span><br><span class="line">修改为:</span><br><span class="line">git:x:<span class="number">1000</span>:<span class="number">1000</span>:/home/git:/usr/bin/git-shell <span class="comment">//修改后的</span></span><br></pre></td></tr></table></figure>
+
+<p>4.nginx配置<br>这里非常重点，特别注意，容易出很多错。所以在root根目录，先执行以下几个命令，执行过程中就不会报错了:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum update  <span class="comment">//更新  </span></span><br><span class="line">yum -y install pcre-devel openssl openssl-devel  </span><br><span class="line">yum -y install gcc-c++  </span><br><span class="line">yum install -y zlib-devel</span><br></pre></td></tr></table></figure>
+
+<p>然后安装nginx，执行以下命令，一步一步来:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">centos8系统自带nginx，所以直接yum  </span><br><span class="line">yum install nginx  <span class="comment">//安装</span></span><br><span class="line">nginx -t  <span class="comment">//测试安装  </span></span><br><span class="line">systemctl enable nginx  <span class="comment">//添加系统自启动</span></span><br><span class="line">systemctl start nginx  <span class="comment">//启动服务,还有stop/restart</span></span><br></pre></td></tr></table></figure>
+
+<p>以上代码只要前面的环境都安装了，到这里不会报任何错误的，然后修改nginx配置文件：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/nginx/</span><br><span class="line">vi nginx.conf</span><br><span class="line">修改 root 路径为: /home/git/projects/blog; </span><br><span class="line">同时将 user 改为 root</span><br></pre></td></tr></table></figure>
+
+<p>如下图，改三个地方：<br><img src="https://img-blog.csdnimg.cn/20200225121443220.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt="修改处"></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#user everyone;修改为user root; //注意去掉#字符  </span><br><span class="line">server_name localhost;修改为server_name 你的域名or公网IP  </span><br><span class="line">root index;修改为root /home/git/projects/blog;</span><br></pre></td></tr></table></figure>
+
+<p>改完后记得systemctl restart nginx，就可以访问你的域名啦</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm  run  start</span><br></pre></td></tr></table></figure>
+
+<p>5.修改hexo配置<br>返回本地hexo根目录，找到_system.yml，代码样式如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git<span class="meta">@serverId</span>:/home/git/repos/blog.git  <span class="comment">//serverID是你的服务器地址或者git地址</span></span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>如果有多个仓库，repo这里填写方式一定要特别注意：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">repo:</span><br><span class="line">  linxu: git<span class="meta">@serverId</span>:/home/git/repos/blog.git <span class="comment">//注意缩进</span></span><br><span class="line">  github: git<span class="meta">@your</span> git site    <span class="comment">//注意缩进</span></span><br></pre></td></tr></table></figure>
+<p>每个仓库都可以命名一个名称,我自己的就写的linxu,还有例如github等等，这个可以随便写，没有规定，但是要</p>
+<p>特别注意，多个仓库并列，必须要缩进，不能和repo并齐，否则上传会出错</p>
+<p>6.上传测试<br>至此，所有配置均完成，然后本地cmd写一篇文章测试下</p>
+<blockquote>
+<p>hexo new hello</p>
+</blockquote>
+<p>生成的hello.md文件在myblog/source/_pos下面，打开可以看到发现默认的文章title就是你新建的hello.md</p>
+<p>的hello，这里有个小技巧，修改myblog\scaffolds下面的post.md，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: &#123;&#123; title &#125;&#125;  <span class="comment">//标题：注意窍门，hexo new的是你网页打开的链接显示，title可以改成中文</span></span><br><span class="line">date: &#123;&#123; date &#125;&#125;  <span class="comment">//时间轴</span></span><br><span class="line">top:   <span class="comment">//置顶排序，数字越大越靠前</span></span><br><span class="line">categories:   <span class="comment">//分类</span></span><br><span class="line">tags:   <span class="comment">//标签</span></span><br></pre></td></tr></table></figure>
+<p>这样下次新建文章，就带有上面的这些字段了，</p>
+<h2 id="博客美化"><a href="#博客美化" class="headerlink" title="博客美化"></a>博客美化</h2><h3 id="两个yml文件"><a href="#两个yml文件" class="headerlink" title="两个yml文件"></a>两个yml文件</h3><p>以下next主题为例：</p>
+<ul>
 <li>站点配置文件，位于站点文件夹根目录内<ul>
 <li>~/blog/_config.yml</li>
 </ul>
@@ -146,7 +232,7 @@
 <li>npm install –save-dev 插件名</li>
 </ul>
 </li>
-<li>注：可以使用<strong>cnpm</strong>替换npm，下载速度更快<h3 id="yilia主题"><a href="#yilia主题" class="headerlink" title="yilia主题"></a>yilia主题</h3></li>
+<li>注：可以使用<strong>cnpm</strong>替换npm，下载速度更快，安装淘宝镜像源即可。<h3 id="yilia主题"><a href="#yilia主题" class="headerlink" title="yilia主题"></a>yilia主题</h3></li>
 </ul>
 <ol>
 <li>起初小杨是根据B站视频来搭建的，选择的yilia主题<a href="https://www.bilibili.com/video/av62400697?t=274&p=9" target="_blank" rel="noopener">hexo + yilia主题</a><br>但是主题里面都没有很是中意的，遂改成了Next主题，更加符合我的审美。</li>
@@ -186,7 +272,7 @@
 <h3 id="建立标签云及效果展示"><a href="#建立标签云及效果展示" class="headerlink" title="建立标签云及效果展示"></a>建立标签云及效果展示</h3><a href="http://www.aomanhao.top/2019/04/20/hexo_Tag_cloud/" target="_blank" rel="noopener">Hexo博客建立标签云及效果展示</a><h3 id="Hexo文章简单加密访问"><a href="#Hexo文章简单加密访问" class="headerlink" title="Hexo文章简单加密访问"></a>Hexo文章简单加密访问</h3><a href="https://blog.paddings.cn/2016/12/01/blog/hexo-password/" target="_blank" rel="noopener">教程：密码 password</a><h3 id="在Hexo博客中加入豆瓣读书页面"><a href="#在Hexo博客中加入豆瓣读书页面" class="headerlink" title="在Hexo博客中加入豆瓣读书页面"></a>在Hexo博客中加入豆瓣读书页面</h3><a href="https://bestzuo.cn/posts/hexo-douban.html" target="_blank" rel="noopener">参考链接</a></li>
 </ol>
 <hr>
-<p><a href="https://io-oi.me/tech/hexo-next-optimization/#%E5%9C%A8%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85-hexo" target="_blank" rel="noopener">参考文档：打造个性超赞博客 Hexo + NexT + GitHub Pages 的超深度优化</a><br><a href="https://www.liaofuzhan.com/posts/2114475547.html" target="_blank" rel="noopener">参考文档：Hexo NexT主题美化2.0</a></p>
+<p><a href="https://io-oi.me/tech/hexo-next-optimization/#%E5%9C%A8%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85-hexo" target="_blank" rel="noopener">参考文档：打造个性超赞博客 Hexo + NexT + GitHub Pages 的超深度优化</a><br><a href="https://www.liaofuzhan.com/posts/2114475547.html" target="_blank" rel="noopener">参考文档：Hexo NexT主题美化2.0</a><br><a href="https://www.chenuon.com/2020/01/29/code-hexo-git-nginx/" target="_blank" rel="noopener">参考文档：hexo部署到个人服务器</a></p>
 
       
       <!-- reward -->
@@ -256,7 +342,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/01/04/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/01/14/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%88%B0%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -274,19 +360,19 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/01/06/%E7%9F%A5%E6%96%B0%E7%BD%91%E5%9C%A8%E7%BA%BF%E8%A7%86%E9%A2%91%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/" class="article-nav-link">
+      <a href="/2020/02/06/ES6%E8%AF%AD%E6%B3%95/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            知新网在线视频学习网站
+            ES6的基本语法
           
         </div>
       </a>
     
     
-      <a href="/2020/01/01/tags%E4%BD%BF%E7%94%A8/" class="article-nav-link">
+      <a href="/2020/01/14/Mybatis%E5%B0%8F%E7%AC%94%E8%AE%B0/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">tags</div>
+        <div class="article-nav-title">Mybatis小笔记</div>
       </a>
     
   </nav>
@@ -443,6 +529,10 @@
     
     <li class="nav-item">
       <a class="nav-item-link" href="/tags/%E9%9A%8F%E7%AC%94">随笔</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/cherish">祈愿</a>
     </li>
     
     <li class="nav-item">
