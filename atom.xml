@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-24T03:53:17.560Z</updated>
+  <updated>2020-02-25T17:06:00.403Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,96 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>喜欢</title>
+    <link href="http://yoursite.com/2020/02/26/%E5%96%9C%E6%AC%A2/"/>
+    <id>http://yoursite.com/2020/02/26/%E5%96%9C%E6%AC%A2/</id>
+    <published>2020-02-25T16:46:38.000Z</published>
+    <updated>2020-02-25T17:06:00.403Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;我喜欢夏天的雨，&lt;br&gt;雨后的光，&lt;br&gt;和任何时候的你。&lt;/p&gt;
+&lt;style&gt;
+  .article-entry {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10rem;
+  
+        
+      
+    
+    </summary>
+    
+    
+      <category term="日常" scheme="http://yoursite.com/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从前慢</title>
+    <link href="http://yoursite.com/2020/02/26/%E4%BB%8E%E5%89%8D%E6%85%A2/"/>
+    <id>http://yoursite.com/2020/02/26/%E4%BB%8E%E5%89%8D%E6%85%A2/</id>
+    <published>2020-02-25T16:44:44.000Z</published>
+    <updated>2020-02-25T17:06:24.077Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;记得早先少年时&lt;br&gt;大家诚诚恳恳&lt;br&gt;说一句 是一句&lt;br&gt;清早上火车站&lt;br&gt;长街黑暗无行人&lt;br&gt;卖豆浆的小店冒着热气&lt;br&gt;从前的日色变得慢&lt;br&gt;车，马，邮件都慢&lt;br&gt;一生只够爱一个人&lt;br&gt;从前的锁也好看&lt;br&gt;钥匙精美有样子&lt;br&gt;你锁了
+        
+      
+    
+    </summary>
+    
+    
+      <category term="日常" scheme="http://yoursite.com/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>电脑强制删除文件</title>
+    <link href="http://yoursite.com/2020/02/26/%E7%94%B5%E8%84%91%E5%BC%BA%E5%88%B6%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6/"/>
+    <id>http://yoursite.com/2020/02/26/%E7%94%B5%E8%84%91%E5%BC%BA%E5%88%B6%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6/</id>
+    <published>2020-02-25T16:31:03.000Z</published>
+    <updated>2020-02-25T16:34:53.967Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;本地新建txt文件:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;DEL/FA/Q \?%1&lt;br&gt;RD /S /Q
+        
+      
+    
+    </summary>
+    
+    
+      <category term="日常" scheme="http://yoursite.com/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="电脑知识" scheme="http://yoursite.com/tags/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot+Vue前后端分离简易开发</title>
@@ -405,67 +495,6 @@
       <category term="前端" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="ECharts" scheme="http://yoursite.com/tags/ECharts/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在此处打开cmd窗口</title>
-    <link href="http://yoursite.com/2020/01/06/%E5%9C%A8%E6%AD%A4%E5%A4%84%E6%89%93%E5%BC%80cmd%E7%AA%97%E5%8F%A3/"/>
-    <id>http://yoursite.com/2020/01/06/%E5%9C%A8%E6%AD%A4%E5%A4%84%E6%89%93%E5%BC%80cmd%E7%AA%97%E5%8F%A3/</id>
-    <published>2020-01-06T01:32:09.000Z</published>
-    <updated>2020-02-24T06:16:25.923Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;具体步骤&lt;br&gt;第一步：新建一个txt文件，命名为OpenCmdHere.txt&lt;br&gt;第二步：在文件中输入如下代码，用notepad++保存,&lt;strong&gt;&lt;em&gt;注意编码需要是ANSI&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="电脑知识" scheme="http://yoursite.com/tags/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>function</title>
-    <link href="http://yoursite.com/2020/01/06/layui%E4%BD%BF%E7%94%A8/"/>
-    <id>http://yoursite.com/2020/01/06/layui%E4%BD%BF%E7%94%A8/</id>
-    <published>2020-01-06T01:28:29.000Z</published>
-    <updated>2020-02-24T06:17:12.433Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;使用layer弹出层，官网下载后导入直接报错，&quot;&gt;&lt;a href=&quot;#使用layer弹出层，官网下载后导入直接报错，&quot; class=&quot;headerlink&quot; title=&quot;使用layer弹出层，官网下载后导入直接报错，&quot;&gt;&lt;/a&gt;使用layer弹出层，官网下载后导入直接报错，&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;原因：需要先引入jquery再引入layer.js&lt;/strong&gt;&lt;br&gt;&lt;a href=&quot;http://layer.layui.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;layer官网链接&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="前端" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="layui" scheme="http://yoursite.com/tags/layui/"/>
-    
-      <category term="layer" scheme="http://yoursite.com/tags/layer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>idea的样式颜色修改</title>
-    <link href="http://yoursite.com/2020/01/06/idea%E7%9A%84%E6%A0%B7%E5%BC%8F%E9%A2%9C%E8%89%B2%E4%BF%AE%E6%94%B9/"/>
-    <id>http://yoursite.com/2020/01/06/idea%E7%9A%84%E6%A0%B7%E5%BC%8F%E9%A2%9C%E8%89%B2%E4%BF%AE%E6%94%B9/</id>
-    <published>2020-01-06T01:26:23.000Z</published>
-    <updated>2020-02-24T08:08:44.656Z</updated>
-    
-    <summary type="html">
-    
-      Welcome to my blog, enter password to read.
-    
-    </summary>
-    
-    
-    
-      <category term="idea" scheme="http://yoursite.com/tags/idea/"/>
     
   </entry>
   

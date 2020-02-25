@@ -1,6 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>喜欢</title>
+    <url>/2020/02/26/%E5%96%9C%E6%AC%A2/</url>
+    <content><![CDATA[<p>我喜欢夏天的雨，<br>雨后的光，<br>和任何时候的你。</p>
+<style>
+  .article-entry {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10rem;
+    color: pink;
+  }
+  #reward-btn {
+    display: none;
+  }
+  .article-header .article-title{
+    padding-left: 0rem;
+    padding-right: 1.5rem;
+  }
+</style>]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从前慢</title>
+    <url>/2020/02/26/%E4%BB%8E%E5%89%8D%E6%85%A2/</url>
+    <content><![CDATA[<p>记得早先少年时<br>大家诚诚恳恳<br>说一句 是一句<br>清早上火车站<br>长街黑暗无行人<br>卖豆浆的小店冒着热气<br>从前的日色变得慢<br>车，马，邮件都慢<br>一生只够爱一个人<br>从前的锁也好看<br>钥匙精美有样子<br>你锁了 人家就懂了</p>
+<style>
+  .article-entry {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10rem;
+    color: lightblue;
+  }
+  #reward-btn {
+    display: none;
+  }
+  .article-header .article-title{
+    padding-left: 0rem;
+    padding-right: 1.5rem;
+  }
+</style>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>电脑强制删除文件</title>
+    <url>/2020/02/26/%E7%94%B5%E8%84%91%E5%BC%BA%E5%88%B6%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<ol>
+<li><p>本地新建txt文件:</p>
+<blockquote>
+<p>DEL/FA/Q \?%1<br>RD /S /Q \?%1</p>
+</blockquote>
+</li>
+<li><p>保存为bat文件</p>
+</li>
+<li><p>将需要删除的文件拖入文件处，即可</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>电脑知识</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SpringBoot+Vue前后端分离简易开发</title>
     <url>/2020/02/21/SpringBoot-Vue%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%AE%80%E6%98%93%E5%BC%80%E5%8F%91/</url>
     <content><![CDATA[<p>本文主要是学习于B站的Spring Boot+Vue前后端分离开发，技术主要采用Springboot + Vue + Element Ui，来完成基本的数据表格操作。<br><br></p>
