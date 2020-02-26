@@ -111,6 +111,7 @@
   }
   .article-entry {
     text-align: center;
+    display: none;
   }
   p {
     color: #ac63c4;
@@ -138,7 +139,6 @@ function getCookie(c_name){
 
   $(document).ready(function(){
     if(getCookie('blue') != null && getCookie('blue') != ''){
-      $('.article-entry').hide()
      layer.alert('小祖宗，记得常回家看看', {
       skin: 'layui-layer-molv' //样式类名
       ,closeBtn: 0,
