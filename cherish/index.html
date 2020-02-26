@@ -77,7 +77,54 @@
   .article-footer{
     display: none;
   }
+  .layui-layer-molv .layui-layer-title{
+    background: #e972b4;
+  }
+  .layui-layer-molv .layui-layer-btn a{
+    background: #e972b4;
+  }
+  .layui-layer-btn .layui-layer-btn0{
+    border: none;
+  }
+  .layui-layer-content{
+    color: #de42e0;
+  }
 </style>
+<script src="https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/layer/2.1/layer.js"></script>
+<script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script>
+function getCookie(c_name){
+    if (document.cookie.length>0){
+        c_start=document.cookie.indexOf(c_name + "=");
+        if (c_start!=-1){
+            c_start=c_start + c_name.length+1;
+            c_end=document.cookie.indexOf(";",c_start);
+            if (c_end==-1){ 
+                c_end=document.cookie.length;
+            }
+            return unescape(document.cookie.substring(c_start,c_end));
+        }
+     }
+    return "";
+}
+
+  $(document).ready(function(){
+    if(getCookie('blue') != null && getCookie('blue') != ''){
+     layer.alert('小祖宗，记得常回家看看', {
+      skin: 'layui-layer-molv' //样式类名
+      ,closeBtn: 0,
+      title: '小&nbsp杨',
+       btn: ['朕知道了'] //按钮
+    });  
+      return true;
+    } else{
+      var re = confirm("请勿触及博主的隐私空间，谢谢");
+      top.location='/','_top'
+    }
+  });
+</script>
 
       
       <!-- reward -->
