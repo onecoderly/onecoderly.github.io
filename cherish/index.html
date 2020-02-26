@@ -61,7 +61,27 @@
       
 
       
-      <style>
+      <p>在没风的地方找太阳，在你冷的地方做暖阳</p>
+<p>人事纷纷，你总太天真</p>
+<p>往后的余生，我只要你</p>
+<p>往后余生，风雪是你</p>
+<p>平淡是你，清贫也是你</p>
+<p>荣华是你，心底温柔是你</p>
+<p>目光所至，也是你</p>
+<p>想带你去看晴空万里，想大声告诉你我为你着迷</p>
+<p>往事匆匆，你总会被感动</p>
+<p>往后的余生，我只要你</p>
+<p>往后余生，冬雪是你</p>
+<p>春花是你，夏雨也是你</p>
+<p>秋黄是你，四季冷暖是你</p>
+<p>目光所至，也是你</p>
+<p>往后余生，风雪是你</p>
+<p>平淡是你，清贫也是你</p>
+<p>荣华是你，心底温柔是你</p>
+<p>目光所至，也是你<br><br><br><img src="http://img1.imgtn.bdimg.com/it/u=305760379,1592244102&fm=26&gp=0.jpg" alt=""><br><br></p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=32192436&auto=1&height=66"></iframe>
+
+<style>
   .declare {
     display: none;
   }
@@ -89,6 +109,12 @@
   .layui-layer-content{
     color: #de42e0;
   }
+  .article-entry {
+    text-align: center;
+  }
+  p {
+    color: #ac63c4;
+  }
 </style>
 <script src="https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/layer/2.1/layer.js"></script>
@@ -112,6 +138,7 @@ function getCookie(c_name){
 
   $(document).ready(function(){
     if(getCookie('blue') != null && getCookie('blue') != ''){
+      $('.article-entry').hide()
      layer.alert('小祖宗，记得常回家看看', {
       skin: 'layui-layer-molv' //样式类名
       ,closeBtn: 0,
@@ -124,6 +151,11 @@ function getCookie(c_name){
       top.location='/','_top'
     }
   });
+
+  $("h1").click(function() {
+    $('.article-entry').show()
+  })
+
 </script>
 
       
@@ -590,7 +622,11 @@ function getCookie(c_name){
   <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="/js/love-click.js"></script>
-
+  <script>
+    $(document).ready(function() {
+      $("#hbePass").focus();
+    });
+  </script>
 </body>
 
 </html>
