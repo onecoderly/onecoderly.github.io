@@ -33,88 +33,70 @@
 <body>
   <div id="app">
     <main class="content">
-      <section class="outer">
-  <article id="page-" class="article article-type-page" itemscope
-  itemprop="blogPost" data-scroll-reveal>
+      <html>
 
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  将故事写成我们
-</h1>
-  
-
-    </header>
-    
-
-    
-
-    
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
+<body>
+  <div>
+    <h1>将故事写成我们</h1>
+    <div class="article-entry-div">
       <p>在没风的地方找太阳，在你冷的地方做暖阳</p>
-<p>人事纷纷，你总太天真</p>
-<p>往后的余生，我只要你</p>
-<p>往后余生，风雪是你</p>
-<p>平淡是你，清贫也是你</p>
-<p>荣华是你，心底温柔是你</p>
-<p>目光所至，也是你</p>
-<p>想带你去看晴空万里，想大声告诉你我为你着迷</p>
-<p>往事匆匆，你总会被感动</p>
-<p>往后的余生，我只要你</p>
-<p>往后余生，冬雪是你</p>
-<p>春花是你，夏雨也是你</p>
-<p>秋黄是你，四季冷暖是你</p>
-<p>目光所至，也是你</p>
-<p>往后余生，风雪是你</p>
-<p>平淡是你，清贫也是你</p>
-<p>荣华是你，心底温柔是你</p>
-<p>目光所至，也是你<br><br><br><img src="http://img1.imgtn.bdimg.com/it/u=305760379,1592244102&fm=26&gp=0.jpg" alt=""><br><br></p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=32192436&auto=1&height=66"></iframe>
-
+      <p>人事纷纷，你总太天真</p>
+      <p>往后的余生，我只要你</p>
+      <p>往后余生，风雪是你</p>
+      <p>荣华是你，心底温柔是你</p>
+      <p>目光所至，也是你</p>
+      <p>想带你去看晴空万里，想大声告诉你我为你着迷</p>
+      <p>往事匆匆，你总会被感动</p>
+      <p>往后的余生，我只要你</p>
+      <p>往后余生，冬雪是你</p>
+      <p>春花是你，夏雨也是你</p>
+      <p>秋黄是你，四季冷暖是你</p>
+      <p>目光所至，也是你</p>
+      <p>往后余生，风雪是你</p>
+      <p>平淡是你，清贫也是你</p>
+      <p>荣华是你，心底温柔是你</p>
+      <p>目光所至，也是你</p>
+      <br>
+      <img src="https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3073016051,3867270689&fm=26&gp=0.jpg">
+      <br>
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+        src="//music.163.com/outchain/player?type=2&id=32192436&auto=1&height=66"></iframe>
+      <br>
+    </div>
+  </div>
+</body>
 <style>
-  .declare {
-    display: none;
-  }
-  #reward-btn {
-    display: none;
-  }
-  #vcomments-box {
-    display: none;
-  }
-  .footer{
-    display: none;
-  }
-  .article-footer{
-    display: none;
-  }
-  .layui-layer-molv .layui-layer-title{
+  .layui-layer-molv .layui-layer-title {
     background: #e972b4;
   }
-  .layui-layer-molv .layui-layer-btn a{
+
+  .layui-layer-molv .layui-layer-btn a {
     background: #e972b4;
   }
-  .layui-layer-btn .layui-layer-btn0{
+
+  .layui-layer-btn .layui-layer-btn0 {
     border: none;
   }
-  .layui-layer-content{
+
+  .layui-layer-content {
     color: #de42e0;
   }
-  .article-entry {
+
+  div {
     text-align: center;
+  }
+
+  .article-entry-div {
     display: none;
   }
+
   p {
     color: #ac63c4;
+    font-size: 1.6rem;
+  }
+
+  .footer {
+    display: none;
   }
 </style>
 <script src="https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js"></script>
@@ -122,185 +104,44 @@
 <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
 <script>
-function getCookie(c_name){
-    if (document.cookie.length>0){
-        c_start=document.cookie.indexOf(c_name + "=");
-        if (c_start!=-1){
-            c_start=c_start + c_name.length+1;
-            c_end=document.cookie.indexOf(";",c_start);
-            if (c_end==-1){ 
-                c_end=document.cookie.length;
-            }
-            return unescape(document.cookie.substring(c_start,c_end));
+  function getCookie(c_name) {
+    if (document.cookie.length > 0) {
+      c_start = document.cookie.indexOf(c_name + "=");
+      if (c_start != -1) {
+        c_start = c_start + c_name.length + 1;
+        c_end = document.cookie.indexOf(";", c_start);
+        if (c_end == -1) {
+          c_end = document.cookie.length;
         }
-     }
+        return unescape(document.cookie.substring(c_start, c_end));
+      }
+    }
     return "";
-}
+  }
 
-  $(document).ready(function(){
-    if(getCookie('blue') != null && getCookie('blue') != ''){
-     layer.alert('小祖宗，记得常回家看看', {
-      skin: 'layui-layer-molv' //样式类名
-      ,closeBtn: 0,
-      title: '小&nbsp杨',
-       btn: ['朕知道了'] //按钮
-    });  
+  $(document).ready(function () {
+    if (getCookie('blue') != null && getCookie('blue') != '') {
+      layer.alert('小祖宗，记得常回家看看', {
+        skin: 'layui-layer-molv' //样式类名
+          ,
+        closeBtn: 0,
+        title: '小&nbsp杨',
+        btn: ['朕知道了'] //按钮
+      });
       return true;
-    } else{
+    } else {
       var re = confirm("请勿触及博主的隐私空间，谢谢");
-      top.location='/','_top'
+      top.location = '/', '_top'
     }
   });
 
-  $("h1").click(function() {
-    $('.article-entry').show()
+  $("h1").click(function () {
+    $('.article-entry-div').show()
   })
 
 </script>
 
-      
-      <!-- reward -->
-      
-      <div id="reward-btn">
-        打赏
-      </div>
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <div class="declare">
-      <ul class="post-copyright">
-        <li>
-          <i class="ri-copyright-line"></i>
-          <strong>版权声明： </strong s>
-          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
-            target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
-        </li>
-      </ul>
-    </div>
-    
-    <footer class="article-footer">
-      
-      
-<div class="share-btn">
-      <span class="share-sns share-outer">
-        <i class="ri-share-forward-line"></i>
-        分享
-      </span>
-      <div class="share-wrap">
-        <i class="arrow"></i>
-        <div class="share-icons">
-          
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="ri-weibo-fill"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="ri-wechat-fill"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="ri-qq-fill"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="ri-douban-line"></i>
-          </a>
-          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a> -->
-          
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="ri-facebook-circle-fill"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="ri-twitter-fill"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="ri-google-fill"></i>
-          </a>
-        </div>
-      </div>
-</div>
-
-<div class="wx-share-modal">
-    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/cherish/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div id="share-mask"></div>
-      
-      
-
-    </footer>
-
-  </div>
-
-  
-  
-
-  
-
-  
-  
-<!-- valine评论 -->
-<div id="vcomments-box">
-    <div id="vcomments">
-    </div>
-</div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
-<script>
-    new Valine({
-        el: '#vcomments',
-        app_id: 'Y6sHmEuePRpPWDd5Yv45nEWL-MdYXbMMI',
-        app_key: 'hLz1Wo8jhbxGo5oQFQ59Gp6a',
-        path: window.location.pathname,
-        notify: 'false',
-        verify: 'false',
-        avatar: 'mp',
-        placeholder: '给我的文章加点评论吧~',
-        recordIP: true
-    });
-    const infoEle = document.querySelector('#vcomments .info');
-    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
-        infoEle.childNodes.forEach(function (item) {
-            item.parentNode.removeChild(item);
-        });
-    }
-</script>
-<style>
-    #vcomments-box {
-        padding: 5px 30px;
-    }
-
-    @media screen and (max-width: 800px) {
-        #vcomments-box {
-            padding: 5px 0px;
-        }
-    }
-
-    #vcomments-box #vcomments {
-        background-color: #fff;
-    }
-
-    .v .vlist .vcard .vh {
-        padding-right: 20px;
-    }
-
-    .v .vlist .vcard {
-        padding-left: 10px;
-    }
-</style>
-
-  
-
-  
-
-</article>
-</section>
+</html>
       <footer class="footer">
   <div class="outer">
     <ol class="list-inline">
