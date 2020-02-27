@@ -452,7 +452,7 @@ RD /S /Q \\?\%1
 </blockquote>
 <ul>
 <li>打开git的.ssh目录(我的是C:\Users\Administrator.ssh)，然后右键git bash如下图:<br><img src="https://img-blog.csdnimg.cn/20200225120130407.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></li>
-<li>执行如下命令：  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">"你的用户名"</span>  </span><br><span class="line">git config --global user.email 你的邮箱  </span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"你的邮箱"</span></span><br></pre></td></tr></table></figure>
+<li>执行如下命令：  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">"你的用户名"</span>  </span><br><span class="line">git config --global user.email 你的邮箱  </span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"你的邮箱"</span> </span><br><span class="line"><span class="comment">// 记住三下回车</span></span><br></pre></td></tr></table></figure>
 <h2 id="在本地安装Hexo"><a href="#在本地安装Hexo" class="headerlink" title="在本地安装Hexo"></a>在本地安装Hexo</h2>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。在blog文件下右键点击Git Bash here，输入如下命令:<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><blockquote>
 <p>hexo g #完整命令为hexo generate,生成静态文件<br>hexo s #完整命令为hexo server,启动服务器,本地可以测试<br>hexo d #完整命令为hexo deploy,将本地编译好的静态文件发布到github上<br>hexo n #完整命令为hexo new,新建一篇文章<br>hexo clean #清除当前项目的静态文件<br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s<br>hexo clean &amp;&amp; hexo douban -bgm &amp;&amp; hexo g &amp;&amp; hexo s #加载豆瓣插件部署博客</p>
 </blockquote>
@@ -478,7 +478,7 @@ RD /S /Q \\?\%1
 <p>npm install hexo-deployer-git –save</p>
 </blockquote>
 </li>
-<li>更改自己博客的_config.ym文件，找到如下代码  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: 仓库的ssh链接</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure></li>
+<li>更改自己博客的_config.yml文件，找到如下代码  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: 仓库的ssh链接</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure></li>
 <li>上传到自己建立的仓库：hexo clean &amp;&amp; hexo g &amp;&amp; hexo deploy</li>
 <li>访问网站方式：<a href="https://yourname.github.io/" target="_blank" rel="noopener">https://yourname.github.io/</a><br><a href="https://cloud.tencent.com/developer/article/1520557" target="_blank" rel="noopener">具体可以参考</a></li>
 </ul>
