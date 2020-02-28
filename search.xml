@@ -1,6 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>git常用命令</title>
+    <url>/2020/02/28/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h2 id="将本地工程push到远程"><a href="#将本地工程push到远程" class="headerlink" title="将本地工程push到远程"></a>将本地工程push到远程</h2><h3 id="方式一："><a href="#方式一：" class="headerlink" title="方式一："></a>方式一：</h3><ol>
+<li>建立本地仓库<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></li>
+<li>创建远程仓库：在github或者gitlab创建远程仓库</li>
+<li>让本地仓库和远程仓库进行关联<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add origin git@mycode.skylettestudio.com:xlPay&#x2F;XLPay.git</span><br></pre></td></tr></table></figure></li>
+<li>进行添加和提交操作<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m&quot;添加文件&quot;</span><br></pre></td></tr></table></figure></li>
+<li>push到远程<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git push -u origin master</span><br><span class="line"></span><br><span class="line">由于远程库是空的，第一次推送master分支时，加上-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令，如下：</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="方式二："><a href="#方式二：" class="headerlink" title="方式二："></a>方式二：</h3><ol>
+<li><p>创建远程仓库</p>
+</li>
+<li><p>把远程仓库clone到本地</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone. git@mycode.skylettestudio.com:xlPay&#x2F;XLPay.git</span><br></pre></td></tr></table></figure></li>
+<li><p>将本地工程copy到clone的文件夹中</p>
+</li>
+<li><p>进行添加和提交操作</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git add -A</span><br><span class="line">git commit -m&quot;添加文件&quot;</span><br></pre></td></tr></table></figure></li>
+<li><p>将工程push到远程</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git push _ origin _ master</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="git-clone-指定分支-拉代码"><a href="#git-clone-指定分支-拉代码" class="headerlink" title="git clone 指定分支 拉代码"></a>git clone 指定分支 拉代码</h2><ol>
+<li>git clone 不指定分支 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone  http:&#x2F;&#x2F;10.1.1.11&#x2F;service&#x2F;tmall-service.git</span><br></pre></td></tr></table></figure></li>
+<li>git clone 指定分支 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone -b dev_jk http:&#x2F;&#x2F;10.1.1.11&#x2F;service&#x2F;tmall-service.git</span><br></pre></td></tr></table></figure>
+ 注：命令中：多了一个 -b dev-jk,这个dev_jk就是分支，<a href="http://10.1.1.11/service/tmall" target="_blank" rel="noopener">http://10.1.1.11/service/tmall</a><br> -service.git为源码的仓库地址</li>
+</ol>
+<h2 id="Add操作"><a href="#Add操作" class="headerlink" title="Add操作"></a>Add操作</h2><ul>
+<li>添加单个改动文件，如：readme.txt<br>git add readme.txt</li>
+<li>添加所有改变的文件，有如下几种区别：<br>//表示添加所有内容<br>git add -A<br>//表示添加新文件和编辑过的文件不包括删除的文件<br>git add .<br>//表示添加编辑或者删除的文件，不包括新添加的文件<br>git add -u</li>
+<li>添加同时提交内容<br>git commit -am”添加并提交到仓库”</li>
+</ul>
+<h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><ul>
+<li>查看分支<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure></li>
+<li>创建分支<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch &lt;name&gt;</span><br></pre></td></tr></table></figure></li>
+<li>切换分支<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git checkout &lt;name&gt;</span><br></pre></td></tr></table></figure></li>
+<li>创建+切换分支<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git merge &lt;name&gt;</span><br></pre></td></tr></table></figure></li>
+<li>合并某分支到当前分支<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git merge &lt;name&gt;</span><br></pre></td></tr></table></figure></li>
+<li>删除本地分支<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch -d &lt;name&gt;</span><br></pre></td></tr></table></figure></li>
+<li>查看远程分支列表<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch -a</span><br><span class="line"></span><br><span class="line">绿色代表当前项目所在的分支，红色就是远程分支列表</span><br></pre></td></tr></table></figure></li>
+<li>提交该分支到远程仓库(即：在远程创建dev分支，并提交内容)：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git push origin dev</span><br></pre></td></tr></table></figure></li>
+<li>从远程获取dev分支内容：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git pull origin dev</span><br></pre></td></tr></table></figure></li>
+<li>删除远程分支<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git push origin --delete &lt;branchName&gt;</span><br></pre></td></tr></table></figure></li>
+<li>重命名本地分支<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch -m &lt;oldbranch&gt; &lt;newbranch&gt;</span><br></pre></td></tr></table></figure></li>
+<li>重命名远程分支<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">先删除远程分支，然后重命名本地分支，再重新提交一个远程分支</span><br></pre></td></tr></table></figure>
+<h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2>在Git中，用HEAD表示当前版本。上一个版本就是HEAD，上上一个版本就是HEAD。，当然往上100个版本写100个比较容易数不过来，所以写成HEAD~100。</li>
+<li>查看提交日志（所有的提交日志，最近到最远）<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure></li>
+<li>查看提交的内容（比如更改了哪些类，删除了哪些文件等）<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git log -p -1&#x2F;&#x2F; -p 选项展开显示每次提交的内容差异，用 -2 则仅显示最近的两次更新</span><br></pre></td></tr></table></figure></li>
+<li>查看命令历史（即：我们每一个命令）<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure></li>
+<li>通过git log 或者 git reflog可以拿到每个版本的commit_id，然后通过切换版本/回退版本的命令即可：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reset --hard commit_id</span><br></pre></td></tr></table></figure></li>
+<li>回到上一个版本<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure></li>
+<li>回退版本操作：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;git log 拿到commit_id</span><br><span class="line">git log</span><br><span class="line">&#x2F;&#x2F;回到commit_id那个版本</span><br><span class="line">git reset --hard commit_id</span><br></pre></td></tr></table></figure></li>
+<li>已经回退到了之前的版本，又想回到新版本<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;查看所有的命令，然后找到新版本提交的 commit_id</span><br><span class="line">git reflog</span><br><span class="line">&#x2F;&#x2F;去到新版本 </span><br><span class="line">git reset --hard commit_id</span><br></pre></td></tr></table></figure></li>
+<li>让这个文件回到最近一次git commit或git add时的状态<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git checkout -- readme.txt</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>往后余生</title>
     <url>/2020/02/26/%E5%BE%80%E5%90%8E%E4%BD%99%E7%94%9F/</url>
     <content><![CDATA[]]></content>
@@ -14,7 +84,7 @@
     <label for="hbePass">Welcome to my blog, enter password to read.</label>
     <div class="bottom-line"></div>
   </div>
-  <script id="hbeData" type="hbeData" data-hmacdigest="0cde1424e9b116644395408c038f1757f1303d4c8f2022a482112e2200f61c49">ff8a00bc2b773ee72a7d2b8a16acae550493a386d5d2acdd1c8f08d5cae827999b851c31aed125fc18eb8924c9bc09ce4049352f509643427f6a226788fc18f5d15e9002e100a5af9d137447310eb5e7455bce12835fa948a85f3cadf00b2976fbf4f7730cb59909265ebbe0012e83633f8f941acfb6bd8e22116e16def9a0098e32fcd9e3f2b7107a9fba6b4b4f82f685958c08ae50a01520e99191d78ad2b3a6275c6c3ebe8820e662fd667e0b2aead8584a5b96634dab2220681fae3072a09d973fc97be35817d6c4eb3638eae43fe6d8eb2713e856d332bceb13c69f1b0f8b0521f2be7a865ae2b9fc440e794d0390e463db254fb728ea8146103340fe73c028ae1062eef4895247130fa84b4ca036c18f0416879c36c753b87579f0f4df3839e03573dbb279d26cc9f6c228ff05e10d49633ff54e7ddd336065e423e8ba3f099f778844ee0dc397358d7cb9fbaea79bfb81b0db8b6e044f739de58d4bb613ee7c3825512e514f34ac8b29e1015d012df281b56da66f6fad7b1674552aece3efac9496b1f9337714af6e6a0dd88d8540ec8b7237b19020fd4dee29165a85</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="7514a2b08ce8db6e3a9327a0342279f5475fa81478f49e8cd1af80c13677e09c">ff8a00bc2b773ee72a7d2b8a16acae550493a386d5d2acdd1c8f08d5cae827999b851c31aed125fc18eb8924c9bc09ce4049352f509643427f6a226788fc18f5d15e9002e100a5af9d137447310eb5e7455bce12835fa948a85f3cadf00b2976fbf4f7730cb59909265ebbe0012e83633f8f941acfb6bd8e22116e16def9a0098e32fcd9e3f2b7107a9fba6b4b4f82f685958c08ae50a01520e99191d78ad2b3a6275c6c3ebe8820e662fd667e0b2aead8584a5b96634dab2220681fae3072a09d973fc97be35817d6c4eb3638eae43fe6d8eb2713e856d332bceb13c69f1b0f8b0521f2be7a865ae2b9fc440e794d0390e463db254fb728ea8146103340fe73c028ae1062eef4895247130fa84b4ca036c18f0416879c36c753b87579f0f4df3839e03573dbb279d26cc9f6c228ff05e10d49633ff54e7ddd336065e423e8ba3f099f778844ee0dc397358d7cb9fbaea79bfb81b0db8b6e044f739de58d4bb613ee7c3825512e514f34ac8b29e1015d012df281b56da66f6fad7b1674552aece3efac9496b1f9337714af6e6a0dd88d93f7005c5b5da9153991b65572841e93ac2a4d37eb506b860cca0ddbbdff2110b06933127358c0b560546e2f9dd27879281c7342045e5a3f9a6bb974241154842eecc016ddb3c72ae4e762f97e3071dd577c5e9fab9489ad01f800016821a7b7f18a01300d717516851b91f9019a94248f5ae7465527f1ff0b4e8accc56f1fc86f157f918096b8c9115116e1a8752caf38594434658f5782a8356b7e6467724a179e14176f6db6363bddb22c347298a86136485c1e394f42a46ead7c79aace73561de427525d700ffcc9359c9881ee5401fea7bf831e768e39c8e2b15a127a85d802d5a30f85a9559e198372ab1bfcb05d1f6f893757f000428e6c9f4f4c439acb6ad93be0ea0aaafb78f7c898594e4030ad70dcb23519f810c0547346f3e75b823585d3f3e2ffb5af13f385972210d6614e282ec5d4de2d2bdd31b288f949f79e1086658efa82592bb4fb4ccfb618049e05abd0228336a0b88e3a7c2d0d091d9858a3b7bf35e88438761619cbaada38431355520d8474c611a783748161b75d52ddc176ef3107c9566e1b0e6b0f71fdbafea40a5cdbe9ca790caa3281832f80867c22847577cd30bfdd0b55dd7d88d84472de9404eadb694b4af7f74f44bf840c2eab9b03b2f49374fb4379f7a2a92bd012ba5108a80405a73fbf1746fb1ba484d2559639eb3353818b63c3a7ea979eed58e3f8b9e4c43205f953d6d5acfb28bc7e01562a5e0b22bf9c069be208536a0a1fa936df1604204c053885d932180db903dfe007ff9ad48e52c9859f6c7a70a6f7f6f2ec259fa4cdaf91727805ebd01c8b9cedbb93ed80843fc4076d2fd4bd64b650382eeb362f1532c5ecc12df07260cfbc76425dc05ee811b7456119cf1ab61fda2692dad8e13c063812450661c814408689adb4c81731905925ef48470e3be321094db4eae8001208487cfc72fd5e1c461c9ad2ba3fe14278e769b7e97d74232d179a005b3772ee709f75d5ac869d3ebc4229ebbbf3e6ba0ca4259cd08832fe2a54ae142eea127f7f603ee20831bf66f869ecb295c5f48893f525d25b27c69aec8e1879f5e6a4cd5402cb502eee4a3361344669bf0716367018fcb6186baaac91ae72a6dbd4800bbf4ecd837b8ab5f4cfdb3344b5531ec163449815e6b65ea3d83ee7ac306f04bb942434bbb5df63ff1873b26327235e060e92311d6fa83177cea98bd7e5d28c2508d25b811e082a7c611cd8dd14536709fbadb2fe37b2b88808cafa0adf64441e28314c343bb093538fe7f03320230396c975951fd6df</script>
 </div>
 <script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
       <categories>
@@ -73,7 +143,7 @@
 <a id="more"></a>
 1. 本地新建txt文件:
 > DEL/FA/Q \\?\%1
-RD /S /Q \\?\%1
+> RD /S /Q \\?\%1
 
 <ol start="2">
 <li>保存为bat文件</li>
@@ -452,11 +522,27 @@ RD /S /Q \\?\%1
 </blockquote>
 <ul>
 <li>打开git的.ssh目录(我的是C:\Users\Administrator.ssh)，然后右键git bash如下图:<br><img src="https://img-blog.csdnimg.cn/20200225120130407.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></li>
-<li>执行如下命令：  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">"你的用户名"</span>  </span><br><span class="line">git config --global user.email 你的邮箱  </span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"你的邮箱"</span> </span><br><span class="line"><span class="comment">// 记住三下回车</span></span><br></pre></td></tr></table></figure>
-<h2 id="在本地安装Hexo"><a href="#在本地安装Hexo" class="headerlink" title="在本地安装Hexo"></a>在本地安装Hexo</h2>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。在blog文件下右键点击Git Bash here，输入如下命令:<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><blockquote>
+<li>执行如下命令：  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">"你的用户名"</span>  </span><br><span class="line">git config --global user.email 你的邮箱  </span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"你的邮箱"</span> </span><br><span class="line"><span class="comment">// 记住三下回车，提示y/n就输入y</span></span><br></pre></td></tr></table></figure></li>
+<li>添加SSH key到github或者gitee: 复制密钥文件内容（路径形如C:\Users\Administrator.ssh\id_rsa.pub），粘贴到New SSH Key即可</li>
+<li>测试是否添加成功。在命令行（即Git Bash）依次输入以下命令，返回“You’ve successfully authenticated”即成功  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="在本地安装Hexo"><a href="#在本地安装Hexo" class="headerlink" title="在本地安装Hexo"></a>在本地安装Hexo</h2><p>全局安装Hexo，在cmd中运行以下命令：<br>npm install -g hexo-cli</p>
+<p>安装淘宝镜像源：</p>
+<blockquote>
+<p>方式一：npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br>方式二：npm config set registry <a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br>检验：npm config get registry<br>再安装：<br>npm install -g cnpm</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200228101909121.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+<p>所有必备的应用程序安装完成后，即可使用 cnpm 安装 Hexo。在blog文件下右键点击Git Bash here，输入如下命令:</p>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><blockquote>
 <p>hexo g #完整命令为hexo generate,生成静态文件<br>hexo s #完整命令为hexo server,启动服务器,本地可以测试<br>hexo d #完整命令为hexo deploy,将本地编译好的静态文件发布到github上<br>hexo n #完整命令为hexo new,新建一篇文章<br>hexo clean #清除当前项目的静态文件<br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s<br>hexo clean &amp;&amp; hexo douban -bgm &amp;&amp; hexo g &amp;&amp; hexo s #加载豆瓣插件部署博客</p>
 </blockquote>
-<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3>以下都是在博客根目录下操作~/blog <blockquote>
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>以下都是在博客根目录下操作~/blog </p>
+<blockquote>
 <p>npm install -g hexo</p>
 </blockquote>
 <h3 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h3><blockquote>
@@ -468,11 +554,8 @@ RD /S /Q \\?\%1
 <h3 id="生成和本地预览"><a href="#生成和本地预览" class="headerlink" title="生成和本地预览"></a>生成和本地预览</h3><blockquote>
 <p>$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</p>
 </blockquote>
-<h3 id="查看浏览器-localhost-4000"><a href="#查看浏览器-localhost-4000" class="headerlink" title="查看浏览器:localhost:4000"></a>查看浏览器:localhost:4000</h3><img src="https://ask.qcloudimg.com/http-save/yehe-4220914/tutewqpbhm.jpeg?imageView2/2/w/1620" alt="原始界面"><h2 id="部署博客到-GitHub-Pages"><a href="#部署博客到-GitHub-Pages" class="headerlink" title="部署博客到 GitHub Pages"></a>部署博客到 GitHub Pages</h2></li>
-</ul>
-</li>
-</ul>
-<ul>
+<h3 id="查看浏览器-localhost-4000"><a href="#查看浏览器-localhost-4000" class="headerlink" title="查看浏览器:localhost:4000"></a>查看浏览器:localhost:4000</h3><p><img src="https://ask.qcloudimg.com/http-save/yehe-4220914/tutewqpbhm.jpeg?imageView2/2/w/1620" alt="原始界面"></p>
+<h2 id="部署博客到-GitHub-Pages"><a href="#部署博客到-GitHub-Pages" class="headerlink" title="部署博客到 GitHub Pages"></a>部署博客到 GitHub Pages</h2><ul>
 <li>创建一个repo，名称为yourname.github.io, 其中yourname是你的github名称，按照这个规则创建才有用</li>
 <li><blockquote>
 <p>npm install hexo-deployer-git –save</p>
@@ -482,7 +565,12 @@ RD /S /Q \\?\%1
 <li>上传到自己建立的仓库：hexo clean &amp;&amp; hexo g &amp;&amp; hexo deploy</li>
 <li>访问网站方式：<a href="https://yourname.github.io/" target="_blank" rel="noopener">https://yourname.github.io/</a><br><a href="https://cloud.tencent.com/developer/article/1520557" target="_blank" rel="noopener">具体可以参考</a></li>
 </ul>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>搭建好了博客，也有了hexo，但是报错:ERROR Local hexo not found in D:\hexo 解决：<br>1.cmd进入博客当前文件夹路径<br>2.执行 npm install<br>3.执行 hexo server<br>4.执行成功后,再到博客下的git中执行 hexo d /hexo g 发现可以执行成功。</p>
+<h2 id="部署到gitee"><a href="#部署到gitee" class="headerlink" title="部署到gitee"></a>部署到gitee</h2><p>基本步骤跟github的相同，但是有几个需要注意的点：<br>1.hexo的yml配置文件,一致<br><img src="https://img-blog.csdnimg.cn/20200228102114858.png" alt=""><br>2.需要额外修改root路径，否则css这种静态资源加载不到：</p>
+<ul>
+<li>blog是你的仓库名</li>
+<li>url是你仓库在服务里面开通pages后的访问博客地址<br><img src="https://img-blog.csdnimg.cn/20200228102501186.png" alt=""><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3>搭建好了博客，也有了hexo，但是报错:ERROR Local hexo not found in D:\hexo 解决：</li>
+</ul>
+<p>1.cmd进入博客当前文件夹路径<br>2.执行 npm install<br>3.执行 hexo server<br>4.执行成功后,再到博客下的git中执行 hexo d /hexo g 发现可以执行成功。</p>
 <h2 id="部署到服务器"><a href="#部署到服务器" class="headerlink" title="部署到服务器"></a>部署到服务器</h2><p>以下我以阿里云服务器的centos系统为例：<br>1.搭建git环境<br>xshell进入后台，安装git</p>
 <blockquote>
 <p>yum install git </p>
