@@ -3,7 +3,8 @@
   <entry>
     <title>git常用命令</title>
     <url>/2020/02/28/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h2 id="将本地工程push到远程"><a href="#将本地工程push到远程" class="headerlink" title="将本地工程push到远程"></a>将本地工程push到远程</h2><h3 id="方式一："><a href="#方式一：" class="headerlink" title="方式一："></a>方式一：</h3><ol>
+    <content><![CDATA[<h2 id="将本地工程push到远程"><a href="#将本地工程push到远程" class="headerlink" title="将本地工程push到远程"></a>将本地工程push到远程</h2><a id="more"></a>
+<h3 id="方式一："><a href="#方式一：" class="headerlink" title="方式一："></a>方式一：</h3><ol>
 <li>建立本地仓库<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></li>
 <li>创建远程仓库：在github或者gitlab创建远程仓库</li>
 <li>让本地仓库和远程仓库进行关联<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add origin git@mycode.skylettestudio.com:xlPay&#x2F;XLPay.git</span><br></pre></td></tr></table></figure></li>
@@ -187,8 +188,7 @@
     <content><![CDATA[<br>
 <a id="more"></a>
 1. 本地新建txt文件:
-> DEL/FA/Q \\?\%1
-> RD /S /Q \\?\%1
+    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">DEL&#x2F;FA&#x2F;Q \\?\%1</span><br><span class="line">RD &#x2F;S &#x2F;Q \\?\%1</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>保存为bat文件</li>
