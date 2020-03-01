@@ -7762,23 +7762,34 @@ a.article-more-link {
   border-radius: 50%;
 }
 .footer {
-  padding: 22px !important;
+  background: #f1fbfa;
 }
 .list-inline {
   margin: 0px;
   text-align: center;
   font-size: 17px;
+  padding: 0px !important;
 }
 .list-busuanzi {
   text-align: center;
-  margin-left: 22.5%;
   color: #4c618f;
   font-size: 17px;
+}
+.list-busuanzi li {
+  width: 100%;
+  position: relative;
+  top: -7px;
 }
 .list-inline li {
   display: block !important;
   text-align: center;
   color: #2153c0;
+}
+span#busuanzi_container_site_pv {
+  width: 100%;
+}
+span#busuanzi_container_site_uv {
+  width: 100%;
 }
 #days {
   color: #4c618f;
@@ -7799,7 +7810,12 @@ div#days {
   -moz-border-radius: 50%;
   border-radius: 50%;
 }
-footer.footer {
-  position: relative;
-  left: -2.5rem;
+.local-search {
+  background-color: #fff;
+}
+.search-result-list li .search-result {
+  color: rgba(0,0,0,0.8);
+}
+.local-search-input {
+  background-color: rgba(228,238,239,0.8);
 }
