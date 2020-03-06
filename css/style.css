@@ -6851,7 +6851,7 @@ a.archive-article-title {
 }
 .footer {
   border-top: 2px solid #f6f6f6;
-  padding: 3rem 0;
+  padding: 3rem 0 0 0;
 }
 .footer .outer>ul {
   position: relative;
@@ -7818,4 +7818,7 @@ div#days {
 }
 .local-search-input {
   background-color: rgba(228,238,239,0.8);
+}
+.article-entry pre code {
+  color: #bb4865;
 }
