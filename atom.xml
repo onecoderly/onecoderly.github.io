@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coderblue.cn/"/>
-  <updated>2020-03-09T11:21:36.956Z</updated>
+  <updated>2020-03-11T11:50:53.110Z</updated>
   <id>http://coderblue.cn/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>element-ui的树型控件节点实时刷新</title>
+    <link href="http://coderblue.cn/2949839444/"/>
+    <id>http://coderblue.cn/2949839444/</id>
+    <published>2020-03-11T11:39:14.000Z</published>
+    <updated>2020-03-11T11:50:53.110Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今日在做电商后台管理系统时，我从后端查出来的数据，遍历后赋值给我绑定 key 值的数组，但是发现个问题，没有实时更新过来.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="http://coderblue.cn/categories/vue/"/>
+    
+    
+      <category term="Element Ui" scheme="http://coderblue.cn/tags/Element-Ui/"/>
+    
+  </entry>
   
   <entry>
     <title>oracle的模糊查询</title>
@@ -435,27 +456,6 @@
       <category term="ssm" scheme="http://coderblue.cn/tags/ssm/"/>
     
       <category term="curd" scheme="http://coderblue.cn/tags/curd/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前端小笔记</title>
-    <link href="http://coderblue.cn/2619727741/"/>
-    <id>http://coderblue.cn/2619727741/</id>
-    <published>2020-01-12T09:21:03.000Z</published>
-    <updated>2020-03-02T03:42:32.410Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文主要记录前端小笔记&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://coderblue.cn/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="前端" scheme="http://coderblue.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   

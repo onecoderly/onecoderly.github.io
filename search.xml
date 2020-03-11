@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>element-ui的树型控件节点实时刷新</title>
+    <url>/2949839444/</url>
+    <content><![CDATA[<p>今日在做电商后台管理系统时，我从后端查出来的数据，遍历后赋值给我绑定 key 值的数组，但是发现个问题，没有实时更新过来.</p>
+<a id="more"></a>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 树形控件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">el-tree</span></span></span><br><span class="line"><span class="tag">  <span class="attr">ref</span>=<span class="string">"treeRef"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:data</span>=<span class="string">"rightsList"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:props</span>=<span class="string">"treeProps"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">show-checkbox</span></span></span><br><span class="line"><span class="tag">  <span class="attr">default-expand-all</span></span></span><br><span class="line"><span class="tag">  <span class="attr">node-key</span>=<span class="string">"id"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:default-checked-keys</span>=<span class="string">"defaultKeys"</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">node-click</span>=<span class="string">"handleNodeClick"</span></span></span><br><span class="line"><span class="tag">&gt;</span><span class="tag">&lt;/<span class="name">el-tree</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>data()中的属性</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"> <span class="comment">// 所有权限的数据</span></span><br><span class="line">rightsList: [],</span><br><span class="line"><span class="comment">// 树型控件的属性绑定对象</span></span><br><span class="line">treeProps: &#123;</span><br><span class="line">  label: <span class="string">'authName'</span>,</span><br><span class="line">  children: <span class="string">'children'</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="comment">// 默认选中的节点id值</span></span><br><span class="line">defaultKeys: []</span><br></pre></td></tr></table></figure>
+
+<p>进展：<br>我发现设置@node-click=”handleNodeClick”事件后，点击节点，新的数据就被渲染出来了，但是这还达不到我的要求，我需要直接打开对话框就显示正常的数据。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">handleNodeClick(data, node) &#123;</span><br><span class="line">  <span class="comment">// 这样可以拿到树组件的 tree对象</span></span><br><span class="line">  <span class="keyword">const</span> tree = <span class="keyword">this</span>.$refs.treeRef</span><br><span class="line">  <span class="keyword">this</span>.$refs.treeRef.setCheckedKeys(<span class="keyword">this</span>.defaultKeys)</span><br><span class="line">  <span class="built_in">console</span>.log(node)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样后我打开对话框，只需要点击下节点就能实时更新数据过来，但即便这样体验感也不好。</p>
+<p>最终解决：设置了个延时函数<br>我的理解是：打开对话框的时候拿到的还是旧的数据，我新数据还在生成过程中，新数据没比过旧数据，然后就发现数据没更新过来。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 展示分配权限的对话框</span></span><br><span class="line">showSetRightDialog(id) &#123;</span><br><span class="line">  <span class="keyword">this</span>.getPowerTree(id)</span><br><span class="line">  <span class="comment">// 设置个延时函数，不然不能实时更新数据</span></span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.setRightDialogVisible = <span class="literal">true</span></span><br><span class="line">  &#125;, <span class="number">300</span>)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>Element Ui</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>oracle的模糊查询</title>
     <url>/1625540053/</url>
     <content><![CDATA[<br>
