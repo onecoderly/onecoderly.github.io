@@ -143,8 +143,7 @@
 
   
 </section>
-      
-<footer class="footer">
+      <footer class="footer">
   <div class="outer">
     <ol class="list-inline">
       <li>
@@ -171,8 +170,14 @@
           e_minsold = (e_hrsold - hrsold) * 60;
           minsold = setzero(Math.floor((e_hrsold - hrsold) * 60));
           seconds = setzero(Math.floor((e_minsold - minsold) * 60));
-          document.getElementById('days').innerHTML="<style type=\"text/css\">span {color: #4c618f;}</style><span>我已在此等候你</span>"+daysold+"<style type=\"text/css\">span {color: #4c618f;}</style><span>天</span>"+hrsold+"<style type=\"text/css\">span {color: #4c618f;}</style><span>时</span>"+minsold+"<style type=\"text/css\">span {color: #4c618f;}</style><span>分</span>"+seconds+"<style type=\"text/css\">span {color: #4c618f;}</style><span>秒</span>";
+          document.getElementById('days').innerHTML =
+            "<style type=\"text/css\">span {color: #4c618f;}</style><span>我已在此等候你</span>" + daysold +
+            "<style type=\"text/css\">span {color: #4c618f;}</style><span>天</span>" + hrsold +
+            "<style type=\"text/css\">span {color: #4c618f;}</style><span>时</span>" + minsold +
+            "<style type=\"text/css\">span {color: #4c618f;}</style><span>分</span>" + seconds +
+            "<style type=\"text/css\">span {color: #4c618f;}</style><span>秒</span>";
         }
+
         function setzero(i) {
           if (i < 10) {
             i = "0" + i
@@ -180,6 +185,20 @@
           return i;
         }
         show_date_time();
+      </script>
+      <!-- 主动推送到百度 -->
+      <script>
+        (function () {
+          var bp = document.createElement('script');
+          var curProtocol = window.location.protocol.split(':')[0];
+          if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+          } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+          }
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(bp, s);
+        })();
       </script>
     </ol>
     <ul class="list-busuanzi" style="display: block;">
@@ -190,17 +209,16 @@
         </span>
         
         
-          <span id="busuanzi_container_site_uv">
-            ， 历经<span id="busuanzi_value_site_uv" style="color: #1095e6;"></span>次回眸才与你相遇
-          </span>
+        <span id="busuanzi_container_site_uv">
+          ， 历经<span id="busuanzi_value_site_uv" style="color: #1095e6;"></span>次回眸才与你相遇
+        </span>
         
       </li>
-      <li style="position: relative; top: -20px;"><a style="color: #4c618f;" href="http://coderblue.cn/sitemap.xml">站点地图</a></li>
+      <li style="position: relative; top: -20px;"><a style="color: #4c618f;"
+          href="http://coderblue.cn/sitemap.xml">站点地图</a></li>
     </ul>
   </div>
 </footer>
-
-
       <div class="to_top">
         <div class="totop" id="totop">
   <i class="ri-arrow-up-line"></i>
