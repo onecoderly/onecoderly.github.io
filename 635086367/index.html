@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="baidu-site-verification" content="JAFHu5il3e" />
   <title>
-    往后余生 |  Blue
+    解决后端提示非法字符 |  Blue
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
 
@@ -35,7 +35,7 @@
   <div id="app">
     <main class="content">
       <section class="outer">
-  <article id="post-往后余生" class="article article-type-post" itemscope
+  <article id="post-解决后端提示非法字符" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -43,7 +43,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  往后余生
+  解决后端提示非法字符
 </h1>
   
 
@@ -55,8 +55,8 @@
       <!-- 博客指定样式修改 -->
       
 
-      <a href="/3152622360/" class="article-date">
-  <time datetime="2020-02-26T13:21:19.000Z" itemprop="datePublished">2020-02-26</time>
+      <a href="/635086367/" class="article-date">
+  <time datetime="2020-03-16T12:16:39.000Z" itemprop="datePublished">2020-03-16</time>
 </a>
       
       
@@ -66,7 +66,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">0字</span>
+            <span class="post-count">109字</span>
         </span>
     </span>
 
@@ -100,7 +100,11 @@
       
 
       
-      
+      <p>解决springboot项目请求出现非法字符问题 java.lang.IllegalArgumentException:</p>
+<a id="more"></a>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Blue</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2020/3/12</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.catalina.connector.Connector;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: Blue</span></span><br><span class="line"><span class="comment"> * Invalid character found in the request target. The valid characters are defined in RFC 7230 and RFC 3986</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TomcatConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> TomcatServletWebServerFactory <span class="title">webServerFactory</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        TomcatServletWebServerFactory factory = <span class="keyword">new</span> TomcatServletWebServerFactory();</span><br><span class="line">        factory.addConnectorCustomizers((Connector connector) -&gt; &#123;</span><br><span class="line">            connector.setProperty(<span class="string">"relaxedPathChars"</span>, <span class="string">"\"&lt;&gt;[\\]^`&#123;|&#125;"</span>);</span><br><span class="line">            connector.setProperty(<span class="string">"relaxedQueryChars"</span>, <span class="string">"\"&lt;&gt;[\\]^`&#123;|&#125;"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">return</span> factory;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
       <!-- reward -->
       
@@ -169,7 +173,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://coderblue.cn/3152622360/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://coderblue.cn/635086367/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -185,19 +189,10 @@
   
   <nav class="article-nav">
     
-      <a href="/1111146142/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            git常用命令
-          
-        </div>
-      </a>
     
-    
-      <a href="/3382589965/" class="article-nav-link">
+      <a href="/618161222/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">喜欢</div>
+        <div class="article-nav-title">后端解决跨域问题</div>
       </a>
     
   </nav>
@@ -365,6 +360,10 @@
     
     <li class="nav-item">
       <a class="nav-item-link" href="/links">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="http://43.226.35.120" target="_blank" rel="noopener">项目</a>
     </li>
     
     <li class="nav-item">

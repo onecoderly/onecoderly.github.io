@@ -70,7 +70,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">365字</span>
+            <span class="post-count">420字</span>
         </span>
     </span>
 
@@ -116,8 +116,13 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">handleNodeClick(data, node) &#123;</span><br><span class="line">  <span class="comment">// 这样可以拿到树组件的 tree对象</span></span><br><span class="line">  <span class="keyword">const</span> tree = <span class="keyword">this</span>.$refs.treeRef</span><br><span class="line">  <span class="keyword">this</span>.$refs.treeRef.setCheckedKeys(<span class="keyword">this</span>.defaultKeys)</span><br><span class="line">  <span class="built_in">console</span>.log(node)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这样后我打开对话框，只需要点击下节点就能实时更新数据过来，但即便这样体验感也不好。</p>
-<p>最终解决：设置了个延时函数<br>我的理解是：打开对话框的时候拿到的还是旧的数据，我新数据还在生成过程中，新数据没比过旧数据，然后就发现数据没更新过来。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 展示分配权限的对话框</span></span><br><span class="line">showSetRightDialog(id) &#123;</span><br><span class="line">  <span class="keyword">this</span>.getPowerTree(id)</span><br><span class="line">  <span class="comment">// 设置个延时函数，不然不能实时更新数据</span></span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.setRightDialogVisible = <span class="literal">true</span></span><br><span class="line">  &#125;, <span class="number">300</span>)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>最终解决：设置了个延时函数,加个nextTick钩子</p>
+<p><strong>我的理解是：</strong></p>
+<blockquote>
+<p>这是因为this.dialogVisible = true时并没有立即更新dom，而是等整个逻辑执行完后再一次新渲染，<br>因此此时的弹框并未渲染，在dom树中是不存在的，<br>this.$refs.tree is undefined的所以setCheckedKeys肯定也是undefined。<br>解决方法: this.$nextTick()，this.$nextTick()会在dom更新之后在执行回调</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 展示分配权限的对话框</span></span><br><span class="line">showSetRightDialog(id) &#123;</span><br><span class="line">  <span class="keyword">this</span>.getPowerTree(id)</span><br><span class="line">   <span class="comment">// 设置个延时函数，不然不能实时更新数据</span></span><br><span class="line">      setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.setRightDialogVisible = <span class="literal">true</span></span><br><span class="line">        <span class="keyword">this</span>.$nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">          <span class="keyword">this</span>.$refs.treeRef.setCheckedKeys(<span class="keyword">this</span>.defaultKeys)</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;, <span class="number">300</span>)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>效果展示：<br><img src="https://img-blog.csdnimg.cn/20200316204704374.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
 
       
       <!-- reward -->
@@ -204,6 +209,15 @@
   
   
   <nav class="article-nav">
+    
+      <a href="/3805765109/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Oracle设置自增主键
+          
+        </div>
+      </a>
     
     
       <a href="/1625540053/" class="article-nav-link">
@@ -376,6 +390,10 @@
     
     <li class="nav-item">
       <a class="nav-item-link" href="/links">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="http://43.226.35.120" target="_blank" rel="noopener">项目</a>
     </li>
     
     <li class="nav-item">
