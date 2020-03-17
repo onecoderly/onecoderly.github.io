@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>vue自定义格式规范</title>
+    <url>/1577044944/</url>
+    <content><![CDATA[<p>项目根目录下新建文件：<strong>.prettierrc</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123; </span><br><span class="line">  <span class="comment">// 函数后括号前没空格不报错</span></span><br><span class="line">  <span class="string">"semi"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="comment">// 双引号格式化成单引号</span></span><br><span class="line">  <span class="string">"singleQuote"</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>qq消息简易自动发送脚本</title>
+    <url>/1683247188/</url>
+    <content><![CDATA[<br>
+<br>
+<a id="more"></a>
+
+<p>代码<br>这段代码的功能是 写一个文本复制，然后运行这个脚本之后就会在 QQ 等窗口不断的输出你复制的信息，严重消耗计算机资源，不慎会死机<br>保存为 vbs 后缀的文件</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">on error resume next</span><br><span class="line">dim wsh,ye,path</span><br><span class="line">set wsh = createobject(<span class="string">"wscript.shell"</span>)</span><br><span class="line"><span class="keyword">for</span> i=<span class="number">1</span> to <span class="number">6000</span></span><br><span class="line">wscript.sleep <span class="number">500</span></span><br><span class="line">wsh.appactivate(<span class="string">"bomb"</span>)</span><br><span class="line">wsh.sendkeys <span class="string">"^v"</span></span><br><span class="line">wsh.sendkeys <span class="string">"%s"</span></span><br><span class="line">next</span><br></pre></td></tr></table></figure>
+<p>然后<strong>随意复制句话，运行脚本，点击下想要发送的聊天窗口</strong>，即可。</p>
+]]></content>
+      <tags>
+        <tag>日常</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【linux】在宝塔上 同ip 不同端口 设置一个端口对应一个网站</title>
+    <url>/1333150612/</url>
+    <content><![CDATA[<br>
+<br>
+<a id="more"></a>
+
+<p>准备工作：</p>
+<p>　　 ip一个　， 例如：192.168.1.666</p>
+<p>　　服务器一台，放行所需端口</p>
+<p>　　假想一个域名 <a href="http://www.test.com" target="_blank" rel="noopener">www.test.com</a></p>
+<p>　　ps：默认你已经装好宝塔面板了</p>
+<p>实现效果：</p>
+<p>　　192.168.1.666:6601   访问站点1</p>
+<p>　　192.168.1.666:6602   访问站点2</p>
+<p>1 新建一个站点，比如： <a href="http://www.test.com" target="_blank" rel="noopener">www.test.com</a></p>
+<p>2 修改当前站点的配置文件：<br><img src="https://img-blog.csdnimg.cn/20200317180924199.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+<blockquote>
+<p>listen 80;<br> server_name  <a href="http://www.test.com" target="_blank" rel="noopener">www.test.com</a>;</p>
+</blockquote>
+<p> 改为</p>
+<blockquote>
+<p>listen 6602;<br>  server_name 192.168.1.666;</p>
+</blockquote>
+<p>3.修改域名管理</p>
+<p>添加一个<br><img src="https://img-blog.csdnimg.cn/2020031718053728.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>之前添加那个，<a href="http://www.test.com" target="_blank" rel="noopener">www.test.com</a>  删除 ！</p>
+<p>照此，在添加多个，</p>
+<p>切记  改完之后，重启nginx !  访问 即可看到站点内容<br><img src="https://img-blog.csdnimg.cn/20200317180745157.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+<p>理解：每个项目下都有个Nginx的配置文件，我们需要将预先想访问的ip添加上去，这样就可以实现不同端口号访问不同项目，泛域名也如此。</p>
+]]></content>
+      <tags>
+        <tag>宝塔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>解决后端提示非法字符</title>
     <url>/635086367/</url>
     <content><![CDATA[<p>解决springboot项目请求出现非法字符问题 java.lang.IllegalArgumentException:</p>
@@ -31,8 +90,8 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 如果要设置过期时间以秒为单位</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setCookie</span>(<span class="params">c_name, value, expireseconds</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> exdate = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">  exdate.setTime(exdate.getTime() + expireseconds * <span class="number">1000</span>);</span><br><span class="line">  <span class="built_in">document</span>.cookie =</span><br><span class="line">    c_name +</span><br><span class="line">    <span class="string">"="</span> +</span><br><span class="line">    <span class="built_in">escape</span>(value) +</span><br><span class="line">    (expireseconds == <span class="literal">null</span></span><br><span class="line">      ? <span class="string">""</span></span><br><span class="line">      : <span class="string">";expires="</span> + exdate.toGMTString() + <span class="string">";path=/"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数中的参数为 要获取的cookie键的名称。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">c_name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">document</span>.cookie.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    c_start = <span class="built_in">document</span>.cookie.indexOf(c_name + <span class="string">"="</span>);</span><br><span class="line">    <span class="keyword">if</span> (c_start != <span class="number">-1</span>) &#123;</span><br><span class="line">      c_start = c_start + c_name.length + <span class="number">1</span>;</span><br><span class="line">      c_end = <span class="built_in">document</span>.cookie.indexOf(<span class="string">";"</span>, c_start);</span><br><span class="line">      <span class="keyword">if</span> (c_end == <span class="number">-1</span>) &#123;</span><br><span class="line">        c_end = <span class="built_in">document</span>.cookie.length;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">unescape</span>(<span class="built_in">document</span>.cookie.substring(c_start, c_end));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>JS</tag>
         <tag>前端</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>

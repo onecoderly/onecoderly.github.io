@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coderblue.cn/"/>
-  <updated>2020-03-16T12:48:24.207Z</updated>
+  <updated>2020-03-17T10:25:24.670Z</updated>
   <id>http://coderblue.cn/</id>
   
   <author>
@@ -15,6 +15,72 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue自定义格式规范</title>
+    <link href="http://coderblue.cn/1577044944/"/>
+    <id>http://coderblue.cn/1577044944/</id>
+    <published>2020-03-17T10:22:14.000Z</published>
+    <updated>2020-03-17T10:25:24.670Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;项目根目录下新建文件：&lt;strong&gt;.prettierrc&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Vue" scheme="http://coderblue.cn/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>qq消息简易自动发送脚本</title>
+    <link href="http://coderblue.cn/1683247188/"/>
+    <id>http://coderblue.cn/1683247188/</id>
+    <published>2020-03-17T10:02:16.000Z</published>
+    <updated>2020-03-17T10:15:36.916Z</updated>
+    
+    <summary type="html">
+    
+      &lt;br&gt;
+&lt;br&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="日常" scheme="http://coderblue.cn/tags/%E6%97%A5%E5%B8%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【linux】在宝塔上 同ip 不同端口 设置一个端口对应一个网站</title>
+    <link href="http://coderblue.cn/1333150612/"/>
+    <id>http://coderblue.cn/1333150612/</id>
+    <published>2020-03-17T10:01:35.000Z</published>
+    <updated>2020-03-17T10:13:33.874Z</updated>
+    
+    <summary type="html">
+    
+      &lt;br&gt;
+&lt;br&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="宝塔" scheme="http://coderblue.cn/tags/%E5%AE%9D%E5%A1%94/"/>
+    
+  </entry>
   
   <entry>
     <title>解决后端提示非法字符</title>
@@ -68,9 +134,9 @@
     
     
     
-      <category term="JS" scheme="http://coderblue.cn/tags/JS/"/>
-    
       <category term="前端" scheme="http://coderblue.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="JS" scheme="http://coderblue.cn/tags/JS/"/>
     
   </entry>
   
@@ -376,79 +442,6 @@
       <category term="Vue" scheme="http://coderblue.cn/tags/Vue/"/>
     
       <category term="Springboot" scheme="http://coderblue.cn/tags/Springboot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue学习笔记</title>
-    <link href="http://coderblue.cn/1901149387/"/>
-    <id>http://coderblue.cn/1901149387/</id>
-    <published>2020-02-09T10:19:22.000Z</published>
-    <updated>2020-03-03T03:01:39.659Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;系统学习前端Vue框架，笔记记录于B站的why老师，&lt;a href=&quot;https://www.bilibili.com/video/av89760569&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;具体视频链接&lt;/a&gt;,在此感谢老师的悉心授课。&lt;a href=&quot;https://github.com/onecoderly/vue.js&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github笔记地址&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://coderblue.cn/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="前端" scheme="http://coderblue.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="Vue" scheme="http://coderblue.cn/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Promise异步编程</title>
-    <link href="http://coderblue.cn/2162723474/"/>
-    <id>http://coderblue.cn/2162723474/</id>
-    <published>2020-02-06T03:24:27.000Z</published>
-    <updated>2020-03-02T03:42:32.396Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Promise的使用&quot;&gt;&lt;a href=&quot;#Promise的使用&quot; class=&quot;headerlink&quot; title=&quot;Promise的使用&quot;&gt;&lt;/a&gt;Promise的使用&lt;/h2&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://coderblue.cn/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="JS" scheme="http://coderblue.cn/tags/JS/"/>
-    
-      <category term="ES6" scheme="http://coderblue.cn/tags/ES6/"/>
-    
-      <category term="Vue" scheme="http://coderblue.cn/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>箭头函数</title>
-    <link href="http://coderblue.cn/4068895603/"/>
-    <id>http://coderblue.cn/4068895603/</id>
-    <published>2020-02-06T03:15:19.000Z</published>
-    <updated>2020-03-02T03:42:32.425Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;箭头函数的基本使用&quot;&gt;&lt;a href=&quot;#箭头函数的基本使用&quot; class=&quot;headerlink&quot; title=&quot;箭头函数的基本使用&quot;&gt;&lt;/a&gt;箭头函数的基本使用&lt;/h2&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://coderblue.cn/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="JS" scheme="http://coderblue.cn/tags/JS/"/>
-    
-      <category term="ES6" scheme="http://coderblue.cn/tags/ES6/"/>
-    
-      <category term="Vue" scheme="http://coderblue.cn/tags/Vue/"/>
     
   </entry>
   
