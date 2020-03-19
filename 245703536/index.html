@@ -66,7 +66,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">617字</span>
+            <span class="post-count">823字</span>
         </span>
     </span>
 
@@ -75,7 +75,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">2分钟</span>
+            <span class="post-count">3分钟</span>
         </span>
     </span>
 </div>
@@ -144,21 +144,44 @@
 </li>
 <li><p>在 root 根目录新建文件夹：mkdir mall_vue，并将打包的 jar 包传输到此文件夹</p>
 </li>
-<li><p>在 mall_vue 里输入命令：nohup Java -jar xxxxxx.jar &amp;</p>
+<li><p>在 mall_vue 里输入命令：nohup java -jar xxxxxx.jar &amp;<br><img src="https://img-blog.csdnimg.cn/2020031816385139.png" alt=""></p>
 </li>
 <li><p>至此访问自己 ip 就可以访问项目：<br><img src="https://img-blog.csdnimg.cn/20200316195746636.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
 </li>
 </ol>
 <h2 id="方式二：一起部署"><a href="#方式二：一起部署" class="headerlink" title="方式二：一起部署"></a>方式二：一起部署</h2><ol>
-<li>将 vue 工程生成的 dist 文件下的内容放在 springboot 项目的<strong>resources的static</strong>文件夹下</li>
+<li>将 vue 工程生成的 dist 文件下的内容放在 springboot 项目的<strong>resources 的 static</strong>文件夹下</li>
+<li>pom 文件中引入</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.security<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-security-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.security<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-security-config<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Blue</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2020/3/18</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SecurityConfig</span> <span class="keyword">extends</span> <span class="title">WebSecurityConfigurerAdapter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">configure</span><span class="params">(WebSecurity web)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        web.ignoring().antMatchers(<span class="string">"/login"</span>, <span class="string">"/img/**"</span>,<span class="string">"/fonts/**"</span>, <span class="string">"/css/**"</span>, <span class="string">"/index.html"</span>, <span class="string">"/favicon.ico"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
 <li>然后再 package 项目</li>
 <li>再传到服务器对应文件夹，输入 nohup Java -jar xxxxxx.jar &amp;</li>
+<li>访问ip:端口号/index.html</li>
+<li>控制台中有消息，比如Using generated security password: 76dade1c-f190-44f8-915c-7a6b6917fb9a【每次随机生成的密码】</li>
+<li>将用户名 user 和 密码 76dade1c-f190-44f8-915c-7a6b6917fb9a 填入上面对话框中，点击按钮Sign in<br><img src="https://img-blog.csdnimg.cn/2020031817291794.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></li>
 </ol>
 <h2 id="在-linux-系统下运行-jar-包的命令如下"><a href="#在-linux-系统下运行-jar-包的命令如下" class="headerlink" title="在 linux 系统下运行 jar 包的命令如下"></a>在 linux 系统下运行 jar 包的命令如下</h2><ol>
 <li>java -jar xxxxx.jar // 当前 ssh 窗口被锁定，可按 CTRL + C 打断程序运行，或直接关闭窗口，程序退出</li>
 <li>java -jar xxxxx.jar &amp; //当前 ssh 窗口不被锁定，但是当窗口关闭时，程序中止运行。</li>
-<li>nohup Java -jar xxxxxx.jar &amp; //意思是不挂断运行命令,当账户退出或终端关闭时,程序仍然运行</li>
-<li>nohup Java -jar xxxxxx.jar &gt;aa.log //指定输出日志文件，意思是不挂断运行命令,当账户退出或终端关闭时,程序仍然运行</li>
+<li>nohup java -jar xxxxxx.jar &amp; //意思是不挂断运行命令,当账户退出或终端关闭时,程序仍然运行</li>
+<li>nohup java -jar xxxxxx.jar &gt;aa.log //指定输出日志文件，意思是不挂断运行命令,当账户退出或终端关闭时,程序仍然运行</li>
+</ol>
+<p>如果想要关闭java进程，输入命令行</p>
+<ol>
+<li><p>列出后台进程</p>
+<blockquote>
+<p>ps -ef | grep java</p>
+</blockquote>
+</li>
+<li><p>杀死进程</p>
+<blockquote>
+<p>kill -9 xxxx<br>(xxxx为上条命令列出的后台进程的pid， -9 表示无条件终止)</p>
+</blockquote>
+</li>
 </ol>
 
       
@@ -448,7 +471,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="http://43.226.35.120" target="_blank" rel="noopener">项目</a>
+      <a class="nav-item-link" href="/project">项目</a>
     </li>
     
     <li class="nav-item">

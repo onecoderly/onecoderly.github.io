@@ -75,7 +75,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">5分钟</span>
+            <span class="post-count">6分钟</span>
         </span>
     </span>
 </div>
@@ -216,8 +216,25 @@
 </li>
 </ul>
 <h2 id="常见问题："><a href="#常见问题：" class="headerlink" title="常见问题："></a>常见问题：</h2><ol>
-<li>git解决 error: you need to resolve your current index first<br>解决方法：<blockquote>
+<li><p>git解决 error: you need to resolve your current index first<br>解决方法：</p>
+<blockquote>
 <p>回退到merge前，再切换分支即可<br> git reset –merge </p>
+</blockquote>
+</li>
+<li><p>Repository not found</p>
+<blockquote>
+<p>git push -u origin master<br> ERROR: Repository not found.<br> fatal: The remote end hung up unexpectedly</p>
+</blockquote>
+<p> 解决：git remote add origin 仓库地址</p>
+</li>
+<li><p>fatal: remote origin already exists.</p>
+<blockquote>
+<p>git remote rm origin<br> git remote add origin 仓库地址</p>
+</blockquote>
+</li>
+<li><p>! [rejected]        master -&gt; master (fetch first) error: failed to push some refs to ‘git@github.com:地址.git’</p>
+<blockquote>
+<p>git pull –rebase origin master<br>git push origin master</p>
 </blockquote>
 </li>
 </ol>
@@ -509,7 +526,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="http://43.226.35.120" target="_blank" rel="noopener">项目</a>
+      <a class="nav-item-link" href="/project">项目</a>
     </li>
     
     <li class="nav-item">
