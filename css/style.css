@@ -6451,7 +6451,7 @@ a.tag-list-link {
 .tocbot {
   position: absolute;
   top: 14rem;
-  left: calc((100vw - 70rem) / 2 + 70rem);
+  left: 120rem;
   font-size: 80%;
   opacity: 0.8;
 }
@@ -7828,6 +7828,39 @@ div#days {
 }
 .with-love {
   color: #f10610;
+}
+@media (min-width: 770px) {
+  .wrap,
+  .outer,
+  .articles {
+    width: 90rem;
+  }
+  .article-inner {
+    width: 85rem;
+    margin-left: 10px;
+  }
+}
+.article-entry:hover {
+  box-shadow: 0 0 10px #dfdede;
+}
+a {
+  text-decoration: none;
+}
+a.article-title {
+  background: linear-gradient(to right, #d8a9d8, #e95a73) !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+}
+a.article-more-link:hover {
+  background: linear-gradient(to right, #d8a9d8, #e95a73) !important;
+}
+.article-header .article-title,
+.article-entry h2 {
+  font-size: 1.2em;
+  border-left-color: #d8a9d8;
+}
+.article-entry {
+  padding: 0 10px;
 }
 @-moz-keyframes heartsAnimate {
   0%, 100% {
