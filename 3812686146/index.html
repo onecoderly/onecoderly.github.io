@@ -6,8 +6,9 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="baidu-site-verification" content="JAFHu5il3e" />
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <title>
-    越努力越幸运💖 |  Blue
+    Lombok，真香 |  Blue
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
 
@@ -35,7 +36,7 @@
   <div id="app">
     <main class="content">
       <section class="outer">
-  <article id="page-" class="article article-type-page" itemscope
+  <article id="post-Lombok，真香" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -43,7 +44,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  越努力越幸运💖
+  Lombok，真香
 </h1>
   
 
@@ -51,6 +52,50 @@
     
 
     
+    <div class="article-meta">
+      <!-- 博客指定样式修改 -->
+      
+
+      <a href="/3812686146/" class="article-date">
+  <time datetime="2020-03-20T06:40:47.000Z" itemprop="datePublished">2020-03-20</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">3分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
 
     
 
@@ -62,24 +107,35 @@
       
 
       
-      <h2 id="⭐️代码是热爱，写到世界充满爱！"><a href="#⭐️代码是热爱，写到世界充满爱！" class="headerlink" title="⭐️代码是热爱，写到世界充满爱！"></a>⭐️代码是热爱，写到世界充满爱！</h2><blockquote>
-<p>小小的我，却有着全栈的梦</p>
+      <h2 id="Lombok到底是什么？"><a href="#Lombok到底是什么？" class="headerlink" title="Lombok到底是什么？"></a>Lombok到底是什么？</h2><p>先看一下它的官网<br><img src="https://mmbiz.qpic.cn/mmbiz_png/xq9PqibkVAzp6uHcdh3OGoN5lib8qiahVv1BEukCAUrrmjp1iay5HDcRCMlTJCwyWhnpehDYY15Dicfw4EPhR4VSbcA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt=""><br>英语懒得看？没关系。</p>
+<p><strong>它大致意思是</strong>：Lombok是一个很牛批的<strong>插件</strong>（本质是个<strong>Java库</strong>），项目里一旦引入了Lombok神器之后，你项目中所有诸如：对象的构造函数、 equals()方法，属性的 get()/set()方法等等，这些没有技术含量的代码统统都不用写了，Lombok帮你搞定一切，全部帮你自动生成！</p>
+<p>听起来好像是挺不错…</p>
+<p><strong>眼见为虚，代码为实</strong>，本文亲自尝试一下！</p>
+<h2 id="项目中引入Lombok"><a href="#项目中引入Lombok" class="headerlink" title="项目中引入Lombok"></a>项目中引入Lombok</h2><p>除此之外，还要在IDE中安装Lombok插件，并配置：<br><img src="https://mmbiz.qpic.cn/mmbiz_png/xq9PqibkVAzp6uHcdh3OGoN5lib8qiahVv1rgb30E3H5wCrNwtCA2pGkfjryVLFsOx7eJHJs3ogaFXU8nybM4Fiacw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt=""><br>接下来进行代码实验。</p>
+<h2 id="爽！get-set不用写了"><a href="#爽！get-set不用写了" class="headerlink" title="爽！get/set不用写了"></a>爽！get/set不用写了</h2><p>以前我们写一个 POJO对象时，比如定义一个课程 Course，需要自己手动写上每个字段的 get()和 set()方法，就像这样：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Course</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Integer score;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Long <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Long id)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getScore</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> score;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setScore</span><span class="params">(Integer score)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.score = score;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是借助于Lombok，一切都变得优雅起来，代码篇幅省了一半</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Course</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Getter</span></span><br><span class="line">    <span class="meta">@Setter</span></span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Getter</span></span><br><span class="line">    <span class="meta">@Setter</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Getter</span></span><br><span class="line">    <span class="meta">@Setter</span></span><br><span class="line">    <span class="keyword">private</span> Integer score;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>两个注解：@Getter和 @Setter即可方便搞定。</p>
+<p>更可以使用@data注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Course</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Integer score;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="爽！new对象变得优雅了"><a href="#爽！new对象变得优雅了" class="headerlink" title="爽！new对象变得优雅了"></a>爽！new对象变得优雅了</h2><p>在没有用Lombok之前，我们假如想new一个对象，我们往往会这么做（以上面的 Course类为例）：<br><img src="https://img-blog.csdnimg.cn/20200320145353472.png" alt=""><br>引进Lombok之后，我们只需要在 Course类上用上 @Builder注解：<br><img src="https://img-blog.csdnimg.cn/20200320145234852.png" alt=""><br>则 Course类对象的创建即可使用 链式表达 的方式一行代码完成：<br><img src="https://img-blog.csdnimg.cn/20200320145310480.png" alt=""><br>到这里，如果你学过设计模式中的 “建造者模式” 的话，一定能猜到 @Builder注解就是一个典型的“建造者模式”的实现案例！</p>
+<h2 id="爽！构造函数不用写了"><a href="#爽！构造函数不用写了" class="headerlink" title="爽！构造函数不用写了"></a>爽！构造函数不用写了</h2><h3 id="全参构造器不用写了"><a href="#全参构造器不用写了" class="headerlink" title="全参构造器不用写了"></a>全参构造器不用写了</h3><p>当你在你的类上使用了Lombok的注解 AllArgsConstructor时：<br><img src="https://img-blog.csdnimg.cn/2020032014550690.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>这时候你的类在编译后会自动生成一个全参构造函数，就像这样：<br><img src="https://img-blog.csdnimg.cn/20200320145552136.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+<h3 id="无参数构造器也不用写了"><a href="#无参数构造器也不用写了" class="headerlink" title="无参数构造器也不用写了"></a>无参数构造器也不用写了</h3><p>当你在你的类上使用了Lombok的注解 NoArgsConstructor时：<br><img src="https://img-blog.csdnimg.cn/20200320145644124.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>这时候你的类在编译后会自动生成一个无参构造函数，就像这样：<br><img src="https://img-blog.csdnimg.cn/20200320145713327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+<h3 id="部分参数构造器也不用写了"><a href="#部分参数构造器也不用写了" class="headerlink" title="部分参数构造器也不用写了"></a>部分参数构造器也不用写了</h3><p>当你在你的类上使用了Lombok的注解 RequiredArgsConstructor时:<br><img src="https://img-blog.csdnimg.cn/20200320145754760.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>这时候你的类在编译后会自动生成一个具备部分参数的构造函数，就像这样：<br><img src="https://img-blog.csdnimg.cn/20200320145821664.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>因为 name字段定义成 final，所以 Lombok自动会帮你生成一个部分参数的构造器！！因为 name字段定义成 final，所以 Lombok自动会帮你生成一个部分参数的构造器！！</p>
+<h2 id="爽！null判空不用写了"><a href="#爽！null判空不用写了" class="headerlink" title="爽！null判空不用写了"></a>爽！null判空不用写了</h2><p>Lombok的 @NonNull注解可以自动帮我们避免空指针判断。该注解作用在方法参数上，用于自动生成空值参数检查，比如：<br><img src="https://img-blog.csdnimg.cn/20200320145925792.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>但是有了Lombok之后，事情就变得简单了，一个注解搞定：<br><img src="https://img-blog.csdnimg.cn/20200320145955658.png" alt=""></p>
+<h2 id="爽！关流也不需要了"><a href="#爽！关流也不需要了" class="headerlink" title="爽！关流也不需要了"></a>爽！关流也不需要了</h2><p>什么意思呢？</p>
+<p>假如我们要读取一个 txt文本文件，一般会这样写代码：<br><img src="https://img-blog.csdnimg.cn/20200320150127793.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>注意，这个文件句柄在使用完成之后是一定要手动 close的，否则就有可能资源泄漏。</p>
+<p>有了Lombok之后，这种擦屁股活儿统统不用干了，一个 @Cleanup注解即可搞定<br><img src="https://img-blog.csdnimg.cn/20200320150154895.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+<p>上面列举了几个平时项目开发中使用非常频繁的Lombok注解，除此之外，还有诸如像：</p>
+<blockquote>
+<p>@ToString：为类自动生成toString()方法<br>@EqualsAndHashCode：为类自动生成hashCode和equals实现<br>@Log：为类自动生成log日志记录<br>@Synchronized：为类方法或实例方法自动生成synchronized保护</p>
 </blockquote>
-<h3 id="✨建站初衷"><a href="#✨建站初衷" class="headerlink" title="✨建站初衷"></a>✨建站初衷</h3><p>大学主要学的是数学，但是心里一直有个编程的梦✈️。自己在学校也折腾过，但是没有系统学习的机会。于是乎，在大三参加了培训班，主学java。至此走上了一条不归路，自己也常戏说：<strong>一包烟，一壶酒，一个bug改一天</strong>(当然自己是不抽烟的)。时常很倔强，遇到问题就很头铁，不解决就想着疯狂百度、谷歌，不然心里就沉甸甸的感觉。问题遇到多了就想着能够有个自己的博客，能够记录下自己的学习心得，也能够随时分享点所谓的灵感与诗意。</p>
-<h3 id="✏️学习之路"><a href="#✏️学习之路" class="headerlink" title="✏️学习之路"></a>✏️学习之路</h3><p>初级阶段：从前端基础的<strong>html、css</strong>学起，至此学会了构建简单的静态页面。再后就是系统学习<strong>JavaSE、j2EE</strong>，熟悉java体系。为能更好的页面数据交互，又学了<strong>JavaScript、jQuery、bootstrap</strong>框架。后台数据大多需要存入数据库，又学习了<strong>Oracle、MySQL、SQL sever</strong>(大学学的)以及<strong>c3p0连接池</strong>。至此我们就可以顺利的做出了初级项目，<a href="http://coderblue.cn/3511959982/">知新网在线学习网站</a>。</p>
-<p>中级阶段：主要熟悉了<strong>Maven工程、Mybatis、Spring、SpringMvc、Springboot</strong>，然后前端部分又接触了<strong>Layui</strong>框架，前后端交互时更加方便，做的页面也更美观了。在使用框架后，最大的感受就是自己的配置相对于初级省了很多时间，我能花更多的时间放在前端页面的数据展示上。至此，深刻体会到，前端也是非常难学的，想要学好体系也很庞大。</p>
-<p>高级阶段：接触的就是Spring Cloud，目前只是粗俗的了解了下，并没有实用过。😟</p>
-<h3 id="☀️进阶之路"><a href="#☀️进阶之路" class="headerlink" title="☀️进阶之路"></a>☀️进阶之路</h3><p>目前在一家经验丰富的互联网政务的公司实习，里面的业务逻辑确实把我绕晕了😂。不过也是在这我熟知了<strong>Vue</strong>，便又踏上了一条不归路，用起来还是真的香。</p>
-<h3 id="😃项目代码"><a href="#😃项目代码" class="headerlink" title="😃项目代码"></a>😃项目代码</h3><p>托管于<a href="https://github.com/onecoderly" target="_blank" rel="noopener">GitHub</a>、<a href="https://gitee.com/ly_blue" target="_blank" rel="noopener">Gitee仓库</a></p>
-<h3 id="🚄建站之路"><a href="#🚄建站之路" class="headerlink" title="🚄建站之路"></a>🚄建站之路</h3><blockquote>
-<p>1.参找B站教程搭建了yilia主题，发现了好玩的看板娘，但是由于界面不中，遂想更换主题<br>2.Fork了北宸哥的魔改的主题，自己就踏上了一条不归路，折腾了一星期。熟悉了好多小玩意，比如：旋转立体魔方、巡礼彩虹播放器…<a href="https://liuyang6blue.github.io/" target="_blank" rel="noopener">原主题</a><br>3.将Blog部署到阿里云服务器，绑定域名<br>4.主题速度优化不明显，便忍痛割爱，重新更换主题，寻求一款简约风格的，最后相中了 <a href="https://shen-yu.gitee.io/" target="_blank" rel="noopener">ayer主题</a>。<br>5.对主题界面稍微美化修改，速度相对原主题提升不少，至此。奉劝一句：<strong>博客优化是个无底洞，要忍住、忍住！！！</strong>我就爱折腾这些小名堂，费时间太多了，最后发现依旧只是个小菜鸟🐦。</p>
-</blockquote>
-<p><span id="my_photo"><img id="my" src="https://exampleblue-1301047842.cos.ap-chengdu.myqcloud.com/cover/我的头像.png"></span></p>
-<style>
-div#vcomments-box,.declare,.share-btn {
-    display: none;
-}
-</style>
+<p>等工具也是非常好用的，大家可以尝试在项目里用起来。</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzU4ODI1MjA3NQ==&mid=2247485020&idx=1&sn=3c3405807f96a597398f513c48bb094e&chksm=fdded098caa9598e6159bd7315180e149e6a789a3ee75d42b4acaaae96669504e08378eeddae&scene=21#wechat_redirect" target="_blank" rel="noopener">参考链接, 致谢</a></p>
+
       
       <!-- reward -->
       
@@ -148,13 +204,15 @@ div#vcomments-box,.declare,.share-btn {
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://coderblue.cn/about/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://coderblue.cn/3812686146/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lombok/" rel="tag">Lombok</a></li></ul>
+
 
     </footer>
 
@@ -162,6 +220,25 @@ div#vcomments-box,.declare,.share-btn {
 
   
   
+  <nav class="article-nav">
+    
+      <a href="/3522599201/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            java复制List集合
+          
+        </div>
+      </a>
+    
+    
+      <a href="/1577044944/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">vue自定义格式规范</div>
+      </a>
+    
+  </nav>
+
 
   
 
@@ -220,6 +297,8 @@ div#vcomments-box,.declare,.share-btn {
   
 
   
+  
+  
 
 </article>
 </section>
@@ -230,7 +309,11 @@ div#vcomments-box,.declare,.share-btn {
         &copy;
         2020
         Liu Yang
-        &nbsp|&nbsp<a href="http://www.beian.miit.gov.cn/" target="_blank" rel="noopener" style="text-decoration: none;">湘ICP备20003709号</a>
+        &nbsp
+        <span class="with-love">
+          <i class="fa fa-heart" id="hearts"></i>
+        </span>
+        &nbsp<a href="http://www.beian.miit.gov.cn/" target="_blank" rel="noopener" style="text-decoration: none;">湘ICP备20003709号</a>
       </li>
       <div id="days"></div>
       </script>
@@ -266,20 +349,6 @@ div#vcomments-box,.declare,.share-btn {
           return i;
         }
         show_date_time();
-      </script>
-      <!-- 主动推送到百度 -->
-      <script>
-        (function () {
-          var bp = document.createElement('script');
-          var curProtocol = window.location.protocol.split(':')[0];
-          if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-          } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-          }
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(bp, s);
-        })();
       </script>
       <!-- 图片单击效果 -->
       <script>
@@ -499,6 +568,30 @@ div#vcomments-box,.declare,.share-btn {
 </script>
 
 
+
+
+<script src="//blueblog-1301047842.cos.ap-chengdu.myqcloud.com/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer:'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    onClick: (e) => {
+      $('.toc-link').removeClass('is-active-link');
+      $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+      $(e.target.hash).scrollIntoView();
+      return false;
+    }
+  });
+</script>
 
 
 <script>

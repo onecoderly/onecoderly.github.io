@@ -1,11 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>java复制List集合</title>
+    <url>/3522599201/</url>
+    <content><![CDATA[<p> JDK貌似没有自带的复制List集合的方法，因此，复制方法需要自己去实现。下面介绍两种简单实用的复制List集合的方法。</p>
+<p><strong>方法1</strong>、创建新的ArrayList集合时复制</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">    list.add(<span class="string">"1"</span>);</span><br><span class="line">    list.add(<span class="string">"2"</span>);</span><br><span class="line">    list.add(<span class="string">"3"</span>);</span><br><span class="line">    list.add(<span class="string">"4"</span>);</span><br><span class="line">    list.add(<span class="string">"5"</span>);</span><br><span class="line">    List&lt;String&gt; newList = <span class="keyword">new</span> ArrayList&lt;String&gt;(list);</span><br><span class="line">    System.out.println(newList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：[1, 2, 3, 4, 5]</p>
+<p><strong>方法2</strong>、创建新的ArrayList集合之后，使用addAll方法复制</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">    list.add(<span class="string">"1"</span>);</span><br><span class="line">    list.add(<span class="string">"2"</span>);</span><br><span class="line">    list.add(<span class="string">"3"</span>);</span><br><span class="line">    list.add(<span class="string">"4"</span>);</span><br><span class="line">    list.add(<span class="string">"5"</span>);</span><br><span class="line">    List&lt;String&gt; newList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">    newList.addAll(list);</span><br><span class="line">    System.out.println(newList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：[1, 2, 3, 4, 5]<br>个人推荐使用方法1，因为少一行代码呀！而且，括号里的集合还可以是Set集合。</p>
+<p><a href="https://blog.csdn.net/u013020593/article/details/79043763" target="_blank" rel="noopener">参考链接：致谢</a></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Lombok，真香</title>
+    <url>/3812686146/</url>
+    <content><![CDATA[<h2 id="Lombok到底是什么？"><a href="#Lombok到底是什么？" class="headerlink" title="Lombok到底是什么？"></a>Lombok到底是什么？</h2><p>先看一下它的官网<br><img src="https://mmbiz.qpic.cn/mmbiz_png/xq9PqibkVAzp6uHcdh3OGoN5lib8qiahVv1BEukCAUrrmjp1iay5HDcRCMlTJCwyWhnpehDYY15Dicfw4EPhR4VSbcA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt=""><br>英语懒得看？没关系。</p>
+<p><strong>它大致意思是</strong>：Lombok是一个很牛批的<strong>插件</strong>（本质是个<strong>Java库</strong>），项目里一旦引入了Lombok神器之后，你项目中所有诸如：对象的构造函数、 equals()方法，属性的 get()/set()方法等等，这些没有技术含量的代码统统都不用写了，Lombok帮你搞定一切，全部帮你自动生成！</p>
+<p>听起来好像是挺不错…</p>
+<p><strong>眼见为虚，代码为实</strong>，本文亲自尝试一下！</p>
+<h2 id="项目中引入Lombok"><a href="#项目中引入Lombok" class="headerlink" title="项目中引入Lombok"></a>项目中引入Lombok</h2><p>除此之外，还要在IDE中安装Lombok插件，并配置：<br><img src="https://mmbiz.qpic.cn/mmbiz_png/xq9PqibkVAzp6uHcdh3OGoN5lib8qiahVv1rgb30E3H5wCrNwtCA2pGkfjryVLFsOx7eJHJs3ogaFXU8nybM4Fiacw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt=""><br>接下来进行代码实验。</p>
+<h2 id="爽！get-set不用写了"><a href="#爽！get-set不用写了" class="headerlink" title="爽！get/set不用写了"></a>爽！get/set不用写了</h2><p>以前我们写一个 POJO对象时，比如定义一个课程 Course，需要自己手动写上每个字段的 get()和 set()方法，就像这样：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Course</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Integer score;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Long <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Long id)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getScore</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> score;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setScore</span><span class="params">(Integer score)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.score = score;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是借助于Lombok，一切都变得优雅起来，代码篇幅省了一半</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Course</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Getter</span></span><br><span class="line">    <span class="meta">@Setter</span></span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Getter</span></span><br><span class="line">    <span class="meta">@Setter</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Getter</span></span><br><span class="line">    <span class="meta">@Setter</span></span><br><span class="line">    <span class="keyword">private</span> Integer score;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>两个注解：@Getter和 @Setter即可方便搞定。</p>
+<p>更可以使用@data注解</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Course</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Integer score;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="爽！new对象变得优雅了"><a href="#爽！new对象变得优雅了" class="headerlink" title="爽！new对象变得优雅了"></a>爽！new对象变得优雅了</h2><p>在没有用Lombok之前，我们假如想new一个对象，我们往往会这么做（以上面的 Course类为例）：<br><img src="https://img-blog.csdnimg.cn/20200320145353472.png" alt=""><br>引进Lombok之后，我们只需要在 Course类上用上 @Builder注解：<br><img src="https://img-blog.csdnimg.cn/20200320145234852.png" alt=""><br>则 Course类对象的创建即可使用 链式表达 的方式一行代码完成：<br><img src="https://img-blog.csdnimg.cn/20200320145310480.png" alt=""><br>到这里，如果你学过设计模式中的 “建造者模式” 的话，一定能猜到 @Builder注解就是一个典型的“建造者模式”的实现案例！</p>
+<h2 id="爽！构造函数不用写了"><a href="#爽！构造函数不用写了" class="headerlink" title="爽！构造函数不用写了"></a>爽！构造函数不用写了</h2><h3 id="全参构造器不用写了"><a href="#全参构造器不用写了" class="headerlink" title="全参构造器不用写了"></a>全参构造器不用写了</h3><p>当你在你的类上使用了Lombok的注解 AllArgsConstructor时：<br><img src="https://img-blog.csdnimg.cn/2020032014550690.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>这时候你的类在编译后会自动生成一个全参构造函数，就像这样：<br><img src="https://img-blog.csdnimg.cn/20200320145552136.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+<h3 id="无参数构造器也不用写了"><a href="#无参数构造器也不用写了" class="headerlink" title="无参数构造器也不用写了"></a>无参数构造器也不用写了</h3><p>当你在你的类上使用了Lombok的注解 NoArgsConstructor时：<br><img src="https://img-blog.csdnimg.cn/20200320145644124.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>这时候你的类在编译后会自动生成一个无参构造函数，就像这样：<br><img src="https://img-blog.csdnimg.cn/20200320145713327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+<h3 id="部分参数构造器也不用写了"><a href="#部分参数构造器也不用写了" class="headerlink" title="部分参数构造器也不用写了"></a>部分参数构造器也不用写了</h3><p>当你在你的类上使用了Lombok的注解 RequiredArgsConstructor时:<br><img src="https://img-blog.csdnimg.cn/20200320145754760.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>这时候你的类在编译后会自动生成一个具备部分参数的构造函数，就像这样：<br><img src="https://img-blog.csdnimg.cn/20200320145821664.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>因为 name字段定义成 final，所以 Lombok自动会帮你生成一个部分参数的构造器！！因为 name字段定义成 final，所以 Lombok自动会帮你生成一个部分参数的构造器！！</p>
+<h2 id="爽！null判空不用写了"><a href="#爽！null判空不用写了" class="headerlink" title="爽！null判空不用写了"></a>爽！null判空不用写了</h2><p>Lombok的 @NonNull注解可以自动帮我们避免空指针判断。该注解作用在方法参数上，用于自动生成空值参数检查，比如：<br><img src="https://img-blog.csdnimg.cn/20200320145925792.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>但是有了Lombok之后，事情就变得简单了，一个注解搞定：<br><img src="https://img-blog.csdnimg.cn/20200320145955658.png" alt=""></p>
+<h2 id="爽！关流也不需要了"><a href="#爽！关流也不需要了" class="headerlink" title="爽！关流也不需要了"></a>爽！关流也不需要了</h2><p>什么意思呢？</p>
+<p>假如我们要读取一个 txt文本文件，一般会这样写代码：<br><img src="https://img-blog.csdnimg.cn/20200320150127793.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>注意，这个文件句柄在使用完成之后是一定要手动 close的，否则就有可能资源泄漏。</p>
+<p>有了Lombok之后，这种擦屁股活儿统统不用干了，一个 @Cleanup注解即可搞定<br><img src="https://img-blog.csdnimg.cn/20200320150154895.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+<p>上面列举了几个平时项目开发中使用非常频繁的Lombok注解，除此之外，还有诸如像：</p>
+<blockquote>
+<p>@ToString：为类自动生成toString()方法<br>@EqualsAndHashCode：为类自动生成hashCode和equals实现<br>@Log：为类自动生成log日志记录<br>@Synchronized：为类方法或实例方法自动生成synchronized保护</p>
+</blockquote>
+<p>等工具也是非常好用的，大家可以尝试在项目里用起来。</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzU4ODI1MjA3NQ==&mid=2247485020&idx=1&sn=3c3405807f96a597398f513c48bb094e&chksm=fdded098caa9598e6159bd7315180e149e6a789a3ee75d42b4acaaae96669504e08378eeddae&scene=21#wechat_redirect" target="_blank" rel="noopener">参考链接, 致谢</a></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Lombok</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>vue自定义格式规范</title>
     <url>/1577044944/</url>
     <content><![CDATA[<p>项目根目录下新建文件：<strong>.prettierrc</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123; </span><br><span class="line">  <span class="comment">// 函数后括号前没空格不报错</span></span><br><span class="line">  <span class="string">"semi"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="comment">// 双引号格式化成单引号</span></span><br><span class="line">  <span class="string">"singleQuote"</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
       <tags>
         <tag>Vue</tag>
       </tags>
@@ -21,6 +82,9 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">on error resume next</span><br><span class="line">dim wsh,ye,path</span><br><span class="line">set wsh = createobject(<span class="string">"wscript.shell"</span>)</span><br><span class="line"><span class="keyword">for</span> i=<span class="number">1</span> to <span class="number">6000</span></span><br><span class="line">wscript.sleep <span class="number">500</span></span><br><span class="line">wsh.appactivate(<span class="string">"bomb"</span>)</span><br><span class="line">wsh.sendkeys <span class="string">"^v"</span></span><br><span class="line">wsh.sendkeys <span class="string">"%s"</span></span><br><span class="line">next</span><br></pre></td></tr></table></figure>
 <p>然后<strong>随意复制句话，运行脚本，点击下想要发送的聊天窗口</strong>，即可。</p>
 ]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
       <tags>
         <tag>日常</tag>
       </tags>
@@ -55,6 +119,9 @@
 <p>切记  改完之后，重启nginx !  访问 即可看到站点内容<br><img src="https://img-blog.csdnimg.cn/20200317180745157.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
 <p>理解：每个项目下都有个Nginx的配置文件，我们需要将预先想访问的ip添加上去，这样就可以实现不同端口号访问不同项目，泛域名也如此。</p>
 ]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
       <tags>
         <tag>宝塔</tag>
       </tags>
@@ -67,6 +134,9 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Blue</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2020/3/12</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.catalina.connector.Connector;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: Blue</span></span><br><span class="line"><span class="comment"> * Invalid character found in the request target. The valid characters are defined in RFC 7230 and RFC 3986</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TomcatConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> TomcatServletWebServerFactory <span class="title">webServerFactory</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        TomcatServletWebServerFactory factory = <span class="keyword">new</span> TomcatServletWebServerFactory();</span><br><span class="line">        factory.addConnectorCustomizers((Connector connector) -&gt; &#123;</span><br><span class="line">            connector.setProperty(<span class="string">"relaxedPathChars"</span>, <span class="string">"\"&lt;&gt;[\\]^`&#123;|&#125;"</span>);</span><br><span class="line">            connector.setProperty(<span class="string">"relaxedQueryChars"</span>, <span class="string">"\"&lt;&gt;[\\]^`&#123;|&#125;"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">return</span> factory;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
   </entry>
   <entry>
     <title>后端解决跨域问题</title>
@@ -77,6 +147,9 @@
 
 <h3 id="配置类-CorsConfig-解决跨域问题"><a href="#配置类-CorsConfig-解决跨域问题" class="headerlink" title="配置类 CorsConfig: 解决跨域问题"></a>配置类 CorsConfig: 解决跨域问题</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.blue.demo.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.CorsRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurer;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Blue</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 解决跨域的问题</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CorsConfig</span> <span class="keyword">implements</span> <span class="title">WebMvcConfigurer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addCorsMappings</span><span class="params">(CorsRegistry registry)</span> </span>&#123;</span><br><span class="line">        registry.addMapping(<span class="string">"/**"</span>)</span><br><span class="line">                .allowedOrigins(<span class="string">"*"</span>)</span><br><span class="line">                .allowedMethods(<span class="string">"GET"</span>, <span class="string">"HEAD"</span>, <span class="string">"POST"</span>, <span class="string">"PUT"</span>, <span class="string">"DELETE"</span>, <span class="string">"OPTIONS"</span>)</span><br><span class="line">                .allowCredentials(<span class="keyword">true</span>)</span><br><span class="line">                .maxAge(<span class="number">3600</span>)</span><br><span class="line">                .allowedHeaders(<span class="string">"*"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
       <tags>
         <tag>前后端交互</tag>
       </tags>
@@ -89,6 +162,9 @@
 
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 如果要设置过期时间以秒为单位</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setCookie</span>(<span class="params">c_name, value, expireseconds</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> exdate = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">  exdate.setTime(exdate.getTime() + expireseconds * <span class="number">1000</span>);</span><br><span class="line">  <span class="built_in">document</span>.cookie =</span><br><span class="line">    c_name +</span><br><span class="line">    <span class="string">"="</span> +</span><br><span class="line">    <span class="built_in">escape</span>(value) +</span><br><span class="line">    (expireseconds == <span class="literal">null</span></span><br><span class="line">      ? <span class="string">""</span></span><br><span class="line">      : <span class="string">";expires="</span> + exdate.toGMTString() + <span class="string">";path=/"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数中的参数为 要获取的cookie键的名称。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">c_name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">document</span>.cookie.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    c_start = <span class="built_in">document</span>.cookie.indexOf(c_name + <span class="string">"="</span>);</span><br><span class="line">    <span class="keyword">if</span> (c_start != <span class="number">-1</span>) &#123;</span><br><span class="line">      c_start = c_start + c_name.length + <span class="number">1</span>;</span><br><span class="line">      c_end = <span class="built_in">document</span>.cookie.indexOf(<span class="string">";"</span>, c_start);</span><br><span class="line">      <span class="keyword">if</span> (c_end == <span class="number">-1</span>) &#123;</span><br><span class="line">        c_end = <span class="built_in">document</span>.cookie.length;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">unescape</span>(<span class="built_in">document</span>.cookie.substring(c_start, c_end));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
       <tags>
         <tag>前端</tag>
         <tag>JS</tag>
@@ -179,6 +255,9 @@
 </li>
 </ol>
 ]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
       <tags>
         <tag>Linux</tag>
       </tags>
@@ -1726,10 +1805,10 @@ StringBuffer：线程安全的</code></pre><blockquote>
 ]]></content>
       <categories>
         <category>Java</category>
-        <category>idea</category>
       </categories>
       <tags>
         <tag>Java</tag>
+        <tag>idea</tag>
       </tags>
   </entry>
   <entry>
@@ -1798,7 +1877,6 @@ StringBuffer：线程安全的</code></pre><blockquote>
 ]]></content>
       <categories>
         <category>Java</category>
-        <category>idea</category>
       </categories>
       <tags>
         <tag>Java</tag>
@@ -1818,6 +1896,9 @@ StringBuffer：线程安全的</code></pre><blockquote>
 
 
 ]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
       <tags>
         <tag>前端</tag>
         <tag>Springboot</tag>
@@ -1836,6 +1917,9 @@ StringBuffer：线程安全的</code></pre><blockquote>
 <p>导入依赖</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--JSR303数据校验--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.hibernate.validator<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hibernate-validator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>6.0.18.Final<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
       <tags>
         <tag>Java</tag>
         <tag>数据校验</tag>
@@ -1870,6 +1954,9 @@ StringBuffer：线程安全的</code></pre><blockquote>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"map"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript"><span class="comment">// 导入Echarts</span></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> echarts <span class="keyword">from</span> <span class="string">'echarts'</span></span></span><br><span class="line"><span class="actionscript"><span class="comment">// 导入中国地图</span></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> <span class="string">'echarts/map/js/china'</span></span></span><br><span class="line"><span class="actionscript"><span class="comment">// 引入jsonp</span></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> jsonp <span class="keyword">from</span> <span class="string">'jsonp'</span></span></span><br><span class="line"></span><br><span class="line"><span class="actionscript"><span class="keyword">const</span> option = &#123;</span></span><br><span class="line">  title: &#123;</span><br><span class="line"><span class="actionscript">    text: <span class="string">'模拟疫情地图'</span></span></span><br><span class="line">  &#125;,</span><br><span class="line">  visualMap: [</span><br><span class="line">    &#123;</span><br><span class="line"><span class="actionscript">      <span class="comment">// 分段型</span></span></span><br><span class="line"><span class="actionscript">      type: <span class="string">'piecewise'</span>,</span></span><br><span class="line"><span class="actionscript">      show: <span class="literal">true</span>,</span></span><br><span class="line">      splitNumber: 6,</span><br><span class="line">      pieces: [</span><br><span class="line">        &#123;</span><br><span class="line">          min: 10000</span><br><span class="line"><span class="actionscript">        &#125;, <span class="comment">// 不指定 max，表示 max 为无限大（Infinity）。</span></span></span><br><span class="line">        &#123;</span><br><span class="line">          min: 1000,</span><br><span class="line">          max: 9999</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          min: 100,</span><br><span class="line">          max: 999</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          min: 10,</span><br><span class="line">          max: 99</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          min: 1,</span><br><span class="line">          max: 9</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          min: 0,</span><br><span class="line">          max: 0</span><br><span class="line">        &#125;</span><br><span class="line">      ],</span><br><span class="line">      inRange: &#123;</span><br><span class="line"><span class="actionscript">        symbol: <span class="string">'rect'</span>,</span></span><br><span class="line"><span class="actionscript">        color: [<span class="string">'#fff'</span>, <span class="string">'#ffaa85'</span>, <span class="string">'#ff7b69'</span>, <span class="string">'#cc2929'</span>, <span class="string">'#8c0d0d'</span>, <span class="string">'#660208'</span>]</span></span><br><span class="line">      &#125;,</span><br><span class="line">      itemHeight: 10,</span><br><span class="line">      itemWidth: 20</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line"><span class="actionscript">  <span class="comment">// 鼠标悬浮的提示信息</span></span></span><br><span class="line"><span class="actionscript">  <span class="comment">// 地图 : &#123;a&#125;（系列名称），&#123;b&#125;（区域名称），&#123;c&#125;（合并数值）, &#123;d&#125;（无）</span></span></span><br><span class="line">  tooltip: &#123;</span><br><span class="line"><span class="actionscript">    trigger: <span class="string">'item'</span>,</span></span><br><span class="line"><span class="actionscript">    formatter: <span class="string">'地区：&#123;b&#125;&lt;br/&gt;确诊：&#123;c&#125;'</span>,</span></span><br><span class="line"><span class="actionscript">    position: <span class="function"><span class="keyword">function</span><span class="params">(point, params, dom, rect, size)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// 固定在顶部</span></span></span><br><span class="line"><span class="actionscript">      <span class="keyword">return</span> [point[<span class="number">0</span>], <span class="string">'10%'</span>]</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  series: [</span><br><span class="line">    &#123;</span><br><span class="line"><span class="actionscript">      <span class="comment">// 图表的类型</span></span></span><br><span class="line"><span class="actionscript">      type: <span class="string">'map'</span>,</span></span><br><span class="line"><span class="actionscript">      map: <span class="string">'china'</span>,</span></span><br><span class="line">      label: &#123;</span><br><span class="line"><span class="actionscript">        <span class="comment">// 显示各个省份名称</span></span></span><br><span class="line"><span class="actionscript">        show: <span class="literal">true</span>,</span></span><br><span class="line">        fontSize: 12,</span><br><span class="line"><span class="actionscript">        color: <span class="string">'black'</span></span></span><br><span class="line">      &#125;,</span><br><span class="line">      itemStyle: &#123;</span><br><span class="line"><span class="actionscript">        <span class="comment">// 区域的背景颜色</span></span></span><br><span class="line"><span class="actionscript">        areaColor: <span class="string">'#fff'</span></span></span><br><span class="line">      &#125;,</span><br><span class="line"><span class="actionscript">      <span class="comment">// 高亮状态下</span></span></span><br><span class="line">      emphasis: &#123;</span><br><span class="line">        label: &#123;</span><br><span class="line">          fontSize: 15,</span><br><span class="line"><span class="actionscript">          color: <span class="string">'#4adbaf'</span></span></span><br><span class="line">        &#125;,</span><br><span class="line"><span class="actionscript">        <span class="comment">// 控制鼠标滑过时的高亮样式</span></span></span><br><span class="line">        itemStyle: &#123;</span><br><span class="line"><span class="actionscript">          <span class="comment">// 地图区域的多边形 图形颜色</span></span></span><br><span class="line"><span class="actionscript">          areaColor: <span class="string">'#c7fffd'</span>,</span></span><br><span class="line"><span class="actionscript">          borderColor: <span class="string">'#B03A5B'</span></span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line"><span class="actionscript">      <span class="comment">// 当前视角的缩放比例</span></span></span><br><span class="line">      zoom: 1.2,</span><br><span class="line">      data: [</span><br><span class="line"><span class="actionscript">        &#123; name: <span class="string">'北京'</span>, value: <span class="number">200</span> &#125;,</span></span><br><span class="line"><span class="actionscript">        &#123; name: <span class="string">'湖北'</span>, value: <span class="number">20000</span> &#125;</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">  data() &#123;</span><br><span class="line"><span class="actionscript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">      myChart: <span class="string">''</span></span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  mounted() &#123;</span><br><span class="line"><span class="actionscript">    <span class="comment">// 基于准备好的dom，初始化echarts实例</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">this</span>.myChart = echarts.init(<span class="built_in">document</span>.getElementById(<span class="string">'map'</span>))</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 指定图表的配置项和数据</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 使用刚指定的配置项和数据显示图表。</span></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">this</span>.myChart.setOption(option)</span></span><br><span class="line">  &#125;,</span><br><span class="line">  created() &#123;</span><br><span class="line"><span class="actionscript">    <span class="keyword">this</span>.getData()</span></span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line"><span class="actionscript">    <span class="comment">// 获得真实数据</span></span></span><br><span class="line">    getData() &#123;</span><br><span class="line"><span class="actionscript">      <span class="comment">// 解决访问跨域问题</span></span></span><br><span class="line">      jsonp(</span><br><span class="line"><span class="actionscript">        <span class="string">'http://interface.sina.cn/news/wap/fymap2020_data.d.json?_=1580892522427'</span>,</span></span><br><span class="line">        &#123;&#125;,</span><br><span class="line">        (erros, data) =&gt; &#123;</span><br><span class="line"><span class="actionscript">          <span class="comment">// console.log(data);</span></span></span><br><span class="line"><span class="actionscript">          <span class="comment">// console.log(data.data.list)</span></span></span><br><span class="line"><span class="javascript">          <span class="keyword">var</span> lists = data.data.list.map(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">return</span> &#123;</span></span><br><span class="line">              name: item.name,</span><br><span class="line">              value: item.value</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;)</span><br><span class="line">          option.series[0].data = lists</span><br><span class="line"><span class="actionscript">          <span class="keyword">this</span>.myChart.setOption(option)</span></span><br><span class="line">        &#125;</span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">lang</span>=<span class="string">"less"</span> <span class="attr">scoped</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-id">#map</span> &#123;</span></span><br><span class="line">  width: 1050px;</span><br><span class="line">  height: 620px;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><a href="https://www.echartsjs.com/zh/option.html#title" target="_blank" rel="noopener">Echarts 官方文档</a></p>
 ]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
       <tags>
         <tag>前端</tag>
         <tag>ECharts</tag>
@@ -1884,6 +1971,9 @@ StringBuffer：线程安全的</code></pre><blockquote>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version <span class="number">5.00</span></span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\OpenCmdHere]</span><br><span class="line">@=<span class="string">"在此处打开命令窗口"</span></span><br><span class="line"><span class="string">"Icon"</span>=<span class="string">"cmd.exe"</span></span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\OpenCmdHere\command]</span><br><span class="line">@=<span class="string">"cmd.exe /s /k pushd "</span>%V<span class="string">""</span></span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCmdHere]</span><br><span class="line">@=<span class="string">"在此处打开命令窗口"</span></span><br><span class="line"><span class="string">"Icon"</span>=<span class="string">"cmd.exe"</span></span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCmdHere\command]</span><br><span class="line">@=<span class="string">"cmd.exe /s /k pushd \"%V\""</span></span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Drive\shell\OpenCmdHere]</span><br><span class="line">@=<span class="string">"在此处打开命令窗口"</span></span><br><span class="line"><span class="string">"Icon"</span>=<span class="string">"cmd.exe"</span></span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Drive\shell\OpenCmdHere\command]</span><br><span class="line">@=<span class="string">"cmd.exe /s /k pushd \"%V\""</span></span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\LibraryFolder\<span class="built_in">background</span>\shell\OpenCmdHere]</span><br><span class="line">@=<span class="string">"在此处打开命令窗口"</span></span><br><span class="line"><span class="string">"Icon"</span>=<span class="string">"cmd.exe"</span></span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\LibraryFolder\<span class="built_in">background</span>\shell\OpenCmdHere\command]</span><br><span class="line">@=<span class="string">"cmd.exe /s /k pushd \"%V\""</span></span><br></pre></td></tr></table></figure>
 <p>第三步：更改文件后缀名为reg，弹出的提示点确认。<br>第四步：双击OpenCmdHere.reg文件运行，</p>
 ]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
       <tags>
         <tag>电脑知识</tag>
       </tags>
@@ -1904,6 +1994,9 @@ StringBuffer：线程安全的</code></pre><blockquote>
 <li>DELETE：删除；<br><strong>若为springboot项目直接在type中写对应的类型就好,如：delete,put等,都给我们自动配置好了，只要对应后端相应的mapping.</strong></li>
 </ul>
 ]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
       <tags>
         <tag>前端</tag>
         <tag>layui</tag>
@@ -1926,6 +2019,9 @@ StringBuffer：线程安全的</code></pre><blockquote>
 <li><a href="https://blog.csdn.net/VictorStephen/article/details/80280270" target="_blank" rel="noopener">https://blog.csdn.net/VictorStephen/article/details/80280270</a></li>
 </ul>
 ]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
       <tags>
         <tag>idea</tag>
       </tags>
@@ -1980,9 +2076,9 @@ dao层接口方法</li>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 将用户输入的信息添加到个人中心的我的主页</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> userDetailId用户表id</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> userId用户明细表</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> UserDetail用户详情表对象</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function">UserDetail <span class="title">addMyHomepage</span><span class="params">(<span class="keyword">int</span> userDetailId, UserDetail userId)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 修改密码的方法</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> oldPassword</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> password</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> userId      用户表的id</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 是否修改成功</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">updatePwd</span><span class="params">(String oldPassword, String password, <span class="keyword">int</span> userId)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 根据用户表id查找明细表</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> userOfId</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> UserDetail</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function">UserDetail <span class="title">selectUserDetailByUId</span><span class="params">(<span class="keyword">int</span> userOfId)</span></span>;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
-      <tags>
-        <tag>项目</tag>
-      </tags>
+      <categories>
+        <category>项目</category>
+      </categories>
   </entry>
   <entry>
     <title>Markdown 示范</title>

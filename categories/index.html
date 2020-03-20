@@ -6,6 +6,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="baidu-site-verification" content="JAFHu5il3e" />
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <title>
     分类 |  Blue
   </title>
@@ -37,7 +38,7 @@
       <section class="outer">
   
     <h1 class="page-type-title">Categories</h1>
-    <!-- <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/idea/">idea</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue%E5%AE%9E%E6%88%98/">Vue实战</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE/">项目</a></li></ul> -->
+    <!-- <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue%E5%AE%9E%E6%88%98/">Vue实战</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE/">项目</a></li></ul> -->
     <ul class="category-list">
       
          
@@ -51,7 +52,15 @@
          
           <a class="category-list-link" href="/categories/Java/" title="Java">
             <li class="category-list-item">
-            Java<i>3</i>
+            Java<i>10</i>
+            </li>
+          </a>
+        
+      
+         
+          <a class="category-list-link" href="/categories/Linux/" title="Linux">
+            <li class="category-list-item">
+            Linux<i>2</i>
             </li>
           </a>
         
@@ -65,17 +74,9 @@
         
       
          
-          <a class="category-list-link" href="/categories/Java/idea/" title="idea">
-            <li class="category-list-item">
-            idea<i>2</i>
-            </li>
-          </a>
-        
-      
-         
           <a class="category-list-link" href="/categories/vue/" title="vue">
             <li class="category-list-item">
-            vue<i>2</i>
+            vue<i>3</i>
             </li>
           </a>
         
@@ -83,7 +84,7 @@
          
           <a class="category-list-link" href="/categories/前端/" title="前端">
             <li class="category-list-item">
-            前端<i>7</i>
+            前端<i>10</i>
             </li>
           </a>
         
@@ -107,7 +108,7 @@
          
           <a class="category-list-link" href="/categories/日常/" title="日常">
             <li class="category-list-item">
-            日常<i>4</i>
+            日常<i>6</i>
             </li>
           </a>
         
@@ -115,7 +116,7 @@
          
           <a class="category-list-link" href="/categories/项目/" title="项目">
             <li class="category-list-item">
-            项目<i>1</i>
+            项目<i>2</i>
             </li>
           </a>
         
@@ -130,7 +131,11 @@
         &copy;
         2020
         Liu Yang
-        &nbsp|&nbsp<a href="http://www.beian.miit.gov.cn/" target="_blank" rel="noopener" style="text-decoration: none;">湘ICP备20003709号</a>
+        &nbsp
+        <span class="with-love">
+          <i class="fa fa-heart" id="hearts"></i>
+        </span>
+        &nbsp<a href="http://www.beian.miit.gov.cn/" target="_blank" rel="noopener" style="text-decoration: none;">湘ICP备20003709号</a>
       </li>
       <div id="days"></div>
       </script>
@@ -166,20 +171,6 @@
           return i;
         }
         show_date_time();
-      </script>
-      <!-- 主动推送到百度 -->
-      <script>
-        (function () {
-          var bp = document.createElement('script');
-          var curProtocol = window.location.protocol.split(':')[0];
-          if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-          } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-          }
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(bp, s);
-        })();
       </script>
       <!-- 图片单击效果 -->
       <script>

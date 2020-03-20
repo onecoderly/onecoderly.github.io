@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coderblue.cn/"/>
-  <updated>2020-03-17T10:28:07.420Z</updated>
+  <updated>2020-03-20T07:15:02.588Z</updated>
   <id>http://coderblue.cn/</id>
   
   <author>
@@ -17,11 +17,67 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>java复制List集合</title>
+    <link href="http://coderblue.cn/3522599201/"/>
+    <id>http://coderblue.cn/3522599201/</id>
+    <published>2020-03-20T07:04:08.000Z</published>
+    <updated>2020-03-20T07:15:02.588Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt; JDK貌似没有自带的复制List集合的方法，因此，复制方法需要自己去实现。下面介绍两种简单实用的复制List集合的方法。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;方法1&lt;/strong&gt;、创建新的ArrayList集合时复制&lt;/p&gt;
+&lt;figure
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://coderblue.cn/categories/Java/"/>
+    
+    
+      <category term="java" scheme="http://coderblue.cn/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Lombok，真香</title>
+    <link href="http://coderblue.cn/3812686146/"/>
+    <id>http://coderblue.cn/3812686146/</id>
+    <published>2020-03-20T06:40:47.000Z</published>
+    <updated>2020-03-20T07:15:02.584Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Lombok到底是什么？&quot;&gt;&lt;a href=&quot;#Lombok到底是什么？&quot; class=&quot;headerlink&quot; title=&quot;Lombok到底是什么？&quot;&gt;&lt;/a&gt;Lombok到底是什么？&lt;/h2&gt;&lt;p&gt;先看一下它的官网&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://coderblue.cn/categories/Java/"/>
+    
+    
+      <category term="Lombok" scheme="http://coderblue.cn/tags/Lombok/"/>
+    
+  </entry>
+  
+  <entry>
     <title>vue自定义格式规范</title>
     <link href="http://coderblue.cn/1577044944/"/>
     <id>http://coderblue.cn/1577044944/</id>
     <published>2020-03-17T10:22:14.000Z</published>
-    <updated>2020-03-17T10:28:07.420Z</updated>
+    <updated>2020-03-20T07:14:53.868Z</updated>
     
     <summary type="html">
     
@@ -37,6 +93,8 @@
     </summary>
     
     
+      <category term="vue" scheme="http://coderblue.cn/categories/vue/"/>
+    
     
       <category term="Vue" scheme="http://coderblue.cn/tags/Vue/"/>
     
@@ -47,7 +105,7 @@
     <link href="http://coderblue.cn/1683247188/"/>
     <id>http://coderblue.cn/1683247188/</id>
     <published>2020-03-17T10:02:16.000Z</published>
-    <updated>2020-03-17T10:28:07.419Z</updated>
+    <updated>2020-03-20T07:14:15.441Z</updated>
     
     <summary type="html">
     
@@ -56,6 +114,8 @@
     
     </summary>
     
+    
+      <category term="日常" scheme="http://coderblue.cn/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
       <category term="日常" scheme="http://coderblue.cn/tags/%E6%97%A5%E5%B8%B8/"/>
@@ -67,7 +127,7 @@
     <link href="http://coderblue.cn/1333150612/"/>
     <id>http://coderblue.cn/1333150612/</id>
     <published>2020-03-17T10:01:35.000Z</published>
-    <updated>2020-03-17T10:28:07.421Z</updated>
+    <updated>2020-03-20T07:06:58.801Z</updated>
     
     <summary type="html">
     
@@ -76,6 +136,8 @@
     
     </summary>
     
+    
+      <category term="Linux" scheme="http://coderblue.cn/categories/Linux/"/>
     
     
       <category term="宝塔" scheme="http://coderblue.cn/tags/%E5%AE%9D%E5%A1%94/"/>
@@ -87,7 +149,7 @@
     <link href="http://coderblue.cn/635086367/"/>
     <id>http://coderblue.cn/635086367/</id>
     <published>2020-03-16T12:16:39.000Z</published>
-    <updated>2020-03-16T12:48:24.207Z</updated>
+    <updated>2020-03-20T07:08:38.350Z</updated>
     
     <summary type="html">
     
@@ -95,6 +157,8 @@
     
     </summary>
     
+    
+      <category term="Java" scheme="http://coderblue.cn/categories/Java/"/>
     
     
   </entry>
@@ -104,7 +168,7 @@
     <link href="http://coderblue.cn/618161222/"/>
     <id>http://coderblue.cn/618161222/</id>
     <published>2020-03-16T12:12:43.000Z</published>
-    <updated>2020-03-16T12:51:43.430Z</updated>
+    <updated>2020-03-20T07:08:16.836Z</updated>
     
     <summary type="html">
     
@@ -113,6 +177,8 @@
     
     </summary>
     
+    
+      <category term="Java" scheme="http://coderblue.cn/categories/Java/"/>
     
     
       <category term="前后端交互" scheme="http://coderblue.cn/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92/"/>
@@ -124,7 +190,7 @@
     <link href="http://coderblue.cn/1323035427/"/>
     <id>http://coderblue.cn/1323035427/</id>
     <published>2020-03-16T12:01:33.000Z</published>
-    <updated>2020-03-16T12:48:24.204Z</updated>
+    <updated>2020-03-20T07:10:10.551Z</updated>
     
     <summary type="html">
     
@@ -132,6 +198,8 @@
     
     </summary>
     
+    
+      <category term="前端" scheme="http://coderblue.cn/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
       <category term="前端" scheme="http://coderblue.cn/tags/%E5%89%8D%E7%AB%AF/"/>
@@ -145,7 +213,7 @@
     <link href="http://coderblue.cn/245703536/"/>
     <id>http://coderblue.cn/245703536/</id>
     <published>2020-03-16T11:23:01.000Z</published>
-    <updated>2020-03-18T09:29:29.960Z</updated>
+    <updated>2020-03-20T07:07:24.148Z</updated>
     
     <summary type="html">
     
@@ -153,6 +221,8 @@
     
     </summary>
     
+    
+      <category term="Linux" scheme="http://coderblue.cn/categories/Linux/"/>
     
     
       <category term="Linux" scheme="http://coderblue.cn/tags/Linux/"/>
@@ -252,7 +322,7 @@
     <link href="http://coderblue.cn/3632852599/"/>
     <id>http://coderblue.cn/3632852599/</id>
     <published>2020-03-06T01:47:25.000Z</published>
-    <updated>2020-03-06T02:31:31.060Z</updated>
+    <updated>2020-03-20T07:08:07.041Z</updated>
     
     <summary type="html">
     
@@ -342,7 +412,7 @@
     <link href="http://coderblue.cn/1111146142/"/>
     <id>http://coderblue.cn/1111146142/</id>
     <published>2020-02-28T02:49:13.000Z</published>
-    <updated>2020-03-19T05:21:59.341Z</updated>
+    <updated>2020-03-20T07:11:32.607Z</updated>
     
     <summary type="html">
     
@@ -396,52 +466,6 @@
     
     
       <category term="随笔" scheme="http://coderblue.cn/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>电脑强制删除文件</title>
-    <link href="http://coderblue.cn/2305721189/"/>
-    <id>http://coderblue.cn/2305721189/</id>
-    <published>2020-02-25T16:31:03.000Z</published>
-    <updated>2020-03-02T03:42:32.423Z</updated>
-    
-    <summary type="html">
-    
-      &lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="日常" scheme="http://coderblue.cn/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="电脑知识" scheme="http://coderblue.cn/tags/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot+Vue前后端分离简易开发</title>
-    <link href="http://coderblue.cn/483040631/"/>
-    <id>http://coderblue.cn/483040631/</id>
-    <published>2020-02-21T07:16:36.000Z</published>
-    <updated>2020-03-06T02:44:46.002Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文主要是学习于B站的Spring Boot+Vue前后端分离开发，技术主要采用Springboot + Vue + Element Ui，来完成基本的数据表格操作。&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Vue实战" scheme="http://coderblue.cn/categories/Vue%E5%AE%9E%E6%88%98/"/>
-    
-    
-      <category term="Element Ui" scheme="http://coderblue.cn/tags/Element-Ui/"/>
-    
-      <category term="Vue" scheme="http://coderblue.cn/tags/Vue/"/>
-    
-      <category term="Springboot" scheme="http://coderblue.cn/tags/Springboot/"/>
     
   </entry>
   
