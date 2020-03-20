@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://coderblue.cn/about/index.html</loc>
+    
+    <lastmod>2020-03-20T07:26:56.962Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://coderblue.cn/project/index.html</loc>
     
     <lastmod>2020-03-20T07:23:15.235Z</lastmod>
