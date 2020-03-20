@@ -281,17 +281,62 @@
 <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 
 <script>
+
+  function IsPC() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = ["Android", "iPhone",
+                "SymbianOS", "Windows Phone",
+                "iPad", "iPod"];
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = false;
+            break;
+        }
+    }
+    return flag;
+}
+ 
+var flag = IsPC();
+
   $(".isShow").hide();
   $(".img-circle").hover(function(e) {
     // 给图片的父级元素赋予class
-    $(e.target).parent().parent().addClass('showP')
+    $(e.target).parent().addClass('showP')
   })
   $(".img-circle").mouseleave(function(e) {
-    $(e.target).parent().parent().removeClass('showP')
+    console.log(flag)
+    if(flag === false) {
+        // 手机端
+        setTimeout(function() {
+          $(e.target).parent().removeClass('showP')
+      }, 1000)
+      return
+    } else {
+      $(e.target).parent().removeClass('showP')
+    }
   })
 </script>
 
 <style>
+/* 优化侧边栏显示 */
+.navbar-toggle {
+  display: block;
+  position: absolute;
+  top: 1.5rem;
+  left: 9.5rem;
+  border: none;
+  height: 4rem;
+  width: 4rem;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.5;
+
+}
 .declare {
   display: none;
 }
