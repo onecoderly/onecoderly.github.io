@@ -1,6 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>网站配置https</title>
+    <url>/2153166023/</url>
+    <content><![CDATA[<br>
+<a id="more"></a>
+通过阿里云的云盾获得ssl证书
+![](https://raw.githubusercontent.com/onecoderly/blog_file/master/images/ssl.png)
+
+<p>一直下一步就好，配置txt记录值验证域名<br><img src="https://raw.githubusercontent.com/onecoderly/blog_file/master/images/sslyuming.png" alt=""><br><img src="https://raw.githubusercontent.com/onecoderly/blog_file/master/images/ssl2.png" alt=""></p>
+<p>下载ssl证书<br><img src="https://raw.githubusercontent.com/onecoderly/blog_file/master/images/sslnginx.png" alt=""></p>
+<p>解压已下载保存到本地的Nginx证书压缩包文件。<br>解压后的文件夹中有2个文件：</p>
+<ul>
+<li>证书文件：以.pem为后缀或文件类型。</li>
+<li>密钥文件：以.key为后缀或文件类型。<br><img src="https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/8400591851/p33690.png" alt=""></li>
+</ul>
+<p>登录您的Nginx服务器，在Nginx安装目录（默认Nginx安装目录为/usr/local/nginx/conf）下创建cert目录，并将下载的证书文件和密钥文件拷贝到cert目录中。</p>
+<blockquote>
+<p>说明 如果您在申请证书时选择手动创建CSR文件，请将对应的密钥文件放到cert目录中，并命名为domain name.key。</p>
+</blockquote>
+<p>Linux环境下，怎么确定Nginx是以那个config文件启动的？<br>输入命令行： </p>
+<blockquote>
+<p>ps  -ef | grep nginx<br><img src="https://raw.githubusercontent.com/onecoderly/blog_file/master/images/nginx.png" alt=""></p>
+</blockquote>
+<p>修改Nginx安装目录nginx.conf文件。<br>找到以下配置信息：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"># 以下属性中以ssl开头的属性代表与证书配置有关，其他属性请根据自己的需要进行配置。</span><br><span class="line">server &#123;</span><br><span class="line">listen 443 ssl;   #SSL协议访问端口号为443。此处如未添加ssl，可能会造成Nginx无法启动。</span><br><span class="line">server_name localhost;  #将localhost修改为您证书绑定的域名，例如：www.example.com。</span><br><span class="line">root html;</span><br><span class="line">index index.html index.htm;</span><br><span class="line">ssl_certificate cert/domain name.pem;   #将domain name.pem替换成您证书的文件名。</span><br><span class="line">ssl_certificate_key cert/domain name.key;   #将domain name.key替换成您证书的密钥文件名。</span><br><span class="line">ssl_session_timeout 5m;</span><br><span class="line">ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;  #使用此加密套件。</span><br><span class="line">ssl_protocols TLSv1 TLSv1.1 TLSv1.2;   #使用该协议进行配置。</span><br><span class="line">ssl_prefer_server_ciphers on;   </span><br><span class="line">location / &#123;</span><br><span class="line">root html;   #站点目录。</span><br><span class="line">index index.html index.htm;   </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>保存nginx.conf文件后退出。</p>
+<blockquote>
+<p>nginx -s stop<br>systemctl enable nginx //添加系统自启动,以前开启过就不需要了<br>systemctl start nginx //启动服务<br>查看网页就会有：<br><img src="https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/8400591851/p70468.png" alt=""><br>成功</p>
+</blockquote>
+<p><strong>可选：</strong> 设置HTTP请求自动跳转HTTPS。<br>在需要跳转的HTTP站点下添加以下rewrite语句，实现HTTP访问自动跳转到HTTPS页面。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line"> listen 80;</span><br><span class="line"> server_name localhost;   #将localhost修改为您证书绑定的域名，例如：www.example.com。</span><br><span class="line"> rewrite ^(.*)$ https://$host$1 permanent;   #将所有http请求通过rewrite重定向到https。</span><br><span class="line"> location / &#123;</span><br><span class="line">index index.html index.htm;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>自己的配置：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"># For more information on configuration, see:</span><br><span class="line">#   * Official English Documentation: http://nginx.org/en/docs/</span><br><span class="line">#   * Official Russian Documentation: http://nginx.org/ru/docs/</span><br><span class="line"></span><br><span class="line">user root;</span><br><span class="line">worker_processes auto;</span><br><span class="line">error_log /var/log/nginx/error.log;</span><br><span class="line">pid /run/nginx.pid;</span><br><span class="line"></span><br><span class="line"># Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.</span><br><span class="line">include /usr/share/nginx/modules/*.conf;</span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections 1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '</span><br><span class="line">                      '$status $body_bytes_sent "$http_referer" '</span><br><span class="line">                      '"$http_user_agent" "$http_x_forwarded_for"';</span><br><span class="line"></span><br><span class="line">    access_log  /var/log/nginx/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile            on;</span><br><span class="line">    tcp_nopush          on;</span><br><span class="line">    tcp_nodelay         on;</span><br><span class="line">    keepalive_timeout   65;</span><br><span class="line">    types_hash_max_size 2048;</span><br><span class="line"></span><br><span class="line">    include             /etc/nginx/mime.types;</span><br><span class="line">    default_type        application/octet-stream;</span><br><span class="line"></span><br><span class="line">    # Load modular configuration files from the /etc/nginx/conf.d directory.</span><br><span class="line">    # See http://nginx.org/en/docs/ngx_core_module.html#include</span><br><span class="line">    # for more information.</span><br><span class="line">    include /etc/nginx/conf.d/*.conf;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80 default_server;</span><br><span class="line">        listen       [::]:80 default_server;</span><br><span class="line">        server_name  corderblue;</span><br><span class="line">		rewrite ^(.*)$ https://$host$1 permanent;   #将所有http请求通过rewrite重定向到https。</span><br><span class="line">        root         /home/git/projects/blog;</span><br><span class="line"></span><br><span class="line">        # Load configuration files for the default server block.</span><br><span class="line">        include /etc/nginx/default.d/*.conf;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        error_page 404 /404.html;</span><br><span class="line">            location = /40x.html &#123;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        error_page 500 502 503 504 /50x.html;</span><br><span class="line">            location = /50x.html &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"># Settings for a TLS enabled server.</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       443 ssl http2 default_server;</span><br><span class="line">        listen       [::]:443 ssl http2 default_server;</span><br><span class="line">        server_name  coderblue.cn;</span><br><span class="line">        root         /usr/share/nginx/html;</span><br><span class="line"></span><br><span class="line">        ssl_certificate "conf.d/cert/3637196_coderblue.cn.pem";</span><br><span class="line">        ssl_certificate_key "conf.d/cert/3637196_coderblue.cn.key";</span><br><span class="line">        ssl_session_cache shared:SSL:1m;</span><br><span class="line">        ssl_session_timeout  10m;</span><br><span class="line">#        ssl_ciphers PROFILE=SYSTEM;</span><br><span class="line">		ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;  #使用此加密套件。</span><br><span class="line">		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;   #使用该协议进行配置。</span><br><span class="line">		ssl_prefer_server_ciphers on;</span><br><span class="line">		</span><br><span class="line">        # Load configuration files for the default server block.</span><br><span class="line">        include /etc/nginx/default.d/*.conf;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">		root /home/git/projects/blog;</span><br><span class="line">		index index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        error_page 404 /404.html;</span><br><span class="line">            location = /40x.html &#123;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        error_page 500 502 503 504 /50x.html;</span><br><span class="line">            location = /50x.html &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GitHub+PicGo搭建图床</title>
+    <url>/431037062/</url>
+    <content><![CDATA[<br>
+<a id="more"></a>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>图床是干什么的？</p>
+<p>图床就是一个便于在博文中插入在线图片连接的个人图片仓库。设置图床之后，在自己博客中插入的图片链接就可以随时随地在线预览了，并且不会因为任何意外原因无法查看，除非自己亲自删除。</p>
+<h2 id="下载及安装"><a href="#下载及安装" class="headerlink" title="下载及安装"></a>下载及安装</h2><p>下载安装包 picgo,截止本文发布前的最新发布版本为v2.2.2，然后日常软件安装步骤，没有什么多余的选项，自行安装完成即可，<a href="https://github.com/Molunerfinn/PicGo/tags" target="_blank" rel="noopener">附赠下载地址</a></p>
+<h2 id="创建Github仓库"><a href="#创建Github仓库" class="headerlink" title="创建Github仓库"></a>创建Github仓库</h2><blockquote>
+<p>这里建议创建为公开仓库，因为创建为私有仓库的话在博客引用图片链接时可能会因为权限问题显示不出来</p>
+</blockquote>
+<ol>
+<li>创建完成后，点击右上角的个人头像出现下拉菜单，然后点倒数第二项 设置（英文版为 Setting）</li>
+<li>点左侧菜单的最后一个 Developer setting</li>
+<li>点左侧菜单的最后一个 Personal access tokens，然后点击在右侧有一个 Generate new token 的按钮</li>
+<li>选择 repo，</li>
+<li>拉到最下面点击绿色的按钮 Generate token, 之后会生成一个 token 码 </li>
+<li>token 只显示一次！所以可以先把他复制保存的其他地方</li>
+</ol>
+<h2 id="创建版本"><a href="#创建版本" class="headerlink" title="创建版本"></a>创建版本</h2><p>发布版本使用于大的更新，我们可以添加一个新的发布版本，添加发布版本之后新使用该库的用户可以收到版本更新信息。</p>
+<p>点击“releases”、然后点击“create a new release”新建一个发布版本，发布新版本之后当前的所有文件都属于该版本。<br><img src="https://raw.githubusercontent.com/onecoderly/blog_file/master/images/githubbanben.png" alt=""><br><img src="https://raw.githubusercontent.com/onecoderly/blog_file/master/images/banben.png" alt=""></p>
+<h3 id="创建标签版本"><a href="#创建标签版本" class="headerlink" title="创建标签版本"></a>创建标签版本</h3><ol>
+<li>添加标签版本<blockquote>
+<p>git tag -a 版本号 -m ‘标签版本说明’<br>//标签版本说明不是必须的，可以简写为<br>git tag 版本号</p>
+</blockquote>
+</li>
+<li>创建标签后我们可以建标签同步到GitHub<blockquote>
+<p>git push origin 共享的版本号</p>
+</blockquote>
+</li>
+<li>删除标签版本<blockquote>
+<p>// 删除本地标签版本<br>git tag -d v1.0<br>// 删除GitHub上的标签版本<br>git push origin ：rsfs/tags/v1.0</p>
+</blockquote>
+</li>
+</ol>
+<p>注：删除本地标签版本不会导致和GitHub不一致的情况:</p>
+<blockquote>
+<p>git push origin :refs/tags/v1.0</p>
+</blockquote>
+<h2 id="PicGo设置"><a href="#PicGo设置" class="headerlink" title="PicGo设置"></a>PicGo设置</h2><p><img src="https://raw.githubusercontent.com/onecoderly/blog_file/master/images/pigco1.png" alt=""><br>当然也可以选择自定义域名</p>
+<p>搭建好了上传图片就会在仓库中<br><img src="https://raw.githubusercontent.com/onecoderly/blog_file/master/images/githubtuchuangya.png" alt=""></p>
+<p>注意：图片名不要使用中文</p>
+<p><a href="https://blog.csdn.net/nineya_com/article/details/103499880" target="_blank" rel="noopener">参考</a></p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>日常</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>java复制List集合</title>
     <url>/3522599201/</url>
     <content><![CDATA[<p> JDK貌似没有自带的复制List集合的方法，因此，复制方法需要自己去实现。下面介绍两种简单实用的复制List集合的方法。</p>
@@ -166,8 +259,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>JS</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>

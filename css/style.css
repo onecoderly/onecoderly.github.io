@@ -7862,6 +7862,25 @@ a.article-more-link:hover {
 .article-entry {
   padding: 0 10px;
 }
+/* 优化侧边栏显示 */
+.navbar-toggle {
+  display: block;
+  position: absolute;
+  top: 1.5rem;
+  left: 9.5rem;
+  border: none;
+  height: 4rem;
+  width: 4rem;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+  transition: all;
+  opacity: 0.5;
+}
 @-moz-keyframes heartsAnimate {
   0%, 100% {
     transform: scale(1);

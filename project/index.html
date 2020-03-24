@@ -6,6 +6,10 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="baidu-site-verification" content="JAFHu5il3e" />
+  <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <title>
     留言🍎 |  Blue
@@ -30,7 +34,6 @@
 </head>
 
 </html>
-
 
 <body>
   <div id="app">
@@ -65,9 +68,6 @@
       
       
 
-<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
 <!--我的项目 将col-md-6换成col-md-4就好 -->
 <div class="row">
   <span class="innerlinkcat">My Project 🍊</span>
@@ -95,8 +95,8 @@
 <span class="innerlinkcat">好丽友 🍎</span>
   <div class="col-sm-6 col-md-3">
     <div  title="我的博客">
-      <img src="http://coderblue.cn/images/blue.jpg" class="img-circle" alt="...">
-      <a href="http://coderblue.cn">
+      <img src="https://coderblue.cn/images/blue.jpg" class="img-circle" alt="...">
+      <a href="https://coderblue.cn">
           <p>Blue</p>
           <p class="isShow">代码是热爱，写到世界充满爱！</p>
       </a>
@@ -189,6 +189,15 @@
       </a>
     </div>
   </div>
+  <div class="col-sm-6 col-md-3 min-picture">
+    <div>
+      <img src="https://aqicdn.cc/wp-content/uploads/2017/04/avatar_user_1_1493388302-48x48.png" alt="..." class="img-circle">
+      <a href="https://icss.me/" target="_blank" rel="noopener">
+        <p>爱CSS</p>
+        <p class="isShow">每天多学一点知识，就少写一行代码</p>
+      </a>
+    </div>
+  </div>
   <!-- 后续添加 -->
 </div>
 
@@ -273,12 +282,10 @@
     <li>站点名称：Blue</li>
     <li>地址：coderblue.cn</li>
     <li>描述：代码是热爱，写到世界充满爱！</li>
-    <li>Logo地址：<a href="http://coderblue.cn/images/blue.jpg" target="_blank">http://coderblue.cn/images/blue.jpg</a>
+    <li>Logo地址：<a href="https://coderblue.cn/images/blue.jpg" target="_blank">https://coderblue.cn/images/blue.jpg</a>
     </li>
   </ol>
 </div>
-
-<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 
 <script>
 
@@ -305,7 +312,6 @@ var flag = IsPC();
     $(e.target).parent().addClass('showP')
   })
   $(".img-circle").mouseleave(function(e) {
-    console.log(flag)
     if(flag === false) {
         // 手机端
         setTimeout(function() {
@@ -319,24 +325,6 @@ var flag = IsPC();
 </script>
 
 <style>
-/* 优化侧边栏显示 */
-.navbar-toggle {
-  display: block;
-  position: absolute;
-  top: 1.5rem;
-  left: 9.5rem;
-  border: none;
-  height: 4rem;
-  width: 4rem;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  background-color: rgba(0,0,0,0.5);
-  color: #fff;
-  transition: all 0.3s ease-in-out;
-  opacity: 0.5;
-
-}
 .declare {
   display: none;
 }
@@ -503,6 +491,9 @@ ul.innerlinks_items {
 
 </style>
 <style>
+.min-picture  img{
+      height: 170px;
+    }
   div#vcomments-box {
     margin-left: 15px;
   }
@@ -510,6 +501,7 @@ ul.innerlinks_items {
     .col-sm-6.col-md-3 {
       width: 24% !important;
     }
+/* 上面适合小图 */
 	}
    @media (max-width: 500px){
     .col-sm-6.col-md-3 {
@@ -525,6 +517,14 @@ ul.innerlinks_items {
       max-width: 80%;
       margin-left: 10%;
     }
+    .min-picture {
+      position: relative;
+      top: -25px;
+    }
+    .min-picture img {
+      height: 66px;
+    }
+    /* 上面适合小图 */
 	}
   @media (max-width: 380px){
     .col-sm-6.col-md-3.adapt1 {
@@ -1084,7 +1084,7 @@ ul.innerlinks_items {
 
 
 
-<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+<!-- <script type="text/javascript" src="https://js.users.51.la/20544303.js"></script> -->
   </div>
   <!-- 代码块复制功能 -->
   <script type="text/javascript" src="//blueblog-1301047842.cos.ap-chengdu.myqcloud.com/js/src/clipboard.min.js"></script>

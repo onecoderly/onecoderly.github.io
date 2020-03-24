@@ -12,7 +12,7 @@
   <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <title>
-    Tag: ssm |  Blue
+    GitHub+PicGo搭建图床 |  Blue
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
 
@@ -39,55 +39,284 @@
   <div id="app">
     <main class="content">
       <section class="outer">
-  <article class="articles">
+  <article id="post-GitHub-PicGo搭建图床" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
     
-    
-    <h1 class="page-type-title">#&nbspssm</h1>
-    
-    
-  
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2020" class="archive-year">2020</a>
-    </div>
-    <div class="archives">
-      
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/3618772320/" class="archive-article-date">
-  <time datetime="2020-01-13T02:40:51.000Z" itemprop="datePublished">01/13</time>
-</a>
+    <header class="article-header">
        
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/3618772320/"
-    >ssm-crud项目</a
-  >
-</h2>
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  GitHub+PicGo搭建图床
+</h1>
   
 
     </header>
     
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/curd/" rel="tag">curd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssm/" rel="tag">ssm</a></li></ul>
 
     
-  </div>
-</article>
+    <div class="article-meta">
+      <!-- 博客指定样式修改 -->
       
+
+      <a href="/431037062/" class="article-date">
+  <time datetime="2020-03-21T04:46:29.000Z" itemprop="datePublished">2020-03-21</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">598字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">2分钟</span>
+        </span>
+    </span>
+</div>
+
       
     </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <br>
+<a id="more"></a>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>图床是干什么的？</p>
+<p>图床就是一个便于在博文中插入在线图片连接的个人图片仓库。设置图床之后，在自己博客中插入的图片链接就可以随时随地在线预览了，并且不会因为任何意外原因无法查看，除非自己亲自删除。</p>
+<h2 id="下载及安装"><a href="#下载及安装" class="headerlink" title="下载及安装"></a>下载及安装</h2><p>下载安装包 picgo,截止本文发布前的最新发布版本为v2.2.2，然后日常软件安装步骤，没有什么多余的选项，自行安装完成即可，<a href="https://github.com/Molunerfinn/PicGo/tags" target="_blank" rel="noopener">附赠下载地址</a></p>
+<h2 id="创建Github仓库"><a href="#创建Github仓库" class="headerlink" title="创建Github仓库"></a>创建Github仓库</h2><blockquote>
+<p>这里建议创建为公开仓库，因为创建为私有仓库的话在博客引用图片链接时可能会因为权限问题显示不出来</p>
+</blockquote>
+<ol>
+<li>创建完成后，点击右上角的个人头像出现下拉菜单，然后点倒数第二项 设置（英文版为 Setting）</li>
+<li>点左侧菜单的最后一个 Developer setting</li>
+<li>点左侧菜单的最后一个 Personal access tokens，然后点击在右侧有一个 Generate new token 的按钮</li>
+<li>选择 repo，</li>
+<li>拉到最下面点击绿色的按钮 Generate token, 之后会生成一个 token 码 </li>
+<li>token 只显示一次！所以可以先把他复制保存的其他地方</li>
+</ol>
+<h2 id="创建版本"><a href="#创建版本" class="headerlink" title="创建版本"></a>创建版本</h2><p>发布版本使用于大的更新，我们可以添加一个新的发布版本，添加发布版本之后新使用该库的用户可以收到版本更新信息。</p>
+<p>点击“releases”、然后点击“create a new release”新建一个发布版本，发布新版本之后当前的所有文件都属于该版本。<br><img src="https://raw.githubusercontent.com/onecoderly/blog_file/master/images/githubbanben.png" alt=""><br><img src="https://raw.githubusercontent.com/onecoderly/blog_file/master/images/banben.png" alt=""></p>
+<h3 id="创建标签版本"><a href="#创建标签版本" class="headerlink" title="创建标签版本"></a>创建标签版本</h3><ol>
+<li>添加标签版本<blockquote>
+<p>git tag -a 版本号 -m ‘标签版本说明’<br>//标签版本说明不是必须的，可以简写为<br>git tag 版本号</p>
+</blockquote>
+</li>
+<li>创建标签后我们可以建标签同步到GitHub<blockquote>
+<p>git push origin 共享的版本号</p>
+</blockquote>
+</li>
+<li>删除标签版本<blockquote>
+<p>// 删除本地标签版本<br>git tag -d v1.0<br>// 删除GitHub上的标签版本<br>git push origin ：rsfs/tags/v1.0</p>
+</blockquote>
+</li>
+</ol>
+<p>注：删除本地标签版本不会导致和GitHub不一致的情况:</p>
+<blockquote>
+<p>git push origin :refs/tags/v1.0</p>
+</blockquote>
+<h2 id="PicGo设置"><a href="#PicGo设置" class="headerlink" title="PicGo设置"></a>PicGo设置</h2><p><img src="https://raw.githubusercontent.com/onecoderly/blog_file/master/images/pigco1.png" alt=""><br>当然也可以选择自定义域名</p>
+<p>搭建好了上传图片就会在仓库中<br><img src="https://raw.githubusercontent.com/onecoderly/blog_file/master/images/githubtuchuangya.png" alt=""></p>
+<p>注意：图片名不要使用中文</p>
+<p><a href="https://blog.csdn.net/nineya_com/article/details/103499880" target="_blank" rel="noopener">参考</a></p>
+
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        打赏
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong s>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
+            target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+      
+      
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://coderblue.cn/431037062/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a></li></ul>
+
+
+    </footer>
+
   </div>
+
   
+  
+  <nav class="article-nav">
+    
+      <a href="/2153166023/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            网站配置https
+          
+        </div>
+      </a>
+    
+    
+      <a href="/3522599201/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">java复制List集合</div>
+      </a>
+    
+  </nav>
+
+
   
 
   
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: 'Y6sHmEuePRpPWDd5Yv45nEWL-MdYXbMMI',
+        app_key: 'hLz1Wo8jhbxGo5oQFQ59Gp6a',
+        path: window.location.pathname,
+        notify: 'true',
+        verify: 'false',
+        avatar: 'mp',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
 </section>
       <footer class="footer">
   <div class="outer">
@@ -355,6 +584,30 @@
 </script>
 
 
+
+
+<script src="//blueblog-1301047842.cos.ap-chengdu.myqcloud.com/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer:'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    onClick: (e) => {
+      $('.toc-link').removeClass('is-active-link');
+      $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+      $(e.target.hash).scrollIntoView();
+      return false;
+    }
+  });
+</script>
 
 
 <script>

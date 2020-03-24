@@ -12,7 +12,7 @@
   <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <title>
-    vue自定义格式规范 |  Blue
+    网站配置https |  Blue
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
 
@@ -39,7 +39,7 @@
   <div id="app">
     <main class="content">
       <section class="outer">
-  <article id="post-vue自定义格式规范" class="article article-type-post" itemscope
+  <article id="post-网站配置https" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -47,7 +47,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  vue自定义格式规范
+  网站配置https
 </h1>
   
 
@@ -59,12 +59,12 @@
       <!-- 博客指定样式修改 -->
       
 
-      <a href="/1577044944/" class="article-date">
-  <time datetime="2020-03-17T10:22:14.000Z" itemprop="datePublished">2020-03-17</time>
+      <a href="/2153166023/" class="article-date">
+  <time datetime="2020-03-21T12:01:51.000Z" itemprop="datePublished">2020-03-21</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/vue/">vue</a>
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
   </div>
 
       
@@ -74,7 +74,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">40字</span>
+            <span class="post-count">913字</span>
         </span>
     </span>
 
@@ -83,7 +83,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1分钟</span>
+            <span class="post-count">4分钟</span>
         </span>
     </span>
 </div>
@@ -108,9 +108,37 @@
       
 
       
-      <p>项目根目录下新建文件：<strong>.prettierrc</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123; </span><br><span class="line">  <span class="comment">// 函数后括号前没空格不报错</span></span><br><span class="line">  <span class="string">"semi"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="comment">// 双引号格式化成单引号</span></span><br><span class="line">  <span class="string">"singleQuote"</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      <br>
+<a id="more"></a>
+通过阿里云的云盾获得ssl证书
+![](https://raw.githubusercontent.com/onecoderly/blog_file/master/images/ssl.png)
 
+<p>一直下一步就好，配置txt记录值验证域名<br><img src="https://raw.githubusercontent.com/onecoderly/blog_file/master/images/sslyuming.png" alt=""><br><img src="https://raw.githubusercontent.com/onecoderly/blog_file/master/images/ssl2.png" alt=""></p>
+<p>下载ssl证书<br><img src="https://raw.githubusercontent.com/onecoderly/blog_file/master/images/sslnginx.png" alt=""></p>
+<p>解压已下载保存到本地的Nginx证书压缩包文件。<br>解压后的文件夹中有2个文件：</p>
+<ul>
+<li>证书文件：以.pem为后缀或文件类型。</li>
+<li>密钥文件：以.key为后缀或文件类型。<br><img src="https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/8400591851/p33690.png" alt=""></li>
+</ul>
+<p>登录您的Nginx服务器，在Nginx安装目录（默认Nginx安装目录为/usr/local/nginx/conf）下创建cert目录，并将下载的证书文件和密钥文件拷贝到cert目录中。</p>
+<blockquote>
+<p>说明 如果您在申请证书时选择手动创建CSR文件，请将对应的密钥文件放到cert目录中，并命名为domain name.key。</p>
+</blockquote>
+<p>Linux环境下，怎么确定Nginx是以那个config文件启动的？<br>输入命令行： </p>
+<blockquote>
+<p>ps  -ef | grep nginx<br><img src="https://raw.githubusercontent.com/onecoderly/blog_file/master/images/nginx.png" alt=""></p>
+</blockquote>
+<p>修改Nginx安装目录nginx.conf文件。<br>找到以下配置信息：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 以下属性中以ssl开头的属性代表与证书配置有关，其他属性请根据自己的需要进行配置。</span><br><span class="line">server &#123;</span><br><span class="line">listen 443 ssl;   #SSL协议访问端口号为443。此处如未添加ssl，可能会造成Nginx无法启动。</span><br><span class="line">server_name localhost;  #将localhost修改为您证书绑定的域名，例如：www.example.com。</span><br><span class="line">root html;</span><br><span class="line">index index.html index.htm;</span><br><span class="line">ssl_certificate cert/domain name.pem;   #将domain name.pem替换成您证书的文件名。</span><br><span class="line">ssl_certificate_key cert/domain name.key;   #将domain name.key替换成您证书的密钥文件名。</span><br><span class="line">ssl_session_timeout 5m;</span><br><span class="line">ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;  #使用此加密套件。</span><br><span class="line">ssl_protocols TLSv1 TLSv1.1 TLSv1.2;   #使用该协议进行配置。</span><br><span class="line">ssl_prefer_server_ciphers on;   </span><br><span class="line">location / &#123;</span><br><span class="line">root html;   #站点目录。</span><br><span class="line">index index.html index.htm;   </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>保存nginx.conf文件后退出。</p>
+<blockquote>
+<p>nginx -s stop<br>systemctl enable nginx //添加系统自启动,以前开启过就不需要了<br>systemctl start nginx //启动服务<br>查看网页就会有：<br><img src="https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/8400591851/p70468.png" alt=""><br>成功</p>
+</blockquote>
+<p><strong>可选：</strong> 设置HTTP请求自动跳转HTTPS。<br>在需要跳转的HTTP站点下添加以下rewrite语句，实现HTTP访问自动跳转到HTTPS页面。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line"> listen 80;</span><br><span class="line"> server_name localhost;   #将localhost修改为您证书绑定的域名，例如：www.example.com。</span><br><span class="line"> rewrite ^(.*)$ https://$host$1 permanent;   #将所有http请求通过rewrite重定向到https。</span><br><span class="line"> location / &#123;</span><br><span class="line">index index.html index.htm;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>自己的配置：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"># For more information on configuration, see:</span><br><span class="line">#   * Official English Documentation: http://nginx.org/en/docs/</span><br><span class="line">#   * Official Russian Documentation: http://nginx.org/ru/docs/</span><br><span class="line"></span><br><span class="line">user root;</span><br><span class="line">worker_processes auto;</span><br><span class="line">error_log /var/log/nginx/error.log;</span><br><span class="line">pid /run/nginx.pid;</span><br><span class="line"></span><br><span class="line"># Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.</span><br><span class="line">include /usr/share/nginx/modules/*.conf;</span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections 1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '</span><br><span class="line">                      '$status $body_bytes_sent "$http_referer" '</span><br><span class="line">                      '"$http_user_agent" "$http_x_forwarded_for"';</span><br><span class="line"></span><br><span class="line">    access_log  /var/log/nginx/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile            on;</span><br><span class="line">    tcp_nopush          on;</span><br><span class="line">    tcp_nodelay         on;</span><br><span class="line">    keepalive_timeout   65;</span><br><span class="line">    types_hash_max_size 2048;</span><br><span class="line"></span><br><span class="line">    include             /etc/nginx/mime.types;</span><br><span class="line">    default_type        application/octet-stream;</span><br><span class="line"></span><br><span class="line">    # Load modular configuration files from the /etc/nginx/conf.d directory.</span><br><span class="line">    # See http://nginx.org/en/docs/ngx_core_module.html#include</span><br><span class="line">    # for more information.</span><br><span class="line">    include /etc/nginx/conf.d/*.conf;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80 default_server;</span><br><span class="line">        listen       [::]:80 default_server;</span><br><span class="line">        server_name  corderblue;</span><br><span class="line">		rewrite ^(.*)$ https://$host$1 permanent;   #将所有http请求通过rewrite重定向到https。</span><br><span class="line">        root         /home/git/projects/blog;</span><br><span class="line"></span><br><span class="line">        # Load configuration files for the default server block.</span><br><span class="line">        include /etc/nginx/default.d/*.conf;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        error_page 404 /404.html;</span><br><span class="line">            location = /40x.html &#123;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        error_page 500 502 503 504 /50x.html;</span><br><span class="line">            location = /50x.html &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"># Settings for a TLS enabled server.</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       443 ssl http2 default_server;</span><br><span class="line">        listen       [::]:443 ssl http2 default_server;</span><br><span class="line">        server_name  coderblue.cn;</span><br><span class="line">        root         /usr/share/nginx/html;</span><br><span class="line"></span><br><span class="line">        ssl_certificate "conf.d/cert/3637196_coderblue.cn.pem";</span><br><span class="line">        ssl_certificate_key "conf.d/cert/3637196_coderblue.cn.key";</span><br><span class="line">        ssl_session_cache shared:SSL:1m;</span><br><span class="line">        ssl_session_timeout  10m;</span><br><span class="line">#        ssl_ciphers PROFILE=SYSTEM;</span><br><span class="line">		ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;  #使用此加密套件。</span><br><span class="line">		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;   #使用该协议进行配置。</span><br><span class="line">		ssl_prefer_server_ciphers on;</span><br><span class="line">		</span><br><span class="line">        # Load configuration files for the default server block.</span><br><span class="line">        include /etc/nginx/default.d/*.conf;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">		root /home/git/projects/blog;</span><br><span class="line">		index index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        error_page 404 /404.html;</span><br><span class="line">            location = /40x.html &#123;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        error_page 500 502 503 504 /50x.html;</span><br><span class="line">            location = /50x.html &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
       <!-- reward -->
       
@@ -179,14 +207,14 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://coderblue.cn/1577044944/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://coderblue.cn/2153166023/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
 
 
     </footer>
@@ -197,19 +225,10 @@
   
   <nav class="article-nav">
     
-      <a href="/3812686146/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            Lombok，真香
-          
-        </div>
-      </a>
     
-    
-      <a href="/1683247188/" class="article-nav-link">
+      <a href="/431037062/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">qq消息简易自动发送脚本</div>
+        <div class="article-nav-title">GitHub+PicGo搭建图床</div>
       </a>
     
   </nav>
