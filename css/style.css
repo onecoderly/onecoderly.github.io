@@ -7881,6 +7881,9 @@ a.article-more-link:hover {
   transition: all;
   opacity: 0.5;
 }
+body {
+  cursor: url("../images/fei2.png"), default !important;
+}
 @-moz-keyframes heartsAnimate {
   0%, 100% {
     transform: scale(1);
