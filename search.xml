@@ -242,8 +242,17 @@ eg：public static int count; //学生人数的累加</code></pre><p>意义：<b
 
 <p><img src="https://img-blog.csdnimg.cn/20200326222153187.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
 <ul>
-<li>final 关键字<br>继承关系最大弊端是破环封装：子类能访问父类的实现细节，而且可以通过方法覆盖的形式修改实现细节<br>含义：<strong>最终的，不可改变的</strong>，它可以修饰非抽象类，非抽象方法和变量。注意：<strong>构造方法不能使用 final 修饰，因为本身不能被继承，肯定是最终的。</strong><br><img src="https://img-blog.csdnimg.cn/20200326221143143.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></li>
-<li>super 关键字<br>当前对象的父类对象<br><img src="https://img-blog.csdnimg.cn/20200326221651793.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>因为通过无参构造器，我们就可以点出方法<br><img src="https://img-blog.csdnimg.cn/20200326221809570.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></li>
+<li><p>final 关键字<br>继承关系最大弊端是破环封装：子类能访问父类的实现细节，而且可以通过方法覆盖的形式修改实现细节<br>含义：<strong>最终的，不可改变的</strong>，它可以修饰非抽象类，非抽象方法和变量。注意：<strong>构造方法不能使用 final 修饰，因为本身不能被继承，肯定是最终的。</strong></p>
+<p>  final修饰的变量称为常量，这些变量只能赋值一次。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="keyword">int</span> i = <span class="number">20</span>;</span><br><span class="line">i = <span class="number">30</span>; <span class="comment">//赋值报错，final修饰的变量只能赋值一次</span></span><br></pre></td></tr></table></figure>
+<p>引用类型的变量值为对象地址值，地址值不能更改，但是地址内的对象属性值可以修改。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">final</span> Person p = <span class="keyword">new</span> Person();</span><br><span class="line">Person p2 = <span class="keyword">new</span> Person();</span><br><span class="line">p = p2; <span class="comment">//final修饰的变量p，所记录的地址值不能改变</span></span><br><span class="line">p.name = <span class="string">"小明"</span>;<span class="comment">//可以更改p对象中name属性值</span></span><br><span class="line"><span class="comment">//p不能为别的对象，而p对象中的name或age属性值可更改。</span></span><br></pre></td></tr></table></figure>
+<p>修饰成员变量，需要在创建对象前赋值，否则报错。(当没有显式赋值时，多个构造方法的均需要为其赋值。)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">  <span class="comment">//直接赋值</span></span><br><span class="line">  <span class="keyword">final</span> <span class="keyword">int</span> m = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//final修饰的成员变量，需要在创建对象前赋值，否则报错。</span></span><br><span class="line">  <span class="keyword">final</span> <span class="keyword">int</span> n;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Demo</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="comment">//可以在创建对象时所调用的构造方法中，为变量n赋值</span></span><br><span class="line">      n = <span class="number">2016</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200326221143143.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+</li>
+<li><p>super 关键字<br>当前对象的父类对象<br><img src="https://img-blog.csdnimg.cn/20200326221651793.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>因为通过无参构造器，我们就可以点出方法<br><img src="https://img-blog.csdnimg.cn/20200326221809570.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+</li>
 </ul>
 <h3 id="代码块"><a href="#代码块" class="headerlink" title="{ } 代码块"></a>{ } 代码块</h3><blockquote>
 <pre><code>执行时机：类加载之后，对象创建之前（对象创建一次就执行一次）</code></pre></blockquote>
@@ -298,10 +307,9 @@ eg：public static int count; //学生人数的累加</code></pre><p>意义：<b
 
 <h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>实现接口：</p>
 <blockquote>
-<p>[访问权限] interface 接口名称{</p>
+<p>[访问权限] interface 接口名称{<br>          //规范<br>    }</p>
 </blockquote>
-<pre><code>    //规范
-}</code></pre><p>注意：</p>
+<p>注意：</p>
 <ul>
 <li>一般来说会使用 I 开头 + 名称</li>
 <li>成员变量：<ul>
@@ -324,6 +332,11 @@ eg：public static int count; //学生人数的累加</code></pre><p>意义：<b
 </ul>
 <p>接口类与抽象类的区别：<br><img src="https://img-blog.csdnimg.cn/2020032711475549.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
 <p>接口的特点和接的继承：<br><img src="https://img-blog.csdnimg.cn/20200327114250537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+<h3 id="匿名对象"><a href="#匿名对象" class="headerlink" title="匿名对象"></a>匿名对象</h3><p>匿名对象是指创建对象时，只有创建对象的语句，却没有把对象地址值赋值给某个变量。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建一个普通对象</span></span><br><span class="line">Person p = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="comment">//创建一个匿名对象</span></span><br><span class="line"><span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>匿名对象的特点：<br>创建匿名对象直接使用，没有变量名。<br>new Person().eat() //eat方法被一个没有名字的Person对象调用了。</p>
+</blockquote>
 <h3 id="类与类之间的关系"><a href="#类与类之间的关系" class="headerlink" title="类与类之间的关系"></a>类与类之间的关系</h3><ul>
 <li>内部类</li>
 </ul>
@@ -391,8 +404,69 @@ eg：public static int count; //学生人数的累加</code></pre><p>意义：<b
 <p>原始型 | Byte |  short | int | long | float | double | char | boolean | void<br>:-: | :-: | :-: | :-: | :-:| :-: | :-:| :-: | :-:| :-: | :-:<br>包装类 | Byte | Short | Integer | Long | float | Double | Char | Boolean | Void</p>
 <h3 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h3><ul>
 <li>日期格式转String<br>SimpleDateFormat<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Date date= <span class="keyword">new</span> Date();</span><br><span class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br><span class="line">String str=sdf.format(date);</span><br></pre></td></tr></table></figure></li>
-<li>String转日期<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>); </span><br><span class="line">Date date = sdf.parse(str);</span><br></pre></td></tr></table></figure></li>
+<li>String转日期<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>); </span><br><span class="line">Date date = sdf.parse(str);</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
+<h3 id="集合框架类"><a href="#集合框架类" class="headerlink" title="集合框架类"></a>集合框架类</h3><h4 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h4><p>Collections：提供了对集合进行排序、遍历等多种算法实现，是一个类<br><img src="https://img-blog.csdnimg.cn/20200327202621319.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+<h4 id="List-接口"><a href="#List-接口" class="headerlink" title="List 接口"></a>List 接口</h4><p>List：有序的，可重复的</p>
+<ol>
+<li><p>ArrayList</p>
+<blockquote>
+<p>底层是数组实现的，数组没变，初始容量为10，(空间不够)创建新数组，复制原来的数组的值 ，增加新的值进去，变得是数组引用指向(指向了新的数组)</p>
+</blockquote>
+<ul>
+<li><p>特性：</p>
+<ul>
+<li>空间连续</li>
+<li>有序的</li>
+<li>数据可重复(只能存 引用型)</li>
+<li>对中间节点，查询快，但是做增删操作，效率低下。</li>
+</ul>
+</li>
+<li><p>优点：单链表，查询效率快<br><img src="https://img-blog.csdnimg.cn/20200327202501976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p>LinkedList</p>
+<blockquote>
+<p>底层是双向链表<br> 适合存储大量数据，</p>
+</blockquote>
+<ul>
+<li>优点：查询慢，但中间节点增删快，</li>
+</ul>
+</li>
+<li><p>Vector</p>
+<blockquote>
+<p>类似于ArrayList ，但较之于它，Vector是线程安全的</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="Set-接口"><a href="#Set-接口" class="headerlink" title="Set 接口"></a>Set 接口</h3><p><img src="https://img-blog.csdnimg.cn/20200327202927968.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+<h4 id="HashSet-：-底层是Hash表"><a href="#HashSet-：-底层是Hash表" class="headerlink" title="HashSet ： 底层是Hash表"></a>HashSet ： 底层是Hash表</h4><blockquote>
+<p>其底层 HashMap 实例的默认初始容量是 16，加载因子是 0.75。<br>无序集合、不能重复<br>相比set接口，HashSet 多了一个clone()方法。</p>
+</blockquote>
+<p>特点：</p>
+<ul>
+<li>不能保证元素的排列顺序，顺序有可能发生变化</li>
+<li>不是同步的</li>
+<li>集合元素可以是 null，但只能放入一个 null</li>
+</ul>
+<p>一般操作 HashSet 还是调用 Collection 的 add / remove 等方法进行操作</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HashSetTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//增加</span></span><br><span class="line">        Set&lt;String&gt; hashSet = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">        hashSet.add(<span class="string">"1"</span>);</span><br><span class="line">        hashSet.add(<span class="string">"2"</span>);</span><br><span class="line">        hashSet.add(<span class="string">"3"</span>);</span><br><span class="line">        hashSet.add(<span class="string">"4"</span>);</span><br><span class="line">        hashSet.add(<span class="string">"5"</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//删除</span></span><br><span class="line">        hashSet.remove(<span class="string">"1"</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//查询  无法获取某个元素</span></span><br><span class="line">        System.out.println(<span class="string">"是否包含1元素："</span> + hashSet.contains(<span class="string">"2"</span>));</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//迭代</span></span><br><span class="line">        Iterator&lt;String&gt; it = hashSet.iterator();</span><br><span class="line">        <span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">            System.out.print(it.next() + <span class="string">" "</span>);</span><br><span class="line">        &#125;        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当向 HashSet 结合中存入一个元素时，HashSet 会调用该对象的 hashCode() 方法来得到该对象的hashCode值，然后根据 hashCode值来决定该对象在 HashSet 中存储位置。根据这种方式可以看出，HashSet 的数据存取其实是通过哈希算法实现的，因为通过哈希算法可以极大的提高数据的读取速度。通过阅读 JDK 源码，我们知道 <strong>HashSet 是通过 HashMap 实现的，只不过是HashSet 的 value 上的值都是 null 而已</strong>。</p>
+<p>简单的说，<strong>HashSet 集合判断两个元素相等的标准是两个对象通过 equals() 方法比较相等，并且两个对象的hashCode() 方法返回值相等。</strong></p>
+<p>注意，如果要把一个对象放入 HashSet 中，<strong>重写该对象对应类的 equals() 方法，也应该重写其 hashCode() 方法</strong>。其规则是如果两个对 象通过equals方法比较返回true时，其hashCode也应该相同。另外，对象中用作equals比较标准的属性，都应该用来计算hashCode的值。</p>
+<h4 id="LinkedHashSet"><a href="#LinkedHashSet" class="headerlink" title="LinkedHashSet"></a>LinkedHashSet</h4><p>LinkedHashSet <strong>在迭代访问 Set 中的全部元素时，性能比 HashSet 好，但是插入时性能稍微逊色于HashSet</strong>（因为 HashSet 直接采用哈希算法，而 LinkedHashSet 还需要维护链表结构）。</p>
+<h4 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h4><p><strong>SortedSet 接口的唯一实现类</strong>，TreeSet 可以确保集合元素处于<strong>排序状态</strong>，这也是 TreeSet最大的特征之一。</p>
+<p>底层是最优二叉树<br><img src="https://img-blog.csdnimg.cn/20200327205126382.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+<h3 id="Map集合"><a href="#Map集合" class="headerlink" title="Map集合"></a>Map集合</h3><ul>
+<li>Map中的元素是两个对象，一个对象作为键，一个对象作为值。键不可以重复，但是值可以重复。</li>
+<li>Map存储元素使用put方法，Collection使用add方法<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Map学习体系：</span><br><span class="line"> ---| Map  接口    将键映射到值的对象。一个映射不能包含重复的键；每个键最多只能映射到一个值。</span><br><span class="line">                  ---| HashMap  采用哈希表实现，所以无序</span><br><span class="line">                  ---| TreeMap   可以对健进行排序</span><br><span class="line"></span><br><span class="line">---|Hashtable:</span><br><span class="line">底层是哈希表数据结构，线程是同步的，不可以存入null键，null值。</span><br><span class="line">效率较低，被HashMap 替代。</span><br><span class="line">---|HashMap:</span><br><span class="line">底层是哈希表数据结构，线程是不同步的，可以存入null键，null值。</span><br><span class="line">要保证键的唯一性，需要覆盖hashCode方法，和equals方法。</span><br><span class="line">---| LinkedHashMap：</span><br><span class="line">该子类基于哈希表又融入了链表。可以Map集合进行增删提高效率。</span><br><span class="line">---|TreeMap:</span><br><span class="line">底层是二叉树数据结构。可以对map集合中的键进行排序。需要使用Comparable或者Comparator 进行比较排序。return 0，来判断键的唯一性。</span><br></pre></td></tr></table></figure>
+<a href="https://blog.csdn.net/qq_33642117/article/details/52049764" target="_blank" rel="noopener">Map 进阶学习</a></li>
+</ul>
+<h3 id="File-类"><a href="#File-类" class="headerlink" title="File 类"></a>File 类</h3><p><a href="https://blog.csdn.net/gfd54gd5f46/article/details/54918168" target="_blank" rel="noopener">File 类</a></p>
+<h3 id="IO-流"><a href="#IO-流" class="headerlink" title="IO 流"></a>IO 流</h3><p><a href="https://blog.csdn.net/zhaoyanjun6/article/details/54292148" target="_blank" rel="noopener"> IO 流</a></p>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -739,8 +813,8 @@ eg：public static int count; //学生人数的累加</code></pre><p>意义：<b
         <category>前端</category>
       </categories>
       <tags>
-        <tag>JS</tag>
         <tag>前端</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>

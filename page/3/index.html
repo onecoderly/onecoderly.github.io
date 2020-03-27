@@ -30,6 +30,17 @@
 
   
 
+  <!-- 百度统计 -->
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?28a28ef220229ebef569476d22116e4f";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
 <link rel="alternate" href="/atom.xml" title="Blue" type="application/atom+xml">
 </head>
 
@@ -90,780 +101,6 @@
     
     
     
-    
-    <article id="post-flex布局" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/3828711617/"
-    >flex布局</a
-  >
-</h2>
- 
-<div class="article-topping">
-  <i class="ri-umbrella-line"></i>
-</div>
- 
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <!-- 博客指定样式修改 -->
-      
-      <span style="
-        color: rgb(125, 38, 205);
-        margin-right: 0.35em;
-        font-size: 13px;
-        position: relative;
-        bottom: 1px;
-        ">
-        <svg t="1582527489335" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-          p-id="2088" width="10" height="10">
-          <path
-            d="M730.08 448.01C733.96 189.9 526.33 72.98 512.4 65.38v-0.37l-0.39 0.18-0.36-0.18v0.37c-13.98 7.6-221.63 124.54-217.72 382.63-42.28 27.95-86.58 77.63-79.53 163.55 7.04 85.89 88.59 142.84 119.79 139.75 31.22-3.08 22.13-26.93 22.13-26.93l10.71-44.51s46.01 71.58 60.78 71.55c13.25-1.1 76.3-0.11 83.83 0h0.72c7.55-0.11 70.59-1.1 83.84 0 14.72 0 60.77-71.55 60.77-71.55l10.67 44.51s-9.05 23.85 22.16 26.93c31.22 3.09 112.76-53.86 119.8-139.75 7.05-85.89-37.24-135.6-79.52-163.55z m-218.07-3.79c-5.93-0.1-83.11-2.98-90.24-95.23 2.59-87.71 84.16-95.46 90.24-95.9 6.11 0.44 87.65 8.19 90.23 95.9-7.11 92.25-84.34 95.13-90.23 95.23z m-45.63 444.72c0 10.51-8.26 18.99-18.42 18.99-10.26-0.07-18.53-8.56-18.47-18.95v-93.86c0-10.48 8.27-19 18.47-19 10.16 0 18.42 8.51 18.42 19v93.86-0.04z m67.82 50.84c0.06 10.53-8.31 19.14-18.71 19.22-10.4-0.08-18.78-8.68-18.72-19.22V800.21c0-10.62 8.37-19.26 18.68-19.26 10.35 0 18.75 8.64 18.75 19.26v139.57z m62.4-72.89c0 10.47-8.26 18.96-18.46 18.96-10.24-0.1-18.48-8.58-18.42-18.96v-66.97c0-10.44 8.26-18.92 18.42-18.92 10.2 0 18.46 8.48 18.46 18.92v66.97z m0 0"
-            fill="#606060" p-id="2089"></path>
-        </svg>
-        置顶</span>
-      
-
-      <a href="/3828711617/" class="article-date">
-  <time datetime="2020-03-25T13:40:07.000Z" itemprop="datePublished">2020-03-25</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-  </div>
-
-      
-      
-<div class="word_count">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="ri-quill-pen-line"></i>
-            <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">2.1k字</span>
-        </span>
-    </span>
-
-    <span class="post-time">
-        &nbsp; | &nbsp;
-        <span class="post-meta-item-icon">
-            <i class="ri-book-open-line"></i>
-            <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">9分钟</span>
-        </span>
-    </span>
-</div>
-
-      
-    </div>
-    
-
-    
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-      <h2 id="开启flex布局"><a href="#开启flex布局" class="headerlink" title="开启flex布局"></a>开启flex布局</h2><ul>
-<li><p>display: flex</p>
-<blockquote>
-<p>成块状布局: 默认从主轴方向从main start 到main end，即从左上到右上</p>
-</blockquote>
-</li>
-<li><p>display: inline-flex</p>
-<blockquote>
-<p>  成行内布局  </p>
-</blockquote>
-</li>
-</ul>
-<h3 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h3><blockquote>
-<p>作用：决定主轴方向，默认row  ，从左到右<br>  row-reverse：将主轴方向反转，从右到左<br>  column: 将主轴方向改边成列<br>  column-reverse：将主轴方向改边成列且反转</p>
-</blockquote>
-<h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><blockquote>
-<p>作用：决定flex-items的对齐方式<br>center: 中间对齐<br>    start：起始方向<br>    space-between：左右边一个，其余间隔等分<br>    space-evenly: 等分<br>    space-around: 最左右边的边距是中间间隔边距的一半</p>
-</blockquote>
-<h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><blockquote>
-<p>normal: 在内容没有指定高度情况下，将会向下拉伸填充，效果与stretch一样<br>stretch：当flex items在cross axis方向的 size为auto时，会自动拉伸至填充flex container<br>flex-start: 从左上角开始<br>flex-end: 从左下角开始<br>center: 从中间开始<br>baseline: 与底部基线对齐</p>
-</blockquote>
-<h3 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h3><blockquote>
-<p>默认情况下的，都会在一行显示，放不下就会收缩的<br>nowrap: 默认属性<br>wrap：可换行，多行的<br>wrap-reverse: 在交叉轴上反转</p>
-</blockquote>
-<h3 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h3><blockquote>
-<p>缩写属性 -&gt; flex-direction || flex-wrap (可以多写属性)<br>row: 默认的，主轴方向，从左到右<br>row-reverse：与row相反    </p>
-</blockquote>
-<h3 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h3><blockquote>
-<p>作用：决定 多行的时候flex-items在交叉轴上的对齐方式，一般是垂直方向上的位置变化<br> 用法与justify-content相似<br>    stretch：默认值</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.item</span> &#123;</span></span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    text-align: center;</span><br><span class="line"><span class="css">    <span class="comment">/* 垂直居中 */</span></span></span><br><span class="line">    /* height: 100px;</span><br><span class="line">    line-height: 100px; */</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.item1</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#c4545c</span>;</span></span><br><span class="line"><span class="css">    <span class="comment">/* height: 60px; */</span></span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.item2</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#54c476</span>;</span></span><br><span class="line"><span class="css">    <span class="comment">/* height: 140px; */</span></span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.item3</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#9754c4</span>;</span></span><br><span class="line"><span class="css">    <span class="comment">/* height: 100px; */</span></span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.box</span> &#123;</span></span><br><span class="line">    width: 550px;</span><br><span class="line">    height: 400px;</span><br><span class="line">    background-color: orange;</span><br><span class="line">    /* </span><br><span class="line">    成块状布局: </span><br><span class="line">      默认从主轴方向从main start 到main end，即从左上到右上</span><br><span class="line">    */</span><br><span class="line">    display: flex;</span><br><span class="line"><span class="css">    <span class="comment">/* 成行内布局 */</span></span></span><br><span class="line"><span class="css">    <span class="comment">/* display: inline-flex; */</span></span></span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">    flex-direction: 决定主轴方向，默认row  ，从左到右</span><br><span class="line">    row-reverse：将主轴方向反转，从右到左</span><br><span class="line">    column: 将主轴方向改边成列</span><br><span class="line">    column-reverse：将主轴方向改边成列且反转</span><br><span class="line">    */</span><br><span class="line">    /* flex-direction: row;</span><br><span class="line">    flex-direction: row-reverse;</span><br><span class="line">    flex-direction: column;</span><br><span class="line">    flex-direction: column-reverse; */</span><br><span class="line"></span><br><span class="line">    /* justify-content：决定flex-items的对齐方式 </span><br><span class="line">    center: 中间对齐</span><br><span class="line">    start：起始方向</span><br><span class="line">    space-between：左右边一个，其余间隔等分</span><br><span class="line">    space-evenly: 等分</span><br><span class="line">    space-around: 最左右边的边距是中间间隔边距的一半</span><br><span class="line">    */</span><br><span class="line">    /* justify-content: center;</span><br><span class="line">    justify-content: start;</span><br><span class="line">    justify-content: space-between;</span><br><span class="line">    justify-content: space-around; */</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">    align-items：</span><br><span class="line">    normal: 在内容没有指定高度情况下，将会向下拉伸填充，效果与stretch一样</span><br><span class="line">    stretch：当flex items在cross axis方向的 size为auto时，会自动拉伸至填充flex container</span><br><span class="line">    flex-start: 从左上角开始</span><br><span class="line">    flex-end: 从左下角开始</span><br><span class="line">    center: 从中间开始</span><br><span class="line">    baseline: 与底部基线对齐</span><br><span class="line">    */</span><br><span class="line"><span class="css">    <span class="comment">/* align-items: flex-start; */</span></span></span><br><span class="line"></span><br><span class="line">    /* </span><br><span class="line">    flex-wrap：默认情况下的，都会在一行显示，放不下就会收缩的</span><br><span class="line">    nowrap: 默认属性</span><br><span class="line">    wrap：可换行，多行的</span><br><span class="line">    wrap-reverse: 在交叉轴上反转</span><br><span class="line">     */</span><br><span class="line"><span class="css">    <span class="comment">/* flex-wrap: wrap-reverse; */</span></span></span><br><span class="line"></span><br><span class="line">    /* </span><br><span class="line">    flex-flow: 缩写属性 -&gt; flex-direction || flex-wrap</span><br><span class="line">    可以多写属性</span><br><span class="line">    row: 默认的，主轴方向，从左到右</span><br><span class="line">    row-reverse：与row相反</span><br><span class="line">     */</span><br><span class="line">    flex-flow: row wrap;</span><br><span class="line"><span class="css">    <span class="comment">/* 让flex-items：同一行上间隔同等份 */</span></span></span><br><span class="line">    justify-content: space-evenly;</span><br><span class="line"></span><br><span class="line">    /* </span><br><span class="line">    align-content: 决定 多行的时候flex-items在交叉轴上的对齐方式，一般是垂直方向上的位置变化</span><br><span class="line">    用法与justify-content相似</span><br><span class="line">    stretch：默认值</span><br><span class="line">     */</span><br><span class="line">    align-content: stretch;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item item1"</span>&gt;</span>item1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item item2"</span>&gt;</span>item2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item item3"</span>&gt;</span>item3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 后续添加 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item item1"</span>&gt;</span>item4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item item2"</span>&gt;</span>item5<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item item1"</span>&gt;</span>item6<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item item2"</span>&gt;</span>item7<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item item3"</span>&gt;</span>item8<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item item1"</span>&gt;</span>item9<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">strong</span>&gt;</span>行内元素<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="作用于flex-items"><a href="#作用于flex-items" class="headerlink" title="作用于flex-items"></a>作用于flex-items</h2><h3 id="order：决定排布顺序，默认为0，值越小就月在前面，可以负数"><a href="#order：决定排布顺序，默认为0，值越小就月在前面，可以负数" class="headerlink" title="order：决定排布顺序，默认为0，值越小就月在前面，可以负数"></a>order：决定排布顺序，默认为0，值越小就月在前面，可以负数</h3><h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><blockquote>
-<p>作用：items可以通过 它 覆盖flex container设置的align-items<br>auto(默认值)：遵从 flex container的align-items设置<br>stretch、flex-start、flex-end、center、baseline、效果跟align-items一致</p>
-</blockquote>
-<h3 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h3><blockquote>
-<p>决定了 flex items如何扩展<br>可以设置任意非负数字，默认值为 0<br>……………………<br>当flex container在主轴方向上有剩余size时，flex-grow属性才会有效<br>如果所有flex items的flex-grow总和sum超过1，每个flex item扩展的size为：<br>flex container的剩余size * flex-grow/sum<br>=====================================<br>如果所有flex items的flex-grow总和不超过1，每个 flex item扩展的size为：<br>flex container的剩余 * flex-grow</p>
-</blockquote>
-<h3 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a>flex-shrink</h3><blockquote>
-<p>决定了 flex items如何收缩<br>可以设置任意非负数字，默认值为 1<br>=====================================<br>当felx items在主轴方向上超过了flex container的size时，flex-shrink属性才会有效<br>………………………………………<br>如果所有flex items的flex-shrink总和sum超过1，每个flex item收缩的size为：<br>flex items超出flex container的size * 收缩比例/所有flex items 的收缩比例之和<br>=====================================<br>如果所有flex items的flex-shrink总和不超过1，每个 flex item收缩的size为：<br>flex items超出flex container的size<em>size</em>sum<em>收缩比例/所有flex items的收缩比例之和<br>收缩比例=flex-shrink</em>flex item的base size<br>base size就是flex item放入 flex container之前的size<br>flex items收缩后的size不能小于min-width、min-height</p>
-</blockquote>
-<h3 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h3><blockquote>
-<p>用来设置flex items在主轴方向上的base size<br>auto默认展、具体的宽度数值（100px）<br>================================<br>决定flex items最终base size的因素，从优先级高到低<br>max-width\max-height\min-width\min-height<br>flex-basis<br>width\height<br>内容本身的size</p>
-</blockquote>
-<h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><blockquote>
-<h1 id="为：flex-grow-flex-shrink-flex-basis的简写"><a href="#为：flex-grow-flex-shrink-flex-basis的简写" class="headerlink" title="为：flex-grow || flex-shrink || flex-basis的简写"></a>为：flex-grow || flex-shrink || flex-basis的简写</h1><p>一个值flex-grow<br>两个值：flex-grow 无单位的代表flex-shrink/有 px单位代表flex-basis<br>三个值：flex-grow || flex-shrink || flex-basis</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.item</span> &#123;</span></span><br><span class="line">    width: 250px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    text-align: center;</span><br><span class="line"><span class="css">    <span class="comment">/* 垂直居中 */</span></span></span><br><span class="line">    /* height: 100px;</span><br><span class="line">    line-height: 100px; */</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.item1</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#c4545c</span>;</span></span><br><span class="line"><span class="css">    <span class="comment">/* flex-grow: 1; */</span></span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.item2</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#54c476</span>;</span></span><br><span class="line"><span class="css">    <span class="comment">/* order: -2; */</span></span></span><br><span class="line"><span class="css">    <span class="comment">/* flex-grow: 1; */</span></span></span><br><span class="line">    flex-basis: 100px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.item3</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#9754c4</span>;</span></span><br><span class="line"><span class="css">    <span class="comment">/* order: 99; */</span></span></span><br><span class="line"><span class="css">     <span class="comment">/* 作用于 flex-items的 */</span></span></span><br><span class="line">    /* </span><br><span class="line">    order：决定排布顺序，默认为0，值越小就月在前面，可以负数</span><br><span class="line">     */</span><br><span class="line"></span><br><span class="line">    /* </span><br><span class="line">    align-self: items可以通过 它 覆盖flex container设置的align-items</span><br><span class="line">    auto(默认值)：遵从 flex container的align-items设置</span><br><span class="line">    stretch、flex-start、flex-end、center、baseline、效果跟align-items一致</span><br><span class="line">     */</span><br><span class="line"><span class="css">    <span class="comment">/* align-self: flex-end; */</span></span></span><br><span class="line"></span><br><span class="line">    /* </span><br><span class="line">    flex-grow: 决定了 flex items如何扩展</span><br><span class="line">      可以设置任意非负数字，默认值为 0</span><br><span class="line">      当flex container在主轴方向上有剩余size时，flex-grow属性才会有效</span><br><span class="line">    如果所有flex items的flex-grow总和sum超过1，每个flex item扩展的size为</span><br><span class="line">      flex container的剩余size * flex-grow/sum</span><br><span class="line">    如果所有flex items的flex-grow总和不超过1，每个 flex item扩展的size为</span><br><span class="line">      flex container的剩余 * flex-grow</span><br><span class="line">     */</span><br><span class="line"><span class="css">    <span class="comment">/* flex-grow: 1; */</span></span></span><br><span class="line"></span><br><span class="line">    /* </span><br><span class="line">    flex-shrink: 决定了 flex items如何收缩</span><br><span class="line">      可以设置任意非负数字，默认值为 1</span><br><span class="line">      当felx items在主轴方向上超过了flex container的size时，flex-shrink属性才会有效</span><br><span class="line">    如果所有flex items的flex-shrink总和sum超过1，每个flex item收缩的size为</span><br><span class="line">      flex items超出flex container的size * 收缩比例/所有flex items 的收缩比例之和</span><br><span class="line">    如果所有flex items的flex-shrink总和不超过1，每个 flex item收缩的size为</span><br><span class="line">      flex items超出flex container的size*size*sum*收缩比例/所有flex items的收缩比例之和</span><br><span class="line">      收缩比例=flex-shrink*flex item的base size</span><br><span class="line">      base size就是flex item放入 flex container之前的size</span><br><span class="line">    flex items收缩后的size不能小于min-width、min-height</span><br><span class="line">     </span><br><span class="line">     */</span><br><span class="line"></span><br><span class="line">     /* </span><br><span class="line">     flex-basis：用来设置flex items在主轴方向上的base size </span><br><span class="line">     auto默认展、具体的宽度数值（100px）</span><br><span class="line"></span><br><span class="line">     决定flex items最终base size的因素，从优先级高到低</span><br><span class="line">      max-width\max-height\min-width\min-height</span><br><span class="line">      flex-basis</span><br><span class="line">      width\height</span><br><span class="line">      内容本身的size</span><br><span class="line">     */</span><br><span class="line"></span><br><span class="line">     /* </span><br><span class="line">     flex 时flex-grow || flex-shrink || flex-basis的简写，flex属性可以指定1个，2个或3个值</span><br><span class="line">      一个值flex-grow</span><br><span class="line">      两个值：flex-grow 无单位的代表flex-shrink/有 px单位代表flex-basis</span><br><span class="line">      三个值：flex-grow || flex-shrink || flex-basis</span><br><span class="line">      */</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.box</span> &#123;</span></span><br><span class="line">    width: 550px;</span><br><span class="line">    height: 400px;</span><br><span class="line">    background-color: orange;</span><br><span class="line">   </span><br><span class="line">    display: flex;</span><br><span class="line"></span><br><span class="line"><span class="css">    <span class="comment">/* align-items: center; */</span></span></span><br><span class="line">   </span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item item1"</span>&gt;</span>item1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item item2"</span>&gt;</span>item2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item item3"</span>&gt;</span>item3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">strong</span>&gt;</span>行内元素<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><a href="https://www.yuque.com/qirantianya/ofeuv8/uv2brc#1f9479b8" target="_blank" rel="noopener">另外分享一个不错的笔记总结，有空要去瞧瞧</a></p>
-
-      
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flex%E5%B8%83%E5%B1%80/" rel="tag">flex布局</a></li></ul>
-
-
-    </footer>
-
-  </div>
-
-  
-
-  
-  
-  
-
-  
-
-</article>
-    
-    <article id="post-java复制List集合" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/3522599201/"
-    >java复制List集合</a
-  >
-</h2>
- 
-<div class="article-topping">
-  <i class="ri-umbrella-line"></i>
-</div>
- 
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <!-- 博客指定样式修改 -->
-      
-      <span style="
-        color: rgb(125, 38, 205);
-        margin-right: 0.35em;
-        font-size: 13px;
-        position: relative;
-        bottom: 1px;
-        ">
-        <svg t="1582527489335" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-          p-id="2088" width="10" height="10">
-          <path
-            d="M730.08 448.01C733.96 189.9 526.33 72.98 512.4 65.38v-0.37l-0.39 0.18-0.36-0.18v0.37c-13.98 7.6-221.63 124.54-217.72 382.63-42.28 27.95-86.58 77.63-79.53 163.55 7.04 85.89 88.59 142.84 119.79 139.75 31.22-3.08 22.13-26.93 22.13-26.93l10.71-44.51s46.01 71.58 60.78 71.55c13.25-1.1 76.3-0.11 83.83 0h0.72c7.55-0.11 70.59-1.1 83.84 0 14.72 0 60.77-71.55 60.77-71.55l10.67 44.51s-9.05 23.85 22.16 26.93c31.22 3.09 112.76-53.86 119.8-139.75 7.05-85.89-37.24-135.6-79.52-163.55z m-218.07-3.79c-5.93-0.1-83.11-2.98-90.24-95.23 2.59-87.71 84.16-95.46 90.24-95.9 6.11 0.44 87.65 8.19 90.23 95.9-7.11 92.25-84.34 95.13-90.23 95.23z m-45.63 444.72c0 10.51-8.26 18.99-18.42 18.99-10.26-0.07-18.53-8.56-18.47-18.95v-93.86c0-10.48 8.27-19 18.47-19 10.16 0 18.42 8.51 18.42 19v93.86-0.04z m67.82 50.84c0.06 10.53-8.31 19.14-18.71 19.22-10.4-0.08-18.78-8.68-18.72-19.22V800.21c0-10.62 8.37-19.26 18.68-19.26 10.35 0 18.75 8.64 18.75 19.26v139.57z m62.4-72.89c0 10.47-8.26 18.96-18.46 18.96-10.24-0.1-18.48-8.58-18.42-18.96v-66.97c0-10.44 8.26-18.92 18.42-18.92 10.2 0 18.46 8.48 18.46 18.92v66.97z m0 0"
-            fill="#606060" p-id="2089"></path>
-        </svg>
-        置顶</span>
-      
-
-      <a href="/3522599201/" class="article-date">
-  <time datetime="2020-03-20T07:04:08.000Z" itemprop="datePublished">2020-03-20</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>
-  </div>
-
-      
-      
-<div class="word_count">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="ri-quill-pen-line"></i>
-            <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">233字</span>
-        </span>
-    </span>
-
-    <span class="post-time">
-        &nbsp; | &nbsp;
-        <span class="post-meta-item-icon">
-            <i class="ri-book-open-line"></i>
-            <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1分钟</span>
-        </span>
-    </span>
-</div>
-
-      
-    </div>
-    
-
-    
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-      <p> JDK貌似没有自带的复制List集合的方法，因此，复制方法需要自己去实现。下面介绍两种简单实用的复制List集合的方法。</p>
-<p><strong>方法1</strong>、创建新的ArrayList集合时复制</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">    list.add(<span class="string">"1"</span>);</span><br><span class="line">    list.add(<span class="string">"2"</span>);</span><br><span class="line">    list.add(<span class="string">"3"</span>);</span><br><span class="line">    list.add(<span class="string">"4"</span>);</span><br><span class="line">    list.add(<span class="string">"5"</span>);</span><br><span class="line">    List&lt;String&gt; newList = <span class="keyword">new</span> ArrayList&lt;String&gt;(list);</span><br><span class="line">    System.out.println(newList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果：[1, 2, 3, 4, 5]</p>
-<p><strong>方法2</strong>、创建新的ArrayList集合之后，使用addAll方法复制</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">    list.add(<span class="string">"1"</span>);</span><br><span class="line">    list.add(<span class="string">"2"</span>);</span><br><span class="line">    list.add(<span class="string">"3"</span>);</span><br><span class="line">    list.add(<span class="string">"4"</span>);</span><br><span class="line">    list.add(<span class="string">"5"</span>);</span><br><span class="line">    List&lt;String&gt; newList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">    newList.addAll(list);</span><br><span class="line">    System.out.println(newList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果：[1, 2, 3, 4, 5]<br>个人推荐使用方法1，因为少一行代码呀！而且，括号里的集合还可以是Set集合。</p>
-<p><a href="https://blog.csdn.net/u013020593/article/details/79043763" target="_blank" rel="noopener">参考链接：致谢</a></p>
-
-      
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
-
-
-    </footer>
-
-  </div>
-
-  
-
-  
-  
-  
-
-  
-
-</article>
-    
-    <article id="post-Lombok，真香" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/3812686146/"
-    >Lombok，真香</a
-  >
-</h2>
- 
-<div class="article-topping">
-  <i class="ri-umbrella-line"></i>
-</div>
- 
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <!-- 博客指定样式修改 -->
-      
-      <span style="
-        color: rgb(125, 38, 205);
-        margin-right: 0.35em;
-        font-size: 13px;
-        position: relative;
-        bottom: 1px;
-        ">
-        <svg t="1582527489335" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-          p-id="2088" width="10" height="10">
-          <path
-            d="M730.08 448.01C733.96 189.9 526.33 72.98 512.4 65.38v-0.37l-0.39 0.18-0.36-0.18v0.37c-13.98 7.6-221.63 124.54-217.72 382.63-42.28 27.95-86.58 77.63-79.53 163.55 7.04 85.89 88.59 142.84 119.79 139.75 31.22-3.08 22.13-26.93 22.13-26.93l10.71-44.51s46.01 71.58 60.78 71.55c13.25-1.1 76.3-0.11 83.83 0h0.72c7.55-0.11 70.59-1.1 83.84 0 14.72 0 60.77-71.55 60.77-71.55l10.67 44.51s-9.05 23.85 22.16 26.93c31.22 3.09 112.76-53.86 119.8-139.75 7.05-85.89-37.24-135.6-79.52-163.55z m-218.07-3.79c-5.93-0.1-83.11-2.98-90.24-95.23 2.59-87.71 84.16-95.46 90.24-95.9 6.11 0.44 87.65 8.19 90.23 95.9-7.11 92.25-84.34 95.13-90.23 95.23z m-45.63 444.72c0 10.51-8.26 18.99-18.42 18.99-10.26-0.07-18.53-8.56-18.47-18.95v-93.86c0-10.48 8.27-19 18.47-19 10.16 0 18.42 8.51 18.42 19v93.86-0.04z m67.82 50.84c0.06 10.53-8.31 19.14-18.71 19.22-10.4-0.08-18.78-8.68-18.72-19.22V800.21c0-10.62 8.37-19.26 18.68-19.26 10.35 0 18.75 8.64 18.75 19.26v139.57z m62.4-72.89c0 10.47-8.26 18.96-18.46 18.96-10.24-0.1-18.48-8.58-18.42-18.96v-66.97c0-10.44 8.26-18.92 18.42-18.92 10.2 0 18.46 8.48 18.46 18.92v66.97z m0 0"
-            fill="#606060" p-id="2089"></path>
-        </svg>
-        置顶</span>
-      
-
-      <a href="/3812686146/" class="article-date">
-  <time datetime="2020-03-20T06:40:47.000Z" itemprop="datePublished">2020-03-20</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>
-  </div>
-
-      
-      
-<div class="word_count">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="ri-quill-pen-line"></i>
-            <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1k字</span>
-        </span>
-    </span>
-
-    <span class="post-time">
-        &nbsp; | &nbsp;
-        <span class="post-meta-item-icon">
-            <i class="ri-book-open-line"></i>
-            <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">3分钟</span>
-        </span>
-    </span>
-</div>
-
-      
-    </div>
-    
-
-    
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-      <h2 id="Lombok到底是什么？"><a href="#Lombok到底是什么？" class="headerlink" title="Lombok到底是什么？"></a>Lombok到底是什么？</h2><p>先看一下它的官网<br><img src="https://mmbiz.qpic.cn/mmbiz_png/xq9PqibkVAzp6uHcdh3OGoN5lib8qiahVv1BEukCAUrrmjp1iay5HDcRCMlTJCwyWhnpehDYY15Dicfw4EPhR4VSbcA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt=""><br>英语懒得看？没关系。</p>
-<p><strong>它大致意思是</strong>：Lombok是一个很牛批的<strong>插件</strong>（本质是个<strong>Java库</strong>），项目里一旦引入了Lombok神器之后，你项目中所有诸如：对象的构造函数、 equals()方法，属性的 get()/set()方法等等，这些没有技术含量的代码统统都不用写了，Lombok帮你搞定一切，全部帮你自动生成！</p>
-<p>听起来好像是挺不错…</p>
-<p><strong>眼见为虚，代码为实</strong>，本文亲自尝试一下！</p>
-<h2 id="项目中引入Lombok"><a href="#项目中引入Lombok" class="headerlink" title="项目中引入Lombok"></a>项目中引入Lombok</h2><p>除此之外，还要在IDE中安装Lombok插件，并配置：<br><img src="https://mmbiz.qpic.cn/mmbiz_png/xq9PqibkVAzp6uHcdh3OGoN5lib8qiahVv1rgb30E3H5wCrNwtCA2pGkfjryVLFsOx7eJHJs3ogaFXU8nybM4Fiacw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt=""><br>接下来进行代码实验。</p>
-<h2 id="爽！get-set不用写了"><a href="#爽！get-set不用写了" class="headerlink" title="爽！get/set不用写了"></a>爽！get/set不用写了</h2><p>以前我们写一个 POJO对象时，比如定义一个课程 Course，需要自己手动写上每个字段的 get()和 set()方法，就像这样：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Course</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Integer score;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Long <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Long id)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getScore</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> score;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setScore</span><span class="params">(Integer score)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.score = score;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>但是借助于Lombok，一切都变得优雅起来，代码篇幅省了一半</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Course</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Getter</span></span><br><span class="line">    <span class="meta">@Setter</span></span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Getter</span></span><br><span class="line">    <span class="meta">@Setter</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Getter</span></span><br><span class="line">    <span class="meta">@Setter</span></span><br><span class="line">    <span class="keyword">private</span> Integer score;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>两个注解：@Getter和 @Setter即可方便搞定。</p>
-<p>更可以使用@data注解</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Course</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Integer score;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="爽！new对象变得优雅了"><a href="#爽！new对象变得优雅了" class="headerlink" title="爽！new对象变得优雅了"></a>爽！new对象变得优雅了</h2><p>在没有用Lombok之前，我们假如想new一个对象，我们往往会这么做（以上面的 Course类为例）：<br><img src="https://img-blog.csdnimg.cn/20200320145353472.png" alt=""><br>引进Lombok之后，我们只需要在 Course类上用上 @Builder注解：<br><img src="https://img-blog.csdnimg.cn/20200320145234852.png" alt=""><br>则 Course类对象的创建即可使用 链式表达 的方式一行代码完成：<br><img src="https://img-blog.csdnimg.cn/20200320145310480.png" alt=""><br>到这里，如果你学过设计模式中的 “建造者模式” 的话，一定能猜到 @Builder注解就是一个典型的“建造者模式”的实现案例！</p>
-<h2 id="爽！构造函数不用写了"><a href="#爽！构造函数不用写了" class="headerlink" title="爽！构造函数不用写了"></a>爽！构造函数不用写了</h2><h3 id="全参构造器不用写了"><a href="#全参构造器不用写了" class="headerlink" title="全参构造器不用写了"></a>全参构造器不用写了</h3><p>当你在你的类上使用了Lombok的注解 AllArgsConstructor时：<br><img src="https://img-blog.csdnimg.cn/2020032014550690.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>这时候你的类在编译后会自动生成一个全参构造函数，就像这样：<br><img src="https://img-blog.csdnimg.cn/20200320145552136.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
-<h3 id="无参数构造器也不用写了"><a href="#无参数构造器也不用写了" class="headerlink" title="无参数构造器也不用写了"></a>无参数构造器也不用写了</h3><p>当你在你的类上使用了Lombok的注解 NoArgsConstructor时：<br><img src="https://img-blog.csdnimg.cn/20200320145644124.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>这时候你的类在编译后会自动生成一个无参构造函数，就像这样：<br><img src="https://img-blog.csdnimg.cn/20200320145713327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
-<h3 id="部分参数构造器也不用写了"><a href="#部分参数构造器也不用写了" class="headerlink" title="部分参数构造器也不用写了"></a>部分参数构造器也不用写了</h3><p>当你在你的类上使用了Lombok的注解 RequiredArgsConstructor时:<br><img src="https://img-blog.csdnimg.cn/20200320145754760.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>这时候你的类在编译后会自动生成一个具备部分参数的构造函数，就像这样：<br><img src="https://img-blog.csdnimg.cn/20200320145821664.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>因为 name字段定义成 final，所以 Lombok自动会帮你生成一个部分参数的构造器！！因为 name字段定义成 final，所以 Lombok自动会帮你生成一个部分参数的构造器！！</p>
-<h2 id="爽！null判空不用写了"><a href="#爽！null判空不用写了" class="headerlink" title="爽！null判空不用写了"></a>爽！null判空不用写了</h2><p>Lombok的 @NonNull注解可以自动帮我们避免空指针判断。该注解作用在方法参数上，用于自动生成空值参数检查，比如：<br><img src="https://img-blog.csdnimg.cn/20200320145925792.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>但是有了Lombok之后，事情就变得简单了，一个注解搞定：<br><img src="https://img-blog.csdnimg.cn/20200320145955658.png" alt=""></p>
-<h2 id="爽！关流也不需要了"><a href="#爽！关流也不需要了" class="headerlink" title="爽！关流也不需要了"></a>爽！关流也不需要了</h2><p>什么意思呢？</p>
-<p>假如我们要读取一个 txt文本文件，一般会这样写代码：<br><img src="https://img-blog.csdnimg.cn/20200320150127793.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>注意，这个文件句柄在使用完成之后是一定要手动 close的，否则就有可能资源泄漏。</p>
-<p>有了Lombok之后，这种擦屁股活儿统统不用干了，一个 @Cleanup注解即可搞定<br><img src="https://img-blog.csdnimg.cn/20200320150154895.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>上面列举了几个平时项目开发中使用非常频繁的Lombok注解，除此之外，还有诸如像：</p>
-<blockquote>
-<p>@ToString：为类自动生成toString()方法<br>@EqualsAndHashCode：为类自动生成hashCode和equals实现<br>@Log：为类自动生成log日志记录<br>@Synchronized：为类方法或实例方法自动生成synchronized保护</p>
-</blockquote>
-<p>等工具也是非常好用的，大家可以尝试在项目里用起来。</p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzU4ODI1MjA3NQ==&mid=2247485020&idx=1&sn=3c3405807f96a597398f513c48bb094e&chksm=fdded098caa9598e6159bd7315180e149e6a789a3ee75d42b4acaaae96669504e08378eeddae&scene=21#wechat_redirect" target="_blank" rel="noopener">参考链接, 致谢</a></p>
-
-      
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lombok/" rel="tag">Lombok</a></li></ul>
-
-
-    </footer>
-
-  </div>
-
-  
-
-  
-  
-  
-
-  
-
-</article>
-    
-    <article id="post-宝塔同一ip添加多个站点" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/1333150612/"
-    >【linux】在宝塔上 同ip 不同端口 设置一个端口对应一个网站</a
-  >
-</h2>
- 
-<div class="article-topping">
-  <i class="ri-umbrella-line"></i>
-</div>
- 
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <!-- 博客指定样式修改 -->
-      
-      <span style="
-        color: rgb(125, 38, 205);
-        margin-right: 0.35em;
-        font-size: 13px;
-        position: relative;
-        bottom: 1px;
-        ">
-        <svg t="1582527489335" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-          p-id="2088" width="10" height="10">
-          <path
-            d="M730.08 448.01C733.96 189.9 526.33 72.98 512.4 65.38v-0.37l-0.39 0.18-0.36-0.18v0.37c-13.98 7.6-221.63 124.54-217.72 382.63-42.28 27.95-86.58 77.63-79.53 163.55 7.04 85.89 88.59 142.84 119.79 139.75 31.22-3.08 22.13-26.93 22.13-26.93l10.71-44.51s46.01 71.58 60.78 71.55c13.25-1.1 76.3-0.11 83.83 0h0.72c7.55-0.11 70.59-1.1 83.84 0 14.72 0 60.77-71.55 60.77-71.55l10.67 44.51s-9.05 23.85 22.16 26.93c31.22 3.09 112.76-53.86 119.8-139.75 7.05-85.89-37.24-135.6-79.52-163.55z m-218.07-3.79c-5.93-0.1-83.11-2.98-90.24-95.23 2.59-87.71 84.16-95.46 90.24-95.9 6.11 0.44 87.65 8.19 90.23 95.9-7.11 92.25-84.34 95.13-90.23 95.23z m-45.63 444.72c0 10.51-8.26 18.99-18.42 18.99-10.26-0.07-18.53-8.56-18.47-18.95v-93.86c0-10.48 8.27-19 18.47-19 10.16 0 18.42 8.51 18.42 19v93.86-0.04z m67.82 50.84c0.06 10.53-8.31 19.14-18.71 19.22-10.4-0.08-18.78-8.68-18.72-19.22V800.21c0-10.62 8.37-19.26 18.68-19.26 10.35 0 18.75 8.64 18.75 19.26v139.57z m62.4-72.89c0 10.47-8.26 18.96-18.46 18.96-10.24-0.1-18.48-8.58-18.42-18.96v-66.97c0-10.44 8.26-18.92 18.42-18.92 10.2 0 18.46 8.48 18.46 18.92v66.97z m0 0"
-            fill="#606060" p-id="2089"></path>
-        </svg>
-        置顶</span>
-      
-
-      <a href="/1333150612/" class="article-date">
-  <time datetime="2020-03-17T10:01:35.000Z" itemprop="datePublished">2020-03-17</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-      
-      
-<div class="word_count">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="ri-quill-pen-line"></i>
-            <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">213字</span>
-        </span>
-    </span>
-
-    <span class="post-time">
-        &nbsp; | &nbsp;
-        <span class="post-meta-item-icon">
-            <i class="ri-book-open-line"></i>
-            <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1分钟</span>
-        </span>
-    </span>
-</div>
-
-      
-    </div>
-    
-
-    
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-      <br>
-<br>
-      
-      <a class="article-more-link" href="/1333150612/">阅读更多</a>
-      
-      
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%9D%E5%A1%94/" rel="tag">宝塔</a></li></ul>
-
-
-    </footer>
-
-  </div>
-
-  
-
-  
-  
-  
-
-  
-
-</article>
-    
-    <article id="post-部署前后端分离项目到Linux服务器" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/245703536/"
-    >部署前后端分离项目到Linux服务器</a
-  >
-</h2>
- 
-<div class="article-topping">
-  <i class="ri-umbrella-line"></i>
-</div>
- 
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <!-- 博客指定样式修改 -->
-      
-      <span style="
-        color: rgb(125, 38, 205);
-        margin-right: 0.35em;
-        font-size: 13px;
-        position: relative;
-        bottom: 1px;
-        ">
-        <svg t="1582527489335" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-          p-id="2088" width="10" height="10">
-          <path
-            d="M730.08 448.01C733.96 189.9 526.33 72.98 512.4 65.38v-0.37l-0.39 0.18-0.36-0.18v0.37c-13.98 7.6-221.63 124.54-217.72 382.63-42.28 27.95-86.58 77.63-79.53 163.55 7.04 85.89 88.59 142.84 119.79 139.75 31.22-3.08 22.13-26.93 22.13-26.93l10.71-44.51s46.01 71.58 60.78 71.55c13.25-1.1 76.3-0.11 83.83 0h0.72c7.55-0.11 70.59-1.1 83.84 0 14.72 0 60.77-71.55 60.77-71.55l10.67 44.51s-9.05 23.85 22.16 26.93c31.22 3.09 112.76-53.86 119.8-139.75 7.05-85.89-37.24-135.6-79.52-163.55z m-218.07-3.79c-5.93-0.1-83.11-2.98-90.24-95.23 2.59-87.71 84.16-95.46 90.24-95.9 6.11 0.44 87.65 8.19 90.23 95.9-7.11 92.25-84.34 95.13-90.23 95.23z m-45.63 444.72c0 10.51-8.26 18.99-18.42 18.99-10.26-0.07-18.53-8.56-18.47-18.95v-93.86c0-10.48 8.27-19 18.47-19 10.16 0 18.42 8.51 18.42 19v93.86-0.04z m67.82 50.84c0.06 10.53-8.31 19.14-18.71 19.22-10.4-0.08-18.78-8.68-18.72-19.22V800.21c0-10.62 8.37-19.26 18.68-19.26 10.35 0 18.75 8.64 18.75 19.26v139.57z m62.4-72.89c0 10.47-8.26 18.96-18.46 18.96-10.24-0.1-18.48-8.58-18.42-18.96v-66.97c0-10.44 8.26-18.92 18.42-18.92 10.2 0 18.46 8.48 18.46 18.92v66.97z m0 0"
-            fill="#606060" p-id="2089"></path>
-        </svg>
-        置顶</span>
-      
-
-      <a href="/245703536/" class="article-date">
-  <time datetime="2020-03-16T11:23:01.000Z" itemprop="datePublished">2020-03-16</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-      
-      
-<div class="word_count">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="ri-quill-pen-line"></i>
-            <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">823字</span>
-        </span>
-    </span>
-
-    <span class="post-time">
-        &nbsp; | &nbsp;
-        <span class="post-meta-item-icon">
-            <i class="ri-book-open-line"></i>
-            <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">3分钟</span>
-        </span>
-    </span>
-</div>
-
-      
-    </div>
-    
-
-    
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-      <p>&amp;nbsp &amp;nbsp 近日自己结合 vue + element ui + Springboot 做了个前后端分离的项目。因为是第一次部署项目，便在此记录下自己的心得。</p>
-      
-      <a class="article-more-link" href="/245703536/">阅读更多</a>
-      
-      
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
-
-
-    </footer>
-
-  </div>
-
-  
-
-  
-  
-  
-
-  
-
-</article>
-    
-    <article id="post-后端查询sql报错" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/3632852599/"
-    >后端查询sql报错</a
-  >
-</h2>
- 
-<div class="article-topping">
-  <i class="ri-umbrella-line"></i>
-</div>
- 
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <!-- 博客指定样式修改 -->
-      
-      <span style="
-        color: rgb(125, 38, 205);
-        margin-right: 0.35em;
-        font-size: 13px;
-        position: relative;
-        bottom: 1px;
-        ">
-        <svg t="1582527489335" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-          p-id="2088" width="10" height="10">
-          <path
-            d="M730.08 448.01C733.96 189.9 526.33 72.98 512.4 65.38v-0.37l-0.39 0.18-0.36-0.18v0.37c-13.98 7.6-221.63 124.54-217.72 382.63-42.28 27.95-86.58 77.63-79.53 163.55 7.04 85.89 88.59 142.84 119.79 139.75 31.22-3.08 22.13-26.93 22.13-26.93l10.71-44.51s46.01 71.58 60.78 71.55c13.25-1.1 76.3-0.11 83.83 0h0.72c7.55-0.11 70.59-1.1 83.84 0 14.72 0 60.77-71.55 60.77-71.55l10.67 44.51s-9.05 23.85 22.16 26.93c31.22 3.09 112.76-53.86 119.8-139.75 7.05-85.89-37.24-135.6-79.52-163.55z m-218.07-3.79c-5.93-0.1-83.11-2.98-90.24-95.23 2.59-87.71 84.16-95.46 90.24-95.9 6.11 0.44 87.65 8.19 90.23 95.9-7.11 92.25-84.34 95.13-90.23 95.23z m-45.63 444.72c0 10.51-8.26 18.99-18.42 18.99-10.26-0.07-18.53-8.56-18.47-18.95v-93.86c0-10.48 8.27-19 18.47-19 10.16 0 18.42 8.51 18.42 19v93.86-0.04z m67.82 50.84c0.06 10.53-8.31 19.14-18.71 19.22-10.4-0.08-18.78-8.68-18.72-19.22V800.21c0-10.62 8.37-19.26 18.68-19.26 10.35 0 18.75 8.64 18.75 19.26v139.57z m62.4-72.89c0 10.47-8.26 18.96-18.46 18.96-10.24-0.1-18.48-8.58-18.42-18.96v-66.97c0-10.44 8.26-18.92 18.42-18.92 10.2 0 18.46 8.48 18.46 18.92v66.97z m0 0"
-            fill="#606060" p-id="2089"></path>
-        </svg>
-        置顶</span>
-      
-
-      <a href="/3632852599/" class="article-date">
-  <time datetime="2020-03-06T01:47:25.000Z" itemprop="datePublished">2020-03-06</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-  </div>
-
-      
-      
-<div class="word_count">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="ri-quill-pen-line"></i>
-            <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">128字</span>
-        </span>
-    </span>
-
-    <span class="post-time">
-        &nbsp; | &nbsp;
-        <span class="post-meta-item-icon">
-            <i class="ri-book-open-line"></i>
-            <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1分钟</span>
-        </span>
-    </span>
-</div>
-
-      
-    </div>
-    
-
-    
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-      <br>
-<br>
-      
-      <a class="article-more-link" href="/3632852599/">阅读更多</a>
-      
-      
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li></ul>
-
-
-    </footer>
-
-  </div>
-
-  
-
-  
-  
-  
-
-  
-
-</article>
     
     <article id="post-Springboot连接oracle数据库" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
@@ -966,6 +203,352 @@
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Springboot/" rel="tag">Springboot</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
+    <article id="post-vue错误集" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/1646488506/"
+    >vue错误集</a
+  >
+</h2>
+ 
+<div class="article-topping">
+  <i class="ri-umbrella-line"></i>
+</div>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <!-- 博客指定样式修改 -->
+      
+      <span style="
+        color: rgb(125, 38, 205);
+        margin-right: 0.35em;
+        font-size: 13px;
+        position: relative;
+        bottom: 1px;
+        ">
+        <svg t="1582527489335" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          p-id="2088" width="10" height="10">
+          <path
+            d="M730.08 448.01C733.96 189.9 526.33 72.98 512.4 65.38v-0.37l-0.39 0.18-0.36-0.18v0.37c-13.98 7.6-221.63 124.54-217.72 382.63-42.28 27.95-86.58 77.63-79.53 163.55 7.04 85.89 88.59 142.84 119.79 139.75 31.22-3.08 22.13-26.93 22.13-26.93l10.71-44.51s46.01 71.58 60.78 71.55c13.25-1.1 76.3-0.11 83.83 0h0.72c7.55-0.11 70.59-1.1 83.84 0 14.72 0 60.77-71.55 60.77-71.55l10.67 44.51s-9.05 23.85 22.16 26.93c31.22 3.09 112.76-53.86 119.8-139.75 7.05-85.89-37.24-135.6-79.52-163.55z m-218.07-3.79c-5.93-0.1-83.11-2.98-90.24-95.23 2.59-87.71 84.16-95.46 90.24-95.9 6.11 0.44 87.65 8.19 90.23 95.9-7.11 92.25-84.34 95.13-90.23 95.23z m-45.63 444.72c0 10.51-8.26 18.99-18.42 18.99-10.26-0.07-18.53-8.56-18.47-18.95v-93.86c0-10.48 8.27-19 18.47-19 10.16 0 18.42 8.51 18.42 19v93.86-0.04z m67.82 50.84c0.06 10.53-8.31 19.14-18.71 19.22-10.4-0.08-18.78-8.68-18.72-19.22V800.21c0-10.62 8.37-19.26 18.68-19.26 10.35 0 18.75 8.64 18.75 19.26v139.57z m62.4-72.89c0 10.47-8.26 18.96-18.46 18.96-10.24-0.1-18.48-8.58-18.42-18.96v-66.97c0-10.44 8.26-18.92 18.42-18.92 10.2 0 18.46 8.48 18.46 18.92v66.97z m0 0"
+            fill="#606060" p-id="2089"></path>
+        </svg>
+        置顶</span>
+      
+
+      <a href="/1646488506/" class="article-date">
+  <time datetime="2020-03-06T01:20:52.000Z" itemprop="datePublished">2020-03-06</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/vue/">vue</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">24字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">1分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <br>
+<br>
+      
+      <a class="article-more-link" href="/1646488506/">阅读更多</a>
+      
+      
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
+    <article id="post-Element-ui使用心得" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/1031608707/"
+    >Element-ui使用心得</a
+  >
+</h2>
+ 
+<div class="article-topping">
+  <i class="ri-umbrella-line"></i>
+</div>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <!-- 博客指定样式修改 -->
+      
+      <span style="
+        color: rgb(125, 38, 205);
+        margin-right: 0.35em;
+        font-size: 13px;
+        position: relative;
+        bottom: 1px;
+        ">
+        <svg t="1582527489335" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          p-id="2088" width="10" height="10">
+          <path
+            d="M730.08 448.01C733.96 189.9 526.33 72.98 512.4 65.38v-0.37l-0.39 0.18-0.36-0.18v0.37c-13.98 7.6-221.63 124.54-217.72 382.63-42.28 27.95-86.58 77.63-79.53 163.55 7.04 85.89 88.59 142.84 119.79 139.75 31.22-3.08 22.13-26.93 22.13-26.93l10.71-44.51s46.01 71.58 60.78 71.55c13.25-1.1 76.3-0.11 83.83 0h0.72c7.55-0.11 70.59-1.1 83.84 0 14.72 0 60.77-71.55 60.77-71.55l10.67 44.51s-9.05 23.85 22.16 26.93c31.22 3.09 112.76-53.86 119.8-139.75 7.05-85.89-37.24-135.6-79.52-163.55z m-218.07-3.79c-5.93-0.1-83.11-2.98-90.24-95.23 2.59-87.71 84.16-95.46 90.24-95.9 6.11 0.44 87.65 8.19 90.23 95.9-7.11 92.25-84.34 95.13-90.23 95.23z m-45.63 444.72c0 10.51-8.26 18.99-18.42 18.99-10.26-0.07-18.53-8.56-18.47-18.95v-93.86c0-10.48 8.27-19 18.47-19 10.16 0 18.42 8.51 18.42 19v93.86-0.04z m67.82 50.84c0.06 10.53-8.31 19.14-18.71 19.22-10.4-0.08-18.78-8.68-18.72-19.22V800.21c0-10.62 8.37-19.26 18.68-19.26 10.35 0 18.75 8.64 18.75 19.26v139.57z m62.4-72.89c0 10.47-8.26 18.96-18.46 18.96-10.24-0.1-18.48-8.58-18.42-18.96v-66.97c0-10.44 8.26-18.92 18.42-18.92 10.2 0 18.46 8.48 18.46 18.92v66.97z m0 0"
+            fill="#606060" p-id="2089"></path>
+        </svg>
+        置顶</span>
+      
+
+      <a href="/1031608707/" class="article-date">
+  <time datetime="2020-03-06T01:00:13.000Z" itemprop="datePublished">2020-03-06</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">2.4k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">12分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <br>
+<br>
+      
+      <a class="article-more-link" href="/1031608707/">阅读更多</a>
+      
+      
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Element-Ui/" rel="tag">Element Ui</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
+    <article id="post-git常用命令" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/1111146142/"
+    >git常用命令</a
+  >
+</h2>
+ 
+<div class="article-topping">
+  <i class="ri-umbrella-line"></i>
+</div>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <!-- 博客指定样式修改 -->
+      
+      <span style="
+        color: rgb(125, 38, 205);
+        margin-right: 0.35em;
+        font-size: 13px;
+        position: relative;
+        bottom: 1px;
+        ">
+        <svg t="1582527489335" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          p-id="2088" width="10" height="10">
+          <path
+            d="M730.08 448.01C733.96 189.9 526.33 72.98 512.4 65.38v-0.37l-0.39 0.18-0.36-0.18v0.37c-13.98 7.6-221.63 124.54-217.72 382.63-42.28 27.95-86.58 77.63-79.53 163.55 7.04 85.89 88.59 142.84 119.79 139.75 31.22-3.08 22.13-26.93 22.13-26.93l10.71-44.51s46.01 71.58 60.78 71.55c13.25-1.1 76.3-0.11 83.83 0h0.72c7.55-0.11 70.59-1.1 83.84 0 14.72 0 60.77-71.55 60.77-71.55l10.67 44.51s-9.05 23.85 22.16 26.93c31.22 3.09 112.76-53.86 119.8-139.75 7.05-85.89-37.24-135.6-79.52-163.55z m-218.07-3.79c-5.93-0.1-83.11-2.98-90.24-95.23 2.59-87.71 84.16-95.46 90.24-95.9 6.11 0.44 87.65 8.19 90.23 95.9-7.11 92.25-84.34 95.13-90.23 95.23z m-45.63 444.72c0 10.51-8.26 18.99-18.42 18.99-10.26-0.07-18.53-8.56-18.47-18.95v-93.86c0-10.48 8.27-19 18.47-19 10.16 0 18.42 8.51 18.42 19v93.86-0.04z m67.82 50.84c0.06 10.53-8.31 19.14-18.71 19.22-10.4-0.08-18.78-8.68-18.72-19.22V800.21c0-10.62 8.37-19.26 18.68-19.26 10.35 0 18.75 8.64 18.75 19.26v139.57z m62.4-72.89c0 10.47-8.26 18.96-18.46 18.96-10.24-0.1-18.48-8.58-18.42-18.96v-66.97c0-10.44 8.26-18.92 18.42-18.92 10.2 0 18.46 8.48 18.46 18.92v66.97z m0 0"
+            fill="#606060" p-id="2089"></path>
+        </svg>
+        置顶</span>
+      
+
+      <a href="/1111146142/" class="article-date">
+  <time datetime="2020-02-28T02:49:13.000Z" itemprop="datePublished">2020-02-28</time>
+</a>
+      
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.5k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">6分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <h2 id="将本地工程push到远程"><a href="#将本地工程push到远程" class="headerlink" title="将本地工程push到远程"></a>将本地工程push到远程</h2>
+      
+      <a class="article-more-link" href="/1111146142/">阅读更多</a>
+      
+      
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li></ul>
 
 
     </footer>
@@ -1215,7 +798,7 @@
 
 </article>
     
-    <article id="post-ssm-crud项目" class="article article-type-post" itemscope
+    <article id="post-电脑强制删除文件" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -1223,8 +806,105 @@
     <header class="article-header">
        
 <h2 itemprop="name">
-  <a class="article-title" href="/3618772320/"
-    >ssm-crud项目</a
+  <a class="article-title" href="/2305721189/"
+    >电脑强制删除文件</a
+  >
+</h2>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <!-- 博客指定样式修改 -->
+      
+
+      <a href="/2305721189/" class="article-date">
+  <time datetime="2020-02-25T16:31:03.000Z" itemprop="datePublished">2020-02-26</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">39字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">1分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <br>
+      
+      <a class="article-more-link" href="/2305721189/">阅读更多</a>
+      
+      
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/" rel="tag">电脑知识</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
+    <article id="post-SpringBoot-Vue前后端分离简易开发" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/483040631/"
+    >SpringBoot+Vue前后端分离简易开发</a
   >
 </h2>
  
@@ -1256,12 +936,12 @@
         置顶</span>
       
 
-      <a href="/3618772320/" class="article-date">
-  <time datetime="2020-01-13T02:40:51.000Z" itemprop="datePublished">2020-01-13</time>
+      <a href="/483040631/" class="article-date">
+  <time datetime="2020-02-21T07:16:36.000Z" itemprop="datePublished">2020-02-21</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E9%A1%B9%E7%9B%AE/">项目</a>
+    <a class="article-category-link" href="/categories/Vue%E5%AE%9E%E6%88%98/">Vue实战</a>
   </div>
 
       
@@ -1271,7 +951,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">7.8k字</span>
+            <span class="post-count">3.1k字</span>
         </span>
     </span>
 
@@ -1280,7 +960,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">42分钟</span>
+            <span class="post-count">17分钟</span>
         </span>
     </span>
 </div>
@@ -1299,9 +979,9 @@
       
 
       
-      <p>本文记录着我搭建ssm-crud项目时的主要代码实现，依次来熟悉ssm项目的搭建。<a href="https://github.com/onecoderly/crud" target="_blank" rel="noopener">github代码地址</a><br><br></p>
+      <p>本文主要是学习于B站的Spring Boot+Vue前后端分离开发，技术主要采用Springboot + Vue + Element Ui，来完成基本的数据表格操作。<br><br></p>
       
-      <a class="article-more-link" href="/3618772320/">阅读更多</a>
+      <a class="article-more-link" href="/483040631/">阅读更多</a>
       
       
       <!-- reward -->
@@ -1314,7 +994,220 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/curd/" rel="tag">curd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssm/" rel="tag">ssm</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Element-Ui/" rel="tag">Element Ui</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Springboot/" rel="tag">Springboot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
+    <article id="post-Vue学习笔记" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/1901149387/"
+    >Vue学习笔记</a
+  >
+</h2>
+ 
+<div class="article-topping">
+  <i class="ri-umbrella-line"></i>
+</div>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <!-- 博客指定样式修改 -->
+      
+      <span style="
+        color: rgb(125, 38, 205);
+        margin-right: 0.35em;
+        font-size: 13px;
+        position: relative;
+        bottom: 1px;
+        ">
+        <svg t="1582527489335" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          p-id="2088" width="10" height="10">
+          <path
+            d="M730.08 448.01C733.96 189.9 526.33 72.98 512.4 65.38v-0.37l-0.39 0.18-0.36-0.18v0.37c-13.98 7.6-221.63 124.54-217.72 382.63-42.28 27.95-86.58 77.63-79.53 163.55 7.04 85.89 88.59 142.84 119.79 139.75 31.22-3.08 22.13-26.93 22.13-26.93l10.71-44.51s46.01 71.58 60.78 71.55c13.25-1.1 76.3-0.11 83.83 0h0.72c7.55-0.11 70.59-1.1 83.84 0 14.72 0 60.77-71.55 60.77-71.55l10.67 44.51s-9.05 23.85 22.16 26.93c31.22 3.09 112.76-53.86 119.8-139.75 7.05-85.89-37.24-135.6-79.52-163.55z m-218.07-3.79c-5.93-0.1-83.11-2.98-90.24-95.23 2.59-87.71 84.16-95.46 90.24-95.9 6.11 0.44 87.65 8.19 90.23 95.9-7.11 92.25-84.34 95.13-90.23 95.23z m-45.63 444.72c0 10.51-8.26 18.99-18.42 18.99-10.26-0.07-18.53-8.56-18.47-18.95v-93.86c0-10.48 8.27-19 18.47-19 10.16 0 18.42 8.51 18.42 19v93.86-0.04z m67.82 50.84c0.06 10.53-8.31 19.14-18.71 19.22-10.4-0.08-18.78-8.68-18.72-19.22V800.21c0-10.62 8.37-19.26 18.68-19.26 10.35 0 18.75 8.64 18.75 19.26v139.57z m62.4-72.89c0 10.47-8.26 18.96-18.46 18.96-10.24-0.1-18.48-8.58-18.42-18.96v-66.97c0-10.44 8.26-18.92 18.42-18.92 10.2 0 18.46 8.48 18.46 18.92v66.97z m0 0"
+            fill="#606060" p-id="2089"></path>
+        </svg>
+        置顶</span>
+      
+
+      <a href="/1901149387/" class="article-date">
+  <time datetime="2020-02-09T10:19:22.000Z" itemprop="datePublished">2020-02-09</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">13.7k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">71分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <p>系统学习前端Vue框架，笔记记录于B站的why老师，<a href="https://www.bilibili.com/video/av89760569" target="_blank" rel="noopener">具体视频链接</a>,在此感谢老师的悉心授课。<a href="https://github.com/onecoderly/vue.js" target="_blank" rel="noopener">github笔记地址</a><br><br></p>
+      
+      <a class="article-more-link" href="/1901149387/">阅读更多</a>
+      
+      
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
+    <article id="post-Promise异步编程" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2162723474/"
+    >Promise异步编程</a
+  >
+</h2>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <!-- 博客指定样式修改 -->
+      
+
+      <a href="/2162723474/" class="article-date">
+  <time datetime="2020-02-06T03:24:27.000Z" itemprop="datePublished">2020-02-06</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">859字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">4分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <h2 id="Promise的使用"><a href="#Promise的使用" class="headerlink" title="Promise的使用"></a>Promise的使用</h2>
+      
+      <a class="article-more-link" href="/2162723474/">阅读更多</a>
+      
+      
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li></ul>
 
 
     </footer>
@@ -1481,7 +1374,7 @@
           href="http://coderblue.cn/sitemap.xml">站点地图</a> &nbsp;| &nbsp;
 
       <span class="post-meta-item-icon"><i class="fa fa-area-chart"></i></span>
-      <span class="post-count"> 67.2k</span></li> 
+      <span class="post-count"> 68.7k</span></li> 
     </ul>
   </div>
 </footer>
