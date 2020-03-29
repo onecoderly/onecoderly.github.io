@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8" />
     
+  <meta name="description" content="一花一世界~" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="baidu-site-verification" content="JAFHu5il3e" />
   <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
@@ -45,7 +47,12 @@
 </head>
 
 </html>
-
+<script>
+  const val = '致小朋友\n\n我喜欢夏天的雨，\n雨后的光，\n和任何时候的你。\n'
+    console.log("%c%s",
+          "color: #e798e7; font-size: 16px;font-weight:bolder",
+        val);
+</script>
 <body>
   <div id="app">
     <main class="content">
@@ -95,6 +102,13 @@
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
             <span class="post-count">1分钟</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <!-- 不蒜子统计：暂未实现 -->
+        <span id="busuanzi_container_page_pv">
+            <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
     </span>
 </div>
@@ -439,7 +453,17 @@
 
     </ol>
     <ul class="list-busuanzi" style="display: block;">
-      <li>
+      <li style="position: relative; top: -5px;">
+        <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+        <a style="color: #4c618f;" href="http://coderblue.cn/sitemap.xml">站点地图</a> &nbsp;| &nbsp;
+        
+        <span class="post-meta-item-icon"><i class="fa fa-area-chart"></i></span>
+        <span class="post-count"> 70.2k</span> &nbsp;| &nbsp;
+        <span><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
+        <a style="color: #4c618f;" href="https://tongji.baidu.com/web/10000172729/overview/index" target="_blank" rel="noopener">百度统计</a>
+      </li> 
+
+      <li style="position: relative; top: -15px;">
         
         <span id="busuanzi_container_site_pv">
           我的第<span id="busuanzi_value_site_pv" style="color: #1095e6"></span>位朋友
@@ -451,12 +475,6 @@
         </span>
         
       </li>
-      <li style="position: relative; top: -20px;">
-        <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-        <a style="color: #4c618f;" href="http://coderblue.cn/sitemap.xml">站点地图</a> &nbsp;| &nbsp;
-
-        <span class="post-meta-item-icon"><i class="fa fa-area-chart"></i></span>
-        <span class="post-count"> 70.2k</span></li>
     </ul>
     <!-- 打字特效 -->
     <script type="text/javascript" src="//blueblog-1301047842.cos.ap-chengdu.myqcloud.com/js/activate-power-mode.min.js"></script>

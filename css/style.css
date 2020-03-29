@@ -7761,9 +7761,6 @@ a.article-more-link {
   -moz-border-radius: 50%;
   border-radius: 50%;
 }
-.footer {
-  background: #f1fbfa;
-}
 .list-inline {
   margin: 0px;
   text-align: center;
@@ -7883,6 +7880,9 @@ a.article-more-link:hover {
 }
 body {
   cursor: url("https://coderblue.cn/images/fei.png"), default !important;
+}
+.footer {
+  background: linear-gradient(90deg, rgba(247,149,51,0.102) 0, rgba(243,112,85,0.102) 15%, rgba(239,78,123,0.102) 30%, rgba(161,102,171,0.102) 44%, rgba(80,115,184,0.102) 58%, rgba(16,152,173,0.102) 72%, rgba(7,179,155,0.102) 86%, rgba(109,186,130,0.102) 100%);
 }
 @-moz-keyframes heartsAnimate {
   0%, 100% {
