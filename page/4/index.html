@@ -95,6 +95,31 @@
 
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
 
+<!-- 樱花特效 -->
+<script src="https://cdn.bootcss.com/JQuery-Snowfall/1.7.4/snowfall.jquery.min.js"></script>
+<script>
+  $(document).click(function () {
+      $(document).snowfall('clear');
+    })
+    $(document).dblclick(function () {
+      sakura()
+    })
+
+    function sakura() {
+      $(document).snowfall({
+        image: "sakura.png",
+        flakeCount: 50,
+        minSize: 20,
+        maxSize: 35,
+        minSpeed: 1,
+        maxSpeed: 2
+      })
+    }
+    setTimeout(() => {
+      sakura()
+    }, 1000);
+</script>
+
 <div id="main">
   <section class="outer">
   <article class="articles">
