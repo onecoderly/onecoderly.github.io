@@ -313,12 +313,39 @@ dao层接口方法</li>
         background-color: #fff;
     }
 
-    .v .vlist .vcard .vh {
-        padding-right: 20px;
-    }
-
     .v .vlist .vcard {
         padding-left: 10px;
+    }
+
+    /* 给评论添加背景 */
+    .v .vedit {
+        background-image: url(https://tse1-mm.cn.bing.net/th?id=OIP.OCKV8cGwOZ9Stwv0iUn2AgHaLH&pid=Api&rs=1);
+        background-size: contain;
+        background-position: right;
+        background-repeat: no-repeat;
+    }
+
+    span.vat {
+        border: 1px solid;
+        background: #df7fe1;
+        width: 4rem;
+        border-radius: 4px;
+        text-align: center;
+        color: #ffffff !important;
+    }
+
+    .v .vlist .vcard .vh {
+        padding: 0 !important;
+    }
+
+    .v .vbtn {
+        background: #95eaa9 !important;
+        color: #ffffff !important;
+        border: none !important;
+    }
+
+    .vcontent p {
+        text-align: left;
     }
 </style>
 
@@ -464,13 +491,23 @@ dao层接口方法</li>
         
       </li>
       <li style="position: relative; top: -20px;">
-        <span ><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-        <a style="color: #4c618f;"
-          href="http://coderblue.cn/sitemap.xml">站点地图</a> &nbsp;| &nbsp;
+        <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+        <a style="color: #4c618f;" href="http://coderblue.cn/sitemap.xml">站点地图</a> &nbsp;| &nbsp;
 
-      <span class="post-meta-item-icon"><i class="fa fa-area-chart"></i></span>
-      <span class="post-count"> 70.2k</span></li> 
+        <span class="post-meta-item-icon"><i class="fa fa-area-chart"></i></span>
+        <span class="post-count"> 70.2k</span></li>
     </ul>
+    <!-- 打字特效 -->
+    <script type="text/javascript" src="//blueblog-1301047842.cos.ap-chengdu.myqcloud.com/js/activate-power-mode.min.js"></script>
+    <script>
+      // <script type="text/javascript"
+      //   src="https://qianling-1254036047.cos.ap-chengdu.myqcloud.com/js/activate-power-mode.js">
+    </script>
+    <script>
+      POWERMODE.colorful = true; // ture 为启用礼花特效
+      POWERMODE.shake = false; // false 为禁用震动特效
+      document.body.addEventListener('input', POWERMODE);
+    </script>
   </div>
 </footer>
       <div class="to_top">
