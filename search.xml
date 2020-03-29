@@ -570,6 +570,8 @@ eg：public static int count; //学生人数的累加</code></pre><p>意义：<b
     <title>jdk8新特性</title>
     <url>/2440597073/</url>
     <content><![CDATA[<br>
+<br>
+<br>
 <a id="more"></a>
 ## Labmda 使用
 
@@ -848,8 +850,8 @@ eg：public static int count; //学生人数的累加</code></pre><p>意义：<b
         <category>前端</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>JS</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
