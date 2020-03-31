@@ -6851,9 +6851,10 @@ a.archive-article-title {
 }
 .footer {
   border-top: 2px solid #f6f6f6;
-  padding: 3rem 0 0 0;
+  padding: 2rem 0 0 0;
 }
 .footer .outer>ul {
+  height: 9rem;
   position: relative;
   display: flex;
   justify-content: space-between;
