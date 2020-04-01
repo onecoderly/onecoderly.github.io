@@ -306,14 +306,16 @@
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
 <script>
+    // 随机四种头像
+    const heads = ['', 'mp', 'identicon', 'monsterid']
     new Valine({
         el: '#vcomments',
         app_id: 'Y6sHmEuePRpPWDd5Yv45nEWL-MdYXbMMI',
         app_key: 'hLz1Wo8jhbxGo5oQFQ59Gp6a',
         path: window.location.pathname,
-        notify: 'true',
+        notify: 'false',
         verify: 'false',
-        avatar: 'mp',
+        avatar: heads[parseInt(Math.random() * heads.length)],
         placeholder: '你是爱，是暖，是希望，你是人间的四月天~',
         recordIP: true
     });
