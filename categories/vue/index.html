@@ -21,13 +21,20 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
 
   
-  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/images/favicon.ico" />
   
-  
+  <!-- 
 <link rel="stylesheet" href="/css/style.css">
+ -->
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/css/style.css">
 
   
-<script src="//blueblog-1301047842.cos.ap-chengdu.myqcloud.com/js/pace.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/pace.min.js"></script>
+
+  <!-- Dao Voice -->
+  
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/dao-voice-1.js"></script>
 
 
   
@@ -44,37 +51,8 @@
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
-  <!-- <script src="//cdn.busuanzi.ibruce.info/cdn/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  <!-- Dao Voice -->
-  <script>
-    (function (i, s, o, g, r, a, m) {
-      i["DaoVoiceObject"] = r;
-      i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date();
-      a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-      a.async = 1;
-      a.src = g;
-      a.charset = "utf-8";
-      m.parentNode.insertBefore(a, m)
-    })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
-      "//widget.daovoice.io/widget/a690aa21.js", "daovoice")
-    // 调用下面的 JavaScript 与注册用户沟通
-    daovoice('init', {
-      app_id: "a690aa21",
-      user_id: "NO_89757", // 必填: 该用户在您系统上的唯一ID
-      email: "daovoice@example.com", // 选填:  该用户在您系统上的主邮箱
-      name: "coder", // 选填: 用户名
-      signed_up: 1449821660 // 选填: 用户的注册时间，用Unix时间戳表示
-    });
-    daovoice('update');
-
-    daovoice('init', {
-      app_id: "a690aa21"
-    });
-    daovoice('update');
-  </script>
+  <!-- <script src=""></script> -->
 <link rel="alternate" href="/atom.xml" title="Blue" type="application/atom+xml">
 </head>
 
@@ -213,121 +191,23 @@
       <div id="days"></div>
       </script>
       <!-- 计算网站运行时间 -->
-      <script language="javascript">
-        function show_date_time() {
-          window.setTimeout("show_date_time()", 1000);
-          BirthDay = new Date("01/01/2020 00:00:00");
-          today = new Date();
-          timeold = (today.getTime() - BirthDay.getTime());
-          sectimeold = timeold / 1000
-          secondsold = Math.floor(sectimeold);
-          msPerDay = 24 * 60 * 60 * 1000
-          e_daysold = timeold / msPerDay
-          daysold = Math.floor(e_daysold);
-          e_hrsold = (e_daysold - daysold) * 24;
-          hrsold = setzero(Math.floor(e_hrsold));
-          e_minsold = (e_hrsold - hrsold) * 60;
-          minsold = setzero(Math.floor((e_hrsold - hrsold) * 60));
-          seconds = setzero(Math.floor((e_minsold - minsold) * 60));
-          document.getElementById('days').innerHTML =
-            "<style type=\"text/css\">span {color: #4c618f;}</style><span>我已在此等候你</span>" + daysold +
-            "<style type=\"text/css\">span {color: #4c618f;}</style><span>天</span>" + hrsold +
-            "<style type=\"text/css\">span {color: #4c618f;}</style><span>时</span>" + minsold +
-            "<style type=\"text/css\">span {color: #4c618f;}</style><span>分</span>" + seconds +
-            "<style type=\"text/css\">span {color: #4c618f;}</style><span>秒</span>";
-        }
-
-        function setzero(i) {
-          if (i < 10) {
-            i = "0" + i
-          };
-          return i;
-        }
-        show_date_time();
-      </script>
+      <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/count-time-1.js"></script>
+      
       <!-- 图片单击效果 -->
-      <script>
-        function createImgEventFullScreen() {
-          var imgs = $(".article-entry").find("img");
-          for (var i = 0; i < imgs.length; i++) {
-            // $(imgs[i]).click(createCover(imgs[i]));
-            imgs[i].onclick = function (e) {
-              var src = e.srcElement.currentSrc;
-              var _this = $(this);
-              createCover(src, _this);
-            }
-          }
-
-          function createCover(src, _this) {
-            var cover = $(
-              "<div id='outerDiv'  style='position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);z-index:5;width:100%;height:100%;display:none;'><div id='innerDiv' style='position:absolute;'><img  id='bigImg' style='border:5px solid #fff;' src=''/></div></div>"
-            );
-            $("#outerDiv").remove();
-            $("body").append(cover);
-            imgShow("#outerDiv", "#innerDiv", "#bigImg", _this, src);
-
-          }
-        }
-
-        function imgShow(outerDiv, innerDiv, bigImg, _this, src) {
-          //var src = _this.attr("src"); //获取当前点击的common-img元素中的src属性
-          $(bigImg).attr("src", src); //设置#bigImg元素的src属性
-
-          /*获取当前点击图片的真实大小，并显示弹出层及大图*/
-          $("<img/>").attr("src", src).load(function () {
-            var windowW = $(window).width(); //获取当前窗口宽度
-            var windowH = $(window).height(); //获取当前窗口高度
-            var realWidth = this.width; //获取图片真实宽度
-            var realHeight = this.height; //获取图片真实高度
-            var imgWidth, imgHeight;
-            var scale = 0.8; //缩放尺寸，当图片真实宽度和高度大于窗口宽度和高度时进行缩放
-
-            if (realHeight > windowH * scale) { //判断图片高度
-              imgHeight = windowH * scale; //如大于窗口高度，图片高度进行缩放
-              imgWidth = imgHeight / realHeight * realWidth; //等比例缩放宽度
-              if (imgWidth > windowW * scale) { //如宽度仍大于窗口宽度
-                imgWidth = windowW * scale; //再对宽度进行缩放
-              }
-            } else if (realWidth > windowW * scale) { //如图片高度合适，判断图片宽度
-              imgWidth = windowW * scale; //如大于窗口宽度，图片宽度进行缩放
-              imgHeight = imgWidth / realWidth * realHeight; //等比例缩放高度
-            } else { //如果图片真实高度和宽度都符合要求，高宽不变
-              imgWidth = realWidth;
-              imgHeight = realHeight;
-            }
-            $(bigImg).css("width", imgWidth); //以最终的宽度对图片缩放
-
-            var w = (windowW - imgWidth) / 2; //计算图片与窗口左边距
-            var h = (windowH - imgHeight) / 2; //计算图片与窗口上边距
-            $(innerDiv).css({
-              "top": h,
-              "left": w
-            }); //设置#innerDiv的top和left属性
-            //console.log('****')
-            $(outerDiv).fadeIn("fast"); //淡入显示#outerDiv
-          });
-
-          $(outerDiv).click(function () { //再次点击淡出消失弹出层
-            $(this).fadeOut("fast");
-          });
-        }
-        setTimeout(function () {
-          createImgEventFullScreen();
-        }, 1000)
-      </script>
+      <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/click-img-1.min.js"></script>
 
     </ol>
     <ul class="list-busuanzi" style="display: block;">
       <li style="position: relative; top: -5px;">
         <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-        <a style="color: #4c618f;" href="http://coderblue.cn/sitemap.xml">站点地图</a> &nbsp;| &nbsp;
+        <a style="color: #4c618f;" href="https://coderblue.cn/sitemap.xml">站点地图</a> &nbsp;| &nbsp;
         
         <span class="post-meta-item-icon"><i class="fa fa-area-chart"></i></span>
         <span class="post-count"> 70.2k</span> &nbsp;| &nbsp;
         <span><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
         <a style="color: #4c618f;" href="https://tongji.baidu.com/web/10000172729/overview/index?siteId=14879413" target="_blank" rel="noopener">百度统计</a>&nbsp;|
         <a href="https://www.upyun.com/" target="_blank" rel="noopener">
-          <img class="cdn" src="/images/又拍云.png" alt="">
+          <img class="cdn" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/images/又拍云.png" alt="">
         </a>
       </li> 
 
@@ -343,10 +223,6 @@
         </span>
         
       </li>
-
-      <!-- <li style="position: relative; top: -30px;">
-       
-      </li> -->
     </ul>
     <!-- 打字特效 -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/activate-power-mode.min.js"></script>
@@ -368,7 +244,7 @@
 <nav class="navbar">
   
   <div class="logo">
-    <a href="/"><img src="//blueblog-1301047842.cos.ap-chengdu.myqcloud.com/images/dog.jpg" alt="Blue"></a>
+    <a href="/"><img src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/images/dog.jpg" alt="Blue"></a>
   </div>
   
   <ul class="nav nav-main">
@@ -439,13 +315,13 @@
   <div class="reward-box">
     
     <div class="reward-item">
-      <img class="reward-img" src="/images/alipay.jpg">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/images/alipay.jpg">
       <span class="reward-type">支付宝</span>
     </div>
     
     
     <div class="reward-item">
-      <img class="reward-img" src="/images/wechat.jpg">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/images/wechat.jpg">
       <span class="reward-type">微信</span>
     </div>
     
@@ -491,7 +367,7 @@
 </script>
 
 <!-- 
-<script src="//blueblog-1301047842.cos.ap-chengdu.myqcloud.com/js/ayer.js"></script>
+<script src="/js/ayer.js"></script>
  -->
 <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/ayer.js"></script>
 
@@ -610,10 +486,10 @@
 
   </div>
   <!-- 代码块复制功能 -->
-  <script type="text/javascript" src="//blueblog-1301047842.cos.ap-chengdu.myqcloud.com/js/src/clipboard.min.js"></script>
-  <script type="text/javascript" src="//blueblog-1301047842.cos.ap-chengdu.myqcloud.com/js/src/clipboard-use.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/src/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/src/clipboard-use.js"></script>
   <!-- 页面点击小红心 -->
-  <script type="text/javascript" src="//blueblog-1301047842.cos.ap-chengdu.myqcloud.com/js/love-click.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/love-click.js"></script>
   <script>
     $(document).ready(function() {
       $("#hbePass").focus();
@@ -634,7 +510,7 @@
         s.parentNode.insertBefore(bp, s);
     })();
     </script>
-    <script type="text/javascript" size="210" alpha='0.3' zIndex="-2" src="//blueblog-1301047842.cos.ap-chengdu.myqcloud.com/dist/ribbon.min.js"></script>
+    <script type="text/javascript" size="210" alpha='0.3' zIndex="-2" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/dist/ribbon.min.js"></script>
 </body>
 
 </html>

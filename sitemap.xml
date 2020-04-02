@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://coderblue.cn/about/index.html</loc>
+    
+    <lastmod>2020-04-02T09:57:32.573Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://coderblue.cn/check/index.html</loc>
+    
+    <lastmod>2020-04-02T09:47:43.087Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://coderblue.cn/project/index.html</loc>
     
     <lastmod>2020-04-02T08:41:36.596Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>http://coderblue.cn/1333150612/</loc>
     
     <lastmod>2020-04-02T07:21:41.189Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://coderblue.cn/check/index.html</loc>
-    
-    <lastmod>2020-04-02T07:03:22.539Z</lastmod>
     
   </url>
   
@@ -82,13 +89,6 @@
     <loc>http://coderblue.cn/2619727741/</loc>
     
     <lastmod>2020-03-20T12:07:03.619Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://coderblue.cn/about/index.html</loc>
-    
-    <lastmod>2020-03-20T07:31:16.646Z</lastmod>
     
   </url>
   
