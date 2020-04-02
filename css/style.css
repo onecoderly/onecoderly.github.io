@@ -7887,19 +7887,6 @@ body {
 .cdn {
   width: 6rem;
 }
-@media (max-height: 780px) {
-  .footer {
-    height: 24%;
-  }
-}
-@media (max-height: 580px) {
-  .footer {
-    height: 45%;
-  }
-  .footer .outer>ul {
-    height: 15rem;
-  }
-}
 @-moz-keyframes heartsAnimate {
   0%, 100% {
     transform: scale(1);

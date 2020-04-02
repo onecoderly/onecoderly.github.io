@@ -779,8 +779,8 @@ eg：public static int count; //学生人数的累加</code></pre><p>意义：<b
     <content><![CDATA[<br>
 <br>
 <a id="more"></a>
+准备工作：
 
-<p>准备工作：</p>
 <p>　　 ip一个　， 例如：192.168.1.666</p>
 <p>　　服务器一台，放行所需端口</p>
 <p>　　假想一个域名 <a href="http://www.test.com" target="_blank" rel="noopener">www.test.com</a></p>
