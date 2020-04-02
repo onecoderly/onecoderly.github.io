@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="/css/style.css">
  -->
   
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/css/style@v1.0.1.css">
 
   
 <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/pace.min.js"></script>
@@ -111,36 +111,16 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
-
+<!-- 心知天气 -->
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/weather.js"></script>
 <!-- 樱花特效 -->
 <script src="https://cdn.bootcss.com/JQuery-Snowfall/1.7.4/snowfall.jquery.min.js"></script>
-<script>
-  let _document = $(document)
-
-  $(document).click(function () {
-    _document.snowfall('clear');
-  })
-  $(document).dblclick(function () {
-    sakura()
-  })
-
-  function sakura() {
-    _document.snowfall({
-      image: "/images/sakura.png",
-      flakeCount: 8,
-      minSize: 20,
-      maxSize: 35,
-      minSpeed: 1,
-      maxSpeed: 2
-    })
-  }
-
-  setTimeout(() => {
-    sakura()
-  }, 1000);
-</script>
+<!-- 点击樱花下落 -->
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/sakura-fall.js"></script>
 
 <div id="main">
+  <!-- 心智天气 -->
+  <div id="tp-weather-widget" style="position: fixed;top: 0;left: 0;opacity: 0.8;"></div>
   <section class="outer">
   <article class="articles">
     
