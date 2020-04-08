@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coderblue.cn/"/>
-  <updated>2020-04-05T11:25:49.167Z</updated>
+  <updated>2020-04-07T06:04:40.916Z</updated>
   <id>http://coderblue.cn/</id>
   
   <author>
@@ -15,6 +15,124 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>idea配置tomcat以及成功启动struts项目</title>
+    <link href="http://coderblue.cn/3751625429/"/>
+    <id>http://coderblue.cn/3751625429/</id>
+    <published>2020-04-07T05:57:30.000Z</published>
+    <updated>2020-04-07T06:04:40.916Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;配置tomcat&lt;br&gt;Tomcat8 需要jdk1.7及以上的&lt;br&gt;Tomcat7 需要jdk1.6及以上的&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://coderblue.cn/categories/Java/"/>
+    
+    
+      <category term="struts" scheme="http://coderblue.cn/tags/struts/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tomcat启动乱码</title>
+    <link href="http://coderblue.cn/585021418/"/>
+    <id>http://coderblue.cn/585021418/</id>
+    <published>2020-04-07T04:43:52.000Z</published>
+    <updated>2020-04-07T04:47:01.447Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;刚装完tomcat7，启动就遇到这乱码问题&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;12-Jan-2019 11:15:48.911 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log OS
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://coderblue.cn/categories/Java/"/>
+    
+    
+      <category term="tomcat" scheme="http://coderblue.cn/tags/tomcat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>idea配置svn</title>
+    <link href="http://coderblue.cn/487943876/"/>
+    <id>http://coderblue.cn/487943876/</id>
+    <published>2020-04-07T02:44:43.000Z</published>
+    <updated>2020-04-07T02:51:37.045Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;安装svn&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装过程中需要添加 command line client tools选第一个will be添加的就行。&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="svn" scheme="http://coderblue.cn/categories/svn/"/>
+    
+      <category term="idea" scheme="http://coderblue.cn/categories/svn/idea/"/>
+    
+    
+      <category term="idea" scheme="http://coderblue.cn/tags/idea/"/>
+    
+      <category term="svn" scheme="http://coderblue.cn/tags/svn/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>将网页设置成黑白色</title>
+    <link href="http://coderblue.cn/3296627370/"/>
+    <id>http://coderblue.cn/3296627370/</id>
+    <published>2020-04-06T14:06:00.000Z</published>
+    <updated>2020-04-06T14:18:34.291Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;方式-1：通过-js-可以设定指定时间，自动变灰以及复原&quot;&gt;&lt;a href=&quot;#方式-1：通过-js-可以设定指定时间，自动变灰以及复原&quot; class=&quot;headerlink&quot; title=&quot;方式 1：通过 js
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://coderblue.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="http://coderblue.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>win10主题美化</title>
@@ -342,9 +460,9 @@
       <category term="前端" scheme="http://coderblue.cn/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="前端" scheme="http://coderblue.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="JS" scheme="http://coderblue.cn/tags/JS/"/>
+    
+      <category term="前端" scheme="http://coderblue.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -388,94 +506,6 @@
     
     
       <category term="Oracle" scheme="http://coderblue.cn/tags/Oracle/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>element-ui的树型控件节点实时刷新</title>
-    <link href="http://coderblue.cn/2949839444/"/>
-    <id>http://coderblue.cn/2949839444/</id>
-    <published>2020-03-11T11:39:14.000Z</published>
-    <updated>2020-03-16T12:47:18.937Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今日在做电商后台管理系统时，我从后端查出来的数据，遍历后赋值给我绑定 key 值的数组，但是发现个问题，没有实时更新过来.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="vue" scheme="http://coderblue.cn/categories/vue/"/>
-    
-    
-      <category term="Element Ui" scheme="http://coderblue.cn/tags/Element-Ui/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>oracle的模糊查询</title>
-    <link href="http://coderblue.cn/1625540053/"/>
-    <id>http://coderblue.cn/1625540053/</id>
-    <published>2020-03-09T10:50:37.000Z</published>
-    <updated>2020-03-09T11:21:36.956Z</updated>
-    
-    <summary type="html">
-    
-      &lt;br&gt;
-&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="数据库" scheme="http://coderblue.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="Oracle" scheme="http://coderblue.cn/tags/Oracle/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>axios传值的方式</title>
-    <link href="http://coderblue.cn/880098577/"/>
-    <id>http://coderblue.cn/880098577/</id>
-    <published>2020-03-09T10:50:12.000Z</published>
-    <updated>2020-03-09T11:20:17.744Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;注意：前端怎么传值，后端就用什么拿值，一一对应。&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://coderblue.cn/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="Vue" scheme="http://coderblue.cn/tags/Vue/"/>
-    
-      <category term="axios" scheme="http://coderblue.cn/tags/axios/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>后端查询sql报错</title>
-    <link href="http://coderblue.cn/3632852599/"/>
-    <id>http://coderblue.cn/3632852599/</id>
-    <published>2020-03-06T01:47:25.000Z</published>
-    <updated>2020-03-20T07:08:07.041Z</updated>
-    
-    <summary type="html">
-    
-      &lt;br&gt;
-&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="数据库" scheme="http://coderblue.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="SQL" scheme="http://coderblue.cn/tags/SQL/"/>
     
   </entry>
   
