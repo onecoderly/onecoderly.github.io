@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="corder" />
+   
+  <meta name="description" content="一花一世界~" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="baidu-site-verification" content="JAFHu5il3e" />
+  <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+  <link href="//cdn.bootcss.com/layer/3.0.1/skin/default/layer.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/layer/3.0.1/layer.min.js"></script>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <title>
+    ECharts配置项 |  Blue
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
+
+  
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/images/favicon.ico" />
+  
+  <!-- 
+<link rel="stylesheet" href="/css/style.css">
+ -->
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/css/style@v1.0.2.css">
+
+  
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/pace.min.js"></script>
+
+  <!-- Dao Voice -->
+  
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/dao-voice-1.js"></script>
+
+
+  
+
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?28a28ef220229ebef569476d22116e4f&#34;";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  
+<script>
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link rel="alternate" href="/atom.xml" title="Blue" type="application/atom+xml">
+</head>
+
+</html>
+<script>
+  const val = '致小朋友\n\n我喜欢夏天的雨，\n雨后的光，\n和任何时候的你。\n'
+    console.log("%c%s",
+          "color: #e798e7; font-size: 16px;font-weight:bolder",
+        val);
+</script>
+<body>
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-ECharts配置项" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  ECharts配置项
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <!-- 博客指定样式修改 -->
+      
+
+      <a href="/498086082/" class="article-date">
+  <time datetime="2020-04-12T01:58:33.000Z" itemprop="datePublished">2020-04-12</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.8k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">7分钟</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <!-- 不蒜子统计：暂未实现 -->
+        <span id="busuanzi_container_page_pv">
+            <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <h2 id="配置流程"><a href="#配置流程" class="headerlink" title="配置流程"></a>配置流程</h2><blockquote>
+<p>这里不推荐使用var，毕竟是全局变量，window都可以直接拿出来值。要使用就用 闭包形式 :<br>(function() {<br>  内容<br>})()</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="comment">// 1. 实例化对象</span></span><br><span class="line"><span class="keyword">let</span> myChart = echarts.init(<span class="built_in">document</span>.querySelector(<span class="string">"包裹echarts图形最近的div"</span>));</span><br><span class="line"><span class="built_in">console</span>.log(myChart)</span><br><span class="line"><span class="comment">// 2. 指定配置项和数据</span></span><br><span class="line"><span class="keyword">let</span> option = &#123;</span><br><span class="line">  内容</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 3. 把配置项给实例对象</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> option === <span class="string">'object'</span>) &#123;</span><br><span class="line">    myChart.setOption(option)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 4. 让图表跟随屏幕自动的去适应</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"resize"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  myChart.resize();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>有时候我们可能会因为样式的问题，语法没有问题，但是echarts却没有显示出来，那是因为它现在的高度是 0。那么我们就需要设置点样式了</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">  <span class="selector-class">.panel</span>,</span><br><span class="line">  <span class="selector-class">.chart</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(<span class="number">19</span>, <span class="number">75</span>, <span class="number">159</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><h3 id="title-标题"><a href="#title-标题" class="headerlink" title="title 标题"></a>title 标题</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">title: &#123;</span><br><span class="line">  text: <span class="string">'（个）'</span>,</span><br><span class="line">  left: <span class="number">10</span>,</span><br><span class="line">  top: <span class="number">20</span>,</span><br><span class="line">  textStyle: &#123;</span><br><span class="line">    color: <span class="string">'#03ECFB'</span>,</span><br><span class="line">    fontSize: <span class="number">10</span>,</span><br><span class="line">    fontWeight: <span class="number">10</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h3 id="color-图形的颜色设置"><a href="#color-图形的颜色设置" class="headerlink" title="color 图形的颜色设置"></a>color 图形的颜色设置</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">color: [<span class="string">"#2f89cf"</span>],</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200412100602543.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+<h3 id="tooltip-悬浮提示框"><a href="#tooltip-悬浮提示框" class="headerlink" title="tooltip 悬浮提示框"></a>tooltip 悬浮提示框</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">tooltip: &#123;</span><br><span class="line">    <span class="comment">// 'item'数据项图形触发, 'axis'坐标轴触发，</span></span><br><span class="line">    trigger: <span class="string">"axis"</span>,</span><br><span class="line">    <span class="comment">// 提示框浮层的位置，默认不设置时位置会跟随鼠标的位置。</span></span><br><span class="line">    <span class="comment">// 绝对位置，相对于容器左侧 10px, 上侧 10 px</span></span><br><span class="line">    <span class="comment">// position: [10, 10],</span></span><br><span class="line">    <span class="comment">// 相对位置，放置在容器正中间</span></span><br><span class="line">    <span class="comment">// position: ['50%', '50%'],</span></span><br><span class="line">    <span class="comment">// trigger 为'item'时：inside鼠标所在图形的内部中心位置，top图形上侧，left图形左侧，right图形右侧，bottom图形底侧</span></span><br><span class="line">    position: <span class="string">'bottom'</span>,</span><br><span class="line">    <span class="comment">// 同时鼠标移动和点击时触发</span></span><br><span class="line">    triggerOn: <span class="string">'mousemove|click'</span>,</span><br><span class="line">    <span class="comment">// 鼠标是否可进入提示框浮层中</span></span><br><span class="line">    enterable: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 是否将 tooltip 框限制在图表的区域内。</span></span><br><span class="line">    confine: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 格式化的显示内容</span></span><br><span class="line">    formatter: <span class="string">'&#123;a&#125; &lt;br/&gt;&#123;b&#125;: &#123;c&#125; (&#123;d&#125;%)'</span>,</span><br><span class="line">    textStyle: &#123;</span><br><span class="line">      color: <span class="string">'#03ECFB'</span> <span class="comment">// 悬浮文字颜色</span></span><br><span class="line">    &#125;,</span><br><span class="line">    axisPointer: &#123;</span><br><span class="line">      <span class="comment">// 坐标轴指示器，坐标轴触发有效</span></span><br><span class="line">      type: <span class="string">"cross"</span>, <span class="comment">// 默认为直线，可选为：'line'直线 | 'shadow'阴影部分 | 'cross'十字架</span></span><br><span class="line">      <span class="comment">// 坐标轴指示器是否自动吸附到点上。默认自动判断。可以自动寻找细小的数值点</span></span><br><span class="line">      snap: <span class="literal">false</span>,</span><br><span class="line">      <span class="comment">// 坐标轴指示器的文本标签</span></span><br><span class="line">      label: &#123;</span><br><span class="line">        color: <span class="string">'red'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      animation: <span class="literal">true</span>,</span><br><span class="line">      <span class="comment">// axisPointer.type 为 'cross' 时有效。 还有lineStyle，shadowStyle</span></span><br><span class="line">      crossStyle: &#123;</span><br><span class="line">        <span class="comment">// 线的颜色</span></span><br><span class="line">        color: <span class="string">'green'</span>,</span><br><span class="line">        type: <span class="string">'solid'</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200409222653376.png" alt=""></p>
+<h3 id="grid-修改图表的大小"><a href="#grid-修改图表的大小" class="headerlink" title="grid 修改图表的大小"></a>grid 修改图表的大小</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">grid: &#123;</span><br><span class="line">  <span class="comment">// grid 组件离容器左侧的距离。</span></span><br><span class="line">  left: <span class="string">"0%"</span>,</span><br><span class="line">  top: <span class="string">"10px"</span>,</span><br><span class="line">  right: <span class="string">"0%"</span>,</span><br><span class="line">  bottom: <span class="string">"4%"</span>,</span><br><span class="line">  <span class="comment">// 组件的宽度</span></span><br><span class="line">  width: <span class="string">'450px'</span>,</span><br><span class="line">  <span class="comment">// 组件的高度</span></span><br><span class="line">  height: <span class="string">'400px'</span>,</span><br><span class="line">  <span class="comment">// z值小的图形会被z值大的图形覆盖。 或者zlevel</span></span><br><span class="line">  z: <span class="number">1</span>,</span><br><span class="line">  <span class="comment">// grid 区域是否包含坐标轴的刻度标签。</span></span><br><span class="line">  containLabel: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="textStyle-文本颜色"><a href="#textStyle-文本颜色" class="headerlink" title="textStyle 文本颜色"></a>textStyle 文本颜色</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">textStyle: &#123;</span><br><span class="line">  color: <span class="string">"#03ECFB"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="legend-图例组件"><a href="#legend-图例组件" class="headerlink" title="legend 图例组件"></a>legend 图例组件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">legend: &#123;</span><br><span class="line">    data: [<span class="string">'流量'</span>, <span class="string">'降雨量'</span>],</span><br><span class="line">    left: <span class="number">10</span>,</span><br><span class="line">    textStyle: &#123;</span><br><span class="line">      color: <span class="string">"#03ECFB"</span> <span class="comment">// 文字颜色</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200409222139367.png" alt=""></p>
+<h3 id="toolbox-工具栏"><a href="#toolbox-工具栏" class="headerlink" title="toolbox 工具栏"></a>toolbox 工具栏</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">toolbox : &#123;</span><br><span class="line">  <span class="comment">// 是否显示工具栏组件</span></span><br><span class="line">  show : <span class="literal">true</span>,</span><br><span class="line">    feature: &#123;</span><br><span class="line">      <span class="comment">// 区域缩放</span></span><br><span class="line">      dataZoom: &#123;</span><br><span class="line">          yAxisIndex: <span class="string">'none'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment">// 还原</span></span><br><span class="line">      restore: &#123;&#125;,</span><br><span class="line">      <span class="comment">// 保存为图片</span></span><br><span class="line">      saveAsImage: &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200409230616744.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+<h3 id="xAxis-横坐标"><a href="#xAxis-横坐标" class="headerlink" title="xAxis 横坐标"></a>xAxis 横坐标</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line">xAxis: [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// 'value' 数值轴，适用于连续数据。</span></span><br><span class="line">    <span class="comment">// 'category' 类目轴，适用于离散的类目数据，为该类型时必须通过 data 设置类目数据。</span></span><br><span class="line">    <span class="comment">// 'time' 时间轴，适用于连续的时序数据，与数值轴相比时间轴带有时间的格式化，在刻度计算上也有所不同，例如会根据跨度的范围来决定使用月，星期，日还是小时范围的刻度。</span></span><br><span class="line">    <span class="comment">// 'log' 对数轴。适用于对数数据。</span></span><br><span class="line">    type: <span class="string">"category"</span>,</span><br><span class="line">    data: [<span class="string">'1月'</span>, <span class="string">'2月'</span>, <span class="string">'3月'</span>, <span class="string">'4月'</span>, <span class="string">'5月'</span>, <span class="string">'6月'</span>, <span class="string">'7月'</span>, <span class="string">'8月'</span>, <span class="string">'9月'</span>, <span class="string">'10月'</span>, <span class="string">'11月'</span>, <span class="string">'12月'</span>],</span><br><span class="line">    <span class="comment">//网格线</span></span><br><span class="line">    splitLine: &#123;</span><br><span class="line">      show: <span class="literal">true</span>,</span><br><span class="line">      interval: <span class="number">0</span>, <span class="comment">// 0表示不间断显示网格线</span></span><br><span class="line">      lineStyle: &#123;</span><br><span class="line">        color: <span class="string">"#3e3b3d"</span>, <span class="comment">// 不填color就默认跟原本的颜色一样</span></span><br><span class="line">        type: <span class="string">'dotted'</span>    <span class="comment">//设置网格线类型 dotted：虚线   solid:实线</span></span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    axisTick: &#123;</span><br><span class="line">      <span class="comment">// 类目轴中在 boundaryGap 为 true 的时候有效，可以保证刻度线和标签对齐。</span></span><br><span class="line">      alignWithLabel: <span class="literal">true</span>,</span><br><span class="line">      <span class="comment">// 默认auto，0显示所有刻度，如果设置为 1，表示『隔一个标签显示一个刻度』，如果值为 2，表示隔两个标签显示一个刻度，以此类推</span></span><br><span class="line">      interval: <span class="number">0</span>,</span><br><span class="line">      <span class="comment">// 坐标轴刻度是否朝内，默认朝外。朝内就可能看不到刻度线啦</span></span><br><span class="line">      inside: <span class="literal">false</span>,</span><br><span class="line">      <span class="comment">// 坐标轴刻度的长度(高度)</span></span><br><span class="line">      length: <span class="number">20</span>,</span><br><span class="line">      <span class="comment">// 刻度线的样式设置</span></span><br><span class="line">      lineStyle: &#123;</span><br><span class="line">        <span class="comment">// 如果刻度线的宽度 &lt; 图形的宽度，那么就会被图形遮盖，显示不出来</span></span><br><span class="line">        color: <span class="string">'red'</span>,</span><br><span class="line">        width: <span class="number">30</span>,</span><br><span class="line">        <span class="comment">// 图形透明度</span></span><br><span class="line">        opacity: <span class="number">0.5</span>,</span><br><span class="line">        <span class="comment">// 以下设置没见效果</span></span><br><span class="line">        type: <span class="string">'dashed'</span>,</span><br><span class="line">        <span class="comment">// 阴影颜色</span></span><br><span class="line">        shadowColor: <span class="string">'green'</span>,</span><br><span class="line">        <span class="comment">// 图形阴影的模糊大小</span></span><br><span class="line">        shadowBlur: <span class="number">10</span>,</span><br><span class="line">        <span class="comment">// 阴影水平方向上的偏移距离。</span></span><br><span class="line">        shadowOffsetY: <span class="number">100</span>,</span><br><span class="line">        <span class="comment">//设置网格线类型 dotted：虚线</span></span><br><span class="line">        type: <span class="string">'dotted'</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 修改刻度标签文字相关样式</span></span><br><span class="line">    axisLabel: &#123;</span><br><span class="line">      color: <span class="string">"rgba(255,255,255,.6) "</span>,</span><br><span class="line">      <span class="comment">// 刻度线文字样式</span></span><br><span class="line">      fontSize: <span class="string">"12"</span>,</span><br><span class="line">      <span class="comment">// 刻度标签与轴线之间的距离</span></span><br><span class="line">      margin: <span class="number">30</span>,</span><br><span class="line">      formatter: <span class="string">'&#123;value&#125;'</span>, <span class="comment">// &#123;value&#125; kg</span></span><br><span class="line">      <span class="comment">// 坐标轴刻度标签的显示间隔</span></span><br><span class="line">      interval: <span class="number">0</span>,</span><br><span class="line">      <span class="comment">// 文字水平对齐方式，默认自动'left', 'center', 'right'</span></span><br><span class="line">      align: <span class="string">'center'</span>,</span><br><span class="line">      <span class="comment">// 文字垂直对齐方式 'top', 'bottom', 'middle'</span></span><br><span class="line">      verticalAlign: <span class="string">'bottom'</span>,</span><br><span class="line">      <span class="comment">// 行高</span></span><br><span class="line">      lineHeight: <span class="number">20</span>,</span><br><span class="line">      rich: &#123;</span><br><span class="line">        a: &#123;</span><br><span class="line">          <span class="comment">// 没有设置 `lineHeight`，则 `lineHeight` 为 56</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment">// 文字块背景色, 这里支持背景图片</span></span><br><span class="line">      backgroundColor: &#123;</span><br><span class="line">        image: <span class="string">'https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/images/dog.jpg'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment">// 文字块边框颜色</span></span><br><span class="line">      borderColor: <span class="string">'pink'</span>,</span><br><span class="line">      <span class="comment">// 文字块边框宽度。</span></span><br><span class="line">      borderWidth: <span class="number">20</span>,</span><br><span class="line">      <span class="comment">// 文字块的圆角</span></span><br><span class="line">      borderRadius: <span class="number">10</span>,</span><br><span class="line">      <span class="comment">// backgroundColor: '#123234',</span></span><br><span class="line">      <span class="comment">// 是否显示刻度标签</span></span><br><span class="line">      show: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 坐标轴名称的文字样式。</span></span><br><span class="line">    nameTextStyle: &#123;</span><br><span class="line">      color: <span class="string">''</span>,</span><br><span class="line">      <span class="comment">// 坐标轴名称文字字体风格'normal','italic','oblique'</span></span><br><span class="line">      fontStyle: <span class="string">'italic'</span>,</span><br><span class="line">      fontWeight: <span class="string">''</span>,</span><br><span class="line">      fontFamily: <span class="string">''</span>,</span><br><span class="line">      fontSize: <span class="string">''</span>,</span><br><span class="line">      <span class="comment">// 文字水平对齐方式，默认自动，需要与rich同用</span></span><br><span class="line">      align: <span class="string">''</span>,</span><br><span class="line">      <span class="comment">// 文字垂直对齐方式，默认自动</span></span><br><span class="line">      verticalAlign: bottom,</span><br><span class="line">      rich: &#123;</span><br><span class="line">          a: &#123;</span><br><span class="line">              <span class="comment">// 没有设置 `verticalAlign`，则 `verticalAlign` 为 bottom</span></span><br><span class="line">          &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      lineHeight: <span class="string">''</span>,</span><br><span class="line">      backgroundColor: <span class="string">''</span></span><br><span class="line">      <span class="comment">// 等等，参照：https://www.echartsjs.com/zh/option.html#xAxis.type</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 不显示x坐标轴的样式(也就是对轴的颜色、weight等的修改)</span></span><br><span class="line">    axisLine: &#123;</span><br><span class="line">      show: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h3 id="yAxis-纵坐标"><a href="#yAxis-纵坐标" class="headerlink" title="yAxis 纵坐标"></a>yAxis 纵坐标</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">yAxis: [</span><br><span class="line">  &#123;</span><br><span class="line">    type: <span class="string">"value"</span>,</span><br><span class="line">    <span class="comment">// 修改刻度标签 相关样式</span></span><br><span class="line">    axisLabel: &#123;</span><br><span class="line">      color: <span class="string">"rgba(255,255,255,.6) "</span>,</span><br><span class="line">      fontSize: <span class="number">12</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// y轴的线条改为了 2像素</span></span><br><span class="line">    axisLine: &#123;</span><br><span class="line">      lineStyle: &#123;</span><br><span class="line">        color: <span class="string">"rgba(255,255,255,.1)"</span>,</span><br><span class="line">        width: <span class="number">2</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// y轴分割线的颜色</span></span><br><span class="line">    splitLine: &#123;</span><br><span class="line">      lineStyle: &#123;</span><br><span class="line">        color: <span class="string">"rgba(255,255,255,.1)"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h3 id="series-系列列表"><a href="#series-系列列表" class="headerlink" title="series 系列列表"></a>series 系列列表</h3><p>两根折线</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">series: [</span><br><span class="line">  &#123;</span><br><span class="line">      <span class="comment">// 需要对应legend中数据</span></span><br><span class="line">      name: <span class="string">"共收录的"</span>,</span><br><span class="line">      data: data.dataList, <span class="comment">// ajax请求回来的数据</span></span><br><span class="line">      type: <span class="string">"line"</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">"被引用的"</span>,</span><br><span class="line">      data: data.dataList1,</span><br><span class="line">      type: <span class="string">"line"</span>,</span><br><span class="line">      itemStyle: &#123;</span><br><span class="line">        color: <span class="string">"#1f78fb"</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  ],</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200412104202411.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+<p>一根折线一个柱状图</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">series: [&#123;</span><br><span class="line">  name: <span class="string">'验证'</span>,</span><br><span class="line">  data: data.dataList,</span><br><span class="line">  type: <span class="string">'line'</span></span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">  name: <span class="string">'证照引用'</span>,</span><br><span class="line">  type: <span class="string">'bar'</span>,</span><br><span class="line">  barWidth: <span class="string">'30%'</span>,</span><br><span class="line">  <span class="comment">// 使用的 y 轴的 index，在单个图表实例中存在多个 y轴的时候有用 注意配置这个不然都会以右边的y轴数值为基准</span></span><br><span class="line">  yAxisIndex: <span class="number">1</span>,</span><br><span class="line">  data: data.dataList1</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200412111857405.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+<p>柱状图</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">series: [&#123;</span><br><span class="line">  name: <span class="string">"直接访问"</span>,</span><br><span class="line">  type: <span class="string">"bar"</span>,</span><br><span class="line">  barWidth: <span class="string">"35%"</span>,</span><br><span class="line">  data: [<span class="number">200</span>, <span class="number">300</span>, <span class="number">300</span>, <span class="number">900</span>, <span class="number">1500</span>, <span class="number">1200</span>, <span class="number">600</span>],</span><br><span class="line">  itemStyle: &#123;</span><br><span class="line">    <span class="comment">// 修改柱子圆角</span></span><br><span class="line">    barBorderRadius: <span class="number">5</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200412104709813.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+<p>饼图</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">series: [</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">""</span>,</span><br><span class="line">    type: <span class="string">"pie"</span>,</span><br><span class="line">    radius: [<span class="string">"50%"</span>, <span class="string">"70%"</span>],</span><br><span class="line">    avoidLabelOverlap: <span class="literal">false</span>,</span><br><span class="line">    label: &#123;</span><br><span class="line">      show: <span class="literal">true</span>,</span><br><span class="line">      position: <span class="string">"inside"</span>,</span><br><span class="line">      fontSize: <span class="number">17</span>,</span><br><span class="line">      formatter: <span class="string">"&#123;b|&#123;b&#125;&#125;\n &#123;c&#125;\t\t  &#123;d&#125;%"</span>,</span><br><span class="line">      rich: &#123;</span><br><span class="line">        <span class="comment">// 自定义文字标签样式</span></span><br><span class="line">        b: &#123;</span><br><span class="line">          fontSize: <span class="number">16</span>,</span><br><span class="line">          lineHeight: <span class="number">33</span>,</span><br><span class="line">          color: <span class="string">"#fff"</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 高亮的扇区和标签样式</span></span><br><span class="line">    emphasis: &#123;</span><br><span class="line">      label: &#123;</span><br><span class="line">        show: <span class="literal">true</span>,</span><br><span class="line">        fontSize: <span class="string">"30"</span>,</span><br><span class="line">        fontWeight: <span class="string">"bold"</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 是否显示视觉引导线</span></span><br><span class="line">    labelLine: &#123;</span><br><span class="line">      show: <span class="literal">false</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    data: [</span><br><span class="line">      &#123; <span class="attr">value</span>: data.dataList, <span class="attr">name</span>: <span class="string">"行政审批证照"</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">value</span>: data.dataList1, <span class="attr">name</span>: <span class="string">"电子证照"</span> &#125;,</span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/2020041210480239.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        打赏
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong s>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
+            target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+      
+      
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://coderblue.cn/498086082/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ECharts/" rel="tag">ECharts</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/3242869481/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            你值得拥有美好
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2702678070/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">最常用的正则表达式</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1'></script>
+<!-- <script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script> -->
+<script>
+    // 随机四种头像
+    const heads = ['', 'mp', 'identicon', 'monsterid']
+    new Valine({
+        el: '#vcomments',
+        app_id: 'Y6sHmEuePRpPWDd5Yv45nEWL-MdYXbMMI',
+        app_key: 'hLz1Wo8jhbxGo5oQFQ59Gp6a',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: heads[parseInt(Math.random() * heads.length)],
+        placeholder: '你是爱，是暖，是希望，你是人间的四月天~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+
+    /* 给评论添加背景 */
+    .v .vedit {
+        background-image: url(https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/project/valine.jpg);
+        background-size: contain;
+        background-position: right;
+        background-repeat: no-repeat;
+    }
+
+    span.vat {
+        border: 1px solid;
+        background: #df7fe1;
+        width: 4rem;
+        border-radius: 4px;
+        text-align: center;
+        color: #ffffff !important;
+    }
+
+    .v .vlist .vcard .vh {
+        padding: 0 !important;
+    }
+
+    .v .vbtn {
+        background: #95eaa9 !important;
+        color: #ffffff !important;
+        border: none !important;
+    }
+
+    .vcontent p {
+        text-align: left;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ol class="list-inline">
+      <li>
+        &copy;
+        2020
+        Liu Yang
+        &nbsp
+        <span class="with-love">
+          <i class="fa fa-heart" id="hearts"></i>
+        </span>
+        &nbsp<a href="http://www.beian.miit.gov.cn/" target="_blank" rel="noopener" style="text-decoration: none;">湘ICP备20003709号</a>
+      </li>
+      <div id="days"></div>
+      </script>
+      <!-- 计算网站运行时间 -->
+      <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/count-time-1.js"></script>
+      
+    </ol>
+    <ul class="list-busuanzi" style="display: block;">
+      <li style="position: relative; top: -5px;">
+        <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+        <a style="color: #4c618f;" href="https://coderblue.cn/sitemap.xml">站点地图</a> &nbsp;| &nbsp;
+        
+        <span class="post-meta-item-icon"><i class="fa fa-area-chart"></i></span>
+        <span class="post-count"> 79.3k</span> &nbsp;| &nbsp;
+        <span><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
+        <a style="color: #4c618f;" href="https://tongji.baidu.com/web/10000172729/overview/index?siteId=14879413" target="_blank" rel="noopener">百度统计</a>&nbsp;|
+        <a href="https://www.upyun.com/" target="_blank" rel="noopener">
+          <img class="cdn" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/images/又拍云.png" alt="">
+        </a>
+      </li> 
+
+      <li style="position: relative; top: -15px;">
+        
+        <span id="busuanzi_container_site_pv">
+          我的第<span id="busuanzi_value_site_pv" style="color: #1095e6"></span>位朋友
+        </span>
+        
+        
+        <span id="busuanzi_container_site_uv">
+          ， 历经<span id="busuanzi_value_site_uv" style="color: #1095e6;"></span>次回眸才与你相遇
+        </span>
+        
+      </li>
+    </ul>
+    <!-- 打字特效 -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/activate-power-mode.min.js"></script>
+    <script>
+      POWERMODE.colorful = true; // ture 为启用礼花特效
+      POWERMODE.shake = false; // false 为禁用震动特效
+      document.body.addEventListener('input', POWERMODE);
+    </script>
+  </div>
+</footer>
+      <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    <aside class="sidebar">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/images/dog.jpg" alt="Blue"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item"></li>
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item"></li>
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item"></li>
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item"></li>
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item"></li>
+      <a class="nav-item-link" href="/tags/%E9%9A%8F%E7%AC%94">随笔</a>
+    </li>
+    
+    <li class="nav-item"></li>
+      <a class="nav-item-link" href="/check">祈愿</a>
+    </li>
+    
+    <li class="nav-item"></li>
+      <a class="nav-item-link" href="/project">留言</a>
+    </li>
+    
+    <li class="nav-item"></li>
+      <a class="nav-item-link" href="/Timeline">Timeline</a>
+    </li>
+    
+    <li class="nav-item"></li>
+      <a class="nav-item-link" href="/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="搜索...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/lazyload.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/checkvaline@v1.0.1.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/share.js"></script>
+
+<!--  -->
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+    strings: ['一花一世界,一叶一追寻','面朝大海，春暖花开','愿你一生努力，一生被爱'],
+    startDelay: 0,
+    typeSpeed: 200,
+    loop: true,
+    backSpeed: 100,
+    showCursor: true
+    });
+  } catch (err) {
+  }
+  
+</script>
+
+
+
+<!-- 
+<script src="/js/tocbot.min.js"></script>
+ -->
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/tocbot.min.js"></script>
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer:'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    onClick: (e) => {
+      $('.toc-link').removeClass('is-active-link');
+      $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+      $(e.target.hash).scrollIntoView();
+      return false;
+    }
+  });
+</script>
+
+
+<script>
+  var ayerConfig = {
+    mathjax: false
+  }
+</script>
+
+<!-- 
+<script src="/js/ayer.js"></script>
+ -->
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/ayer.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+
+
+ <!-- 图片单击效果 -->
+ <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/click-img-1.min.js"></script>
+
+
+
+  </div>
+  <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/src/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/src/clipboard-use.js"></script>
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/love-click.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#hbePass").focus();
+    });
+  </script>
+  <script type="text/javascript" size="210" alpha='0.3' zIndex="-2" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/dist/ribbon.min.js"></script>
+</body>
+
+</html>

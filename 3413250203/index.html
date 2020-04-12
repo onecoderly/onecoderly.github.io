@@ -199,15 +199,14 @@ var _hmt = _hmt || [];
 <li>查询存在员工的部门信息</li>
 </ol>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> dep.depid, dep.depname</span><br><span class="line">  <span class="keyword">from</span> department dep</span><br><span class="line">  <span class="keyword">where</span> <span class="keyword">exists</span> (<span class="keyword">select</span> * <span class="keyword">from</span> employee emp <span class="keyword">where</span> emp.depid = dep.depid)</span><br></pre></td></tr></table></figure>
-
-<p>同</p>
+<p><img src="https://img-blog.csdnimg.cn/20200411131234238.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""><br>同</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> d.depid, d.depname</span><br><span class="line">  <span class="keyword">from</span> department d</span><br><span class="line">  <span class="keyword">where</span> d.depid <span class="keyword">in</span> (<span class="keyword">select</span> e.depid <span class="keyword">from</span> employee e)</span><br></pre></td></tr></table></figure>
-
+<p><img src="https://img-blog.csdnimg.cn/20200411131525472.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
 <ol start="2">
 <li>查询部门平均工资不小于 3000 元的部门信息（未过滤没有员工的部门信息）</li>
 </ol>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">avg</span>(empsalary) avgsal, e.depid, d.depname</span><br><span class="line">  <span class="keyword">from</span> employee e</span><br><span class="line">  <span class="keyword">left</span> <span class="keyword">join</span> department d</span><br><span class="line">  <span class="keyword">on</span> d.depid = e.depid</span><br><span class="line">  <span class="keyword">group</span> <span class="keyword">by</span> e.depid, d.depname;</span><br></pre></td></tr></table></figure>
-
+<p><img src="https://img-blog.csdnimg.cn/20200411131551981.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
 <p>可以使用 not exists 来实现：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line">  <span class="keyword">from</span> department de</span><br><span class="line">  <span class="keyword">where</span> <span class="keyword">not</span> <span class="keyword">exists</span> (<span class="keyword">select</span> em.depid</span><br><span class="line">    <span class="keyword">from</span> employee em</span><br><span class="line">    <span class="keyword">where</span> em.depid = de.depid</span><br><span class="line">        <span class="keyword">group</span> <span class="keyword">by</span> em.depid</span><br><span class="line">        <span class="keyword">having</span>(<span class="keyword">avg</span>(em.empsalary) &lt; <span class="number">3000</span>))</span><br></pre></td></tr></table></figure>
 
@@ -222,6 +221,7 @@ var _hmt = _hmt || [];
 
 <p>同样我们也可以用 not in 来实现：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> depa.depid, depa.depname</span><br><span class="line">  <span class="keyword">from</span> department depa</span><br><span class="line">  <span class="keyword">where</span> depa.depid <span class="keyword">not</span> <span class="keyword">in</span></span><br><span class="line">      (<span class="keyword">select</span> empl.depid </span><br><span class="line">        <span class="keyword">from</span> employee empl</span><br><span class="line">        <span class="keyword">group</span> <span class="keyword">by</span> empl.depid</span><br><span class="line">        <span class="keyword">having</span>(<span class="keyword">avg</span>(empl.empsalary) &lt; <span class="number">3000</span>))</span><br><span class="line">        <span class="keyword">and</span> depa.depid <span class="keyword">in</span> (<span class="keyword">select</span> emplo.depid <span class="keyword">from</span> employee emplo)</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200411131615645.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
 
       
       <!-- reward -->
@@ -444,7 +444,7 @@ var _hmt = _hmt || [];
         <a style="color: #4c618f;" href="https://coderblue.cn/sitemap.xml">站点地图</a> &nbsp;| &nbsp;
         
         <span class="post-meta-item-icon"><i class="fa fa-area-chart"></i></span>
-        <span class="post-count"> 76.4k</span> &nbsp;| &nbsp;
+        <span class="post-count"> 79.3k</span> &nbsp;| &nbsp;
         <span><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
         <a style="color: #4c618f;" href="https://tongji.baidu.com/web/10000172729/overview/index?siteId=14879413" target="_blank" rel="noopener">百度统计</a>&nbsp;|
         <a href="https://www.upyun.com/" target="_blank" rel="noopener">
@@ -490,35 +490,39 @@ var _hmt = _hmt || [];
   
   <ul class="nav nav-main">
     
-    <li class="nav-item">
+    <li class="nav-item"></li>
       <a class="nav-item-link" href="/">主页</a>
     </li>
     
-    <li class="nav-item">
+    <li class="nav-item"></li>
       <a class="nav-item-link" href="/archives">归档</a>
     </li>
     
-    <li class="nav-item">
+    <li class="nav-item"></li>
       <a class="nav-item-link" href="/categories">分类</a>
     </li>
     
-    <li class="nav-item">
+    <li class="nav-item"></li>
       <a class="nav-item-link" href="/tags">标签</a>
     </li>
     
-    <li class="nav-item">
+    <li class="nav-item"></li>
       <a class="nav-item-link" href="/tags/%E9%9A%8F%E7%AC%94">随笔</a>
     </li>
     
-    <li class="nav-item">
+    <li class="nav-item"></li>
       <a class="nav-item-link" href="/check">祈愿</a>
     </li>
     
-    <li class="nav-item">
+    <li class="nav-item"></li>
       <a class="nav-item-link" href="/project">留言</a>
     </li>
     
-    <li class="nav-item">
+    <li class="nav-item"></li>
+      <a class="nav-item-link" href="/Timeline">Timeline</a>
+    </li>
+    
+    <li class="nav-item"></li>
       <a class="nav-item-link" href="/about">关于我</a>
     </li>
     
@@ -575,7 +579,7 @@ var _hmt = _hmt || [];
 <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/lazyload.min.js"></script>
 
 
-<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/checkvaline.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/checkvaline@v1.0.1.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/share.js"></script>
