@@ -3,7 +3,11 @@
   <entry>
     <title>致最好的小朋友❤</title>
     <url>/3034358134/</url>
-    <content><![CDATA[<p>一见倾心，</p>
+    <content><![CDATA[<br>
+<br>
+<a id="more"></a>
+一见倾心，
+
 <p>再见欢喜，</p>
 <p>只因眼前人是心上人。<br><br><br><img src="https://b339.photo.store.qq.com/psb?/V11DTiJ41S70mR/GTzMJIodkgrbDe*4ImnxaR0QX1sKj9Y7RV3dTt2Oe58!/b/dFMBAAAAAAAA&bo=iQEoAYkBKAEDEDU!" alt=""></p>
 <style>
@@ -26,9 +30,48 @@
       </tags>
   </entry>
   <entry>
+    <title>ora-01658表空间不足</title>
+    <url>/3612225564/</url>
+    <content><![CDATA[<p>错误：ORA-01658: 无法为表空间XXX段创建 INITIAL 区</p>
+<a id="more"></a>
+<p>或者</p>
+<p>ORA-01659：无法分配超出 4 的 MINEXTENTS (在表空间XXX中) 。</p>
+<h3 id="oracle里怎样查询一个表属于哪个表空间？"><a href="#oracle里怎样查询一个表属于哪个表空间？" class="headerlink" title="oracle里怎样查询一个表属于哪个表空间？"></a>oracle里怎样查询一个表属于哪个表空间？</h3><blockquote>
+<p>select TABLESPACE_NAME from tabs where TABLESPACE_NAME = 表名</p>
+</blockquote>
+<p>注意：表名 如果是英文的，要大写才可以</p>
+<h3 id="查看表空间总大小："><a href="#查看表空间总大小：" class="headerlink" title="查看表空间总大小："></a>查看表空间总大小：</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> tablespace_name,<span class="keyword">sum</span>(<span class="keyword">bytes</span>)/<span class="number">1024</span>/<span class="number">1024</span> <span class="keyword">from</span> dba_data_files <span class="keyword">group</span> <span class="keyword">by</span> tablespace_name;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看表空间已使用大小及分配情况"><a href="#查看表空间已使用大小及分配情况" class="headerlink" title="查看表空间已使用大小及分配情况"></a>查看表空间已使用大小及分配情况</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> SEGMENT_TYPE,owner,<span class="keyword">sum</span>(<span class="keyword">bytes</span>)/<span class="number">1024</span>/<span class="number">1024</span> <span class="keyword">from</span>  dba_segments  <span class="keyword">where</span> tablespace_name=<span class="string">'XITONG'</span> <span class="keyword">group</span> <span class="keyword">by</span> segment_type,owner;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看表空间文件路径"><a href="#查看表空间文件路径" class="headerlink" title="查看表空间文件路径"></a>查看表空间文件路径</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span>  * <span class="keyword">from</span> dba_data_files;</span><br></pre></td></tr></table></figure>
+
+<h3 id="增加表空间大小"><a href="#增加表空间大小" class="headerlink" title="增加表空间大小"></a>增加表空间大小</h3><p>可以选择增加新的数据文件：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">tablespace</span> YWGOV <span class="keyword">add</span> <span class="keyword">datafile</span> <span class="string">'F:\SOFT-INSTALL-SOFT\ORACLE\PRODUCT\10.2.0\ORADATA\ORCL\HOUTAI1.ORA '</span> <span class="keyword">size</span> <span class="number">100</span>M;</span><br></pre></td></tr></table></figure>
+
+<p>扩充表空间原有数据文件的大小</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">DATAFILE</span> <span class="string">'F:\SOFT-INSTALL-SOFT\ORACLE\PRODUCT\10.2.0\ORADATA\ORCL\HOUTAI.ORA'</span> <span class="keyword">RESIZE</span> <span class="number">1024</span>M;</span><br></pre></td></tr></table></figure>
+
+<p>修改表空间使其自动增加</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">DATAFILE</span> <span class="string">'F:\SOFT-INSTALL-SOFT\ORACLE\PRODUCT\10.2.0\ORADATA\ORCL\HOUTAI.ORA'</span> <span class="keyword">AUTOEXTEND</span> <span class="keyword">ON</span> <span class="keyword">NEXT</span> <span class="number">200</span>M <span class="keyword">MAXSIZE</span> <span class="keyword">UNLIMITED</span>;</span><br></pre></td></tr></table></figure>
+
+<p>或</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLESPACE</span> SDE <span class="keyword">AUTOEXTEND</span> <span class="keyword">ON</span> <span class="keyword">NEXT</span> <span class="number">100</span>M <span class="keyword">MAXSIZE</span> <span class="keyword">UNLIMITED</span>;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>Oralce</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>由三行情书感</title>
     <url>/249340220/</url>
-    <content><![CDATA[<p>是你，</p>
+    <content><![CDATA[<br>
+<br>
+<a id="more"></a>
+
+<p>是你，</p>
 <p>仿佛一粒石子坠入我的心河，</p>
 <p>掀起了我阵阵涟漪，</p>
 <p>温存了我的生命。</p>
@@ -55,7 +98,11 @@
   <entry>
     <title>夜跑有感</title>
     <url>/4080543304/</url>
-    <content><![CDATA[<p>几许繁星，</p>
+    <content><![CDATA[<br>
+<br>
+<a id="more"></a>
+几许繁星，
+
 <p>点缀夜空。</p>
 <p>几方嫩草，</p>
 <p>写出绿意。</p>
@@ -86,7 +133,11 @@
   <entry>
     <title>最是人间留不住，朱颜辞镜花辞树</title>
     <url>/3441414939/</url>
-    <content><![CDATA[<p>朱颜会老去，</p>
+    <content><![CDATA[<br>
+<br>
+<a id="more"></a>
+朱颜会老去，
+
 <p>花儿会凋谢，</p>
 <p>但你的心永远青春，</p>
 <p>绽放芳华，</p>
@@ -118,14 +169,13 @@
       </tags>
   </entry>
   <entry>
-    <title>情绪化的自己</title>
-    <url>/2833374077/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>读着--人生不易，别太在意</title>
     <url>/87565138/</url>
-    <content><![CDATA[<p>你若不屑一顾，就能刀枪不入。你若云淡风轻，才能看见最美的风景。</p>
+    <content><![CDATA[<br>
+<br>
+<a id="more"></a>
+你若不屑一顾，就能刀枪不入。你若云淡风轻，才能看见最美的风景。
+
 <p>世上本无事，庸人自扰之。你不必讨所有人的欢心，也不可能让所有人都喜欢你。</p>
 <p>少关注点别人，多关注点自己，因为你未来的路，只能靠你自己走。</p>
 <style>
@@ -150,7 +200,11 @@
   <entry>
     <title>你值得拥有美好</title>
     <url>/3242869481/</url>
-    <content><![CDATA[<p>你喜欢的人，</p>
+    <content><![CDATA[<br>
+<br>
+<a id="more"></a>
+你喜欢的人，
+
 <p>应该是你的动力，</p>
 <p>而不是你的伤口；</p>
 <p>你喜欢的事，</p>
@@ -160,6 +214,44 @@
 <p>每天都在往前走；</p>
 <p>这样多好，</p>
 <p>每天醒来都能有动力。</p>
+<style>
+  .article-entry {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10rem;
+    color: #53c9b9;
+  }
+  #reward-btn {
+    display: none;
+  }
+  .article-header .article-title{
+    padding-left: 0rem;
+    padding-right: 1.5rem;
+  }
+</style>]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从前慢</title>
+    <url>/3832130555/</url>
+    <content><![CDATA[<br>
+<br>
+<a id="more"></a>
+记得早先少年时
+
+<p>大家诚诚恳恳</p>
+<p>说一句 是一句</p>
+<p>清早上火车站</p>
+<p>长街黑暗无行人</p>
+<p>卖豆浆的小店冒着热气</p>
+<p>从前的日色变得慢</p>
+<p>车，马，邮件都慢</p>
+<p>一生只够爱一个人</p>
+<p>从前的锁也好看</p>
+<p>钥匙精美有样子</p>
+<p>你锁了 人家就懂了</p>
 <style>
   .article-entry {
     text-align: center;
@@ -192,7 +284,11 @@
 
 <h3 id="color-图形的颜色设置"><a href="#color-图形的颜色设置" class="headerlink" title="color 图形的颜色设置"></a>color 图形的颜色设置</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">color: [<span class="string">"#2f89cf"</span>],</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20200412100602543.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
-<h3 id="tooltip-悬浮提示框"><a href="#tooltip-悬浮提示框" class="headerlink" title="tooltip 悬浮提示框"></a>tooltip 悬浮提示框</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">tooltip: &#123;</span><br><span class="line">    <span class="comment">// 'item'数据项图形触发, 'axis'坐标轴触发，</span></span><br><span class="line">    trigger: <span class="string">"axis"</span>,</span><br><span class="line">    <span class="comment">// 提示框浮层的位置，默认不设置时位置会跟随鼠标的位置。</span></span><br><span class="line">    <span class="comment">// 绝对位置，相对于容器左侧 10px, 上侧 10 px</span></span><br><span class="line">    <span class="comment">// position: [10, 10],</span></span><br><span class="line">    <span class="comment">// 相对位置，放置在容器正中间</span></span><br><span class="line">    <span class="comment">// position: ['50%', '50%'],</span></span><br><span class="line">    <span class="comment">// trigger 为'item'时：inside鼠标所在图形的内部中心位置，top图形上侧，left图形左侧，right图形右侧，bottom图形底侧</span></span><br><span class="line">    position: <span class="string">'bottom'</span>,</span><br><span class="line">    <span class="comment">// 同时鼠标移动和点击时触发</span></span><br><span class="line">    triggerOn: <span class="string">'mousemove|click'</span>,</span><br><span class="line">    <span class="comment">// 鼠标是否可进入提示框浮层中</span></span><br><span class="line">    enterable: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 是否将 tooltip 框限制在图表的区域内。</span></span><br><span class="line">    confine: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 格式化的显示内容</span></span><br><span class="line">    formatter: <span class="string">'&#123;a&#125; &lt;br/&gt;&#123;b&#125;: &#123;c&#125; (&#123;d&#125;%)'</span>,</span><br><span class="line">    textStyle: &#123;</span><br><span class="line">      color: <span class="string">'#03ECFB'</span> <span class="comment">// 悬浮文字颜色</span></span><br><span class="line">    &#125;,</span><br><span class="line">    axisPointer: &#123;</span><br><span class="line">      <span class="comment">// 坐标轴指示器，坐标轴触发有效</span></span><br><span class="line">      type: <span class="string">"cross"</span>, <span class="comment">// 默认为直线，可选为：'line'直线 | 'shadow'阴影部分 | 'cross'十字架</span></span><br><span class="line">      <span class="comment">// 坐标轴指示器是否自动吸附到点上。默认自动判断。可以自动寻找细小的数值点</span></span><br><span class="line">      snap: <span class="literal">false</span>,</span><br><span class="line">      <span class="comment">// 坐标轴指示器的文本标签</span></span><br><span class="line">      label: &#123;</span><br><span class="line">        color: <span class="string">'red'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      animation: <span class="literal">true</span>,</span><br><span class="line">      <span class="comment">// axisPointer.type 为 'cross' 时有效。 还有lineStyle，shadowStyle</span></span><br><span class="line">      crossStyle: &#123;</span><br><span class="line">        <span class="comment">// 线的颜色</span></span><br><span class="line">        color: <span class="string">'green'</span>,</span><br><span class="line">        type: <span class="string">'solid'</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="tooltip-悬浮提示框"><a href="#tooltip-悬浮提示框" class="headerlink" title="tooltip 悬浮提示框"></a>tooltip 悬浮提示框</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">tooltip: &#123;</span><br><span class="line">    <span class="comment">// 'item'数据项图形触发, 'axis'坐标轴触发，</span></span><br><span class="line">    trigger: <span class="string">"axis"</span>,</span><br><span class="line">    <span class="comment">// 提示框浮层的位置，默认不设置时位置会跟随鼠标的位置。</span></span><br><span class="line">    <span class="comment">// 绝对位置，相对于容器左侧 10px, 上侧 10 px</span></span><br><span class="line">    <span class="comment">// position: [10, 10],</span></span><br><span class="line">    <span class="comment">// 相对位置，放置在容器正中间</span></span><br><span class="line">    <span class="comment">// position: ['50%', '50%'],</span></span><br><span class="line">    <span class="comment">// trigger 为'item'时：inside鼠标所在图形的内部中心位置，top图形上侧，left图形左侧，right图形右侧，bottom图形底侧</span></span><br><span class="line">    position: <span class="string">'bottom'</span>,</span><br><span class="line">    <span class="comment">// 同时鼠标移动和点击时触发</span></span><br><span class="line">    triggerOn: <span class="string">'mousemove|click'</span>,</span><br><span class="line">    <span class="comment">// 鼠标是否可进入提示框浮层中</span></span><br><span class="line">    enterable: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 是否将 tooltip 框限制在图表的区域内。</span></span><br><span class="line">    confine: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 格式化的显示内容</span></span><br><span class="line">    formatter: <span class="string">'&#123;a&#125; &lt;br/&gt;&#123;b&#125;: &#123;c&#125; (&#123;d&#125;%)'</span>,</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="textStyle"><a href="#textStyle" class="headerlink" title="textStyle"></a>textStyle</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">textStyle: &#123;</span><br><span class="line">  color: <span class="string">'#03ECFB'</span> <span class="comment">// 悬浮文字颜色</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h4 id="axisPointer-坐标轴指示器"><a href="#axisPointer-坐标轴指示器" class="headerlink" title="axisPointer 坐标轴指示器"></a>axisPointer 坐标轴指示器</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">axisPointer: &#123;</span><br><span class="line">  <span class="comment">// 坐标轴指示器，坐标轴触发有效</span></span><br><span class="line">  type: <span class="string">"cross"</span>, <span class="comment">// 默认为直线，可选为：'line'直线 | 'shadow'阴影部分 | 'cross'十字架</span></span><br><span class="line">  <span class="comment">// 坐标轴指示器是否自动吸附到点上。默认自动判断。可以自动寻找细小的数值点</span></span><br><span class="line">  snap: <span class="literal">false</span>,</span><br><span class="line">  <span class="comment">// 坐标轴指示器的文本标签</span></span><br><span class="line">  label: &#123;</span><br><span class="line">    color: <span class="string">'red'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  animation: <span class="literal">true</span>,</span><br><span class="line">  <span class="comment">// axisPointer.type 为 'cross' 时有效。 还有lineStyle，shadowStyle</span></span><br><span class="line">  crossStyle: &#123;</span><br><span class="line">    <span class="comment">// 线的颜色</span></span><br><span class="line">    color: <span class="string">'green'</span>,</span><br><span class="line">    type: <span class="string">'solid'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://img-blog.csdnimg.cn/20200409222653376.png" alt=""></p>
 <h3 id="grid-修改图表的大小"><a href="#grid-修改图表的大小" class="headerlink" title="grid 修改图表的大小"></a>grid 修改图表的大小</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">grid: &#123;</span><br><span class="line">  <span class="comment">// grid 组件离容器左侧的距离。</span></span><br><span class="line">  left: <span class="string">"0%"</span>,</span><br><span class="line">  top: <span class="string">"10px"</span>,</span><br><span class="line">  right: <span class="string">"0%"</span>,</span><br><span class="line">  bottom: <span class="string">"4%"</span>,</span><br><span class="line">  <span class="comment">// 组件的宽度</span></span><br><span class="line">  width: <span class="string">'450px'</span>,</span><br><span class="line">  <span class="comment">// 组件的高度</span></span><br><span class="line">  height: <span class="string">'400px'</span>,</span><br><span class="line">  <span class="comment">// z值小的图形会被z值大的图形覆盖。 或者zlevel</span></span><br><span class="line">  z: <span class="number">1</span>,</span><br><span class="line">  <span class="comment">// grid 区域是否包含坐标轴的刻度标签。</span></span><br><span class="line">  containLabel: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -202,12 +298,22 @@
 <h3 id="legend-图例组件"><a href="#legend-图例组件" class="headerlink" title="legend 图例组件"></a>legend 图例组件</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">legend: &#123;</span><br><span class="line">    data: [<span class="string">'流量'</span>, <span class="string">'降雨量'</span>],</span><br><span class="line">    left: <span class="number">10</span>,</span><br><span class="line">    textStyle: &#123;</span><br><span class="line">      color: <span class="string">"#03ECFB"</span> <span class="comment">// 文字颜色</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://img-blog.csdnimg.cn/20200409222139367.png" alt=""></p>
-<h3 id="toolbox-工具栏"><a href="#toolbox-工具栏" class="headerlink" title="toolbox 工具栏"></a>toolbox 工具栏</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">toolbox : &#123;</span><br><span class="line">  <span class="comment">// 是否显示工具栏组件</span></span><br><span class="line">  show : <span class="literal">true</span>,</span><br><span class="line">    feature: &#123;</span><br><span class="line">      <span class="comment">// 区域缩放</span></span><br><span class="line">      dataZoom: &#123;</span><br><span class="line">          yAxisIndex: <span class="string">'none'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment">// 还原</span></span><br><span class="line">      restore: &#123;&#125;,</span><br><span class="line">      <span class="comment">// 保存为图片</span></span><br><span class="line">      saveAsImage: &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="toolbox-工具栏"><a href="#toolbox-工具栏" class="headerlink" title="toolbox 工具栏"></a>toolbox 工具栏</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">toolbox : &#123;</span><br><span class="line">  <span class="comment">// 是否显示工具栏组件</span></span><br><span class="line">  show : <span class="literal">true</span>,</span><br><span class="line">    feature: &#123;</span><br><span class="line">      <span class="comment">// 还原</span></span><br><span class="line">      restore: &#123;&#125;,</span><br><span class="line">      <span class="comment">// 保存为图片</span></span><br><span class="line">      saveAsImage: &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h4 id="dataZoom-区域缩放"><a href="#dataZoom-区域缩放" class="headerlink" title="dataZoom 区域缩放"></a>dataZoom 区域缩放</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">dataZoom: &#123;</span><br><span class="line">    yAxisIndex: <span class="string">'none'</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://img-blog.csdnimg.cn/20200409230616744.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
-<h3 id="xAxis-横坐标"><a href="#xAxis-横坐标" class="headerlink" title="xAxis 横坐标"></a>xAxis 横坐标</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">xAxis: [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// 'value' 数值轴，适用于连续数据。</span></span><br><span class="line">    <span class="comment">// 'category' 类目轴，适用于离散的类目数据，为该类型时必须通过 data 设置类目数据。</span></span><br><span class="line">    <span class="comment">// 'time' 时间轴，适用于连续的时序数据，与数值轴相比时间轴带有时间的格式化，在刻度计算上也有所不同，例如会根据跨度的范围来决定使用月，星期，日还是小时范围的刻度。</span></span><br><span class="line">    <span class="comment">// 'log' 对数轴。适用于对数数据。</span></span><br><span class="line">    type: <span class="string">"category"</span>,</span><br><span class="line">    data: [<span class="string">'1月'</span>, <span class="string">'2月'</span>, <span class="string">'3月'</span>, <span class="string">'4月'</span>, <span class="string">'5月'</span>, <span class="string">'6月'</span>, <span class="string">'7月'</span>, <span class="string">'8月'</span>, <span class="string">'9月'</span>, <span class="string">'10月'</span>, <span class="string">'11月'</span>, <span class="string">'12月'</span>],</span><br><span class="line">    <span class="comment">//网格线</span></span><br><span class="line">    splitLine: &#123;</span><br><span class="line">      show: <span class="literal">true</span>,</span><br><span class="line">      interval: <span class="number">0</span>, <span class="comment">// 0表示不间断显示网格线</span></span><br><span class="line">      lineStyle: &#123;</span><br><span class="line">        color: <span class="string">"#3e3b3d"</span>, <span class="comment">// 不填color就默认跟原本的颜色一样</span></span><br><span class="line">        type: <span class="string">'dotted'</span>    <span class="comment">//设置网格线类型 dotted：虚线   solid:实线</span></span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    axisTick: &#123;</span><br><span class="line">      <span class="comment">// 类目轴中在 boundaryGap 为 true 的时候有效，可以保证刻度线和标签对齐。</span></span><br><span class="line">      alignWithLabel: <span class="literal">true</span>,</span><br><span class="line">      <span class="comment">// 默认auto，0显示所有刻度，如果设置为 1，表示『隔一个标签显示一个刻度』，如果值为 2，表示隔两个标签显示一个刻度，以此类推</span></span><br><span class="line">      interval: <span class="number">0</span>,</span><br><span class="line">      <span class="comment">// 坐标轴刻度是否朝内，默认朝外。朝内就可能看不到刻度线啦</span></span><br><span class="line">      inside: <span class="literal">false</span>,</span><br><span class="line">      <span class="comment">// 坐标轴刻度的长度(高度)</span></span><br><span class="line">      length: <span class="number">20</span>,</span><br><span class="line">      <span class="comment">// 刻度线的样式设置</span></span><br><span class="line">      lineStyle: &#123;</span><br><span class="line">        <span class="comment">// 如果刻度线的宽度 &lt; 图形的宽度，那么就会被图形遮盖，显示不出来</span></span><br><span class="line">        color: <span class="string">'red'</span>,</span><br><span class="line">        width: <span class="number">30</span>,</span><br><span class="line">        <span class="comment">// 图形透明度</span></span><br><span class="line">        opacity: <span class="number">0.5</span>,</span><br><span class="line">        <span class="comment">// 以下设置没见效果</span></span><br><span class="line">        type: <span class="string">'dashed'</span>,</span><br><span class="line">        <span class="comment">// 阴影颜色</span></span><br><span class="line">        shadowColor: <span class="string">'green'</span>,</span><br><span class="line">        <span class="comment">// 图形阴影的模糊大小</span></span><br><span class="line">        shadowBlur: <span class="number">10</span>,</span><br><span class="line">        <span class="comment">// 阴影水平方向上的偏移距离。</span></span><br><span class="line">        shadowOffsetY: <span class="number">100</span>,</span><br><span class="line">        <span class="comment">//设置网格线类型 dotted：虚线</span></span><br><span class="line">        type: <span class="string">'dotted'</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 修改刻度标签文字相关样式</span></span><br><span class="line">    axisLabel: &#123;</span><br><span class="line">      color: <span class="string">"rgba(255,255,255,.6) "</span>,</span><br><span class="line">      <span class="comment">// 刻度线文字样式</span></span><br><span class="line">      fontSize: <span class="string">"12"</span>,</span><br><span class="line">      <span class="comment">// 刻度标签与轴线之间的距离</span></span><br><span class="line">      margin: <span class="number">30</span>,</span><br><span class="line">      formatter: <span class="string">'&#123;value&#125;'</span>, <span class="comment">// &#123;value&#125; kg</span></span><br><span class="line">      <span class="comment">// 坐标轴刻度标签的显示间隔</span></span><br><span class="line">      interval: <span class="number">0</span>,</span><br><span class="line">      <span class="comment">// 文字水平对齐方式，默认自动'left', 'center', 'right'</span></span><br><span class="line">      align: <span class="string">'center'</span>,</span><br><span class="line">      <span class="comment">// 文字垂直对齐方式 'top', 'bottom', 'middle'</span></span><br><span class="line">      verticalAlign: <span class="string">'bottom'</span>,</span><br><span class="line">      <span class="comment">// 行高</span></span><br><span class="line">      lineHeight: <span class="number">20</span>,</span><br><span class="line">      rich: &#123;</span><br><span class="line">        a: &#123;</span><br><span class="line">          <span class="comment">// 没有设置 `lineHeight`，则 `lineHeight` 为 56</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment">// 文字块背景色, 这里支持背景图片</span></span><br><span class="line">      backgroundColor: &#123;</span><br><span class="line">        image: <span class="string">'https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/images/dog.jpg'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment">// 文字块边框颜色</span></span><br><span class="line">      borderColor: <span class="string">'pink'</span>,</span><br><span class="line">      <span class="comment">// 文字块边框宽度。</span></span><br><span class="line">      borderWidth: <span class="number">20</span>,</span><br><span class="line">      <span class="comment">// 文字块的圆角</span></span><br><span class="line">      borderRadius: <span class="number">10</span>,</span><br><span class="line">      <span class="comment">// backgroundColor: '#123234',</span></span><br><span class="line">      <span class="comment">// 是否显示刻度标签</span></span><br><span class="line">      show: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 坐标轴名称的文字样式。</span></span><br><span class="line">    nameTextStyle: &#123;</span><br><span class="line">      color: <span class="string">''</span>,</span><br><span class="line">      <span class="comment">// 坐标轴名称文字字体风格'normal','italic','oblique'</span></span><br><span class="line">      fontStyle: <span class="string">'italic'</span>,</span><br><span class="line">      fontWeight: <span class="string">''</span>,</span><br><span class="line">      fontFamily: <span class="string">''</span>,</span><br><span class="line">      fontSize: <span class="string">''</span>,</span><br><span class="line">      <span class="comment">// 文字水平对齐方式，默认自动，需要与rich同用</span></span><br><span class="line">      align: <span class="string">''</span>,</span><br><span class="line">      <span class="comment">// 文字垂直对齐方式，默认自动</span></span><br><span class="line">      verticalAlign: bottom,</span><br><span class="line">      rich: &#123;</span><br><span class="line">          a: &#123;</span><br><span class="line">              <span class="comment">// 没有设置 `verticalAlign`，则 `verticalAlign` 为 bottom</span></span><br><span class="line">          &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      lineHeight: <span class="string">''</span>,</span><br><span class="line">      backgroundColor: <span class="string">''</span></span><br><span class="line">      <span class="comment">// 等等，参照：https://www.echartsjs.com/zh/option.html#xAxis.type</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 不显示x坐标轴的样式(也就是对轴的颜色、weight等的修改)</span></span><br><span class="line">    axisLine: &#123;</span><br><span class="line">      show: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="xAxis-横坐标"><a href="#xAxis-横坐标" class="headerlink" title="xAxis 横坐标"></a>xAxis 横坐标</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">xAxis: [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// 'value' 数值轴，适用于连续数据。</span></span><br><span class="line">    <span class="comment">// 'category' 类目轴，适用于离散的类目数据，为该类型时必须通过 data 设置类目数据。</span></span><br><span class="line">    <span class="comment">// 'time' 时间轴，适用于连续的时序数据，与数值轴相比时间轴带有时间的格式化，在刻度计算上也有所不同，例如会根据跨度的范围来决定使用月，星期，日还是小时范围的刻度。</span></span><br><span class="line">    <span class="comment">// 'log' 对数轴。适用于对数数据。</span></span><br><span class="line">    type: <span class="string">"category"</span>,</span><br><span class="line">    data: [<span class="string">'1月'</span>, <span class="string">'2月'</span>, <span class="string">'3月'</span>, <span class="string">'4月'</span>, <span class="string">'5月'</span>, <span class="string">'6月'</span>, <span class="string">'7月'</span>, <span class="string">'8月'</span>, <span class="string">'9月'</span>, <span class="string">'10月'</span>, <span class="string">'11月'</span>, <span class="string">'12月'</span>],</span><br><span class="line">    <span class="comment">// 不显示x坐标轴的样式(也就是对轴的颜色、weight等的修改)</span></span><br><span class="line">    axisLine: &#123;</span><br><span class="line">      show: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 
-<h3 id="yAxis-纵坐标"><a href="#yAxis-纵坐标" class="headerlink" title="yAxis 纵坐标"></a>yAxis 纵坐标</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">yAxis: [</span><br><span class="line">  &#123;</span><br><span class="line">    type: <span class="string">"value"</span>,</span><br><span class="line">    <span class="comment">// 修改刻度标签 相关样式</span></span><br><span class="line">    axisLabel: &#123;</span><br><span class="line">      color: <span class="string">"rgba(255,255,255,.6) "</span>,</span><br><span class="line">      fontSize: <span class="number">12</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// y轴的线条改为了 2像素</span></span><br><span class="line">    axisLine: &#123;</span><br><span class="line">      lineStyle: &#123;</span><br><span class="line">        color: <span class="string">"rgba(255,255,255,.1)"</span>,</span><br><span class="line">        width: <span class="number">2</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// y轴分割线的颜色</span></span><br><span class="line">    splitLine: &#123;</span><br><span class="line">      lineStyle: &#123;</span><br><span class="line">        color: <span class="string">"rgba(255,255,255,.1)"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h4 id="splitLine-网格线"><a href="#splitLine-网格线" class="headerlink" title="splitLine 网格线"></a>splitLine 网格线</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">splitLine: &#123;</span><br><span class="line">  show: <span class="literal">true</span>,</span><br><span class="line">  interval: <span class="number">0</span>, <span class="comment">// 0表示不间断显示网格线</span></span><br><span class="line">  lineStyle: &#123;</span><br><span class="line">    color: <span class="string">"#3e3b3d"</span>, <span class="comment">// 不填color就默认跟原本的颜色一样</span></span><br><span class="line">    type: <span class="string">'dotted'</span>    <span class="comment">//设置网格线类型 dotted：虚线   solid:实线</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="axisTick-坐标轴刻度"><a href="#axisTick-坐标轴刻度" class="headerlink" title="axisTick 坐标轴刻度"></a>axisTick 坐标轴刻度</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">axisTick: &#123;</span><br><span class="line">  <span class="comment">// 类目轴中在 boundaryGap 为 true 的时候有效，可以保证刻度线和标签对齐。</span></span><br><span class="line">  alignWithLabel: <span class="literal">true</span>,</span><br><span class="line">  <span class="comment">// 默认auto，0显示所有刻度，如果设置为 1，表示『隔一个标签显示一个刻度』，如果值为 2，表示隔两个标签显示一个刻度，以此类推</span></span><br><span class="line">  interval: <span class="number">0</span>,</span><br><span class="line">  <span class="comment">// 坐标轴刻度是否朝内，默认朝外。朝内就可能看不到刻度线啦</span></span><br><span class="line">  inside: <span class="literal">false</span>,</span><br><span class="line">  <span class="comment">// 坐标轴刻度的长度(高度)</span></span><br><span class="line">  length: <span class="number">20</span>,</span><br><span class="line">  <span class="comment">// 刻度线的样式设置</span></span><br><span class="line">  lineStyle: &#123;</span><br><span class="line">    <span class="comment">// 如果刻度线的宽度 &lt; 图形的宽度，那么就会被图形遮盖，显示不出来</span></span><br><span class="line">    color: <span class="string">'red'</span>,</span><br><span class="line">    width: <span class="number">30</span>,</span><br><span class="line">    <span class="comment">// 图形透明度</span></span><br><span class="line">    opacity: <span class="number">0.5</span>,</span><br><span class="line">    <span class="comment">// 以下设置没见效果</span></span><br><span class="line">    type: <span class="string">'dashed'</span>,</span><br><span class="line">    <span class="comment">// 阴影颜色</span></span><br><span class="line">    shadowColor: <span class="string">'green'</span>,</span><br><span class="line">    <span class="comment">// 图形阴影的模糊大小</span></span><br><span class="line">    shadowBlur: <span class="number">10</span>,</span><br><span class="line">    <span class="comment">// 阴影水平方向上的偏移距离。</span></span><br><span class="line">    shadowOffsetY: <span class="number">100</span>,</span><br><span class="line">    <span class="comment">//设置网格线类型 dotted：虚线</span></span><br><span class="line">    type: <span class="string">'dotted'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="nameTextStyle-坐标轴名称的文字样式"><a href="#nameTextStyle-坐标轴名称的文字样式" class="headerlink" title="nameTextStyle 坐标轴名称的文字样式"></a>nameTextStyle 坐标轴名称的文字样式</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">nameTextStyle: &#123;</span><br><span class="line">  color: <span class="string">''</span>,</span><br><span class="line">  <span class="comment">// 坐标轴名称文字字体风格'normal','italic','oblique'</span></span><br><span class="line">  fontStyle: <span class="string">'italic'</span>,</span><br><span class="line">  fontWeight: <span class="string">''</span>,</span><br><span class="line">  fontFamily: <span class="string">''</span>,</span><br><span class="line">  fontSize: <span class="string">''</span>,</span><br><span class="line">  <span class="comment">// 文字水平对齐方式，默认自动，需要与rich同用</span></span><br><span class="line">  align: <span class="string">''</span>,</span><br><span class="line">  <span class="comment">// 文字垂直对齐方式，默认自动</span></span><br><span class="line">  verticalAlign: bottom,</span><br><span class="line">  rich: &#123;</span><br><span class="line">      a: &#123;</span><br><span class="line">          <span class="comment">// 没有设置 `verticalAlign`，则 `verticalAlign` 为 bottom</span></span><br><span class="line">      &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  lineHeight: <span class="string">''</span>,</span><br><span class="line">  backgroundColor: <span class="string">''</span></span><br><span class="line">  <span class="comment">// 等等，参照：https://www.echartsjs.com/zh/option.html#xAxis.type</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="axisLabel-修改刻度标签文字相关样式"><a href="#axisLabel-修改刻度标签文字相关样式" class="headerlink" title="axisLabel 修改刻度标签文字相关样式"></a>axisLabel 修改刻度标签文字相关样式</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">axisLabel: &#123;</span><br><span class="line">  color: <span class="string">"rgba(255,255,255,.6) "</span>,</span><br><span class="line">  <span class="comment">// 刻度线文字样式</span></span><br><span class="line">  fontSize: <span class="string">"12"</span>,</span><br><span class="line">  <span class="comment">// 刻度标签与轴线之间的距离</span></span><br><span class="line">  margin: <span class="number">30</span>,</span><br><span class="line">  formatter: <span class="string">'&#123;value&#125;'</span>, <span class="comment">// &#123;value&#125; kg</span></span><br><span class="line">  <span class="comment">// 坐标轴刻度标签的显示间隔</span></span><br><span class="line">  interval: <span class="number">0</span>,</span><br><span class="line">  <span class="comment">// 文字水平对齐方式，默认自动'left', 'center', 'right'</span></span><br><span class="line">  align: <span class="string">'center'</span>,</span><br><span class="line">  <span class="comment">// 文字垂直对齐方式 'top', 'bottom', 'middle'</span></span><br><span class="line">  verticalAlign: <span class="string">'bottom'</span>,</span><br><span class="line">  <span class="comment">// 行高</span></span><br><span class="line">  lineHeight: <span class="number">20</span>,</span><br><span class="line">  rich: &#123;</span><br><span class="line">    a: &#123;</span><br><span class="line">      <span class="comment">// 没有设置 `lineHeight`，则 `lineHeight` 为 56</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 文字块背景色, 这里支持背景图片</span></span><br><span class="line">  backgroundColor: &#123;</span><br><span class="line">    image: <span class="string">'https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/images/dog.jpg'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 文字块边框颜色</span></span><br><span class="line">  borderColor: <span class="string">'pink'</span>,</span><br><span class="line">  <span class="comment">// 文字块边框宽度。</span></span><br><span class="line">  borderWidth: <span class="number">20</span>,</span><br><span class="line">  <span class="comment">// 文字块的圆角</span></span><br><span class="line">  borderRadius: <span class="number">10</span>,</span><br><span class="line">  <span class="comment">// backgroundColor: '#123234',</span></span><br><span class="line">  <span class="comment">// 是否显示刻度标签</span></span><br><span class="line">  show: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="yAxis-纵坐标"><a href="#yAxis-纵坐标" class="headerlink" title="yAxis 纵坐标"></a>yAxis 纵坐标</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">yAxis: [</span><br><span class="line">  &#123;</span><br><span class="line">    type: <span class="string">"value"</span>,</span><br><span class="line">    min: <span class="number">0</span>,</span><br><span class="line">    max: <span class="number">100</span>,</span><br><span class="line">    <span class="comment">// 每格增长</span></span><br><span class="line">    interval: <span class="number">20</span>,</span><br><span class="line">    <span class="comment">// 修改刻度标签 相关样式</span></span><br><span class="line">    axisLabel: &#123;</span><br><span class="line">      color: <span class="string">"rgba(255,255,255,.6) "</span>,</span><br><span class="line">      fontSize: <span class="number">12</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// y轴的线条改为了 2像素</span></span><br><span class="line">    axisLine: &#123;</span><br><span class="line">      lineStyle: &#123;</span><br><span class="line">        color: <span class="string">"rgba(255,255,255,.1)"</span>,</span><br><span class="line">        width: <span class="number">2</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// y轴分割线的颜色</span></span><br><span class="line">    splitLine: &#123;</span><br><span class="line">      lineStyle: &#123;</span><br><span class="line">        color: <span class="string">"rgba(255,255,255,.1)"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 
 <h3 id="series-系列列表"><a href="#series-系列列表" class="headerlink" title="series 系列列表"></a>series 系列列表</h3><p>两根折线</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">series: [</span><br><span class="line">  &#123;</span><br><span class="line">      <span class="comment">// 需要对应legend中数据</span></span><br><span class="line">      name: <span class="string">"共收录的"</span>,</span><br><span class="line">      data: data.dataList, <span class="comment">// ajax请求回来的数据</span></span><br><span class="line">      type: <span class="string">"line"</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">"被引用的"</span>,</span><br><span class="line">      data: data.dataList1,</span><br><span class="line">      type: <span class="string">"line"</span>,</span><br><span class="line">      itemStyle: &#123;</span><br><span class="line">        color: <span class="string">"#1f78fb"</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  ],</span><br></pre></td></tr></table></figure>
@@ -251,7 +357,12 @@
   <entry>
     <title>循环遍历常用方法</title>
     <url>/1159467397/</url>
-    <content><![CDATA[<h2 id="前端遍历"><a href="#前端遍历" class="headerlink" title="前端遍历"></a>前端遍历</h2><h3 id="for-while"><a href="#for-while" class="headerlink" title="for / while"></a>for / while</h3><p>for 循环更适用于循环的开始和结束已知，循环次数固定的场合；<br>while 循环更适合于条件不确定的场合</p>
+    <content><![CDATA[<br>
+<br>
+<a id="more"></a>
+##  前端遍历
+
+<h3 id="for-while"><a href="#for-while" class="headerlink" title="for / while"></a>for / while</h3><p>for 循环更适用于循环的开始和结束已知，循环次数固定的场合；<br>while 循环更适合于条件不确定的场合</p>
 <h3 id="for-in"><a href="#for-in" class="headerlink" title="for in"></a>for in</h3><p>兼容 ie6，效率最差（效率可看最下面的对比） for in 会把继承链的对象属性都会遍历一遍,所以会更花时间.</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">let arr = [<span class="string">'red'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>];</span><br><span class="line">let obj = &#123;</span><br><span class="line">  name:<span class="string">'张三'</span>,</span><br><span class="line">  age:<span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 循环对象</span></span><br><span class="line"><span class="keyword">for</span>(k in obj)&#123;</span><br><span class="line">  console.log(k); <span class="comment">//name  ， age</span></span><br><span class="line">  console.log(obj[k]);  <span class="comment">// 张三 ， 20</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 循环数组</span></span><br><span class="line"><span class="keyword">for</span>(k in arr)&#123;</span><br><span class="line">  console.log(k);   <span class="comment">// 0   , 1   ,2</span></span><br><span class="line">  console.log(arr[k]); <span class="comment">// red, green ,blue</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -266,6 +377,8 @@
 </ul>
 <p>区别：for of 和 for in 的区别 for-in 语句以原始插入顺序迭代对象的可枚举属性。<strong>for-in 会把继承链的对象属性都会遍历一遍,所以会更花时间.</strong> for of不支持普通对象的遍历,或者<strong>通过对象.key的方法 Object.keys()方法，用于返回对象自身的所有可枚举属性</strong> (比如userInfo中的name、id)</p>
 <h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">myArray.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">data.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span>(item.STATUS === <span class="number">0</span>) &#123;</span><br><span class="line">    localList.push(item.COUNT);</span><br><span class="line">  &#125;</span><br><span class="line">  unLocalList.push(item.COUNT);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h3 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"><span class="keyword">let</span> iter = arr[<span class="built_in">Symbol</span>.iterator]();</span><br><span class="line"></span><br><span class="line">iter.next() <span class="comment">// &#123; value: 'a', done: false &#125;</span></span><br><span class="line">iter.next() <span class="comment">// &#123; value: 'b', done: false &#125;</span></span><br><span class="line">iter.next() <span class="comment">// &#123; value: 'c', done: false &#125;</span></span><br><span class="line">iter.next() <span class="comment">// &#123; value: undefined, done: true &#125;</span></span><br></pre></td></tr></table></figure>
 
@@ -418,11 +531,6 @@
         <tag>Java</tag>
         <tag>注解</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>初识ssh使用</title>
-    <url>/3728169584/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>ORA-01451错误</title>
@@ -1940,11 +2048,6 @@ eg：public static int count; //学生人数的累加</code></pre><p>意义：<b
       </tags>
   </entry>
   <entry>
-    <title>从前慢</title>
-    <url>/3832130555/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>电脑强制删除文件</title>
     <url>/2305721189/</url>
     <content><![CDATA[<br>
@@ -3417,7 +3520,7 @@ dao层接口方法</li>
     <label for="hbePass">Welcome to my blog, enter password to read.</label>
     <div class="bottom-line"></div>
   </div>
-  <script id="hbeData" type="hbeData" data-hmacdigest="1de93424df14a4f4c1ae621509275b9c3f542b6acb3e7cf9c1c0316107041fd7">3f9d8c4b4f45ae2ce29402fae3f7fdfeaf087c4b8dc1be2864d8e69cf0a54b621066bec90f3d20ba7aeb17db554a8f648ad79aec2f6f2f55e4df166ddc96a941f08734a975da0d93b0ca6c6ea8327c9347be61df5eb1cfe940cc6bf491f7c35fd174e92681812465ecfea575f6916cf2905a07e32fb51842a1d9dce0aca49eb4dc5f1e0618640708ca7e0bf2606debff459ed75ad8b8984388a7970793f9f74e25ca6b0ef5d15f12ea9e397db26c2f7ef0add620150830740c68a6be39dd4d72d698a8cc6a13937eca39f7337678e4d957baca06ab6f8d780fdc50114735f01bd1c7f7065989d355bb57e0498b010c6065edf5948171ce78897dede726855431754df5ba6aeed97b47c04117939fc6137d3900e09a029c18d1242342aeb89a00c8635fa873d095510052108aaaec368bc81a03437a224c945bfc7e68352722f735bff6fd91c6e90b36bb148ca5fe88a638d3557b71ef3478e2befffb1193064034350164456088dbc1bf101c5d833015b4d3b2a6d630ed0b58b32efd105a8fd09cc7fcf176cf0a447323309d2cd108d8f248eff9007bad7671bb4915d29f27a7afbd98af1ab5690767032c1fcd247617c36383f2aa04c78b65ae8eff47ce00b8f8ecba0ed91d9b821238ba5ade82ef41e57d9d57e82fa061e0e9bb3729379767cecb25436969dbb8160edc548f5f9c5af21325296f64afb1be8a4ea94254531869b06a3aca7e6008802b43e26cf60fe7caa81b771013fa4975ee3432077006c030e10976e117fb039dc0ec51bc5882e9c54002fcef5154bf45b0690a29cbfa53f84d11eefb434e400488a2cf55621a6e43588ba91003f1c8455e7e366005ee2794c7aab272026da5e2cd66454ca16ede8039ec82b07421a64e2400228aa0a580c2431c4b16a00ccb7b9a7eca2926d48233bda6dc8787f1bbac93acda5a41c26cb2d05ea14e8b4922a87695521e1127e7cb5b225f6bdd211cdc282774bd2852b74a588966a49c45adf2773587f3c9bc86209e076ca62a9be612c394e90bd18e212940a072a80723b821f1dd8484745f026ef04436ebf7074fb1edc046bda536be440a46bacac536dae8f9d29da586d1e13731665c6a2d4e1915d3e17b334ef18aebcee9218f74b7a5200adde9c80946d247aae10fe6658020c13c5768a74a8aed82dcf13e1731d5528ae1052ba0de4ffdf794dfb49e9af3f380b3cbe00f7e0a1fb2e8a4a66ece8da1eaa6a785133098b22cb303a72285cbd0199ab111a16bd5ca8d9aa57846d7bc5465ba3bff5be63c3f020a90afc9c5f17394f4de7581a4d8cc569a4c073f65aa7ed0c1ddb893d2e9465cb1b5ce954046f6aef0dbfda37b1fead0327561a431aa0ac98211b0f06cf37d8e31f66ee19698b63bdb4e00189f04d8c05d273a457494aaac492b12c6a3ff95e4281c579a5adb155707e8339611c2c91fb84c6a1d697ade212f43a435dd37004d6c81d2f6b6386a1e394ee25b5f5a0e745cd4e354675c195bfc316f4b9109321afac269f6279a6fe0c2b0a3f8807e21430cbf4c2e116d4f70c180da8e5132335179ec68fc7d98fa2da5f125f71408eb27c9e4c344e6ad1aedf2df449d895ce1c9319382526124c57049f6a1cd33a60faa3747d0a906607743d5d27ae98013133e384c9db4335c4828a13ece7fb2d3e88d120c05efd6a796ff8a1e65b9cd9f48dfa228550fbe4d7a799ff4754ca09147602da73779e61320533c651769eff8ed177cf90a2cf6c041fb8f986e17c48175d4eaaea2b42e40e43677513718529e248a30761879d81526d4e0ff262392c112dda4ea02c281bb6c3ce218f472f29813bde59e901701c643ce79bfecba59a08d6ff6caec48c9b02f59116b226b5d5e5f6a0da19704b6a8f007d0355f587dc36c803b639300504ff531e3a605e93ecdb6a2e3162d8a203162f18ee344b91bf8374a1fc38d3c4f0faeffc6de05a1ec68c3a8a189811b7045a5692a5996307582b2fcb9b79f9f773f65eb2b5281c712ee2c14b52d6967a8e1927f340a0941b6d4025cb810471c1211ffd6a2d6a46516720075025280422fa8df4b003d05f0421b15723151aad01332e52576967b9ac8b8ec995f059f306c7976bf82cb91e3ecb7e17e2674f6204b9a4c7ba847a168a93f3bf6228f23394cdc8e9365fe4ed81a386f62ba47f9815d0ffcdf754c589d0062f9e6fb26f4e75c02729ecb6a29a3ff9e638ef31c112a7f7fa3701023ceba9a20b0912f9c4b662710e27ba0b3c94348c2467fafa1242e7d3f5d24b4aebc270e6582a1bf45350a9c9b80671e35254d8b3e1b0763ad23a952494027dbdc3f831a9baa6df41b904806a3e88465278973b47932b2ad76bf581aeea4e4200241946618d7614ad097a8c366639a3bff7a089a7c23d91242a30bce24125235f017ec5b169e6e3a07b493ccc9d3feb27d79ab6ce415568b23f2a2f750f093a731f316b6584d99c5e883d8aac2c1bde9203512fde2a4cbd7b51c89d869c8f3b7b68d8ffb166690be0bf8b40c78cc1d3bcc46b5f76bdd37f5cf78aa742016752af695ee97a2871f2053f293df1d44435fc0c742abbe9bbb63c82ca7cb4d4a78fb5dd797b43cf2de1d0a9143e4ea192e286cd76391dd035655311e0fc92f4a4424bd7c13f0ee6832cb5e94115ee8136a5f1fe52626daef65d4478a777c44ebbe6c7b63eb4a26b2169c6dd874e49fc2a74ff102f03f7ea1c1373f988792ccc8b280c8d3a6bb313123ce700cae70e93880811b41efae245cf5d8b537c90cad2f04f3442b5b563148f3f4f64ae8938c30836162eefc8adb4e5a0011175e15a55eb2dca9498048782bd0f96fdfe3922b8f55850f2020e4b8f859d05b95109acd7e3a04bd649ad30b18b76a73c59b0a2601b8f7f9055dbd19107c95c0c62cd2da2dc7b0cd390a1e694b1d9a409d4a0a4c757309f21e749ab060d94a2a7652a1a104b253b43b98ee20351591090c57a79396343c637c59e85213e113a17f89f6d79eb670a6af7e932292e8ba75c5bf3aecc6eb66e578105c09e72452a17acf78062ff7cb9b52e3d80ba528e4429361833ef840ef600321913013004dd876a0ecdcedca01b394879643217ac5f77942174a9a75f443cd0df7f1a7e078dd0325ddbdf7f2c880f0707df234e6392a81f58952d7c3fda20100d91a380a3d0294a8a21490f2c51b6aca4e1223b8309cae00359b518a63bc15dfa3c4b33dcc606eaffe979b2ad6e26c1df95914e785fd8a4aa102b031b5dae47ee80e9f9c16e5c18331712a3c828cd48736efd02f64b8cdd4482d7a46921262df9d9a511acaefb892605610dc5ce5afe92545666ce533c3b23f84b316e38b99fd1ee67956a37c32fb404439edf907570aec96c8431a9ea454249008a7b8303584578a97511e67a6df9663eca632afa107e61e663307f9a946b31da154e50a7f87a340d847113f985ddd8f0cc35105a7634260ea9fe08e306eebaa03aae60816d3458be62c76f8820c1c4726223ec420d722ea68a23e10e32c1c7e1ccba3ec475c11a7a64ccf525fd75a7f937fd66925f02bdb0383f57c4efca9cfd805da1116c73550ec3c03d62a0d497392217c79632b50a2e4dce2e681c7db74596cacb97943eaee8d2aa5333b3530b2ecebea31992a611df5cadd5dd2e2a80ca31f350fc2b2f589ec9d93ac67278798516a9673206ca400e469ef0cdaee6cd01cb40c41554520100bdfb588750c42e61c8a452e112deaeb728d2f535503ab41d2fa47641d8ea74a92f201267c0968a8476ce4ecbba087a8e21b629c4d95d60a8195afd3a60924cc575ea77e41224810e5d3502616e9a9f240480b1eff1a4593eb80f37ad032eececff512c139a7c2d2e152d1a26d6f7c0f14e493f119592acffaaa7cee07fb558b0831f8dba10ad84ee0d93e05945983ad40eff9fb561d16aba9f4f17085b712a01a0e53eee1e18af284dd5da5d4f6c1277ffc73e59ee53904f5e40a2e879f1b5e9f1958c340e6bcee3a721b422e33e14d1092cfae1dc5dbe35e875782513162c31aa408c89c069fd5ff92bb3d911754109af192913c54bf24cf4dd1416a08890547d1287ee67d57a1a9ee0347bbeb43c7402b3c36a658e3531ca5d72fbc537853418bc017d183731eb0099cf6934e777322e6727d5b3c8ce6677d252141995474ddce22347a1340e1a5da517875451494226ef3a6080763629c7d2aef74818562e8</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="6d7450308b707f4ac358b3d378dfa8b926437d11ae388871e41b2b214578c18d">0034aa674305ad343a8a161bad39f8bc5ac1244f37c5f2382c3901df2c93ad4aa1d35da2ecc486b19ec356a8b2204313c773b3f629f2bc3aa3a4b1014f4cb8085a9be858f8b2aaea0408248366eb098ada071b19114cb61ce6b436a4fdda16a8ca60b13e69eeae491e748da9cb7a961e3d288c9a23bce6f2165d7a1acd2c35908a4567461978d0232a3ca44d45bb40c4704b4f75e9636e007d017103b4ef73e2a837c0154ec7fa3c368c76ba120fb2eaecb22fb1336056265ef4d493569a4c7cac149c2ed3d9f7197c001dfd3703f2bc41657482e9822ec151bebcc6be77bac87fec22b7efdb8201299f492c280dbadf7392fefbc3f0b08fa6d4a824bfc8fd579420c367735f03cc1c45e89b87e178f2c662b64c7eaa4038483e4615d2f7d21969e1775b6ce6862f04aebaa9ec635fe1ec25deb8e427d507181303f072213b04d59fc8398414423c0ef649b51bef1998cba71b7b95aef2dc9dc307739d66a877a144283d4bcc17a45a73c36f86f4e535f1b7311a2839269eb19bb9b5a4871983f513a61a03957bd7f8b3cf52b921f3f020c35fbaaa118234d7a9b53879c228c84f929e72ba4a671bb34d88e87057179fcf73118729165dc5cf64d3e1457a4962f9139c751e349780c3f5dfee81fcc3f6c54fc292d89270021205fa5430a94ad3e8313063c1a11374345bcf958305a09baa26f86e484a1835e228bfca8d711f5482c2418083ff1804764dd6e6e159528f4d85000a45536e7e7482b7ee9837ba7e50cde72a0cc74c961d50ae309884762eb5584072df8240d0ef94883289d51b07bf699a0dbd26713190de83b70392b41f9b46bccaf8c8b6326ee87731bd31554837b04cf510969efad4b492ccd7d295b20c7ddd689ba25e24e9450a6898c282a37f604eb62a9ad124f944e21e4555f4e621022094072e8414edd4985495c0c9242939f9f826c81604cfefe6f997476a644336f699bea9412e369abe7bd5648d8fa8ebfd586fab5dd5945f886bd7922b3f5219ed8f77ae20035c1d2f74fc8a42713e409c51716b2c7fec9c0f6223699acffadd10752a411ba57e4b17cfb450fd029d78e2263002db818a590541be19a2c76c2d2ded4de78e58de80a09947d23356877426e02df18e63dc775ce24aa37e74a750eccdd3640fd64071af074a56765d94da95ee168eb56e9ec1d80159060a8fdbd6ecfc8b55de2086a8741f5a84a7c5cf581320c88a34277a19397a29d9e8784114722b8806e9c3cc2ebe4f8d53bb5189a729952d629a386483f442918b9096c7a105dd72d5b7e6335f5e69db2d1ae0327294dbffbf99e75087df9077c84d18d868e67dd493843fcbdbe39eafaace6d866f4961fe836dcab4ea5fa1298cb45d45501faa4fc2171e212a0ace5bff4b6f312811ed7754de83876c24aef7d6e8dd7971976583d02d1a045b4e9a9dc26a3090d72f2b7fbf0f273ffa3fbd717fae7093f3664c7a8d181db302d102f0d938b72379859359c4d72cee2f61d07c8fc251b50db3940a6b55db87b2c67e9d568dfb98450c97712308bc826ada195665875dc7d87e31d7edc4bfcdb679c7324e633486197e49e6c23654cea08f81c0273fccd961c37a149e389798dba8252cb78bc8239cb6abf8377120e1ef32bdb848067b5b622ee53bbcc0881eb10a53fcc95e965b03a81c6a58c5ed3ede82c9037635c664b686a7fe20b95e57165f99e4dc8c871b685a351d41fcb01eca3f1277ca1a0df437f54bfb34f1c000c899113a67be814ea4f71e0d0208ed68516d59289e1d3e96edc4d8d910a1b70e4e26544abb3f5e52800a529145ee923ab6748ce6228e377a56bc41b59f9b7b374a9342b2ff5b45fdd19c827bf71b17203dd1db66143e53c3c3e67da2b1b50b95a490ac160ca384defc9bcbc0f69bd5309ecb702e8b1df5fe2fb7007d90d9a171278430d4e411d32d8efcf34aef34f8065f55518c8768908df567ca7fec3f837c50271f64094896cfd0b1433a1b4ed458b7a9afdcbfadc9ce37ac3dfd65a365b7aa2a5a56db937a472c93226f1a387a516451644660af16a2100ca764cd171c5b3f0f28964be23eb4db27faa6412bcba5d743c444bf5364d9ade3069b86ae14281c267ae6320d09df495d090a9cd010ae23cdf19b0151a841bfe501395c8be340f329815bd6f74e30b03b2f4dc499bb1831bc3a7be5d29c43e7113e8f17c81d35c8b8a19ccd482079c9060f470fcc6cd9613b6d9cd7220df41654d8ed4dc55a3d68f57073932610768b3dd517fa61adf89c6fcf3a893df65a25666d7e753d3c60eaa6f8f22f420fcffb94a7df46645ba9570ad2f6b793060db6474a591f22b6aa5a99a2a71023c774bf30f17e9effff6999fdde585bccb8caa6b85759e26911af26edb5e4d04e1c978bb8dc7a99d638eec07bc8d975eb22de50c7e456d4256d9e168980f3f57ac2c62384cb0fdaff3c8af8b29dc0e784787ce7e2f0a09c85ac8d33be2a709ff2cc061bcb7fc6cb8832fc7ffde7c7c2a4bea67e8e831b4517b2ba3aa9c5592072246e9c063821e357607bc13ccbe90e96ae699a04b2496ededb237017e619fe374ba35abeff3cddcb0eb04e9921cff01d33d5cb31d3ffde447e0c2a9fa6373355e94c437dc4d4db83c0cbfa2efe6f4d38fd9aeec1298bb9902f7a84d67248fdcc5d532bef320c44d274362827dc21a3cc7daa0d56f081e3189dd7a5fd45248d487b5c6f6dc153d87904a8101169a68b09ed0f9ef8547e352c0ae0187d325b20f08602d12c9e809a61e132faaab35417429f142b7f1b00906ca11952b3db7ecaaf6221b52084186855111cdf665b7ae1b26e8b75eb26e91fb15bf01c878dcbf6e98458ae6c8e7d9321ad29ba455887dc9d50e221c2bbbd015cc0a77bb88824170d12a9c6ed49a902cc0d7f46d2776d955520f4d210a4598ca59780c81d73368467b8cec8ff80c0edd41efbf10cbe2ff96552cb2be07d4a2d3e2d54e2676de70e32399eebc357d41faaf9b6454a1e9fe5525ccc63d6316aad98fcd7b32199bbcb7763584ac45b96d07178825a0a12d769d67fab3751d91ae7c11c16b564c2e5febff89ebdd6c7e8ae65a6618423fdb45a2d7323d30f4262d28e6d644b34aa302661280d37cab82e402b7e53f1d0b3e1ce9e1a8ed2f627bb236a2cb746e16aa7cccc63a5821571eae55c111f78cd1b4c24050989c3bf275cd7c8efb8a0fba0b92d566b5e4a39653e49615b160997f0379edff3e34ccbd62a4bb4cd52214776ab475a522d154ff0dfceab7b7ef3c0f28b12f1b634ff37b38887da440747117144641c70c41aab96228911889efcb449ba71889d832c509b1f22b18cc90531c5d17a95148b7699ba832c59929789f2d93e2a9446da505ba648b9036c67917c7b6dde63de92c3e8d5d623cb579a1c58bddbeca580ef69f35578193aa60b4fab08b40578a28c8d1f1170b094379da355197e4b823fdced9007cbbe993ccf0c29101d47f8f350d0f9774bfdf5728d30f24b305ef3c5f67aa28ae02087e83f52d7c1b5892184ba2246e57ad8125908b9bb03debc433b05c3272b7e950cb59a88afaf81905f7a6ad917457de9ae56933053556e8b3995a69c851c5cf2b52150a8386e77b049bf3e0a7bccf1a329eebbaf24ab925e655eb1d81f421ed30f7038f7ed51d04099f1812dc12bba543b3c999241a2dde70f5ae12a52592e6220431aa571f817d954e55dc799512ee424f9d36c42a20932c5b6c04b0b6f7023bf16d126be762fa00f5645f481b949356daddb556631409461994ef05bb17b09565dde74beb005c7e13cd9cd45de6502a1c54469217fbd73f7fcd4fb19126a37365aa95fb7ac69b4406e1993e73b8ec0c881315c5e50afc61e0d74f4389387ec26034244e9e47a9d662dca0f7839cc149486083d5340de4dd0a62dcefc0cd8fddc2f962921c4a172e927d0a13b80f987831fece7908e13fea85b9516de383bf22c8a8664251f96c6bd7b5e54ac2e1f5231fac2f416f64183f6b6761ad7f03549f40546ca14b9b0e2bc2a05c31dada2c46adc93c07bea90f841ca90bafac5f40f1f496784848975226205fb7a240b8a14955d3cb5e1b40efe42888856481fa0c6b6b99e4dde510cae7c8e851dab92e2e7c99f73773718eb3e631eb4a000a97836eb7a713a90465bc3f4cee71c8fc8665d53b3ac106d6ed296caa3ce2cf6f5ae98c0ddaac041a644782d26a5bc921bd7607c1abf02c328ee9ad985</script>
 </div>
 <script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
       <tags>
@@ -3427,7 +3530,11 @@ dao层接口方法</li>
   <entry>
     <title>读人性的弱点</title>
     <url>/1530163407/</url>
-    <content><![CDATA[<p>生而为人，</p>
+    <content><![CDATA[<br>
+<br>
+<a id="more"></a>
+生而为人，
+
 <p>本来不易。</p>
 <p>常伴微笑，</p>
 <p>何需多虑。</p>
@@ -3453,7 +3560,11 @@ dao层接口方法</li>
   <entry>
     <title>夜行</title>
     <url>/1905889123/</url>
-    <content><![CDATA[<p>蔚蓝色的天空，</p>
+    <content><![CDATA[<br>
+<br>
+<a id="more"></a>
+蔚蓝色的天空，
+
 <p>鸟瞰着沧桑的森林，</p>
 <p>在它们之间，</p>
 <p>轻轻吹起一阵喟叹的清风。</p>
@@ -3480,7 +3591,11 @@ dao层接口方法</li>
   <entry>
     <title>一代才女-林徽因</title>
     <url>/120364306/</url>
-    <content><![CDATA[<h2 id="一身诗意千寻瀑，万古人间四月天"><a href="#一身诗意千寻瀑，万古人间四月天" class="headerlink" title="一身诗意千寻瀑，万古人间四月天"></a>一身诗意千寻瀑，万古人间四月天</h2><p>想着总想写点啥，但是文笔似乎又不足以配上她传奇动人的一生。我想，生如夏花之绚烂，死如秋叶之静美，应可为她的代名词了。绚烂一生，竟是短短五十一载，或许命运总是喜欢跟我们开点要代价的玩笑吧。</p>
+    <content><![CDATA[<br>
+<br>
+<a id="more"></a>
+
+<h2 id="一身诗意千寻瀑，万古人间四月天"><a href="#一身诗意千寻瀑，万古人间四月天" class="headerlink" title="一身诗意千寻瀑，万古人间四月天"></a>一身诗意千寻瀑，万古人间四月天</h2><p>想着总想写点啥，但是文笔似乎又不足以配上她传奇动人的一生。我想，生如夏花之绚烂，死如秋叶之静美，应可为她的代名词了。绚烂一生，竟是短短五十一载，或许命运总是喜欢跟我们开点要代价的玩笑吧。</p>
 <p>记起我与她初识，却是在傍晚时分。那时，黄昏吹着风的软，星子在无意中的闪，细雨点洒在花前。我完完全全被这唯美的意境所吸引了，再也忘不了那犹如一树一树的花开，清风袭来，随着一席花香的她。在我心中镌刻着美丽、动人的童话。待我循着乡间的小路，穿过她梦中的恋土北平，止步在了前方的园林间。望着你那工作专注，看着你那与夫欢恰，寻着你在那“太太的客厅”语言犀利、思维敏捷、率直真挚，品着你那一腔诗意的美韵……</p>
 <p>随着你的步伐，思绪慢慢澎湃起来了，想起那 你是爱，是暖，是希望，你是人间四月天，应是你的写照也不为过了。也许，是你这敏锐的察觉力，你突然驻留了脚步，冲着我笑了笑。可是不及我半分痴呆你就在这月色还没消散的清晨，着薄雾，踏青鸟，化为了那最美的人间四月天。<br><br><br><img src="https://b307.photo.store.qq.com/psb?/V11DTiJ41S70mR/NBgr8YoWf7IH*yimWNQhUd2OytEd6fa47RyD1.gbimE!/b/dDMBAAAAAAAA&bo=iQEoAYkBKAEDEDU!" alt=""></p>
 <style>
@@ -3505,7 +3620,15 @@ dao层接口方法</li>
   <entry>
     <title>双十一感</title>
     <url>/4147575898/</url>
-    <content><![CDATA[<p>夜空披着渐变的深蓝，<br>中有几点繁星，<br>在不停的眨眼睛，<br>仿佛是看着月下的人们，<br>兴奋着，微笑着。</p>
+    <content><![CDATA[<br>
+<br>
+<a id="more"></a>
+夜空披着渐变的深蓝，
+中有几点繁星，
+在不停的眨眼睛，
+仿佛是看着月下的人们，
+兴奋着，微笑着。
+
 <p>是啊，临近双十一了。<br>今晚又正好，<br>月光晒在田径场，<br>和灯光交相辉映着，<br>点亮了我心中早已黯淡的诺曼蒂克爱情，<br>期盼着如巴黎铁塔下的甜蜜浪漫，陶醉着。</p>
 <p>徐徐凉风，<br>一丝丝冷意透骨袭人，<br>轻掠着脸颊，<br>却也带走了我的梦，我如真如幻的梦。</p>
 <p>缓神之间，<br>竟遇友人同佳人相会，<br>心中不免泛滥出层层涟漪，<br>叹时光短暂。<br>我想，我的路注定还是要孤单下去的。<br>早闻”慎独”二字，很是平淡，<br>如今回首，却发现此之如酒，<br>越酿越醇香。<br>这兴许也是我渐渐喜欢着这种感觉的缘由吧。<br>一个人，也不会差的。<br>虽偶尔羡慕两人结伴，眼里都是满满喜欢，<br>写着诗意的往后余生，我都只要你。<br>可惜，我不想将就，也不愿主动，<br>至此下去，我愿继续续写自己青春的片尾曲，<br>平淡却不平凡，孤单也不失有趣。</p>
@@ -3531,7 +3654,17 @@ dao层接口方法</li>
   <entry>
     <title>纸短情长</title>
     <url>/4098979498/</url>
-    <content><![CDATA[<p>爱情，<br>是我梦中迷人的情人，<br>是我遥不可及的远方。<br>遇一俩佳人执手嬉笑，<br>也曾渴望拥有，<br>却更害怕失去，<br>只能徒增感伤。 </p>
+    <content><![CDATA[<br>
+<br>
+<a id="more"></a>
+爱情， 
+是我梦中迷人的情人， 
+是我遥不可及的远方。 
+遇一俩佳人执手嬉笑， 
+也曾渴望拥有， 
+却更害怕失去， 
+只能徒增感伤。 
+
 <p>待梦醒时分，<br>抚一卷花儿，<br>存一席芳香。<br>才方知，<br>心上人仍在云不知深处，<br>唯有织梦远方。<br>愿有朝一日，<br>我踏着七色彩虹，<br>带你笑看花开花落，云卷云舒。 </p>
 <p>世人常道，<br>世景繁华，似云烟。<br>我却自知，<br>与你交集，便是永恒。</p>
 <style>
@@ -3556,7 +3689,11 @@ dao层接口方法</li>
   <entry>
     <title>清晨</title>
     <url>/1578035835/</url>
-    <content><![CDATA[<p>每当清晨第一缕阳光坐拥在脸颊，</p>
+    <content><![CDATA[<br>
+<br>
+<a id="more"></a>
+每当清晨第一缕阳光坐拥在脸颊，
+
 <p>都是在诠释着今天又是诗意的一天，</p>
 <p>我们都应该怀着期待，</p>
 <p>开开心心的去面对。</p>

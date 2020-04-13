@@ -18,7 +18,7 @@
   <script src="//cdn.bootcss.com/layer/3.0.1/layer.min.js"></script>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <title>
-    初识ssh使用 |  Blue
+    ora-01658表空间不足 |  Blue
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
 
@@ -84,7 +84,7 @@ var _hmt = _hmt || [];
   <div id="app">
     <main class="content">
       <section class="outer">
-  <article id="post-初识ssh使用" class="article article-type-post" itemscope
+  <article id="post-ora-01658表空间不足" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -92,7 +92,7 @@ var _hmt = _hmt || [];
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  初识ssh使用
+  ora-01658表空间不足
 </h1>
   
 
@@ -104,10 +104,14 @@ var _hmt = _hmt || [];
       <!-- 博客指定样式修改 -->
       
 
-      <a href="/3728169584/" class="article-date">
-  <time datetime="2020-04-09T13:30:37.000Z" itemprop="datePublished">2020-04-09</time>
+      <a href="/3612225564/" class="article-date">
+  <time datetime="2020-04-13T13:53:23.000Z" itemprop="datePublished">2020-04-13</time>
 </a>
       
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+  </div>
+
       
       
 <div class="word_count">
@@ -115,7 +119,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">0字</span>
+            <span class="post-count">251字</span>
         </span>
     </span>
 
@@ -142,6 +146,8 @@ var _hmt = _hmt || [];
 
     
     
+    <div class="tocbot"></div>
+
 
 
 
@@ -156,7 +162,31 @@ var _hmt = _hmt || [];
       
 
       
-      
+      <p>错误：ORA-01658: 无法为表空间XXX段创建 INITIAL 区</p>
+<a id="more"></a>
+<p>或者</p>
+<p>ORA-01659：无法分配超出 4 的 MINEXTENTS (在表空间XXX中) 。</p>
+<h3 id="oracle里怎样查询一个表属于哪个表空间？"><a href="#oracle里怎样查询一个表属于哪个表空间？" class="headerlink" title="oracle里怎样查询一个表属于哪个表空间？"></a>oracle里怎样查询一个表属于哪个表空间？</h3><blockquote>
+<p>select TABLESPACE_NAME from tabs where TABLESPACE_NAME = 表名</p>
+</blockquote>
+<p>注意：表名 如果是英文的，要大写才可以</p>
+<h3 id="查看表空间总大小："><a href="#查看表空间总大小：" class="headerlink" title="查看表空间总大小："></a>查看表空间总大小：</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> tablespace_name,<span class="keyword">sum</span>(<span class="keyword">bytes</span>)/<span class="number">1024</span>/<span class="number">1024</span> <span class="keyword">from</span> dba_data_files <span class="keyword">group</span> <span class="keyword">by</span> tablespace_name;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看表空间已使用大小及分配情况"><a href="#查看表空间已使用大小及分配情况" class="headerlink" title="查看表空间已使用大小及分配情况"></a>查看表空间已使用大小及分配情况</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> SEGMENT_TYPE,owner,<span class="keyword">sum</span>(<span class="keyword">bytes</span>)/<span class="number">1024</span>/<span class="number">1024</span> <span class="keyword">from</span>  dba_segments  <span class="keyword">where</span> tablespace_name=<span class="string">'XITONG'</span> <span class="keyword">group</span> <span class="keyword">by</span> segment_type,owner;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看表空间文件路径"><a href="#查看表空间文件路径" class="headerlink" title="查看表空间文件路径"></a>查看表空间文件路径</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  * <span class="keyword">from</span> dba_data_files;</span><br></pre></td></tr></table></figure>
+
+<h3 id="增加表空间大小"><a href="#增加表空间大小" class="headerlink" title="增加表空间大小"></a>增加表空间大小</h3><p>可以选择增加新的数据文件：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">tablespace</span> YWGOV <span class="keyword">add</span> <span class="keyword">datafile</span> <span class="string">'F:\SOFT-INSTALL-SOFT\ORACLE\PRODUCT\10.2.0\ORADATA\ORCL\HOUTAI1.ORA '</span> <span class="keyword">size</span> <span class="number">100</span>M;</span><br></pre></td></tr></table></figure>
+
+<p>扩充表空间原有数据文件的大小</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">DATAFILE</span> <span class="string">'F:\SOFT-INSTALL-SOFT\ORACLE\PRODUCT\10.2.0\ORADATA\ORCL\HOUTAI.ORA'</span> <span class="keyword">RESIZE</span> <span class="number">1024</span>M;</span><br></pre></td></tr></table></figure>
+
+<p>修改表空间使其自动增加</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">DATAFILE</span> <span class="string">'F:\SOFT-INSTALL-SOFT\ORACLE\PRODUCT\10.2.0\ORADATA\ORCL\HOUTAI.ORA'</span> <span class="keyword">AUTOEXTEND</span> <span class="keyword">ON</span> <span class="keyword">NEXT</span> <span class="number">200</span>M <span class="keyword">MAXSIZE</span> <span class="keyword">UNLIMITED</span>;</span><br></pre></td></tr></table></figure>
+
+<p>或</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLESPACE</span> SDE <span class="keyword">AUTOEXTEND</span> <span class="keyword">ON</span> <span class="keyword">NEXT</span> <span class="number">100</span>M <span class="keyword">MAXSIZE</span> <span class="keyword">UNLIMITED</span>;</span><br></pre></td></tr></table></figure>
       
       <!-- reward -->
       
@@ -225,13 +255,15 @@ var _hmt = _hmt || [];
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://coderblue.cn/3728169584/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://coderblue.cn/3612225564/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oralce/" rel="tag">Oralce</a></li></ul>
+
 
     </footer>
 
@@ -241,19 +273,19 @@ var _hmt = _hmt || [];
   
   <nav class="article-nav">
     
-      <a href="/1087884883/" class="article-nav-link">
+      <a href="/3034358134/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            @Autowired注解与@Resource注解的区别
+            致最好的小朋友❤
           
         </div>
       </a>
     
     
-      <a href="/1803361479/" class="article-nav-link">
+      <a href="/249340220/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">ORA-01451错误</div>
+        <div class="article-nav-title">由三行情书感</div>
       </a>
     
   </nav>
@@ -341,6 +373,10 @@ var _hmt = _hmt || [];
     .vcontent p {
         text-align: left;
     }
+
+    .vcopy.txt-right {
+        display: none;
+    }
 </style>
 
   
@@ -376,7 +412,7 @@ var _hmt = _hmt || [];
         <a style="color: #4c618f;" href="https://coderblue.cn/sitemap.xml">站点地图</a> &nbsp;| &nbsp;
         
         <span class="post-meta-item-icon"><i class="fa fa-area-chart"></i></span>
-        <span class="post-count"> 79.3k</span> &nbsp;| &nbsp;
+        <span class="post-count"> 79.7k</span> &nbsp;| &nbsp;
         <span><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
         <a style="color: #4c618f;" href="https://tongji.baidu.com/web/10000172729/overview/index?siteId=14879413" target="_blank" rel="noopener">百度统计</a>&nbsp;|
         <a href="https://www.upyun.com/" target="_blank" rel="noopener">

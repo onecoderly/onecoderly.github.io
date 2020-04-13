@@ -119,7 +119,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">889字</span>
+            <span class="post-count">909字</span>
         </span>
     </span>
 
@@ -128,7 +128,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">3分钟</span>
+            <span class="post-count">4分钟</span>
         </span>
     </span>
     <span class="post-time">
@@ -162,7 +162,12 @@ var _hmt = _hmt || [];
       
 
       
-      <h2 id="前端遍历"><a href="#前端遍历" class="headerlink" title="前端遍历"></a>前端遍历</h2><h3 id="for-while"><a href="#for-while" class="headerlink" title="for / while"></a>for / while</h3><p>for 循环更适用于循环的开始和结束已知，循环次数固定的场合；<br>while 循环更适合于条件不确定的场合</p>
+      <br>
+<br>
+<a id="more"></a>
+##  前端遍历
+
+<h3 id="for-while"><a href="#for-while" class="headerlink" title="for / while"></a>for / while</h3><p>for 循环更适用于循环的开始和结束已知，循环次数固定的场合；<br>while 循环更适合于条件不确定的场合</p>
 <h3 id="for-in"><a href="#for-in" class="headerlink" title="for in"></a>for in</h3><p>兼容 ie6，效率最差（效率可看最下面的对比） for in 会把继承链的对象属性都会遍历一遍,所以会更花时间.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">let arr = [<span class="string">'red'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>];</span><br><span class="line">let obj = &#123;</span><br><span class="line">  name:<span class="string">'张三'</span>,</span><br><span class="line">  age:<span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 循环对象</span></span><br><span class="line"><span class="keyword">for</span>(k in obj)&#123;</span><br><span class="line">  console.log(k); <span class="comment">//name  ， age</span></span><br><span class="line">  console.log(obj[k]);  <span class="comment">// 张三 ， 20</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 循环数组</span></span><br><span class="line"><span class="keyword">for</span>(k in arr)&#123;</span><br><span class="line">  console.log(k);   <span class="comment">// 0   , 1   ,2</span></span><br><span class="line">  console.log(arr[k]); <span class="comment">// red, green ,blue</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -177,6 +182,8 @@ var _hmt = _hmt || [];
 </ul>
 <p>区别：for of 和 for in 的区别 for-in 语句以原始插入顺序迭代对象的可枚举属性。<strong>for-in 会把继承链的对象属性都会遍历一遍,所以会更花时间.</strong> for of不支持普通对象的遍历,或者<strong>通过对象.key的方法 Object.keys()方法，用于返回对象自身的所有可枚举属性</strong> (比如userInfo中的name、id)</p>
 <h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">myArray.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span>(item.STATUS === <span class="number">0</span>) &#123;</span><br><span class="line">    localList.push(item.COUNT);</span><br><span class="line">  &#125;</span><br><span class="line">  unLocalList.push(item.COUNT);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h3 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"><span class="keyword">let</span> iter = arr[<span class="built_in">Symbol</span>.iterator]();</span><br><span class="line"></span><br><span class="line">iter.next() <span class="comment">// &#123; value: 'a', done: false &#125;</span></span><br><span class="line">iter.next() <span class="comment">// &#123; value: 'b', done: false &#125;</span></span><br><span class="line">iter.next() <span class="comment">// &#123; value: 'c', done: false &#125;</span></span><br><span class="line">iter.next() <span class="comment">// &#123; value: undefined, done: true &#125;</span></span><br></pre></td></tr></table></figure>
 
@@ -397,6 +404,10 @@ var _hmt = _hmt || [];
     .vcontent p {
         text-align: left;
     }
+
+    .vcopy.txt-right {
+        display: none;
+    }
 </style>
 
   
@@ -432,7 +443,7 @@ var _hmt = _hmt || [];
         <a style="color: #4c618f;" href="https://coderblue.cn/sitemap.xml">站点地图</a> &nbsp;| &nbsp;
         
         <span class="post-meta-item-icon"><i class="fa fa-area-chart"></i></span>
-        <span class="post-count"> 79.3k</span> &nbsp;| &nbsp;
+        <span class="post-count"> 79.7k</span> &nbsp;| &nbsp;
         <span><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
         <a style="color: #4c618f;" href="https://tongji.baidu.com/web/10000172729/overview/index?siteId=14879413" target="_blank" rel="noopener">百度统计</a>&nbsp;|
         <a href="https://www.upyun.com/" target="_blank" rel="noopener">
