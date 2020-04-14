@@ -18,7 +18,7 @@
   <script src="//cdn.bootcss.com/layer/3.0.1/layer.min.js"></script>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <title>
-    ora-01658表空间不足 |  Blue
+    sql练习笔记 |  Blue
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
 
@@ -84,7 +84,7 @@ var _hmt = _hmt || [];
   <div id="app">
     <main class="content">
       <section class="outer">
-  <article id="post-ora-01658表空间不足" class="article article-type-post" itemscope
+  <article id="post-sql练习笔记" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -92,7 +92,7 @@ var _hmt = _hmt || [];
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  ora-01658表空间不足
+  sql练习笔记
 </h1>
   
 
@@ -104,8 +104,8 @@ var _hmt = _hmt || [];
       <!-- 博客指定样式修改 -->
       
 
-      <a href="/3612225564/" class="article-date">
-  <time datetime="2020-04-13T13:53:23.000Z" itemprop="datePublished">2020-04-13</time>
+      <a href="/1462133166/" class="article-date">
+  <time datetime="2020-04-14T14:00:27.000Z" itemprop="datePublished">2020-04-14</time>
 </a>
       
   <div class="article-category">
@@ -119,7 +119,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">251字</span>
+            <span class="post-count">315字</span>
         </span>
     </span>
 
@@ -146,8 +146,6 @@ var _hmt = _hmt || [];
 
     
     
-    <div class="tocbot"></div>
-
 
 
 
@@ -162,31 +160,34 @@ var _hmt = _hmt || [];
       
 
       
-      <p>错误：ORA-01658: 无法为表空间XXX段创建 INITIAL 区</p>
+      <p>最近在做公司的项目，由于基本使用 ECharts 做可视化分析，查数据库居多。有时候 sql 就写的不太顺手，遂最近抽时间想多练习练习。</p>
 <a id="more"></a>
-<p>或者</p>
-<p>ORA-01659：无法分配超出 4 的 MINEXTENTS (在表空间XXX中) 。</p>
-<h3 id="oracle里怎样查询一个表属于哪个表空间？"><a href="#oracle里怎样查询一个表属于哪个表空间？" class="headerlink" title="oracle里怎样查询一个表属于哪个表空间？"></a>oracle里怎样查询一个表属于哪个表空间？</h3><blockquote>
-<p>select TABLESPACE_NAME from tabs where TABLESPACE_NAME = 表名</p>
+<p><strong>1. 查询” 01 “课程比” 02 “课程成绩高的学生的信息及课程分数</strong></p>
+<blockquote>
+<p>查出” 01 “课程、” 02 “课程，再找出01课程成绩更高的</p>
 </blockquote>
-<p>注意：表名 如果是英文的，要大写才可以</p>
-<h3 id="查看表空间总大小："><a href="#查看表空间总大小：" class="headerlink" title="查看表空间总大小："></a>查看表空间总大小：</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> tablespace_name,<span class="keyword">sum</span>(<span class="keyword">bytes</span>)/<span class="number">1024</span>/<span class="number">1024</span> <span class="keyword">from</span> dba_data_files <span class="keyword">group</span> <span class="keyword">by</span> tablespace_name;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> (<span class="keyword">SELECT</span> <span class="keyword">SId</span>, score <span class="keyword">from</span> sc <span class="keyword">where</span> sc.CId = <span class="string">'01'</span>) t1, (<span class="keyword">SELECT</span> <span class="keyword">SId</span>, score <span class="keyword">from</span> sc <span class="keyword">where</span> sc.CId = <span class="string">'02'</span>) t2</span><br><span class="line"><span class="keyword">where</span> t1.SId = t2.SId</span><br></pre></td></tr></table></figure>
 
-<h3 id="查看表空间已使用大小及分配情况"><a href="#查看表空间已使用大小及分配情况" class="headerlink" title="查看表空间已使用大小及分配情况"></a>查看表空间已使用大小及分配情况</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> SEGMENT_TYPE,owner,<span class="keyword">sum</span>(<span class="keyword">bytes</span>)/<span class="number">1024</span>/<span class="number">1024</span> <span class="keyword">from</span>  dba_segments  <span class="keyword">where</span> tablespace_name=<span class="string">'XITONG'</span> <span class="keyword">group</span> <span class="keyword">by</span> segment_type,owner;</span><br></pre></td></tr></table></figure>
+<p><strong>1.2 查询存在” 01 “课程但可能不存在” 02 “课程的情况(不存在时显示为 null )</strong></p>
+<blockquote>
+<p>以01课程为基准连接，则01的必有</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> </span><br><span class="line">(<span class="keyword">SELECT</span> <span class="keyword">SId</span>,score <span class="keyword">from</span> sc <span class="keyword">where</span> sc.CId = <span class="string">'01'</span>) t1 <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> (<span class="keyword">SELECT</span> <span class="keyword">SId</span>,score <span class="keyword">from</span> sc <span class="keyword">where</span> sc.CId = <span class="string">'02'</span>) t2 </span><br><span class="line"><span class="keyword">on</span> t1.SId = t2.SId</span><br></pre></td></tr></table></figure>
 
-<h3 id="查看表空间文件路径"><a href="#查看表空间文件路径" class="headerlink" title="查看表空间文件路径"></a>查看表空间文件路径</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  * <span class="keyword">from</span> dba_data_files;</span><br></pre></td></tr></table></figure>
+<p><strong>1.3 查询不存在” 01 “课程但存在” 02 “课程的情况</strong></p>
+<blockquote>
+<p>不存在：not in</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * </span><br><span class="line"><span class="keyword">from</span> sc </span><br><span class="line"><span class="keyword">where</span> sc.sid <span class="keyword">not</span> <span class="keyword">in</span> (<span class="keyword">SELECT</span> <span class="keyword">SId</span> <span class="keyword">from</span> sc <span class="keyword">where</span> sc.CId = <span class="string">'01'</span>)</span><br><span class="line"><span class="keyword">and</span> sc.cId = <span class="string">'02'</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="增加表空间大小"><a href="#增加表空间大小" class="headerlink" title="增加表空间大小"></a>增加表空间大小</h3><p>可以选择增加新的数据文件：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">tablespace</span> YWGOV <span class="keyword">add</span> <span class="keyword">datafile</span> <span class="string">'F:\SOFT-INSTALL-SOFT\ORACLE\PRODUCT\10.2.0\ORADATA\ORCL\HOUTAI1.ORA '</span> <span class="keyword">size</span> <span class="number">100</span>M;</span><br></pre></td></tr></table></figure>
+<p><strong>2.查询平均成绩大于等于 60 分的同学的学生编号和学生姓名和平均成绩</strong></p>
+<blockquote>
+<p>HAVING随着Group by一起使用，有过滤作用，即需要符合后续的条件</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> sc.SId ,<span class="keyword">AVG</span>(sc.score)<span class="keyword">as</span> avgscore</span><br><span class="line"><span class="keyword">from</span> sc </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> sc.SId</span><br><span class="line"><span class="keyword">HAVING</span> <span class="keyword">AVG</span>(sc.score)&gt;=<span class="number">60</span></span><br></pre></td></tr></table></figure>
 
-<p>扩充表空间原有数据文件的大小</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">DATAFILE</span> <span class="string">'F:\SOFT-INSTALL-SOFT\ORACLE\PRODUCT\10.2.0\ORADATA\ORCL\HOUTAI.ORA'</span> <span class="keyword">RESIZE</span> <span class="number">1024</span>M;</span><br></pre></td></tr></table></figure>
+<p><a href="https://note.youdao.com/ynoteshare1/index.html?id=45d4298f42397bd52ccf6fc716e27ee9&type=note#/" target="_blank" rel="noopener">sql 代码参照于此</a></p>
 
-<p>修改表空间使其自动增加</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">DATAFILE</span> <span class="string">'F:\SOFT-INSTALL-SOFT\ORACLE\PRODUCT\10.2.0\ORADATA\ORCL\HOUTAI.ORA'</span> <span class="keyword">AUTOEXTEND</span> <span class="keyword">ON</span> <span class="keyword">NEXT</span> <span class="number">200</span>M <span class="keyword">MAXSIZE</span> <span class="keyword">UNLIMITED</span>;</span><br></pre></td></tr></table></figure>
-
-<p>或</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLESPACE</span> SDE <span class="keyword">AUTOEXTEND</span> <span class="keyword">ON</span> <span class="keyword">NEXT</span> <span class="number">100</span>M <span class="keyword">MAXSIZE</span> <span class="keyword">UNLIMITED</span>;</span><br></pre></td></tr></table></figure>
       
       <!-- reward -->
       
@@ -255,14 +256,14 @@ var _hmt = _hmt || [];
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://coderblue.cn/3612225564/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://coderblue.cn/1462133166/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oralce/" rel="tag">Oralce</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li></ul>
 
 
     </footer>
@@ -273,19 +274,19 @@ var _hmt = _hmt || [];
   
   <nav class="article-nav">
     
-      <a href="/1462133166/" class="article-nav-link">
+      <a href="/3034358134/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            sql练习笔记
+            致最好的小朋友❤
           
         </div>
       </a>
     
     
-      <a href="/249340220/" class="article-nav-link">
+      <a href="/3612225564/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">由三行情书感</div>
+        <div class="article-nav-title">ora-01658表空间不足</div>
       </a>
     
   </nav>
