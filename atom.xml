@@ -37,6 +37,58 @@
   </entry>
   
   <entry>
+    <title>js中filter方法使用</title>
+    <link href="http://coderblue.cn/3155173279/"/>
+    <id>http://coderblue.cn/3155173279/</id>
+    <published>2020-04-15T14:08:20.000Z</published>
+    <updated>2020-04-15T14:46:10.302Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;作用：用于把Array的某些元素过滤掉，然后返回剩下的元素。&lt;/p&gt;
+&lt;p&gt;原理：filter()把传入的函数依次作用于每个元素，然后根据返回值是true还是false决定保留还是丢弃该元素。&lt;/p&gt;
+&lt;p&gt;在一个Array中，删掉偶数，只保留奇数，&lt;/p&gt;
+&lt;figure
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://coderblue.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JS" scheme="http://coderblue.cn/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>配置jdk环境变量</title>
+    <link href="http://coderblue.cn/2386613974/"/>
+    <id>http://coderblue.cn/2386613974/</id>
+    <published>2020-04-15T14:01:22.000Z</published>
+    <updated>2020-04-15T14:46:10.305Z</updated>
+    
+    <summary type="html">
+    
+      &lt;br&gt;
+&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://coderblue.cn/categories/Java/"/>
+    
+    
+      <category term="jdk" scheme="http://coderblue.cn/tags/jdk/"/>
+    
+  </entry>
+  
+  <entry>
     <title>sql练习笔记</title>
     <link href="http://coderblue.cn/1462133166/"/>
     <id>http://coderblue.cn/1462133166/</id>
@@ -121,7 +173,7 @@
     <link href="http://coderblue.cn/3441414939/"/>
     <id>http://coderblue.cn/3441414939/</id>
     <published>2020-04-12T04:12:30.000Z</published>
-    <updated>2020-04-13T14:04:36.160Z</updated>
+    <updated>2020-04-15T14:44:56.874Z</updated>
     
     <summary type="html">
     
@@ -201,7 +253,7 @@
     <link href="http://coderblue.cn/498086082/"/>
     <id>http://coderblue.cn/498086082/</id>
     <published>2020-04-12T01:58:33.000Z</published>
-    <updated>2020-04-13T14:21:11.568Z</updated>
+    <updated>2020-04-15T14:42:30.978Z</updated>
     
     <summary type="html">
     
@@ -441,67 +493,6 @@
     
     
       <category term="tomcat" scheme="http://coderblue.cn/tags/tomcat/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>idea配置svn</title>
-    <link href="http://coderblue.cn/487943876/"/>
-    <id>http://coderblue.cn/487943876/</id>
-    <published>2020-04-07T02:44:43.000Z</published>
-    <updated>2020-04-08T00:53:07.130Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;安装svn&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;安装过程中需要添加 command line client tools选第一个will be添加的就行。&lt;br&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-      <category term="svn" scheme="http://coderblue.cn/categories/svn/"/>
-    
-      <category term="idea" scheme="http://coderblue.cn/categories/svn/idea/"/>
-    
-    
-      <category term="idea" scheme="http://coderblue.cn/tags/idea/"/>
-    
-      <category term="svn" scheme="http://coderblue.cn/tags/svn/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>将网页设置成黑白色</title>
-    <link href="http://coderblue.cn/3296627370/"/>
-    <id>http://coderblue.cn/3296627370/</id>
-    <published>2020-04-06T14:06:00.000Z</published>
-    <updated>2020-04-08T00:53:07.146Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;方式-1：通过-js-可以设定指定时间，自动变灰以及复原&quot;&gt;&lt;a href=&quot;#方式-1：通过-js-可以设定指定时间，自动变灰以及复原&quot; class=&quot;headerlink&quot; title=&quot;方式 1：通过 js
-        
-      
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://coderblue.cn/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="前端" scheme="http://coderblue.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
