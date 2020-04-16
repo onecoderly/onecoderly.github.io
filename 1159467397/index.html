@@ -119,7 +119,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">909字</span>
+            <span class="post-count">943字</span>
         </span>
     </span>
 
@@ -184,6 +184,8 @@ var _hmt = _hmt || [];
 <h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">myArray.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span>(item.STATUS === <span class="number">0</span>) &#123;</span><br><span class="line">    localList.push(item.COUNT);</span><br><span class="line">  &#125;</span><br><span class="line">  unLocalList.push(item.COUNT);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">arr.forEach(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(item === <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'中止本次循环，继续执行下一次循环'</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(index)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 <h3 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"><span class="keyword">let</span> iter = arr[<span class="built_in">Symbol</span>.iterator]();</span><br><span class="line"></span><br><span class="line">iter.next() <span class="comment">// &#123; value: 'a', done: false &#125;</span></span><br><span class="line">iter.next() <span class="comment">// &#123; value: 'b', done: false &#125;</span></span><br><span class="line">iter.next() <span class="comment">// &#123; value: 'c', done: false &#125;</span></span><br><span class="line">iter.next() <span class="comment">// &#123; value: undefined, done: true &#125;</span></span><br></pre></td></tr></table></figure>
 
@@ -443,7 +445,7 @@ var _hmt = _hmt || [];
         <a style="color: #4c618f;" href="https://coderblue.cn/sitemap.xml">站点地图</a> &nbsp;| &nbsp;
         
         <span class="post-meta-item-icon"><i class="fa fa-area-chart"></i></span>
-        <span class="post-count"> 81.5k</span> &nbsp;| &nbsp;
+        <span class="post-count"> 82.3k</span> &nbsp;| &nbsp;
         <span><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
         <a style="color: #4c618f;" href="https://tongji.baidu.com/web/10000172729/overview/index?siteId=14879413" target="_blank" rel="noopener">百度统计</a>&nbsp;|
         <a href="https://www.upyun.com/" target="_blank" rel="noopener">
@@ -471,6 +473,8 @@ var _hmt = _hmt || [];
       POWERMODE.shake = false; // false 为禁用震动特效
       document.body.addEventListener('input', POWERMODE);
     </script>
+    <!-- 懒加载图片 -->
+    <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/lazyload.js"></script>
   </div>
 </footer>
       <div class="to_top">
@@ -578,7 +582,7 @@ var _hmt = _hmt || [];
 <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/lazyload.min.js"></script>
 
 
-<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/checkvaline@v1.0.1.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/checkvaline@v1.0.2.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/share.js"></script>

@@ -37,36 +37,6 @@
   </entry>
   
   <entry>
-    <title>js中filter方法使用</title>
-    <link href="http://coderblue.cn/3155173279/"/>
-    <id>http://coderblue.cn/3155173279/</id>
-    <published>2020-04-15T14:08:20.000Z</published>
-    <updated>2020-04-15T14:46:10.302Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;作用：用于把Array的某些元素过滤掉，然后返回剩下的元素。&lt;/p&gt;
-&lt;p&gt;原理：filter()把传入的函数依次作用于每个元素，然后根据返回值是true还是false决定保留还是丢弃该元素。&lt;/p&gt;
-&lt;p&gt;在一个Array中，删掉偶数，只保留奇数，&lt;/p&gt;
-&lt;figure
-        
-      
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://coderblue.cn/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="JS" scheme="http://coderblue.cn/tags/JS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>配置jdk环境变量</title>
     <link href="http://coderblue.cn/2386613974/"/>
     <id>http://coderblue.cn/2386613974/</id>
@@ -93,7 +63,7 @@
     <link href="http://coderblue.cn/758859499/"/>
     <id>http://coderblue.cn/758859499/</id>
     <published>2020-04-15T13:39:07.000Z</published>
-    <updated>2020-04-15T15:15:26.846Z</updated>
+    <updated>2020-04-15T15:15:43.981Z</updated>
     
     <summary type="html">
     
@@ -115,7 +85,7 @@
     <link href="http://coderblue.cn/1462133166/"/>
     <id>http://coderblue.cn/1462133166/</id>
     <published>2020-04-14T14:00:27.000Z</published>
-    <updated>2020-04-14T14:44:34.445Z</updated>
+    <updated>2020-04-16T14:54:48.405Z</updated>
     
     <summary type="html">
     
@@ -332,7 +302,7 @@
     <link href="http://coderblue.cn/1159467397/"/>
     <id>http://coderblue.cn/1159467397/</id>
     <published>2020-04-10T14:24:42.000Z</published>
-    <updated>2020-04-13T14:04:12.533Z</updated>
+    <updated>2020-04-16T01:04:39.375Z</updated>
     
     <summary type="html">
     
@@ -486,6 +456,35 @@
     
     
       <category term="struts" scheme="http://coderblue.cn/tags/struts/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tomcat启动乱码</title>
+    <link href="http://coderblue.cn/585021418/"/>
+    <id>http://coderblue.cn/585021418/</id>
+    <published>2020-04-07T04:43:52.000Z</published>
+    <updated>2020-04-08T00:53:07.130Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;刚装完tomcat7，启动就遇到这乱码问题&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;12-Jan-2019 11:15:48.911 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log OS
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://coderblue.cn/categories/Java/"/>
+    
+    
+      <category term="tomcat" scheme="http://coderblue.cn/tags/tomcat/"/>
     
   </entry>
   
