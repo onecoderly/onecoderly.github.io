@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="corder" />
+   
+  <meta name="description" content="一花一世界~" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="baidu-site-verification" content="JAFHu5il3e" />
+  <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+  <link href="//cdn.bootcss.com/layer/3.0.1/skin/default/layer.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.7.2/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.scrollstop.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.lazyload.min.js"></script>
+  <script src="//cdn.bootcss.com/layer/3.0.1/layer.min.js"></script>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.2/jquery.fancybox.min.css" />
+  <script src="https://cdn.staticfile.org/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  <title>
+    fancybox图片查看、lazyload懒加载踩坑日记 |  Blue
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
+
+  
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/images/favicon.ico" />
+  
+  <!-- 
+<link rel="stylesheet" href="/css/style.css">
+ -->
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/css/style@v1.0.2.css">
+
+  
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/pace.min.js"></script>
+
+  <!-- Dao Voice -->
+  
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/dao-voice-1.js"></script>
+
+
+  
+
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?28a28ef220229ebef569476d22116e4f&#34;";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  
+<script>
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+  
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+<link rel="alternate" href="/atom.xml" title="Blue" type="application/atom+xml">
+</head>
+
+</html>
+<script>
+  const val = '致小朋友\n\n我喜欢夏天的雨，\n雨后的光，\n和任何时候的你。\n'
+    console.log("%c%s",
+          "color: #e798e7; font-size: 16px;font-weight:bolder",
+        val);
+</script>
+<body>
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-fancybox图片查看、lazyload懒加载踩坑日记" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  fancybox图片查看、lazyload懒加载踩坑日记
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <!-- 博客指定样式修改 -->
+      
+
+      <a href="/3606282458/" class="article-date">
+  <time datetime="2020-04-19T14:15:46.000Z" itemprop="datePublished">2020-04-19</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a> / <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/Hexo/">Hexo</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">636字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">2分钟</span>
+        </span>
+    </span>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <!-- 不蒜子统计：暂未实现 -->
+        <span id="busuanzi_container_page_pv">
+            <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+      <p>今天花了许久时间来折腾博客。一直都想要实现懒加载，但是总有着一些莫名的错误。无奈的，我只能一个个排查问题。最后发现我的 css 文件存在问题，使得图片只可被加载少部分。</p>
+<a id="more"></a>
+
+<p>八千多行的全局 css 文件，肯定是不能说去就去的。我便只能开始苦逼的探索之旅了。理科生的思维，二分法查找，幸好让我在少许时间内锁定到了几百行内的代码问题。</p>
+<p>最终惊人的发现竟然是 div 的 height 设置了 100%影响的,真的心态很崩。<br><img src="https://img-blog.csdnimg.cn/20200419222053347.png" alt=""></p>
+<p>我便改成 height: auto;为自适应了。但是与此而来，因为 height 的影响，浏览器的滚动条又新增了一个。</p>
+<p>我便又只能想办法了，最终通过：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span><span class="selector-pseudo">::-webkit-scrollbar</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="懒加载-lazyload"><a href="#懒加载-lazyload" class="headerlink" title="懒加载 lazyload"></a>懒加载 lazyload</h3><p>这个解决后就言归正传，谈谈懒加载 lazyload 的使用：</p>
+<ol>
+<li>引入 js</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"https://cdn.staticfile.org/jquery/1.7.2/jquery.min.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script src="https:/</span><span class="regexp">/cdn.jsdelivr.net/g</span>h/onecoderly/cdn/<span class="keyword">static</span>/js/jquery.scrollstop.min.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;script src="</span>https:<span class="comment">//cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.lazyload.min.js"&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>我开始使用 jquery2.几版本的，但是就报错了，似乎他们不兼容，我便只能降低版本了。</p>
+<ol start="2">
+<li>图片格式</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"lazyload"</span> <span class="attr">data-original</span>=<span class="string">"真实图片的地址"</span> <span class="attr">src</span>=<span class="string">"加载的gif图"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>使用懒加载</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  $(<span class="string">"img.lazyload"</span>).lazyload(&#123;</span><br><span class="line">    effect: <span class="string">"fadeIn"</span>,</span><br><span class="line">    event: <span class="string">"scrollstop"</span>, <span class="comment">// 滚动加载图片，适合大量图片</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="fancybox-图片查看"><a href="#fancybox-图片查看" class="headerlink" title="fancybox 图片查看"></a>fancybox 图片查看</h3><p><img src="https://img-blog.csdnimg.cn/2020041922354911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+<ol>
+<li>引入文件</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"https://cdn.staticfile.org/jquery/1.7.2/jquery.min.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;link rel="stylesheet" href="https:/</span><span class="regexp">/cdn.staticfile.org/</span>fancybox/<span class="number">3.5</span><span class="number">.2</span>/jquery.fancybox.min.css<span class="string">" /&gt;</span></span><br><span class="line"><span class="string">&lt;script src="</span>https:<span class="comment">//cdn.staticfile.org/fancybox/3.5.2/jquery.fancybox.min.js"&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>图片格式<br>配合懒加载一起使用<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">data-fancybox</span>=<span class="string">"gallery"</span> <span class="attr">data-caption</span>=<span class="string">"图片标题"</span> <span class="attr">href</span>=<span class="string">"查看图片的地址"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"lazyload"</span> <span class="attr">data-original</span>=<span class="string">"查看图片的地址"</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/images/loading.gif"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>加载图片查看所需的js配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"[data-fancybox]"</span>).fancybox(&#123;</span><br><span class="line">  thumbs: &#123;</span><br><span class="line">    autoStart: <span class="literal">true</span>, <span class="comment">//缩略图</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;); </span><br><span class="line">$(<span class="string">"[data-fancybox]"</span>).fancybox(&#123;</span><br><span class="line">  protect: <span class="literal">true</span>, <span class="comment">// 给图片添加水印</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>视频格式<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">data-fancybox</span> <span class="attr">class</span>=<span class="string">"innerlinksa"</span> <span class="attr">href</span>=<span class="string">"视频地址"</span> <span class="attr">title</span>=<span class="string">"大B站"</span> <span class="attr">target</span>=<span class="string">"_blank"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">rel</span>=<span class="string">"external nofollow"</span>&gt;</span>谨以此片，告诫自己！❤</span><br><span class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<p>加载视频播放所需的js配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'[data-fancybox]'</span>).fancybox(&#123;</span><br><span class="line">    youtube : &#123;</span><br><span class="line">        controls : <span class="number">0</span>,</span><br><span class="line">        showinfo : <span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line">    vimeo : &#123;</span><br><span class="line">        color : <span class="string">'f00'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        打赏
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong s>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
+            target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+      
+      
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://coderblue.cn/3606282458/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%87%92%E5%8A%A0%E8%BD%BD/" rel="tag">懒加载</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/1558415691/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            网站的基本保护措施
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2386613974/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">配置jdk环境变量</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1'></script>
+<!-- <script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script> -->
+<script>
+    // 随机四种头像
+    const heads = ['', 'mp', 'identicon', 'monsterid']
+    new Valine({
+        el: '#vcomments',
+        app_id: 'Y6sHmEuePRpPWDd5Yv45nEWL-MdYXbMMI',
+        app_key: 'hLz1Wo8jhbxGo5oQFQ59Gp6a',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: heads[parseInt(Math.random() * heads.length)],
+        placeholder: '你是爱，是暖，是希望，你是人间的四月天~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+
+    /* 给评论添加背景 */
+    .v .vedit {
+        background-image: url(https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/project/valine.jpg);
+        background-size: contain;
+        background-position: right;
+        background-repeat: no-repeat;
+    }
+
+    span.vat {
+        border: 1px solid;
+        background: #df7fe1;
+        width: 4rem;
+        border-radius: 4px;
+        text-align: center;
+        color: #ffffff !important;
+    }
+
+    .v .vlist .vcard .vh {
+        padding: 0 !important;
+    }
+
+    .v .vbtn {
+        background: #95eaa9 !important;
+        color: #ffffff !important;
+        border: none !important;
+    }
+
+    .vcontent p {
+        text-align: left;
+    }
+
+    .vcopy.txt-right {
+        display: none;
+    }
+</style>
+
+  
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ol class="list-inline">
+      <li>
+        &copy;
+        2020
+        Liu Yang
+        &nbsp
+        <span class="with-love">
+          <i class="fa fa-heart" id="hearts"></i>
+        </span>
+        &nbsp<a href="http://www.beian.miit.gov.cn/" target="_blank" rel="noopener" style="text-decoration: none;">湘ICP备20003709号</a>
+      </li>
+      <div id="days"></div>
+      </script>
+      <!-- 计算网站运行时间 -->
+      <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/count-time-1.js"></script>
+      
+    </ol>
+    <ul class="list-busuanzi" style="display: block;">
+      <li style="position: relative; top: -5px;">
+        <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+        <a style="color: #4c618f;" href="https://coderblue.cn/sitemap.xml">站点地图</a> &nbsp;| &nbsp;
+        
+        <span class="post-meta-item-icon"><i class="fa fa-area-chart"></i></span>
+        <span class="post-count"> 83.9k</span> &nbsp;| &nbsp;
+        <span><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
+        <a style="color: #4c618f;" href="https://tongji.baidu.com/web/10000172729/overview/index?siteId=14879413" target="_blank" rel="noopener">百度统计</a>&nbsp;|
+        <a href="https://www.upyun.com/" target="_blank" rel="noopener">
+          <img class="cdn" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/images/又拍云.png" alt="">
+        </a>
+      </li> 
+
+      <li style="position: relative; top: -15px;">
+        
+        <span id="busuanzi_container_site_pv">
+          我的第<span id="busuanzi_value_site_pv" style="color: #1095e6"></span>位朋友
+        </span>
+        
+        
+        <span id="busuanzi_container_site_uv">
+          ， 历经<span id="busuanzi_value_site_uv" style="color: #1095e6;"></span>次回眸才与你相遇
+        </span>
+        
+      </li>
+    </ul>
+    <!-- 打字特效 -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/activate-power-mode.min.js"></script>
+    <script>
+      POWERMODE.colorful = true; // ture 为启用礼花特效
+      POWERMODE.shake = false; // false 为禁用震动特效
+      document.body.addEventListener('input', POWERMODE);
+    </script>
+  </div>
+</footer>
+      <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    <aside class="sidebar">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/images/dog.jpg" alt="Blue"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item"></li>
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item"></li>
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item"></li>
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item"></li>
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item"></li>
+      <a class="nav-item-link" href="/tags/%E9%9A%8F%E7%AC%94">随笔</a>
+    </li>
+    
+    <li class="nav-item"></li>
+      <a class="nav-item-link" href="/check">祈愿</a>
+    </li>
+    
+    <li class="nav-item"></li>
+      <a class="nav-item-link" href="/project">留言</a>
+    </li>
+    
+    <li class="nav-item"></li>
+      <a class="nav-item-link" href="/Timeline">Timeline</a>
+    </li>
+    
+    <li class="nav-item"></li>
+      <a class="nav-item-link" href="/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="搜索...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/checkvaline@v1.0.2.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/share.js"></script>
+
+<!--  -->
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+    strings: ['一花一世界,一叶一追寻','面朝大海，春暖花开','愿你一生努力，一生被爱'],
+    startDelay: 0,
+    typeSpeed: 200,
+    loop: true,
+    backSpeed: 100,
+    showCursor: true
+    });
+  } catch (err) {
+  }
+  
+</script>
+
+
+
+<!-- 
+<script src="/js/tocbot.min.js"></script>
+ -->
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/tocbot.min.js"></script>
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer:'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    onClick: (e) => {
+      $('.toc-link').removeClass('is-active-link');
+      $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+      $(e.target.hash).scrollIntoView();
+      return false;
+    }
+  });
+</script>
+
+
+<script>
+  var ayerConfig = {
+    mathjax: false
+  }
+</script>
+
+<!-- 
+<script src="/js/ayer.js"></script>
+ -->
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/ayer.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+
+
+ <!-- 图片单击效果 -->
+ <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/click-img-1.min.js"></script>
+
+
+
+  </div>
+  <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/src/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/src/clipboard-use.js"></script>
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/love-click.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#hbePass").focus();
+    });
+  </script>
+  <script type="text/javascript" size="210" alpha='0.3' zIndex="-2" src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/dist/ribbon.min.js"></script>
+</body>
+
+</html>

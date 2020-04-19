@@ -37,6 +37,50 @@
   </entry>
   
   <entry>
+    <title>网站的基本保护措施</title>
+    <link href="http://coderblue.cn/1558415691/"/>
+    <id>http://coderblue.cn/1558415691/</id>
+    <published>2020-04-19T14:51:58.000Z</published>
+    <updated>2020-04-19T14:56:59.938Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;近日总觉得有些东西，并不想完全开放在网络上。就想着弄一些基本的手段来保护下自己的资源。对于大佬还是请高抬贵手，我并没有做很多的优化或者加密。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://coderblue.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="网站保护" scheme="http://coderblue.cn/tags/%E7%BD%91%E7%AB%99%E4%BF%9D%E6%8A%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>fancybox图片查看、lazyload懒加载踩坑日记</title>
+    <link href="http://coderblue.cn/3606282458/"/>
+    <id>http://coderblue.cn/3606282458/</id>
+    <published>2020-04-19T14:15:46.000Z</published>
+    <updated>2020-04-19T14:45:47.920Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天花了许久时间来折腾博客。一直都想要实现懒加载，但是总有着一些莫名的错误。无奈的，我只能一个个排查问题。最后发现我的 css 文件存在问题，使得图片只可被加载少部分。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://coderblue.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Hexo" scheme="http://coderblue.cn/categories/%E5%89%8D%E7%AB%AF/Hexo/"/>
+    
+    
+      <category term="懒加载" scheme="http://coderblue.cn/tags/%E6%87%92%E5%8A%A0%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
     <title>配置jdk环境变量</title>
     <link href="http://coderblue.cn/2386613974/"/>
     <id>http://coderblue.cn/2386613974/</id>
@@ -428,63 +472,6 @@
     
     
       <category term="项目打包" scheme="http://coderblue.cn/tags/%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>idea配置tomcat以及成功启动struts项目</title>
-    <link href="http://coderblue.cn/3751625429/"/>
-    <id>http://coderblue.cn/3751625429/</id>
-    <published>2020-04-07T05:57:30.000Z</published>
-    <updated>2020-04-08T00:53:07.130Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;配置tomcat&lt;br&gt;Tomcat8 需要jdk1.7及以上的&lt;br&gt;Tomcat7 需要jdk1.6及以上的&lt;br&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://coderblue.cn/categories/Java/"/>
-    
-    
-      <category term="struts" scheme="http://coderblue.cn/tags/struts/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>tomcat启动乱码</title>
-    <link href="http://coderblue.cn/585021418/"/>
-    <id>http://coderblue.cn/585021418/</id>
-    <published>2020-04-07T04:43:52.000Z</published>
-    <updated>2020-04-08T00:53:07.130Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;刚装完tomcat7，启动就遇到这乱码问题&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;12-Jan-2019 11:15:48.911 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log OS
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://coderblue.cn/categories/Java/"/>
-    
-    
-      <category term="tomcat" scheme="http://coderblue.cn/tags/tomcat/"/>
     
   </entry>
   

@@ -4,7 +4,39 @@ $(function () {
       event: "scrollstop",
     });
 });
-
+if (document.layers) {
+    document.captureEvents(Event.MOUSEDOWN);
+  }
+  document.onmousedown = click;
+  document.oncontextmenu = new Function("return false;");
+  function click(e) {
+    e = e || event;
+    if (e.button == 2) {
+      var tag = e.srcElement || e.target;
+      if (tag.type == "text" || tag.type == "textarea") {
+        document.oncontextmenu = new Function("return true;");
+      } else {
+        document.oncontextmenu = new Function("return false;");
+      }
+    }
+  }
+  $(document).bind("contextmenu", function () {
+    return false;
+  });
+  document.onkeydown = function () {
+    if (window.event && window.event.keyCode == 123) {
+      alert("少侠见谅");
+      event.keyCode = 0;
+      event.returnValue = false;
+    }
+    if (window.event && window.event.keyCode == 13) {
+      window.event.keyCode = 505;
+    }
+    if (window.event && window.event.keyCode == 8) {
+      alert(str + "\n请使用Del键进行字符的删除操作！");
+      window.event.returnValue = false;
+    }
+  };
 (function() {
 var slideshow = document.querySelector(".slideshow");
 var carousel = document.querySelector(".carousel");
@@ -77,6 +109,7 @@ var setActiveIndex = function (activeIndex) {
     slides.forEach(function (slide) { return (slide.style.zIndex = "-1"); });
     slides[activeIndex].style.zIndex = "0";
 };
+// dots
 dots[0].classList.add("active");
 dots.forEach(function (dot, activeIndex) {
     dot.addEventListener("click", function () {

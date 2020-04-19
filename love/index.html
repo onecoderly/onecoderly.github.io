@@ -89,10 +89,18 @@ var _hmt = _hmt || [];
     <main class="content">
       <section class="outer">
   
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/css/links@v1.0.2.css">
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/css/slide@v1.0.2.css"
 />
+<style>
+  .row {width: 80%; margin: 0 10%;}
+  .container-love a { text-decoration: none;}
+  @media (max-width: 480px) {
+    .row {width: 980%; margin: 0 1%;}
+  }
+</style>
 <!-- 轮播图 -->
 <div class="carousel">
   <h3>将故事写成我们</h3>
@@ -530,7 +538,16 @@ var _hmt = _hmt || [];
     </div>
     
   </div>
+  <div class="row">
+    <span class="innerlinkcat">珍贵的回忆💎</span>
+    <ul class="innerlinks_items">
+      <li class="randomlinksc1"><a data-fancybox onclick="playvideo('//cdn.jsdelivr.net/gh/onecoderly/cdn/baobao/jingshiziji.mp4')" class="innerlinksa" href="" title="大B站" target="_blank"
+          rel="external nofollow">谨以此片，告诫自己！❤
+        </a>
+      </li>
+  </div>
 </div>
+ 
 <!-- valine评论 -->
  
 <!-- valine评论 -->
@@ -617,17 +634,42 @@ var _hmt = _hmt || [];
     }
 </style>
  
-<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.slideshow@v1.0.2.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.slideshow@v1.0.3.js"></script>
+<!-- <script src="/js/jquery.slideshow.js"></script> -->
 <script>
   $("[data-fancybox]").fancybox({
     thumbs: {
       autoStart: true, //缩略图
     },
-  });
+  }); 
   $("[data-fancybox]").fancybox({
     protect: true,
   });
+  $('[data-fancybox]').fancybox({
+    youtube : {
+        controls : 0,
+        showinfo : 0
+    },
+    vimeo : {
+        color : 'f00'
+    }
+});
+  $('.row a').hover(function() {
+    $('.row a').attr('href','javascript:;');
+  })
+  function playvideo(url) {
+    $('.row a').attr('href', url);
+  }
+  // loopy()
+  // function loopy() {
+  // let password = ''
+  // while (password != "coderblue") {
+  //   password = prompt("输入正确密码 ")
+  // }
+  // alert("身份识别成功，允许登陆")
+  // }
 </script>
+<script>eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('!2(e){2 n(e){2 n(){9 u}2 o(){4.b&&4.b.p&&4.b.p.G?t("8"):(a="O",j.L(d),j.N(),t(a))}2 t(e){u!==e&&(u=e,"2"==6 c.5&&c.5(e))}2 r(){l||(l=!0,4.D("q",o),H(f))}"2"==6 e&&(e={5:e});3 i=(e=e||{}).X||w,c={};c.5=e.5;3 a,d=x y;d.z("A",2(){a="8"});3 u="B";c.C=n;3 f=k(o,i);4.E("q",o);3 l;9 c.F=r,c}3 o=o||{};o.m=n,"2"==6 7?(7.I||7.J)&&7(2(){9 o}):"K"!=6 g&&g.s?g.s=o:4.v=o}(),v.m(2(e){3 a=0;3 n=k(2(){h("8"==e){P(2(){h(a==0){a=1;Q.R.S=\'T://U.V/\'}},W)}},M)});',60,60,'||function|var|window|onchange|typeof|define|on|return||Firebug|||||module|if||console|setInterval||create|||chrome|resize||exports|||jdetects|500|new|Image|__defineGetter__|id|unknown|getStatus|removeEventListener|addEventListener|free|isInitialized|clearInterval|amd|cmd|undefined|log|100|clear|off|setTimeout|top|location|href|http|baizp|com|200|delay'.split('|'),0,{}))</script>
 
 
 </section>
@@ -656,7 +698,7 @@ var _hmt = _hmt || [];
         <a style="color: #4c618f;" href="https://coderblue.cn/sitemap.xml">站点地图</a> &nbsp;| &nbsp;
         
         <span class="post-meta-item-icon"><i class="fa fa-area-chart"></i></span>
-        <span class="post-count"> 82.5k</span> &nbsp;| &nbsp;
+        <span class="post-count"> 83.9k</span> &nbsp;| &nbsp;
         <span><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
         <a style="color: #4c618f;" href="https://tongji.baidu.com/web/10000172729/overview/index?siteId=14879413" target="_blank" rel="noopener">百度统计</a>&nbsp;|
         <a href="https://www.upyun.com/" target="_blank" rel="noopener">
