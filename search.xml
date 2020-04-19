@@ -43,7 +43,12 @@
 
 <p>效果如图：</p>
 <p><img src="https://img-blog.csdnimg.cn/20200419225620151.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
-]]></content>
+<p>但是后续发现谷歌浏览器一加载页面就会跳转，edge自测可以。</p>
+<p>方式二：</p>
+<blockquote>
+<p>原理：当控制台在输出的某个对象时，是会去get对象属性的，因此会调用到属性的getter。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(x, <span class="string">'id'</span>, &#123;</span><br><span class="line">  <span class="keyword">get</span>:function()&#123;</span><br><span class="line">    <span class="comment">// 在这里放入你的代码</span></span><br><span class="line">    <span class="built_in">window</span>.location.href=<span class="string">'https://coderblue.cn'</span></span><br><span class="line">    alert(<span class="string">'Console is opened'</span>);</span><br><span class="line">  &#125; </span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(x);</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>前端</category>
       </categories>
