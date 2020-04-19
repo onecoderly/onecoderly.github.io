@@ -14,9 +14,13 @@
   <link href="//cdn.bootcss.com/layer/3.0.1/skin/default/layer.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script src="https://cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.7.2/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.scrollstop.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.lazyload.min.js"></script>
   <script src="//cdn.bootcss.com/layer/3.0.1/layer.min.js"></script>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.2/jquery.fancybox.min.css" />
+  <script src="https://cdn.staticfile.org/fancybox/3.5.2/jquery.fancybox.min.js"></script>
   <title>
     常用的oracle查询语句 |  Blue
   </title>
@@ -69,7 +73,7 @@ var _hmt = _hmt || [];
 </script>
 
   
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
 <link rel="alternate" href="/atom.xml" title="Blue" type="application/atom+xml">
 </head>
 
@@ -119,7 +123,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">885字</span>
+            <span class="post-count">979字</span>
         </span>
     </span>
 
@@ -128,7 +132,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">4分钟</span>
+            <span class="post-count">5分钟</span>
         </span>
     </span>
     <span class="post-time">
@@ -158,8 +162,6 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
 
-
-      
 
       
       <h3 id="将数据根据月份分组查询且从小到大排序"><a href="#将数据根据月份分组查询且从小到大排序" class="headerlink" title="将数据根据月份分组查询且从小到大排序"></a>将数据根据月份分组查询且从小到大排序</h3><p>这个适用于echarts的数据需要</p>
@@ -222,6 +224,17 @@ var _hmt = _hmt || [];
 <p>同样我们也可以用 not in 来实现：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> depa.depid, depa.depname</span><br><span class="line">  <span class="keyword">from</span> department depa</span><br><span class="line">  <span class="keyword">where</span> depa.depid <span class="keyword">not</span> <span class="keyword">in</span></span><br><span class="line">      (<span class="keyword">select</span> empl.depid </span><br><span class="line">        <span class="keyword">from</span> employee empl</span><br><span class="line">        <span class="keyword">group</span> <span class="keyword">by</span> empl.depid</span><br><span class="line">        <span class="keyword">having</span>(<span class="keyword">avg</span>(empl.empsalary) &lt; <span class="number">3000</span>))</span><br><span class="line">        <span class="keyword">and</span> depa.depid <span class="keyword">in</span> (<span class="keyword">select</span> emplo.depid <span class="keyword">from</span> employee emplo)</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20200411131615645.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDc2NDY1,size_16,color_FFFFFF,t_70" alt=""></p>
+<h3 id="分页使用-查询某个范围的数据"><a href="#分页使用-查询某个范围的数据" class="headerlink" title="分页使用(查询某个范围的数据)"></a>分页使用(查询某个范围的数据)</h3><ol>
+<li>使用rownum 虚列</li>
+</ol>
+<p>按姓名排序取出前十条数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">id</span>,<span class="keyword">name</span> <span class="keyword">from</span> (<span class="keyword">select</span> <span class="keyword">id</span>,<span class="keyword">name</span> <span class="keyword">from</span> student <span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">name</span>) <span class="keyword">where</span> <span class="keyword">rownum</span>&lt;=<span class="number">10</span> <span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">rownum</span> <span class="keyword">asc</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>最佳选择：利用分析函数</li>
+</ol>
+<p>取出100-150条记录,按照tname排序</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">select</span> tname,tabtype <span class="keyword">from</span> (</span><br><span class="line">  <span class="keyword">select</span> tname,tabtype,row_number() <span class="keyword">over</span> ( <span class="keyword">order</span> <span class="keyword">by</span> tname ) rn <span class="keyword">from</span> tab</span><br><span class="line">) <span class="keyword">where</span> rn <span class="keyword">between</span> <span class="number">100</span> <span class="keyword">and</span> <span class="number">150</span>;</span><br></pre></td></tr></table></figure>
 
       
       <!-- reward -->
@@ -416,11 +429,6 @@ var _hmt = _hmt || [];
 </style>
 
   
-
-  
-  
-  
-
 </article>
 </section>
       <footer class="footer">
@@ -448,7 +456,7 @@ var _hmt = _hmt || [];
         <a style="color: #4c618f;" href="https://coderblue.cn/sitemap.xml">站点地图</a> &nbsp;| &nbsp;
         
         <span class="post-meta-item-icon"><i class="fa fa-area-chart"></i></span>
-        <span class="post-count"> 82.3k</span> &nbsp;| &nbsp;
+        <span class="post-count"> 82.5k</span> &nbsp;| &nbsp;
         <span><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
         <a style="color: #4c618f;" href="https://tongji.baidu.com/web/10000172729/overview/index?siteId=14879413" target="_blank" rel="noopener">百度统计</a>&nbsp;|
         <a href="https://www.upyun.com/" target="_blank" rel="noopener">
@@ -476,8 +484,6 @@ var _hmt = _hmt || [];
       POWERMODE.shake = false; // false 为禁用震动特效
       document.body.addEventListener('input', POWERMODE);
     </script>
-    <!-- 懒加载图片 -->
-    <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/lazyload.js"></script>
   </div>
 </footer>
       <div class="to_top">
@@ -580,9 +586,6 @@ var _hmt = _hmt || [];
 </div>
     
 <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.justifiedGallery.min.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/lazyload.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/checkvaline@v1.0.2.js"></script>

@@ -14,9 +14,13 @@
   <link href="//cdn.bootcss.com/layer/3.0.1/skin/default/layer.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script src="https://cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.7.2/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.scrollstop.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.lazyload.min.js"></script>
   <script src="//cdn.bootcss.com/layer/3.0.1/layer.min.js"></script>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.2/jquery.fancybox.min.css" />
+  <script src="https://cdn.staticfile.org/fancybox/3.5.2/jquery.fancybox.min.js"></script>
   <title>
     最常用的正则表达式 |  Blue
   </title>
@@ -69,7 +73,7 @@ var _hmt = _hmt || [];
 </script>
 
   
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
 <link rel="alternate" href="/atom.xml" title="Blue" type="application/atom+xml">
 </head>
 
@@ -158,8 +162,6 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
 
-
-      
 
       
       <h2 id="校验数字的表达式"><a href="#校验数字的表达式" class="headerlink" title="校验数字的表达式"></a>校验数字的表达式</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">数字：^[<span class="number">0</span>-<span class="number">9</span>]*$</span><br><span class="line">n位的数字：^\d&#123;n&#125;$</span><br><span class="line">至少n位的数字：^\d&#123;n,&#125;$</span><br><span class="line">m-n位的数字：^\d&#123;m,n&#125;$</span><br><span class="line">零和非零开头的数字：^(<span class="number">0</span>|[<span class="number">1</span>-<span class="number">9</span>][<span class="number">0</span>-<span class="number">9</span>]*)$</span><br><span class="line">非零开头的最多带两位小数的数字：^([<span class="number">1</span>-<span class="number">9</span>][<span class="number">0</span>-<span class="number">9</span>]*)+(.[<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">1</span>,<span class="number">2</span>&#125;)?$</span><br><span class="line">带<span class="number">1</span>-<span class="number">2</span>位小数的正数或负数：^(\-)?\d+(\.\d&#123;<span class="number">1</span>,<span class="number">2</span>&#125;)?$</span><br><span class="line">正数、负数、和小数：^(\-|\+)?\d+(\.\d+)?$</span><br><span class="line">有两位小数的正实数：^[<span class="number">0</span>-<span class="number">9</span>]+(.[<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">2</span>&#125;)?$</span><br><span class="line">有<span class="number">1</span>~<span class="number">3</span>位小数的正实数：^[<span class="number">0</span>-<span class="number">9</span>]+(.[<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">1</span>,<span class="number">3</span>&#125;)?$</span><br><span class="line">非零的正整数：^[<span class="number">1</span>-<span class="number">9</span>]\d*$ 或 ^([<span class="number">1</span>-<span class="number">9</span>][<span class="number">0</span>-<span class="number">9</span>]*)&#123;<span class="number">1</span>,<span class="number">3</span>&#125;$ 或 ^\+?[<span class="number">1</span>-<span class="number">9</span>][<span class="number">0</span>-<span class="number">9</span>]*$</span><br><span class="line">非零的负整数：^\-[<span class="number">1</span>-<span class="number">9</span>][]<span class="number">0</span>-<span class="number">9</span><span class="string">"*$ 或 ^-[1-9]\d*$</span></span><br><span class="line"><span class="string">非负整数：^\d+$ 或 ^[1-9]\d*|0$</span></span><br><span class="line"><span class="string">非正整数：^-[1-9]\d*|0$ 或 ^((-\d+)|(0+))$</span></span><br><span class="line"><span class="string">非负浮点数：^\d+(\.\d+)?$ 或 ^[1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0$</span></span><br><span class="line"><span class="string">非正浮点数：^((-\d+(\.\d+)?)|(0+(\.0+)?))$ 或 ^(-([1-9]\d*\.\d*|0\.\d*[1-9]\d*))|0?\.0+|0$</span></span><br><span class="line"><span class="string">正浮点数：^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$ 或 ^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$</span></span><br><span class="line"><span class="string">负浮点数：^-([1-9]\d*\.\d*|0\.\d*[1-9]\d*)$ 或 ^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$</span></span><br><span class="line"><span class="string">浮点数：^(-?\d+)(\.\d+)?$ 或 ^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$</span></span><br></pre></td></tr></table></figure>
@@ -363,11 +365,6 @@ var _hmt = _hmt || [];
 </style>
 
   
-
-  
-  
-  
-
 </article>
 </section>
       <footer class="footer">
@@ -395,7 +392,7 @@ var _hmt = _hmt || [];
         <a style="color: #4c618f;" href="https://coderblue.cn/sitemap.xml">站点地图</a> &nbsp;| &nbsp;
         
         <span class="post-meta-item-icon"><i class="fa fa-area-chart"></i></span>
-        <span class="post-count"> 82.3k</span> &nbsp;| &nbsp;
+        <span class="post-count"> 82.5k</span> &nbsp;| &nbsp;
         <span><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
         <a style="color: #4c618f;" href="https://tongji.baidu.com/web/10000172729/overview/index?siteId=14879413" target="_blank" rel="noopener">百度统计</a>&nbsp;|
         <a href="https://www.upyun.com/" target="_blank" rel="noopener">
@@ -423,8 +420,6 @@ var _hmt = _hmt || [];
       POWERMODE.shake = false; // false 为禁用震动特效
       document.body.addEventListener('input', POWERMODE);
     </script>
-    <!-- 懒加载图片 -->
-    <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/lazyload.js"></script>
   </div>
 </footer>
       <div class="to_top">
@@ -527,9 +522,6 @@ var _hmt = _hmt || [];
 </div>
     
 <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.justifiedGallery.min.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/lazyload.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/checkvaline@v1.0.2.js"></script>

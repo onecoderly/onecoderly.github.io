@@ -14,9 +14,13 @@
   <link href="//cdn.bootcss.com/layer/3.0.1/skin/default/layer.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script src="https://cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.7.2/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.scrollstop.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.lazyload.min.js"></script>
   <script src="//cdn.bootcss.com/layer/3.0.1/layer.min.js"></script>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.2/jquery.fancybox.min.css" />
+  <script src="https://cdn.staticfile.org/fancybox/3.5.2/jquery.fancybox.min.js"></script>
   <title>
      Blue
   </title>
@@ -69,7 +73,7 @@ var _hmt = _hmt || [];
 </script>
 
   
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
 <link rel="alternate" href="/atom.xml" title="Blue" type="application/atom+xml">
 </head>
 
@@ -207,8 +211,6 @@ var _hmt = _hmt || [];
 
 
       
-
-      
       <br>
 <br>
       
@@ -237,9 +239,6 @@ var _hmt = _hmt || [];
   
   
   
-
-  
-
 </article>
     
     <article id="post-append使用" class="article article-type-post" itemscope
@@ -305,8 +304,6 @@ var _hmt = _hmt || [];
 
 
       
-
-      
       <br>
 <br>
       
@@ -335,9 +332,6 @@ var _hmt = _hmt || [];
   
   
   
-
-  
-
 </article>
     
     <article id="post-sql练习笔记" class="article article-type-post" itemscope
@@ -403,8 +397,6 @@ var _hmt = _hmt || [];
 
 
       
-
-      
       <p>最近在做公司的项目，由于基本使用 ECharts 做可视化分析，查数据库居多。有时候 sql 就写的不太顺手，遂最近抽时间想多练习练习。</p>
       
       <a class="article-more-link" href="/1462133166/">阅读更多</a>
@@ -432,9 +424,6 @@ var _hmt = _hmt || [];
   
   
   
-
-  
-
 </article>
     
     <article id="post-flex布局" class="article article-type-post" itemscope
@@ -498,8 +487,6 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
 
-
-      
 
       
       <h2 id="开启flex布局"><a href="#开启flex布局" class="headerlink" title="开启flex布局"></a>开启flex布局</h2><ul>
@@ -575,9 +562,6 @@ var _hmt = _hmt || [];
   
   
   
-
-  
-
 </article>
     
     <article id="post-java复制List集合" class="article article-type-post" itemscope
@@ -643,8 +627,6 @@ var _hmt = _hmt || [];
 
 
       
-
-      
       <p> JDK貌似没有自带的复制List集合的方法，因此，复制方法需要自己去实现。下面介绍两种简单实用的复制List集合的方法。</p>
 <p><strong>方法1</strong>、创建新的ArrayList集合时复制</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">    list.add(<span class="string">"1"</span>);</span><br><span class="line">    list.add(<span class="string">"2"</span>);</span><br><span class="line">    list.add(<span class="string">"3"</span>);</span><br><span class="line">    list.add(<span class="string">"4"</span>);</span><br><span class="line">    list.add(<span class="string">"5"</span>);</span><br><span class="line">    List&lt;String&gt; newList = <span class="keyword">new</span> ArrayList&lt;String&gt;(list);</span><br><span class="line">    System.out.println(newList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -677,9 +659,6 @@ var _hmt = _hmt || [];
   
   
   
-
-  
-
 </article>
     
     <article id="post-Lombok，真香" class="article article-type-post" itemscope
@@ -745,8 +724,6 @@ var _hmt = _hmt || [];
 
 
       
-
-      
       <h2 id="Lombok到底是什么？"><a href="#Lombok到底是什么？" class="headerlink" title="Lombok到底是什么？"></a>Lombok到底是什么？</h2><p>先看一下它的官网<br><img src="https://mmbiz.qpic.cn/mmbiz_png/xq9PqibkVAzp6uHcdh3OGoN5lib8qiahVv1BEukCAUrrmjp1iay5HDcRCMlTJCwyWhnpehDYY15Dicfw4EPhR4VSbcA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt=""><br>英语懒得看？没关系。</p>
 <p><strong>它大致意思是</strong>：Lombok是一个很牛批的<strong>插件</strong>（本质是个<strong>Java库</strong>），项目里一旦引入了Lombok神器之后，你项目中所有诸如：对象的构造函数、 equals()方法，属性的 get()/set()方法等等，这些没有技术含量的代码统统都不用写了，Lombok帮你搞定一切，全部帮你自动生成！</p>
 <p>听起来好像是挺不错…</p>
@@ -799,9 +776,6 @@ var _hmt = _hmt || [];
   
   
   
-
-  
-
 </article>
     
     <article id="post-宝塔同一ip添加多个站点" class="article article-type-post" itemscope
@@ -867,8 +841,6 @@ var _hmt = _hmt || [];
 
 
       
-
-      
       <br>
 <br>
       
@@ -897,9 +869,6 @@ var _hmt = _hmt || [];
   
   
   
-
-  
-
 </article>
     
     <article id="post-部署前后端分离项目到Linux服务器" class="article article-type-post" itemscope
@@ -965,8 +934,6 @@ var _hmt = _hmt || [];
 
 
       
-
-      
       <p>&amp;nbsp &amp;nbsp 近日自己结合 vue + element ui + Springboot 做了个前后端分离的项目。因为是第一次部署项目，便在此记录下自己的心得。</p>
       
       <a class="article-more-link" href="/245703536/">阅读更多</a>
@@ -994,9 +961,6 @@ var _hmt = _hmt || [];
   
   
   
-
-  
-
 </article>
     
     <article id="post-后端查询sql报错" class="article article-type-post" itemscope
@@ -1062,8 +1026,6 @@ var _hmt = _hmt || [];
 
 
       
-
-      
       <br>
 <br>
       
@@ -1092,9 +1054,6 @@ var _hmt = _hmt || [];
   
   
   
-
-  
-
 </article>
     
     <article id="post-Springboot连接oracle数据库" class="article article-type-post" itemscope
@@ -1160,8 +1119,6 @@ var _hmt = _hmt || [];
 
 
       
-
-      
       <br>
 <br>
       
@@ -1190,9 +1147,6 @@ var _hmt = _hmt || [];
   
   
   
-
-  
-
 </article>
     
   </article>
@@ -1231,7 +1185,7 @@ var _hmt = _hmt || [];
         <a style="color: #4c618f;" href="https://coderblue.cn/sitemap.xml">站点地图</a> &nbsp;| &nbsp;
         
         <span class="post-meta-item-icon"><i class="fa fa-area-chart"></i></span>
-        <span class="post-count"> 82.3k</span> &nbsp;| &nbsp;
+        <span class="post-count"> 82.5k</span> &nbsp;| &nbsp;
         <span><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
         <a style="color: #4c618f;" href="https://tongji.baidu.com/web/10000172729/overview/index?siteId=14879413" target="_blank" rel="noopener">百度统计</a>&nbsp;|
         <a href="https://www.upyun.com/" target="_blank" rel="noopener">
@@ -1259,8 +1213,6 @@ var _hmt = _hmt || [];
       POWERMODE.shake = false; // false 为禁用震动特效
       document.body.addEventListener('input', POWERMODE);
     </script>
-    <!-- 懒加载图片 -->
-    <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/lazyload.js"></script>
   </div>
 </footer>
       <div class="to_top">
@@ -1363,9 +1315,6 @@ var _hmt = _hmt || [];
 </div>
     
 <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.justifiedGallery.min.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/lazyload.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/checkvaline@v1.0.2.js"></script>

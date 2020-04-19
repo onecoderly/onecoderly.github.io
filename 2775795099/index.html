@@ -14,9 +14,13 @@
   <link href="//cdn.bootcss.com/layer/3.0.1/skin/default/layer.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script src="https://cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.7.2/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.scrollstop.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.lazyload.min.js"></script>
   <script src="//cdn.bootcss.com/layer/3.0.1/layer.min.js"></script>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.2/jquery.fancybox.min.css" />
+  <script src="https://cdn.staticfile.org/fancybox/3.5.2/jquery.fancybox.min.js"></script>
   <title>
     ES6的基本语法 |  Blue
   </title>
@@ -69,7 +73,7 @@ var _hmt = _hmt || [];
 </script>
 
   
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
 <link rel="alternate" href="/atom.xml" title="Blue" type="application/atom+xml">
 </head>
 
@@ -119,7 +123,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.5k字</span>
+            <span class="post-count">1.6k字</span>
         </span>
     </span>
 
@@ -158,8 +162,6 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
 
-
-      
 
       
       <p>ES6， 全称 ECMAScript 6.0 ，是 JavaScript 的下一个版本标准，2015.06 发版。</p>
@@ -207,6 +209,10 @@ var _hmt = _hmt || [];
 <h2 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// map()方法：map，映射，即原数组映射成一个新的数组；</span></span><br><span class="line"><span class="comment">// map方法接受一个新参数，这个参数就是将原数组变成新数组的映射关系。</span></span><br><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line">myfun_1(arr1); <span class="comment">//[1,4,9,16,25]</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myfun_1</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> array = [];</span><br><span class="line">  arr.map(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">    array.push(item * item);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="built_in">console</span>.log(array);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过map方法得到某一个对象数组中特定属性的值</span></span><br><span class="line"><span class="keyword">const</span> obj = [</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">"小明"</span>, <span class="attr">age</span>: <span class="number">16</span>, <span class="attr">sex</span>: <span class="string">"男"</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">"小红"</span>, <span class="attr">age</span>: <span class="number">17</span>, <span class="attr">sex</span>: <span class="string">"女"</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">"小白"</span>, <span class="attr">age</span>: <span class="number">18</span>, <span class="attr">sex</span>: <span class="string">"女"</span> &#125;,</span><br><span class="line">];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getter</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  obj.map(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item.age);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getter(obj); <span class="comment">// 16 17 18</span></span><br><span class="line"><span class="comment">// ![](https://blog.csdn.net/weixin_40736319/article/details/89301034)</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"==========="</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> data = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"><span class="comment">// var arrayOfSquares = data.map(function (data) &#123;</span></span><br><span class="line"><span class="comment">//   return data * data</span></span><br><span class="line"><span class="comment">// &#125;);</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arrayOfSquares = data.map(<span class="function">(<span class="params">data</span>) =&gt;</span> data * data);</span><br><span class="line">arrayOfSquares.forEach(<span class="built_in">console</span>.log);</span><br><span class="line"><span class="comment">// callback需要有return值，如果没有，就遍历四次都全是undefined：</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"==========="</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> users = [</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">"张含韵"</span>, <span class="attr">email</span>: <span class="string">"zhang@email.com"</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">"江一燕"</span>, <span class="attr">email</span>: <span class="string">"jiang@email.com"</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">"李小璐"</span>, <span class="attr">email</span>: <span class="string">"li@email.com"</span> &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> emails = users.map(<span class="function"><span class="keyword">function</span> (<span class="params">user</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> user.email;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 不然就是一个数组：zhang@email.com, jiang@email.com, li@email.com</span></span><br><span class="line"><span class="built_in">console</span>.log(emails.join(<span class="string">", "</span>)); </span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"==========="</span>);</span><br><span class="line"><span class="comment">// function(value, index, array)</span></span><br><span class="line"><span class="keyword">var</span> emailsZhang = users</span><br><span class="line">  <span class="comment">// 获得邮件</span></span><br><span class="line">  .map(<span class="function"><span class="keyword">function</span> (<span class="params">user, index</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> user.email + index;</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="comment">// 筛选出zhang开头的邮件</span></span><br><span class="line">  .filter(<span class="function"><span class="keyword">function</span> (<span class="params">email</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 正则表达式写法：①包含在斜杠之间；②调用RegExp对象的构造函数</span></span><br><span class="line">    <span class="keyword">let</span> re = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"^zhang"</span>);</span><br><span class="line">    <span class="keyword">return</span> re.test(email);</span><br><span class="line">    <span class="comment">// return /^zhang/.test(email);</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(emailsZhang.join(<span class="string">", "</span>)); <span class="comment">// zhang@email.com</span></span><br></pre></td></tr></table></figure>
 <p><a href="https://www.zhangxinxu.com/wordpress/2013/04/es5%E6%96%B0%E5%A2%9E%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/#map" target="_blank" rel="noopener">参考文档</a></p>
 <h3 id="查询本周对应的日期"><a href="#查询本周对应的日期" class="headerlink" title="查询本周对应的日期"></a>查询本周对应的日期</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> dateOfToday = <span class="built_in">Date</span>.now()</span><br><span class="line"><span class="comment">// 因为创建的daysOfThisWeek数组，索引为6就对应的星期天，故减一</span></span><br><span class="line"><span class="comment">// Date().getDay() 获取当天对应的星期</span></span><br><span class="line"><span class="comment">// date.getDate() 返回月份的某一天</span></span><br><span class="line"><span class="comment">// date.getFullYear() 返回一个年份</span></span><br><span class="line"><span class="keyword">const</span> dayOfToday = (<span class="keyword">new</span> <span class="built_in">Date</span>().getDay() + <span class="number">7</span> - <span class="number">1</span>) % <span class="number">7</span></span><br><span class="line"><span class="keyword">const</span> daysOfThisWeek = <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">7</span>))</span><br><span class="line">  .map(<span class="function">(<span class="params">_, i</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// date.getMonth()：0=一月, 1=二月</span></span><br><span class="line">    <span class="keyword">const</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(dateOfToday + (i - dayOfToday) * <span class="number">1000</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span>)</span><br><span class="line">    <span class="keyword">return</span> date.getFullYear() +</span><br><span class="line">        <span class="string">'-'</span> +</span><br><span class="line">        <span class="built_in">String</span>(date.getMonth() + <span class="number">1</span>).padStart(<span class="number">2</span>, <span class="string">'0'</span>) +</span><br><span class="line">        <span class="string">'-'</span> +</span><br><span class="line">        <span class="built_in">String</span>(date.getDate()).padStart(<span class="number">2</span>, <span class="string">'0'</span>)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="不满足条件的就填充为-0"><a href="#不满足条件的就填充为-0" class="headerlink" title="不满足条件的就填充为 0"></a>不满足条件的就填充为 0</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">7</span>)))</span><br><span class="line">        <span class="comment">// 定义数组长度为7，符合企业的、值不等于0的，否则就value赋值为0</span></span><br><span class="line">        <span class="keyword">const</span> daysOfThisWeek = <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">7</span>))</span><br><span class="line">            .map(<span class="function">(<span class="params">_, i</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span>(data[i].CATEGORIES === <span class="string">'企业'</span> &amp;&amp;  data[i].SUM !== <span class="number">0</span>) &#123;</span><br><span class="line">                  <span class="keyword">return</span> &#123;</span><br><span class="line">                    name: (i + <span class="number">1</span>) + <span class="string">'月'</span>,</span><br><span class="line">                    value: data[i].SUM</span><br><span class="line">                  &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> &#123;</span><br><span class="line">                  name: (i + <span class="number">1</span>) + <span class="string">'月'</span>,</span><br><span class="line">                  value: <span class="number">0</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200417172240586.png" alt=""></p>
+
       
       <!-- reward -->
       
@@ -400,11 +406,6 @@ var _hmt = _hmt || [];
 </style>
 
   
-
-  
-  
-  
-
 </article>
 </section>
       <footer class="footer">
@@ -432,7 +433,7 @@ var _hmt = _hmt || [];
         <a style="color: #4c618f;" href="https://coderblue.cn/sitemap.xml">站点地图</a> &nbsp;| &nbsp;
         
         <span class="post-meta-item-icon"><i class="fa fa-area-chart"></i></span>
-        <span class="post-count"> 82.3k</span> &nbsp;| &nbsp;
+        <span class="post-count"> 82.5k</span> &nbsp;| &nbsp;
         <span><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
         <a style="color: #4c618f;" href="https://tongji.baidu.com/web/10000172729/overview/index?siteId=14879413" target="_blank" rel="noopener">百度统计</a>&nbsp;|
         <a href="https://www.upyun.com/" target="_blank" rel="noopener">
@@ -460,8 +461,6 @@ var _hmt = _hmt || [];
       POWERMODE.shake = false; // false 为禁用震动特效
       document.body.addEventListener('input', POWERMODE);
     </script>
-    <!-- 懒加载图片 -->
-    <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/lazyload.js"></script>
   </div>
 </footer>
       <div class="to_top">
@@ -564,9 +563,6 @@ var _hmt = _hmt || [];
 </div>
     
 <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.justifiedGallery.min.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/lazyload.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/checkvaline@v1.0.2.js"></script>

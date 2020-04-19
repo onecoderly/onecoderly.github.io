@@ -14,9 +14,13 @@
   <link href="//cdn.bootcss.com/layer/3.0.1/skin/default/layer.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script src="https://cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.7.2/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.scrollstop.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.lazyload.min.js"></script>
   <script src="//cdn.bootcss.com/layer/3.0.1/layer.min.js"></script>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.2/jquery.fancybox.min.css" />
+  <script src="https://cdn.staticfile.org/fancybox/3.5.2/jquery.fancybox.min.js"></script>
   <title>
     ECharts配置项 |  Blue
   </title>
@@ -69,7 +73,7 @@ var _hmt = _hmt || [];
 </script>
 
   
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
 <link rel="alternate" href="/atom.xml" title="Blue" type="application/atom+xml">
 </head>
 
@@ -119,7 +123,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">2k字</span>
+            <span class="post-count">2.1k字</span>
         </span>
     </span>
 
@@ -160,11 +164,16 @@ var _hmt = _hmt || [];
 
 
       
-
-      
       <h2 id="配置流程"><a href="#配置流程" class="headerlink" title="配置流程"></a>配置流程</h2><blockquote>
-<p>这里不推荐使用var，毕竟是全局变量，window都可以直接拿出来值。要使用就用 闭包形式 :<br>(function() {<br>  内容<br>})()</p>
+<p>这里不推荐使用var，毕竟是全局变量，window都可以直接拿出来值。要使用就用 闭包形式 :</p>
 </blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="meta">  'use strict'</span>;</span><br><span class="line"> </span><br><span class="line">  <span class="comment">// Code goes here</span></span><br><span class="line"> </span><br><span class="line">&#125;())</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>引用全局变量或者是外层 IIFE 的变量，可以通过下列方式传参：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$, w, d</span>)</span>&#123;</span><br><span class="line"><span class="meta">  'use strict'</span>;</span><br><span class="line"> </span><br><span class="line">  $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    w.alert(d.querySelectorAll(<span class="string">'div'</span>).length);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;(jQuery, <span class="built_in">window</span>, <span class="built_in">document</span>));</span><br></pre></td></tr></table></figure>
+
 <p><a href="https://www.pianshen.com/article/4428129481/" target="_blank" rel="noopener">不错的参考</a></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="comment">// 1. 实例化对象</span></span><br><span class="line"><span class="keyword">let</span> myChart = echarts.init(<span class="built_in">document</span>.querySelector(<span class="string">"包裹echarts图形最近的div"</span>));</span><br><span class="line"><span class="built_in">console</span>.log(myChart)</span><br><span class="line"><span class="comment">// 2. 指定配置项和数据</span></span><br><span class="line"><span class="keyword">let</span> option = &#123;</span><br><span class="line">  内容</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 3. 把配置项给实例对象</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> option === <span class="string">'object'</span>) &#123;</span><br><span class="line">    myChart.setOption(option)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 4. 让图表跟随屏幕自动的去适应</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"resize"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  myChart.resize();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>有时候我们可能会因为样式的问题，语法没有问题，但是echarts却没有显示出来，那是因为它现在的高度是 0。那么我们就需要设置点样式了</p>
@@ -414,11 +423,6 @@ var _hmt = _hmt || [];
 </style>
 
   
-
-  
-  
-  
-
 </article>
 </section>
       <footer class="footer">
@@ -446,7 +450,7 @@ var _hmt = _hmt || [];
         <a style="color: #4c618f;" href="https://coderblue.cn/sitemap.xml">站点地图</a> &nbsp;| &nbsp;
         
         <span class="post-meta-item-icon"><i class="fa fa-area-chart"></i></span>
-        <span class="post-count"> 82.3k</span> &nbsp;| &nbsp;
+        <span class="post-count"> 82.5k</span> &nbsp;| &nbsp;
         <span><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
         <a style="color: #4c618f;" href="https://tongji.baidu.com/web/10000172729/overview/index?siteId=14879413" target="_blank" rel="noopener">百度统计</a>&nbsp;|
         <a href="https://www.upyun.com/" target="_blank" rel="noopener">
@@ -474,8 +478,6 @@ var _hmt = _hmt || [];
       POWERMODE.shake = false; // false 为禁用震动特效
       document.body.addEventListener('input', POWERMODE);
     </script>
-    <!-- 懒加载图片 -->
-    <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/lazyload.js"></script>
   </div>
 </footer>
       <div class="to_top">
@@ -578,9 +580,6 @@ var _hmt = _hmt || [];
 </div>
     
 <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/jquery.justifiedGallery.min.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/lazyload.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/gh/onecoderly/cdn/static/js/checkvaline@v1.0.2.js"></script>
