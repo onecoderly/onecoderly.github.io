@@ -670,7 +670,10 @@ var _hmt = _hmt || [];
   // }
 </script>
 <script>
-let x = document.createElement('div');
+  if(window.innerWidth <= 1025) {
+    window.ontouchstart = function(e) { e.preventDefault(); };
+  }
+  let x = document.createElement('div');
   Object.defineProperty(x, 'id', {
     get:function(){
       // 在这里放入你的代码
@@ -707,7 +710,7 @@ let x = document.createElement('div');
         <a style="color: #4c618f;" href="https://coderblue.cn/sitemap.xml">站点地图</a> &nbsp;| &nbsp;
         
         <span class="post-meta-item-icon"><i class="fa fa-area-chart"></i></span>
-        <span class="post-count"> 84k</span> &nbsp;| &nbsp;
+        <span class="post-count"> 84.9k</span> &nbsp;| &nbsp;
         <span><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
         <a style="color: #4c618f;" href="https://tongji.baidu.com/web/10000172729/overview/index?siteId=14879413" target="_blank" rel="noopener">百度统计</a>&nbsp;|
         <a href="https://www.upyun.com/" target="_blank" rel="noopener">
